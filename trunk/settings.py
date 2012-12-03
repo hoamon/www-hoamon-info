@@ -3,6 +3,8 @@ import os, sys
 ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ROOT)
 sys.path.insert(0, os.path.dirname(ROOT))
+# use the below to set up third party libraries
+#sys.path.insert(0, os.path.join(os.path.dirname(ROOT), 'asset', 'SOME-LIB-DIR'))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
