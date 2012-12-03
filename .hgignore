@@ -6,6 +6,7 @@
 ^trunk/apache2.conf
 ^trunk/nginx.conf
 ^trunk/docs
+^docs/README.zh_TW.rst
 ^trunk/.livereload
 ^trunk/.gaedata
 ^trunk/_generated_media/
