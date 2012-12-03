@@ -1,0 +1,17 @@
+.*\.swp$
+.*\.pyc$
+.*\.gpg$
+^docs/_build
+^trunk/local_settings.py
+^trunk/apache2.conf
+^trunk/nginx.conf
+^trunk/.livereload
+^trunk/.gaedata
+^trunk/_generated_media/
+^trunk/_generated_media_names.py
+^nbproject/
+^.project
+^.settings
+^.pydevproject
+^.settings/org.eclipse.core.resources.prefs
+^.settings/org.eclipse.core.runtime.prefs
