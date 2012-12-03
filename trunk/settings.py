@@ -3,8 +3,6 @@ import os, sys
 ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ROOT)
 sys.path.insert(0, os.path.dirname(ROOT))
-# use the below to set up third party libraries
-#sys.path.insert(0, os.path.join(os.path.dirname(ROOT), 'asset', 'SOME-LIB-DIR'))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -101,6 +99,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'mediagenerator.middleware.MediaMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -114,6 +113,10 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+# use the below to set up third party libraries
+#sys.path.insert(0, os.path.join(os.path.dirname(ROOT), 'asset', 'SOME-LIB-DIR'))
+sys.path.insert(0, os.path.join(os.path.dirname(ROOT), 'asset', 'django-mediagenerator'))
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,6 +129,8 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'ho600_lib',
+
+    'mediagenerator', # must be last
 )
 
 # A sample logging configuration. The only tangible logging
@@ -167,6 +172,45 @@ LOGGING = {
         },
     }
 }
+
+
+# mediagenerator
+MEDIA_DEV_MODE = DEBUG
+DEV_MEDIA_URL = '/mediagenerator/'
+PRODUCTION_MEDIA_URL = '/for_mediagenerator/'
+GLOBAL_MEDIA_DIRS = (ROOT, os.path.join(ROOT, 'for_mediagenerator'), )
+
+MEDIA_GENERATORS = (
+    'mediagenerator.generators.copyfiles.CopyFiles',
+    'mediagenerator.generators.bundles.Bundles',
+    #'mediagenerator.generators.manifest.Manifest',
+)
+COPY_MEDIA_FILETYPES = ('gif', 'jpg', 'jpeg', 'png', 'svg', 'svgz',
+                                     'ico', 'swf', 'ttf', 'otf', 'eot')
+IGNORE_APP_MEDIA_DIRS = ('django.contrib.admin', )
+MEDIA_BUNDLES = (
+    ('bundle.css',
+        'media/ho600_com.css',
+        'media/ie6.css',
+        'media/style.css',
+        'media/tables.css',
+    ),
+    ('bundle.js',
+        'media/base64.js',
+        'media/canvas2image.js',
+        'media/chart_example.js',
+        'media/modernizr.custom.82028.js',
+        'media/webkit.base64.js',
+    ),
+)
+
+ROOT_MEDIA_FILTERS = {
+    'js': 'mediagenerator.filters.yuicompressor.YUICompressor',
+    'css': 'mediagenerator.filters.yuicompressor.YUICompressor',
+}
+
+YUICOMPRESSOR_PATH = os.path.join(os.path.dirname(ROOT), 'asset',
+                                  'yuicompressor-2.4.7.jar')
 
 
 
