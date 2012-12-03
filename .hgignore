@@ -5,6 +5,7 @@
 ^trunk/local_settings.py
 ^trunk/apache2.conf
 ^trunk/nginx.conf
+^trunk/docs
 ^trunk/.livereload
 ^trunk/.gaedata
 ^trunk/_generated_media/
