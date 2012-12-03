@@ -190,17 +190,10 @@ COPY_MEDIA_FILETYPES = ('gif', 'jpg', 'jpeg', 'png', 'svg', 'svgz',
 IGNORE_APP_MEDIA_DIRS = ('django.contrib.admin', )
 MEDIA_BUNDLES = (
     ('bundle.css',
-        'media/ho600_com.css',
-        'media/ie6.css',
-        'media/style.css',
-        'media/tables.css',
+        'media/root.css',
     ),
     ('bundle.js',
-        'media/base64.js',
-        'media/canvas2image.js',
-        'media/chart_example.js',
-        'media/modernizr.custom.82028.js',
-        'media/webkit.base64.js',
+        'media/root.js',
     ),
 )
 
