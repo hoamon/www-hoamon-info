@@ -1,0 +1,54 @@
+application: my-application
+version: test
+
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+builtins:
+- django_wsgi: on
+
+inbound_services:
+- mail
+
+libraries:
+- name: lxml
+  version: latest
+- name: django
+  version: latest
+
+handlers:
+- url: /favicon.ico
+  static_files: media/favicon.ico
+  upload: media/favicon.ico
+
+- url: /robots.txt
+  static_files: media/robots.txt
+  upload: media/robots.txt
+
+- url: /for_mediagenerator
+  static_dir: _generated_media
+
+- url: /media
+  static_dir: media
+
+- url: /admin/media/
+  static_dir: media/admin/media
+
+- url: /__docs__/
+  static_files: docs/index.html
+  upload: docs/index.html
+  login: admin
+
+- url: /__docs__/
+  static_dir: docs
+  login: admin
+
+- url: /__admin__/.*
+  script: wsgi.application
+  login: admin
+
+- url: /.*
+  script: wsgi.application
+#  login: required
+#  secure: always
