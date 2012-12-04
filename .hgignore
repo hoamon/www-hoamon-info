@@ -2,6 +2,7 @@
 .*\.pyc$
 .*\.gpg$
 ^docs/_build
+^docs-of-ho600-django-gae-default-trunk/_build
 ^trunk/local_settings.py
 ^trunk/apache2.conf
 ^trunk/nginx.conf
