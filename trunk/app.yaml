@@ -32,8 +32,8 @@ handlers:
 - url: /media
   static_dir: media
 
-- url: /admin/media/
-  static_dir: media/admin/media
+- url: /static/admin/
+  static_dir: media/admin
 
 - url: /__docs__/
   static_files: __docs__/index.html
