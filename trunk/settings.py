@@ -17,7 +17,7 @@ if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
     DATABASES = {
         'default': {
             'ENGINE': 'google.appengine.ext.django.backends.rdbms', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-            'INSTANCE': 'ho600:test',
+            'INSTANCE': 'ho600.com:ho600-com:ho600-com',
             'NAME': 'ho600',                      # Or path to database file if using sqlite3.
         }
     }
