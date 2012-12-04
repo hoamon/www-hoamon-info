@@ -2,8 +2,17 @@
 本專案目的(正體中文版)
 ================================================================================
 
-把開一個軟體專案所屬的常用檔案及結構定義好，方便取用。主要是給 django-based 系統使用，\
-同時可套用在「自架機器」或「GAE hosting」的專案上。
+把創建一個軟體專案所需要的常用檔案及結構定義好，方便取用。\
+主要是給 django-based 系統使用，\
+同時可套用在「自架機器」或「GAE hosting」的「應用專案」上。
+
+.. note::
+
+    名詞定義:
+        1. 「本專案」指的是 ho600-django-gae-default-trunk 專案
+        2. 「應用專案」指的是您把 ho600-django-gae-default-trunk 所有檔案複製成新開發專案的那個專案
+
+本專案的檔案架構配置如下：
 
 .. code-block:: bash
 
@@ -16,13 +25,26 @@
                                     trunk/
                                             modules/
 
-檔案架構配置如上。
-
 --------------------------------------------------------------------------------
 asset/
 --------------------------------------------------------------------------------
 
-放置第三方的函式庫，
+放置第三方的函式庫， __init__.py 則紀錄應該要抓取那些專案到 asset/ 中。內容如下：
+
+.. code-block:: python
+    :linenos:
+
+    # asset/__init__.py
+    REPOS = [
+        ("tip", "ssh://hg@bitbucket.org/wkornewald/django-mediagenerator"),
+        ("...", "..."),
+    ]
+
+tip 代表後者儲存庫下載後，要 update 的版本。
+
+.. note::
+
+    目前僅支援 mercurial 儲存庫。
 
 --------------------------------------------------------------------------------
 conf_example/
@@ -33,20 +55,25 @@ conf_example/
 並在系統的 apache.conf 內使用：
 
 .. code-block:: apache
+    :linenos:
 
+    # YOUR_SYSTEM_APACHE/httpd.conf
     Include "WHERE_YOU_PUT_CONF_DIR/apache2.conf"
 
 或是在系統的 nginx.conf 內使用：
 
 .. code-block:: nginx
+    :linenos:
 
+    # YOUR_SYSTEM_NGINX/nginx.conf
     Include "WHERE_YOU_PUT_CONF_DIR/nginx.conf"
 
 其中因為 nginx 是結合 uWSGI 一起使用的，所以需另外設定 uwsgi 設定檔：
 
 .. code-block:: ini
+    :linenos:
 
-    ##/etc/uwsgi/apps-enabled/www.ini
+    ## /etc/uwsgi/apps-enabled/www.ini
     ## sudo invoke-rc.d uwsgi start
     ## sudo invoke-rc.d uwsgi stop
     ## sudo invoke-rc.d uwsgi restart
@@ -67,13 +94,14 @@ conf_example/
 docs/
 --------------------------------------------------------------------------------
 
-為 sphinx-based 的文件資料夾。
+為 sphinx-based 的文件資料夾。給「應用專案」使用的預設文件寫作位置，\
+當然也可以全刪除不使用或是自行再利用 sphinx-quickstart 生成一個。
 
 --------------------------------------------------------------------------------
 docs-of-ho600-django-gae-default-trunk/
 --------------------------------------------------------------------------------
 
-本文件所在處。
+本專案的文件所在處。
 
 --------------------------------------------------------------------------------
 ho600_lib/
@@ -82,10 +110,17 @@ ho600_lib/
 方便作 django-based 程式開發的函式庫，主要有 bugrecord 功能，在執行程式時，\
 若發生 404|500 錯誤時，能紀錄在資料庫內。
 
+.. todo::
+
+    目前 ho600_lib 仍未實作。
+
 --------------------------------------------------------------------------------
 trunk/
 --------------------------------------------------------------------------------
 
+這裡是執行 ./manage.py runserver 或 dev_appserver.py .  的位置。
+
 --------------------------------------------------------------------------------
 modules/
 --------------------------------------------------------------------------------
+
