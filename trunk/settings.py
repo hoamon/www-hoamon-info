@@ -1,8 +1,14 @@
 # Django settings for trunk project.
 import os, sys
-ROOT = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, ROOT)
-sys.path.insert(0, os.path.dirname(ROOT))
+TRUNK = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, TRUNK)
+sys.path.insert(0, os.path.join(TRUNK, 'modules'))
+
+TRUNK_PARENT = os.path.dirname(TRUNK)
+sys.path.insert(0, TRUNK_PARENT)
+
+# use the below to set up third party libraries
+#sys.path.insert(0, os.path.join(os.path.dirname(TRUNK), 'asset', 'SOME-LIB-DIR'))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -91,6 +97,8 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+
+sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'django-mediagenerator'))
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -112,10 +120,6 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
-
-# use the below to set up third party libraries
-#sys.path.insert(0, os.path.join(os.path.dirname(ROOT), 'asset', 'SOME-LIB-DIR'))
-sys.path.insert(0, os.path.join(os.path.dirname(ROOT), 'asset', 'django-mediagenerator'))
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -177,8 +181,12 @@ LOGGING = {
 # mediagenerator
 MEDIA_DEV_MODE = DEBUG
 DEV_MEDIA_URL = '/mediagenerator/'
-PRODUCTION_MEDIA_URL = '/for_mediagenerator/'
-GLOBAL_MEDIA_DIRS = (ROOT, os.path.join(ROOT, 'for_mediagenerator'), )
+PRODUCTION_MEDIA_URL = '/production_mediagenerator/'
+# *********************************************************** <
+# YOU should put TRUNK/media into TRUNK/for_mediagenerator/   <
+GLOBAL_MEDIA_DIRS = (os.path.join(TRUNK, 'for_mediagenerator'), )
+# YOU should put TRUNK/media into TRUNK/for_mediagenerator/   >
+# *********************************************************** >
 
 MEDIA_GENERATORS = (
     'mediagenerator.generators.copyfiles.CopyFiles',
@@ -189,9 +197,12 @@ COPY_MEDIA_FILETYPES = ('gif', 'jpg', 'jpeg', 'png', 'svg', 'svgz',
                                      'ico', 'swf', 'ttf', 'otf', 'eot')
 IGNORE_APP_MEDIA_DIRS = ('django.contrib.admin', )
 MEDIA_BUNDLES = (
+    # put {% include_media "bundle.css" %} in template.html
     ('bundle.css',
         'media/root.css',
     ),
+
+    # put {% include_media "bundle.js" %} in template.html
     ('bundle.js',
         'media/root.js',
     ),
@@ -202,8 +213,7 @@ ROOT_MEDIA_FILTERS = {
     'css': 'mediagenerator.filters.yuicompressor.YUICompressor',
 }
 
-YUICOMPRESSOR_PATH = os.path.join(os.path.dirname(ROOT), 'asset',
-                                  'yuicompressor-2.4.7.jar')
+YUICOMPRESSOR_PATH = os.path.join(TRUNK_PARENT, 'asset', 'yuicompressor-2.4.7.jar')
 
 
 

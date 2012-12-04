@@ -14,8 +14,8 @@ framework.
 
 """
 import os, sys
-ROOT = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, ROOT)
+TRUNK = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, TRUNK)
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 
