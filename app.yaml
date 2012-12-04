@@ -1,4 +1,4 @@
-application: ho600-maillist
+application: my-application
 version: test
 
 runtime: python27
