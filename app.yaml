@@ -1,4 +1,4 @@
-application: my-application
+application: ho600-maillist
 version: test
 
 runtime: python27
@@ -19,36 +19,36 @@ libraries:
 
 handlers:
 - url: /favicon.ico
-  static_files: media/favicon.ico
-  upload: media/favicon.ico
+  static_files: trunk/media/favicon.ico
+  upload: trunk/media/favicon.ico
 
 - url: /robots.txt
-  static_files: media/robots.txt
-  upload: media/robots.txt
+  static_files: trunk/media/robots.txt
+  upload: trunk/media/robots.txt
 
 - url: /production_mediagenerator
-  static_dir: _generated_media
+  static_dir: trunk/_generated_media
 
 - url: /media
-  static_dir: media
+  static_dir: trunk/media
 
 - url: /static/admin/
-  static_dir: media/admin
+  static_dir: trunk/media/admin
 
 - url: /__docs__/
-  static_files: __docs__/index.html
-  upload: __docs__/index.html
+  static_files: trunk/__docs__/index.html
+  upload: trunk/__docs__/index.html
   login: admin
 
 - url: /__docs__/
-  static_dir: __docs__
+  static_dir: trunk/__docs__
   login: admin
 
 - url: /__admin__/.*
-  script: wsgi.application
+  script: trunk.wsgi.application
   login: admin
 
 - url: /.*
-  script: wsgi.application
+  script: trunk.wsgi.application
 #  login: required
 #  secure: always
