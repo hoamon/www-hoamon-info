@@ -29,9 +29,6 @@ handlers:
 - url: /production_mediagenerator
   static_dir: trunk/_generated_media
 
-- url: /media
-  static_dir: trunk/media
-
 - url: /static/admin/
   static_dir: trunk/media/admin
 

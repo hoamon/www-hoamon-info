@@ -199,7 +199,7 @@ DEV_MEDIA_URL = '/mediagenerator/'
 PRODUCTION_MEDIA_URL = '/production_mediagenerator/'
 # *********************************************************** <
 # YOU should put TRUNK/media into TRUNK/for_mediagenerator/   <
-GLOBAL_MEDIA_DIRS = (os.path.join(TRUNK, 'for_mediagenerator'), )
+GLOBAL_MEDIA_DIRS = (os.path.join(TRUNK, 'media'), )
 # YOU should put TRUNK/media into TRUNK/for_mediagenerator/   >
 # *********************************************************** >
 
@@ -213,13 +213,14 @@ COPY_MEDIA_FILETYPES = ('gif', 'jpg', 'jpeg', 'png', 'svg', 'svgz',
 IGNORE_APP_MEDIA_DIRS = ('django.contrib.admin', )
 MEDIA_BUNDLES = (
     # put {% include_media "bundle.css" %} in template.html
-    ('bundle.css',
-        'media/root.css',
+    ('jquery.css',
+        'jquery.css',
     ),
 
     # put {% include_media "bundle.js" %} in template.html
-    ('bundle.js',
-        'media/root.js',
+    ('jquery.js',
+        'jquery.js',
+        'jqueryui.js',
     ),
 )
 
