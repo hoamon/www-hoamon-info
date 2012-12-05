@@ -5,7 +5,5 @@ class Rargs:
     def __init__(self, rargs=[]): self.rargs = rargs
 
 ahg = AdvanceHG(run_in_function=True)
-a = Rargs()
-ahg.pullAll('', '--pullall', 'asset/django-mediagenerator', a)
 a = Rargs(['-j'])
 ahg.pullAll('', '--pullall', '.', a)
