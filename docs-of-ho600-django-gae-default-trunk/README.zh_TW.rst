@@ -28,33 +28,34 @@
                                     ho600_lib/
                                     trunk/
                                             modules/
+                                            local_settings.py
 
 asset/
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-放置第三方的函式庫， asset/__init__.py 則紀錄應該要抓取那些專案到 asset/ 中。內容如下：
+放置第三方的函式庫， ./depends_modules.conf 則紀錄應該要抓取那些專案到 asset/ 中。內容如下：
 
 .. code-block:: python
     :linenos:
 
-    # asset/__init__.py
-    REPOS = [
-        ("tip", "ssh://hg@bitbucket.org/wkornewald/django-mediagenerator"),
-        ("...", "..."),
-    ]
+    # ./depends_modules.conf
+    asset/django-mediagenerator:tip = ssh://hg@bitbucket.org/wkornewald/django-mediagenerator
+    asset/django-tastypie:XXXYYYZZZ = git://github.com/toastdriven/django-tastypie.git
 
-tip 代表後者儲存庫下載後，要 update 的版本。
+若有其他想要加入的模組，可自行加在 depends_modules.conf 中\
+XXXYYYZZZ 代表特定版本的 changeset 碼，若無設定代表 tip ，\
+有設定 XXXYYYZZZ 後，則該模組就只會 update 至該版本。但 pull 時還是會抓到 tip 版。
 
 .. note::
 
-    目前僅支援 mercurial 儲存庫。
+    目前僅支援 mercurial 儲存庫。若是使用 GitHub 專案請參考 `hg-git <http://hg-git.github.com/>`_ 。
 
 bin/
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 目前有兩個執行命令：
 
- 1. before_programming.py: 每次在撰寫自己的應用專案前，所執行的指令。幫你把 asset/ 內的專案程式更新到指定版本。
+ 1. before_programming.py: 每次在撰寫自己的應用專案前，所執行的指令。幫你把 depends_modules.conf 中所指定的專案程式更新到指定版本。並提醒你還有那些 hg repo 尚未 commit 。
  2. before_deployment.py: 要上傳至 production server 前所執行的指令，也是未來 jenkins 執行的指令。
 
 conf_example/
@@ -127,9 +128,11 @@ trunk/
 這裡是執行 ./manage.py runserver 0.0.0.0:8080 的地方，若要執行 GAE-based 的應用專案，\
 則到上層目錄執行 dev_appserver.py . -a 0.0.0.0 -p 8080 。
 
-modules/
+trunk/modules/
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+在使用 jenkins 發佈應用專案時，會將 settings.INSTALLED_APPS 中所需的專案全複製到 trunk/modules 下。\
+這樣 jenkins 發佈時，就只需要把 trunk/ 上傳至伺服器。目標伺服器就不需要預先安裝特定 pure-python 函式庫。
 
 --------------------------------------------------------------------------------
 實際應用範例
