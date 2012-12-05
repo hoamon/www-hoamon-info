@@ -17,8 +17,20 @@ class AdvanceHG(object):
     """ """
 
 
-    def __init__(self):
-        """ check user input
+    def __init__(self, *args, **options):
+        u""" check user input
+
+            depends_modules.conf example:
+
+            [depends]
+            #若有其他想要加入的模組，可自行加在 depends_modules.conf 中
+            # :xxxyyyzzz 代表特定版本的 changeset 碼，若無設定代表 tip
+            # 有設定 :xxxyyyzzz 後，則該模組只會 update 至該版本。但 pull 還是會抓到 tip 版
+            apps/common:8f31f65649e4 = https://hg.nchu-cm.com/repo/modules/common
+            apps/dailyreport:420226396cd6 = https://hg.nchu-cm.com/repo/modules/dailyreport
+            apps/engphoto:feb832120670 = https://hg.nchu-cm.com/repo/modules/engphoto
+            apps/general:8843030f10bb = https://hg.nchu-cm.com/repo/modules/general
+            apps/webcpm = https://hg.nchu-cm.com/repo/modules/webcpm
         """
 
         self.op = op = OptionParser(usage = "usage: ./%prog [OPTIONS]... [REPOS]...",
@@ -36,11 +48,13 @@ class AdvanceHG(object):
             type="string", help=u"手動指定 http_proxy 位置格式如：http://172.22.100.100:8080/。須放置於 --pullall 之後。")
 
         opg.add_option("-d", "--depends", action="store", dest="depends",
-            type="string", help=u"手動指定同步更新的模組資料夾，可多值設定，但本參數須放置於 --pullall 之後。如無設定，則自動讀取主資料夾中的 depends_modules.txt 來處理")
+            type="string", help=u"手動指定同步更新的模組資料夾，可多值設定，但本參數須放置於 --pullall 之後。如無設定，則自動讀取主資料夾中的 depends_modules.conf 來處理")
+        self.depends_modules = 'depends_modules.conf'
 
         op.add_option_group(opg)
 
-        (self.options, self.args) = op.parse_args()
+        if not options:
+            (_options, _args) = op.parse_args()
 
 
     def checkNoDiff(self, repo):
@@ -78,10 +92,10 @@ class AdvanceHG(object):
         u""" 所 pull 的路徑必須寫在 .hg/hgrc 中，且帳號/密碼須事先定義
         """
 
-
         ui0 = self.ui0
-        ui0.write('== 目前正在處理 %s 資料夾 ==\n' % directory)
-        try: repo = hg.repository(ui0, directory)
+        ui0.write(u'== 目前正在處理 %s 資料夾 ==\n' % directory)
+        try:
+            repo = hg.repository(ui0, directory)
         except error.RepoError:
             raise ValueError(u'%s 不是 hg 專案'%directory)
 
@@ -89,7 +103,7 @@ class AdvanceHG(object):
             self.checkNoDiff(repo)
         except NonCommitError, e:
             if self.jump_non_commit:
-                ui0.write('    # Need Commit, jump %s 專案\n' % directory)
+                ui0.write(u'\t# Need Commit, jump %s 專案\n' % directory)
                 return
             else:
                 raise NonCommitError(e)
@@ -101,15 +115,17 @@ class AdvanceHG(object):
         if not version:
             version = 'tip'
         hg.update(repo, version)
-        ui0.write('\t 更新至 %s 版\n' % version)
+        ui0.write(u'\t 更新至 %s 版\n' % version)
 
 
     def pullAll(self, *args, **kw):
-        print('\tpullAll: begin')
+        print(u'\tpullAll: begin')
         self.ui0 = ui0 = ui.ui()
         self.pullall_directory = pullall_directory = args[2]
-        try: self.depends = depends = args[3].rargs
-        except IndexError: self.depends = depends = []
+        try:
+            self.depends = depends = args[3].rargs
+        except IndexError:
+            self.depends = depends = []
 
         if '-j' in depends:
             self.jump_non_commit = True
@@ -142,7 +158,7 @@ class AdvanceHG(object):
         self.pull(repo)
 
         if not depends:
-            paths = self.rDepends(pullall_directory, hgrc_filename='depends_modules.txt')
+            paths = self.rDepends(pullall_directory, hgrc_filename=self.depends_modules)
             for path in paths:
                 try:
                     repo, version = path[0].split(':')
@@ -154,7 +170,7 @@ class AdvanceHG(object):
             for depend in depends:
                 self.pull(depend)
 
-        print('\tpullAll: done')
+        print(u'\tpullAll: done')
 
 
 if __name__ == '__main__':
