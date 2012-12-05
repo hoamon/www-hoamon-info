@@ -165,7 +165,13 @@ class AdvanceHG(object):
                 except ValueError:
                     repo = path[0].split(':')[0]
                     version = None
-                self.pull(os.path.join(pullall_directory, repo), version)
+                if os.path.isdir(os.path.join(pullall_directory, repo)):
+                    self.pull(os.path.join(pullall_directory, repo), version)
+                else:
+                    remote_source = path[1]
+                    #TODO should change to mercurial api
+                    os.popen('hg clone %s %s' % (remote_source, os.path.join(pullall_directory, repo)))
+                    self.pull(os.path.join(pullall_directory, repo), version)
         else:
             for depend in depends:
                 self.pull(depend)
