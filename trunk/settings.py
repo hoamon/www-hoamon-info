@@ -197,11 +197,7 @@ LOGGING = {
 MEDIA_DEV_MODE = DEBUG
 DEV_MEDIA_URL = '/mediagenerator/'
 PRODUCTION_MEDIA_URL = '/production_mediagenerator/'
-# *********************************************************** <
-# YOU should put TRUNK/media into TRUNK/for_mediagenerator/   <
 GLOBAL_MEDIA_DIRS = (os.path.join(TRUNK, 'media'), )
-# YOU should put TRUNK/media into TRUNK/for_mediagenerator/   >
-# *********************************************************** >
 
 MEDIA_GENERATORS = (
     'mediagenerator.generators.copyfiles.CopyFiles',
