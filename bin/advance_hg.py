@@ -170,7 +170,8 @@ class AdvanceHG(object):
                 else:
                     remote_source = path[1]
                     #TODO should change to mercurial api
-                    os.popen('hg clone %s %s' % (remote_source, os.path.join(pullall_directory, repo)))
+                    r = os.popen('hg clone %s %s' % (remote_source, os.path.join(pullall_directory, repo)))
+                    print(r.read())
                     self.pull(os.path.join(pullall_directory, repo), version)
         else:
             for depend in depends:
