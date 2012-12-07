@@ -45,7 +45,7 @@ handlers:
   script: trunk.wsgi.application
   login: admin
 
-- url: /.*
+- url: /?.*
   script: trunk.wsgi.application
 #  login: required
 #  secure: always
