@@ -12,3 +12,4 @@ AND
 
 This Software is released under New BSD License( 3-clause ).
 
+**If you have any issue, just say it** ( https://bitbucket.org/hoamon/ho600-django-gae-default-trunk/issues )。
