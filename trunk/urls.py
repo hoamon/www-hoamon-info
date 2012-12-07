@@ -36,9 +36,18 @@ urlpatterns += patterns('',
     url(r'^__admin__/', include(admin.site.urls)),
 )
 
-urlpatterns += patterns('',
-    #<<< default view on any urls, you shoule remove me and put yours.
-    url(r'', lambda R: HttpResponse('''<html><head></head><body>
+def ho600_default_view(R):
+    import os
+    _o = ''
+    if settings.DEBUG:
+        for k, v in os.environ.items():
+            _o += '<div><b>%s</b> = %s</div>' % (k, v)
+    _s = ''
+    if settings.DEBUG:
+        for k in dir(settings):
+            _s += '<div><b>%s</b> = %s</div>' % (k, getattr(settings, k))
+
+    html = '''<html><head></head><body>
 <h1>Hello World!!</h1>
 <p>This is the default view on any urls, you shoule remove me(in ./trunk/urls.py) and put yours.</p>
 <p>from <a href="https://www.ho600.com/">ho600.com</a></p>
@@ -54,7 +63,23 @@ If you have any question,
 <p>Thanks for your listening.</p>
 <p>best regards.</p>
 <p><a href="https://www.ho600.com/">ho600.com</a></p>
+<hr align="left" width="600px"/>
+<h3>To Developer:</h3>
+<h4>os.environ:</h4>
+<p>
+%s
+</p>
+<h4>settings:</h4>
+<p>
+%s
+</p>
 </body></html>
-''')),
+''' % (_o, _s)
+    return HttpResponse(html)
+
+
+urlpatterns += patterns('',
+    #<<< default view on any urls, you shoule remove me and put yours.
+    url(r'', ho600_default_view)
     #>>> default view on any urls, you shoule remove me and put yours.
 )

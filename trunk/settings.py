@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.join(TRUNK, 'modules'))
 #sys.path.insert(0, os.path.join(os.path.dirname(TRUNK), 'asset', 'SOME-LIB-DIR'))
 
 if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
-    os.getenv('SETTINGS_MODE') == 'prod'):
+    os.getenv('SETTINGS_MODE') == 'gae_production'):
     # Running on production App Engine, so use a Google Cloud SQL database.
     DEBUG = False
     DATABASES = {
@@ -19,6 +19,20 @@ if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
             'ENGINE': 'google.appengine.ext.django.backends.rdbms', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
             'INSTANCE': 'ho600.com:ho600-com:ho600-com',
             'NAME': 'ho600',                      # Or path to database file if using sqlite3.
+        }
+    }
+elif os.environ.get('UWSGI_ORIGINAL_PROC_NAME', None):
+    DEBUG = False
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'USER': 'ho600_production',
+            'PASSWORD': 'ho600_production',
+            'HOST': 'localhost',
+            'NAME': 'ho600_production',
+            'OPTIONS': {
+               'init_command': 'SET storage_engine=INNODB',
+            }
         }
     }
 else:
