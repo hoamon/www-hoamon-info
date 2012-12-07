@@ -16,6 +16,10 @@
 ^trunk/modules/mediagenerator
 ^trunk/for_mediagenerator/media
 
+^logs/apache2_access.log
+^logs/apache2_error.log
+^logs/nginx_access.log
+^logs/nginx_error.log
 
 ^nbproject/
 ^.project

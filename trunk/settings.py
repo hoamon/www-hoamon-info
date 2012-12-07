@@ -21,7 +21,8 @@ if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
             'NAME': 'ho600',                      # Or path to database file if using sqlite3.
         }
     }
-elif os.environ.get('UWSGI_ORIGINAL_PROC_NAME', None):
+elif (os.environ.get('UWSGI_ORIGINAL_PROC_NAME', None) or
+    os.environ.get('APACHE_PID_FILE', None)):
     DEBUG = False
     DATABASES = {
         'default': {
