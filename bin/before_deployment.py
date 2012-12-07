@@ -28,3 +28,26 @@
 #OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 #NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+import os, sys
+from shutil import rmtree, copytree, ignore_patterns
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, root)
+from trunk import settings
+trunk_dir = settings.TRUNK
+module_dir = os.path.join(trunk_dir, 'modules')
+
+for app_name in settings.INSTALLED_APPS:
+    if 'django' in app_name: continue
+
+    old_app_dir = os.path.join(module_dir, app_name)
+    if os.path.isdir(old_app_dir):
+        rmtree(old_app_dir)
+
+    app = __import__(app_name)
+    app_from_dir = os.path.dirname(app.__file__)
+    app_to_dir = os.path.join(module_dir, app_name)
+
+    print '%s == copy ==> %s' % (os.path.basename(app_from_dir), app_to_dir)
+    copytree(app_from_dir, app_to_dir, ignore=ignore_patterns('*.pyc', '.hg'))
+    print '\tDone for %s' % os.path.basename(app_to_dir)

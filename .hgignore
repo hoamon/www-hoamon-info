@@ -14,6 +14,7 @@
 ^trunk/django_admin_media
 ^trunk/modules/ho600_lib
 ^trunk/modules/mediagenerator
+^trunk/modules/.*/
 ^trunk/for_mediagenerator/media
 
 ^logs/apache2_access.log
