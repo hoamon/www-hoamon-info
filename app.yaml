@@ -19,18 +19,18 @@ libraries:
 
 handlers:
 - url: /favicon.ico
-  static_files: trunk/media/favicon.ico
-  upload: trunk/media/favicon.ico
+  static_files: trunk/_generated_media/favicon.ico
+  upload: trunk/_generated_media/favicon.ico
 
 - url: /robots.txt
-  static_files: trunk/media/robots.txt
-  upload: trunk/media/robots.txt
+  static_files: trunk/_generated_media/robots.txt
+  upload: trunk/_generated_media/robots.txt
 
 - url: /production_mediagenerator
   static_dir: trunk/_generated_media
 
 - url: /static/admin/
-  static_dir: trunk/media/admin
+  static_dir: trunk/django_admin_media
 
 - url: /__docs__/
   static_files: trunk/__docs__/index.html

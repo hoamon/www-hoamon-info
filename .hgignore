@@ -11,7 +11,7 @@
 ^trunk/.gaedata
 ^trunk/_generated_media/
 ^trunk/_generated_media_names.py
-^trunk/media/admin
+^trunk/django_admin_media
 ^trunk/modules/ho600_lib
 ^trunk/modules/mediagenerator
 ^trunk/for_mediagenerator/media
