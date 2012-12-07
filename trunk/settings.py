@@ -249,13 +249,16 @@ class NonSetError(Exception): pass
 
 
 
-import local_settings
-
-for v in dir(local_settings):
-    if len(v) >= 2 and v[:2] != '__':
-        if not locals().has_key(v):
-            raise NonSetError('Please set the variable "%s" in settings.py first!' % v)
-        else:
-            if DEBUG:
-                print('Upload settings.%s to %s' % (v, getattr(local_settings, v)))
-from local_settings import *
+try:
+    import local_settings
+except ImportError:
+    pass
+else:
+    for v in dir(local_settings):
+        if len(v) >= 2 and v[:2] != '__':
+            if not locals().has_key(v):
+                raise NonSetError('Please set the variable "%s" in settings.py first!' % v)
+            else:
+                if DEBUG:
+                    print('Upload settings.%s to %s' % (v, getattr(local_settings, v)))
+    from local_settings import *
