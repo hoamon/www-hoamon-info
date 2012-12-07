@@ -12,9 +12,9 @@
 ^trunk/_generated_media/
 ^trunk/_generated_media_names.py
 ^trunk/django_admin_media
-^trunk/modules/ho600_lib
-^trunk/modules/mediagenerator
-^trunk/modules/.*/
+^trunk/depends_modules/ho600_lib
+^trunk/depends_modules/mediagenerator
+^trunk/depends_modules/.*/
 ^trunk/for_mediagenerator/media
 
 ^logs/apache2_access.log
