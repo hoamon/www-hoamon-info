@@ -29,12 +29,33 @@
 #NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import os
+import os, sys
+from shutil import rmtree, copytree
 from advance_hg import AdvanceHG
+root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, root)
+from trunk import settings
+
+
+
 class Rargs:
     def __init__(self, rargs=[]): self.rargs = rargs
 
+
+
+# get all depends_modules by hg pull or clone
 ahg = AdvanceHG(run_in_function=True)
 pwd = os.path.dirname(os.path.abspath(__file__))
 a = Rargs(['-j'])
 ahg.pullAll('', '--pullall', os.path.join(pwd, '..'), a)
+
+# delete all depends modules in trunk/moduels/
+trunk_dir = settings.TRUNK
+module_dir = os.path.join(trunk_dir, 'modules')
+for app_name in settings.INSTALLED_APPS:
+    if 'django' in app_name: continue
+
+    old_app_dir = os.path.join(module_dir, app_name)
+    if os.path.isdir(old_app_dir):
+        rmtree(old_app_dir)
+        print '== Delete dir: %s'%old_app_dir
