@@ -30,13 +30,14 @@
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import os, sys
-from shutil import rmtree, copytree, ignore_patterns
+from shutil import copy, rmtree, copytree, ignore_patterns
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, root)
 from trunk import settings
 trunk_dir = settings.TRUNK
 module_dir = os.path.join(trunk_dir, 'depends_modules')
 
+# copy moduels to trunk/depends_modules/
 for app_name in settings.INSTALLED_APPS:
     if 'django' in app_name: continue
 
@@ -52,5 +53,10 @@ for app_name in settings.INSTALLED_APPS:
     copytree(app_from_dir, app_to_dir, ignore=ignore_patterns('*.pyc', '.hg'))
     print '\tDone for %s' % os.path.basename(app_to_dir)
 
+# run ./manage.py generatemedia to export static media file
 r = os.popen('%s generatemedia'%os.path.join(trunk_dir, 'manage.py'))
 print(r.read())
+
+# copy favicon.ico and robots.txt after ./manage.py generatemedia
+copy(os.path.join(trunk_dir, 'media/favicon.ico'), os.path.join(trunk_dir, '_generated_media'))
+copy(os.path.join(trunk_dir, 'media/robots.txt'), os.path.join(trunk_dir, '_generated_media'))
