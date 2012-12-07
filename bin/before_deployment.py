@@ -51,3 +51,6 @@ for app_name in settings.INSTALLED_APPS:
     print '%s == copy ==> %s' % (os.path.basename(app_from_dir), app_to_dir)
     copytree(app_from_dir, app_to_dir, ignore=ignore_patterns('*.pyc', '.hg'))
     print '\tDone for %s' % os.path.basename(app_to_dir)
+
+r = os.popen('%s generatemedia'%os.path.join(trunk_dir, 'manage.py'))
+print(r.read())
