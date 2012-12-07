@@ -28,27 +28,17 @@
    EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 .. ho600-default-trunk for django or gae documentation master file, created by
-   sphinx-quickstart on Tue Dec  4 13:51:01 2012.
+   sphinx-quickstart on Tue Dec  7 16:10:01 2012.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to ho600-default-trunk for django or gae's documentation!
+=================================================================
+Changelog
 =================================================================
 
-Contents:
+release-1.0.0:
+-----------------------------------------------------------------
 
-.. toctree::
-    :maxdepth: 2
-
-    README.zh_TW
-    changelog
-
-.. todolist::
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+ * bin/before_programming.py and bin/before_deployment.py are both working.
+ * Directory layout is stable.
 
