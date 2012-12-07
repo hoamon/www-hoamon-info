@@ -5,6 +5,7 @@ sys.path.insert(0, TRUNK)
 TRUNK_PARENT = os.path.dirname(TRUNK)
 sys.path.insert(0, TRUNK_PARENT)
 
+sys.path.insert(0, os.path.join(TRUNK, 'depends_modules'))
 sys.path.insert(0, os.path.join(TRUNK, 'modules'))
 
 # use the below to set up third party libraries

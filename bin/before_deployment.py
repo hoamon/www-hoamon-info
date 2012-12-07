@@ -35,7 +35,7 @@ root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, root)
 from trunk import settings
 trunk_dir = settings.TRUNK
-module_dir = os.path.join(trunk_dir, 'modules')
+module_dir = os.path.join(trunk_dir, 'depends_modules')
 
 for app_name in settings.INSTALLED_APPS:
     if 'django' in app_name: continue
