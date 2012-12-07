@@ -2,10 +2,10 @@
 import os, sys
 TRUNK = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, TRUNK)
-sys.path.insert(0, os.path.join(TRUNK, 'modules'))
-
 TRUNK_PARENT = os.path.dirname(TRUNK)
 sys.path.insert(0, TRUNK_PARENT)
+
+sys.path.insert(0, os.path.join(TRUNK, 'modules'))
 
 # use the below to set up third party libraries
 #sys.path.insert(0, os.path.join(os.path.dirname(TRUNK), 'asset', 'SOME-LIB-DIR'))
