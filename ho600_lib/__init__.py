@@ -50,25 +50,27 @@ def get_template_by_site_and_lang(template_name, sub_dir='ho600_lib',
     if not template_name.endswith('.html'): template_name += '.html'
 
     if hasattr(settings, 'SITE_DOMAIN'):
-        sites = [settings.SITE_DOMAIN] + [s.domain for s in Site.objects.all().order_by('id')]
+        site = settings.SITE_DOMAIN
     else:
-        sites = [s.domain for s in Site.objects.all().order_by('id')]
+        site = Site.objects.all().order_by('id')[0].domain
 
     langs = [lang] + [l[0] for l in settings.LANGUAGES[:]] + ['']
-    for site in sites:
-        for lang in langs:
-            path = os.path.join(site, sub_dir, lang, template_name)
+
+    for lang in langs:
+        path = os.path.join(site, sub_dir, lang, template_name)
+        try:
+            t = get_template(path)
+        except TemplateDoesNotExist:
+            path = os.path.join(sub_dir, lang, template_name)
             try:
                 t = get_template(path)
             except TemplateDoesNotExist:
-                path = os.path.join(sub_dir, lang, template_name)
-                try:
-                    t = get_template(path)
-                except TemplateDoesNotExist:
-                    path = os.path.join(sub_dir, template_name)
-                    try:
-                        t = get_template(path)
-                    except TemplateDoesNotExist:
-                        continue
-            if show_template_filename: logging.info('Use template: "%s"' % t.name)
-            return t
+                    continue
+        if show_template_filename: logging.info('Use template: "%s"' % t.name)
+        return t
+
+    path = os.path.join(sub_dir, template_name)
+    try:
+        return get_template(path)
+    except TemplateDoesNotExist:
+        raise TemplateDoesNotExist('site: %s, sub_dir: %s, lang: %s, template_name:%s'%(site, sub_dir, lang, template_name))
