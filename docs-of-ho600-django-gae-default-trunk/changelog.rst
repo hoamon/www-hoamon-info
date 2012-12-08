@@ -36,6 +36,12 @@
 Changelog
 =================================================================
 
+release-1.0.1
+-----------------------------------------------------------------
+
+ * bin/before_programming is renamed to bin/prepare_programming.
+ * can copy multi-hierarchy modules.
+
 release-1.0.0
 -----------------------------------------------------------------
 
