@@ -191,7 +191,8 @@ hg clone ssh://hg@bitbucket.org/hoamon/ho600-django-gae-default-trunk \
 指令再配合 hg update -C 'release-1.X.X' 來使用。
 
 得到 ho600-django-gae-default-trunk 資料夾後，先把它改名成自己的應用專案，像是： \
-my-example ，並刪除 .hg 資料夾，這是 ho600-django-gae-default-trunk 的版本控制庫，\
+my-example ，並刪除 .hg 資料夾及 .hgtags 檔案，\
+這是 ho600-django-gae-default-trunk 版本控制庫所使用的檔案，\
 如是從 bitbucket downloads 頁面下載的，則無此資料夾。
 
 修改 ./depends_modules.conf 。而後執行：
