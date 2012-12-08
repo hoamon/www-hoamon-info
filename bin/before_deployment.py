@@ -39,7 +39,8 @@ module_dir = os.path.join(trunk_dir, 'depends_modules')
 
 # copy moduels to trunk/depends_modules/
 for app_name in settings.INSTALLED_APPS:
-    if 'django' in app_name: continue
+    app_name = app_name.split('.')[0]
+    if 'django' == app_name: continue
 
     old_app_dir = os.path.join(module_dir, app_name)
     if os.path.isdir(old_app_dir):
