@@ -1,12 +1,12 @@
 # Django settings for trunk project.
 import os, sys
 TRUNK = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(TRUNK)
+sys.path.insert(0, os.path.join(TRUNK, 'depends_modules'))
+sys.path.insert(0, os.path.join(TRUNK, 'modules'))
 sys.path.insert(0, TRUNK)
 TRUNK_PARENT = os.path.dirname(TRUNK)
 sys.path.insert(0, TRUNK_PARENT)
-
-sys.path.insert(0, os.path.join(TRUNK, 'depends_modules'))
-sys.path.insert(0, os.path.join(TRUNK, 'modules'))
 
 # use the below to set up third party libraries
 #sys.path.insert(0, os.path.join(os.path.dirname(TRUNK), 'asset', 'SOME-LIB-DIR'))
@@ -129,6 +129,12 @@ TEMPLATE_LOADERS = (
 )
 
 
+TEMPLATE_CONTEXT_PROCESSORS =  (
+    'django.contrib.auth.context_processors.auth',
+    'ho600_lib.context_processors.settings',
+)
+
+
 sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'django-mediagenerator'))
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -213,7 +219,11 @@ LOGGING = {
 MEDIA_DEV_MODE = DEBUG
 DEV_MEDIA_URL = '/mediagenerator/'
 PRODUCTION_MEDIA_URL = '/production_mediagenerator/'
-GLOBAL_MEDIA_DIRS = (os.path.join(TRUNK, 'media'), )
+GLOBAL_MEDIA_DIRS = (os.path.join(TRUNK, 'media'),
+                        os.path.join(TRUNK, 'modules'),
+                        ROOT,
+                        )
+
 
 MEDIA_GENERATORS = (
     'mediagenerator.generators.copyfiles.CopyFiles',
