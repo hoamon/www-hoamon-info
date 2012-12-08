@@ -186,7 +186,7 @@ trunk/local_settings.py
 --------------------------------------------------------------------------------
 
 到 `https://bitbucket.org/hoamon/ho600-django-gae-default-trunk/downloads <https://bitbucket.org/hoamon/ho600-django-gae-default-trunk/downloads>`_ \
-這裡下載所需的 ho600-django-gae-default-trunk 專案。也可以是用 \
+這裡點選 Tags 頁面，下載所需的 ho600-django-gae-default-trunk 版本。也可以是用 \
 hg clone ssh://hg@bitbucket.org/hoamon/ho600-django-gae-default-trunk \
 指令再配合 hg update -C 'release-1.X.X' 來使用。
 
