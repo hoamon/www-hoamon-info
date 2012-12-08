@@ -65,7 +65,7 @@ bin/
 
 目前有兩個執行命令：
 
-before_programming.py
+prepare_programming.py
 ................................................................................
 
 每次在撰寫自己的應用專案前，所執行的指令。\
@@ -198,7 +198,7 @@ my-example ，並刪除 .hg 資料夾，這是 ho600-django-gae-default-trunk �
 
 .. code-block:: bash
 
-    hoamon@localhost my-example # bin/before_programming.py
+    hoamon@localhost my-example # bin/prepare_programming.py
 
 修改 trunk/settings.py 。而後執行：
 
