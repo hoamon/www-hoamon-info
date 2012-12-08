@@ -48,6 +48,9 @@ for app_name in settings.INSTALLED_APPS:
 
     app = __import__(app_name)
     app_from_dir = os.path.dirname(app.__file__)
+    if os.path.join(trunk_dir, 'modules') in app_from_dir:
+        continue
+
     app_to_dir = os.path.join(module_dir, app_name)
 
     print '%s == copy ==> %s' % (os.path.basename(app_from_dir), app_to_dir)
