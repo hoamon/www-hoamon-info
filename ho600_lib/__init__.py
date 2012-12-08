@@ -28,3 +28,47 @@
 #OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 #NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+import os
+from django.conf import settings
+from django.contrib.sites.models import Site
+from django.utils.translation import get_language, get_language_from_request
+from django.template import TemplateDoesNotExist
+from django.template.loader import get_template
+
+
+
+def get_template_by_site_and_lang(template_name, sub_dir='ho600_lib',
+                                        show_template_filename=False):
+    """ the order of finding template:
+
+        domain_name/module_name/lang_name/template_name
+        module_name/lang_name/template_name
+        module_name/template_name
+    """
+    lang = get_language()
+    if not template_name.endswith('.html'): template_name += '.html'
+
+    if hasattr(settings, 'SITE_DOMAIN'):
+        sites = [settings.SITE_DOMAIN] + [s.domain for s in Site.objects.all().order_by('id')]
+    else:
+        sites = [s.domain for s in Site.objects.all().order_by('id')]
+
+    langs = [lang] + [l[0] for l in settings.LANGUAGES[:]] + ['']
+    for site in sites:
+        for lang in langs:
+            path = os.path.join(site, sub_dir, lang, template_name)
+            try:
+                t = get_template(path)
+            except TemplateDoesNotExist:
+                path = os.path.join(sub_dir, lang, template_name)
+                try:
+                    t = get_template(path)
+                except TemplateDoesNotExist:
+                    path = os.path.join(sub_dir, template_name)
+                    try:
+                        t = get_template(path)
+                    except TemplateDoesNotExist:
+                        continue
+            if show_template_filename: logging.info('Use template: "%s"' % t.name)
+            return t
