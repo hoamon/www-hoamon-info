@@ -272,3 +272,23 @@ else:
                 if DEBUG:
                     print('Upload settings.%s to %s' % (v, getattr(local_settings, v)))
     from local_settings import *
+
+
+for app in INSTALLED_APPS:
+    try:
+        app_settings = __import__('.'.join([app, 'settings']))
+    except ImportError:
+        continue
+    else:
+        for v in dir(app_settings):
+            if len(v) >= 2 and v[:2] != '__':
+                globals()[v] = getattr(app_settings, v)
+
+    try:
+        local_app_settings = __import__('.'.join([app, 'local_settings']))
+    except ImportError:
+        continue
+    else:
+        for v in dir(local_app_settings):
+            if len(v) >= 2 and v[:2] != '__' and hasattr(app_settings, v):
+                globals()[v] = getattr(local_app_settings, v)
