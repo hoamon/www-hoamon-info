@@ -135,7 +135,6 @@ TEMPLATE_CONTEXT_PROCESSORS =  (
 )
 
 
-sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'django-mediagenerator'))
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -158,6 +157,8 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'django-tastypie'))
+sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'django-mediagenerator'))
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
