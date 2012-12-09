@@ -157,6 +157,8 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'mimeparse-0.1.3')) # needed by django-tastypie
+sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'python-dateutil-1.5')) # needed by django-tastypie
 sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'django-tastypie'))
 sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'django-mediagenerator'))
 INSTALLED_APPS = (
