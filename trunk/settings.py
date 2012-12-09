@@ -271,7 +271,7 @@ class NonSetError(Exception):
 
 
 
-# load another settings and local_settings of other modules
+# load another settings and local_settings of other modules >>>
 try:
     import local_settings
 except ImportError:
@@ -305,3 +305,4 @@ for app in INSTALLED_APPS:
         for v in dir(local_app_settings):
             if len(v) >= 2 and v[:2] != '__' and hasattr(app_settings, v):
                 globals()[v] = getattr(local_app_settings, v)
+# <<< load another settings and local_settings of other modules
