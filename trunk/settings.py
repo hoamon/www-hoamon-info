@@ -160,6 +160,12 @@ TEMPLATE_DIRS = (
 sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'mimeparse-0.1.3')) # needed by django-tastypie
 sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'python-dateutil-1.5')) # needed by django-tastypie
 sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'django-tastypie'))
+# and Optional modules:
+# python_digest (https://bitbucket.org/akoha/python-digest/)
+# lxml (http://lxml.de/) if using the XML serializer
+# pyyaml (http://pyyaml.org/) if using the YAML serializer
+# biplist (http://explorapp.com/biplist/) if using the binary plist serializer
+
 sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'django-mediagenerator'))
 INSTALLED_APPS = (
     'django.contrib.auth',
