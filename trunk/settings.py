@@ -244,7 +244,12 @@ DEV_MEDIA_URL = '/mediagenerator/'
 PRODUCTION_MEDIA_URL = '/production_mediagenerator/'
 GLOBAL_MEDIA_DIRS = (os.path.join(TRUNK, 'media'),
                         os.path.join(TRUNK, 'modules'),
-                        ROOT,
+                        #ROOT,  # if you run in GAE mode, this ROOT directory will raise a IOError on ./trunk/_generate_media .
+                                # for example: the media file laies on ./my_module/media/xxx.js , 
+                                # you should use os.path.join(ROOT, 'my_module', 'media') here and
+                                # ('bundle_xxx.js',
+                                #   'xxx.js'),
+                                # in MEDIA_BUNDLES.
                         )
 
 
