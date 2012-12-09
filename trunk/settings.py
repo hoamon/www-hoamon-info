@@ -169,6 +169,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'tastypie',
     'ho600_lib',
 
     'mediagenerator', # must be last
@@ -215,7 +216,13 @@ LOGGING = {
 }
 
 
-# mediagenerator
+# django-tastypie >>>
+API_LIMIT_PER_PAGE = 25
+TASTYPIE_FULL_DEBUG = DEBUG
+# <<< django-tastypie
+
+
+# mediagenerator >>>
 MEDIA_DEV_MODE = DEBUG
 DEV_MEDIA_URL = '/mediagenerator/'
 PRODUCTION_MEDIA_URL = '/production_mediagenerator/'
@@ -252,13 +259,19 @@ ROOT_MEDIA_FILTERS = {
 }
 
 YUICOMPRESSOR_PATH = os.path.join(TRUNK_PARENT, 'asset', 'yuicompressor-2.4.7.jar')
+# <<< mediagenerator
 
 
 
-class NonSetError(Exception): pass
+class NonSetError(Exception):
+    """ Any variable in local_settings.py should be set in settings.py first.
+        If not, the raise this Error.
+    """
+    pass
 
 
 
+# load another settings and local_settings of other modules
 try:
     import local_settings
 except ImportError:
