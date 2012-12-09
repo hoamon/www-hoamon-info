@@ -11,6 +11,13 @@ sys.path.insert(0, TRUNK_PARENT)
 # use the below to set up third party libraries
 #sys.path.insert(0, os.path.join(os.path.dirname(TRUNK), 'asset', 'SOME-LIB-DIR'))
 
+
+if os.environ.get('APPLICATION_ID', ''):
+    SDK_MODE = 'appengine'
+else:
+    SDK_MODE = 'puredjango'
+
+
 if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
     os.getenv('SETTINGS_MODE') == 'gae_production'):
     # Running on production App Engine, so use a Google Cloud SQL database.
