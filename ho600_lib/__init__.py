@@ -29,6 +29,10 @@
 #NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+
+VERSION = (1, 0, 3, 'final', 0)
+
+
 import os
 from django.utils.translation import get_language, get_language_from_request
 from django.template import TemplateDoesNotExist
