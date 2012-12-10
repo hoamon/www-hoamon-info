@@ -30,8 +30,6 @@
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import os
-from django.conf import settings
-from django.contrib.sites.models import Site
 from django.utils.translation import get_language, get_language_from_request
 from django.template import TemplateDoesNotExist
 from django.template.loader import get_template
@@ -46,6 +44,10 @@ def get_template_by_site_and_lang(template_name, sub_dir='ho600_lib',
         module_name/lang_name/template_name
         module_name/template_name
     """
+    from django.conf import settings
+    from django.contrib.sites.models import Site
+
+
     lang = get_language()
     if not template_name.endswith('.html'): template_name += '.html'
 
