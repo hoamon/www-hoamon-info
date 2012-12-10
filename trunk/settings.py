@@ -1,15 +1,25 @@
 # Django settings for trunk project.
+
 import os, sys
+
+
+def _insert_sys_path(index, path):
+    """ insert "path" to sys.path if "path" not in sys.path
+    """
+    if path not in sys.path:
+        sys.path.insert(index, path)
+
+
 TRUNK = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(TRUNK)
-sys.path.insert(0, os.path.join(TRUNK, 'depends_modules'))
-sys.path.insert(0, os.path.join(TRUNK, 'modules'))
-sys.path.insert(0, TRUNK)
+_insert_sys_path(0, os.path.join(TRUNK, 'depends_modules'))
+_insert_sys_path(0, os.path.join(TRUNK, 'modules'))
+_insert_sys_path(0, TRUNK)
 TRUNK_PARENT = os.path.dirname(TRUNK)
-sys.path.insert(0, TRUNK_PARENT)
+_insert_sys_path(0, TRUNK_PARENT)
 
 # use the below to set up third party libraries
-#sys.path.insert(0, os.path.join(os.path.dirname(TRUNK), 'asset', 'SOME-LIB-DIR'))
+#_insert_sys_path(0, os.path.join(os.path.dirname(TRUNK), 'asset', 'SOME-LIB-DIR'))
 
 
 if os.environ.get('APPLICATION_ID', ''):
@@ -164,16 +174,24 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
-sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'mimeparse-0.1.3')) # needed by django-tastypie
-sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'python-dateutil-1.5')) # needed by django-tastypie
-sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'django-tastypie'))
+_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'mimeparse-0.1.3')) # needed by django-tastypie
+_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'python-dateutil-1.5')) # needed by django-tastypie
+_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'django-tastypie'))
 # and Optional modules:
 # python_digest (https://bitbucket.org/akoha/python-digest/)
 # lxml (http://lxml.de/) if using the XML serializer
 # pyyaml (http://pyyaml.org/) if using the YAML serializer
 # biplist (http://explorapp.com/biplist/) if using the binary plist serializer
 
-sys.path.insert(0, os.path.join(TRUNK_PARENT, 'asset', 'django-mediagenerator'))
+
+# the modules were needed by INSTALLED_APPS
+ANOTHER_DEPENDS_MODULES = (
+    'mimeparse',
+    'dateutil',
+)
+
+
+_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'django-mediagenerator'))
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
