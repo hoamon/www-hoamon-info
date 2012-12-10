@@ -33,7 +33,8 @@ import os, sys
 from shutil import rmtree, copytree
 from advance_hg import AdvanceHG
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, root)
+if root not in sys.path:
+    sys.path.insert(0, root)
 from trunk import settings
 
 
@@ -52,7 +53,11 @@ ahg.pullAll('', '--pullall', os.path.join(pwd, '..'), a)
 # delete all depends modules in trunk/moduels/
 trunk_dir = settings.TRUNK
 module_dir = os.path.join(trunk_dir, 'depends_modules')
-for app_name in settings.INSTALLED_APPS:
+if hasattr(settings, 'ANOTHER_DEPENDS_MODULES'):
+    MODULES = settings.ANOTHER_DEPENDS_MODULES + settings.INSTALLED_APPS
+else:
+    MODULES = settings.INSTALLED_APPS
+for app_name in MODULES:
     app_name = app_name.split('.')[0]
     if 'django' == app_name: continue
 
