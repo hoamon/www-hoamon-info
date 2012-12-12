@@ -44,8 +44,10 @@ def get_template_by_site_and_lang(template_name, sub_dir='ho600_lib',
                                         show_template_filename=False):
     """ the order of finding template:
 
-        domain_name/module_name/lang_name/template_name
-        module_name/lang_name/template_name
+        for lang_name in lang_names:
+            if domain_name/module_name/lang_name/template_name: return
+            if domain_name/module_name/template_name: return
+            if module_name/lang_name/template_name: return
         module_name/template_name
     """
     from django.conf import settings
@@ -63,17 +65,19 @@ def get_template_by_site_and_lang(template_name, sub_dir='ho600_lib',
     langs = [lang] + [l[0] for l in settings.LANGUAGES[:]] + ['']
 
     for lang in langs:
-        path = os.path.join(site, sub_dir, lang, template_name)
-        try:
-            t = get_template(path)
-        except TemplateDoesNotExist:
-            path = os.path.join(sub_dir, lang, template_name)
+        paths = []
+        paths.append(os.path.join(site, sub_dir, lang, template_name))
+        paths.append(os.path.join(site, sub_dir, template_name))
+        paths.append(os.path.join(sub_dir, lang, template_name))
+        for p in paths:
             try:
                 t = get_template(path)
             except TemplateDoesNotExist:
-                    continue
-        if show_template_filename: logging.info('Use template: "%s"' % t.name)
-        return t
+                continue
+            else:
+                if show_template_filename:
+                    logging.info('Use template: "%s"' % t.name)
+                return t
 
     path = os.path.join(sub_dir, template_name)
     try:
