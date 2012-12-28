@@ -33,7 +33,6 @@ from django.conf import settings
 from django import template
 from mediagenerator.generators.bundles.utils import _render_include_media
 from mediagenerator import utils
-from trunk import _generated_media_names
 
 
 register = template.Library()
