@@ -70,7 +70,7 @@ def get_template_by_site_and_lang(template_name, sub_dir='ho600_lib',
         paths.append(os.path.join(site, sub_dir, lang, template_name))
         paths.append(os.path.join(site, sub_dir, template_name))
         paths.append(os.path.join(sub_dir, lang, template_name))
-        for p in paths:
+        for path in paths:
             try:
                 t = get_template(path)
             except TemplateDoesNotExist:
