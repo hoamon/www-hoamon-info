@@ -38,7 +38,26 @@ from django.utils.translation import get_language, get_language_from_request
 from django.template import TemplateDoesNotExist
 from django.template.loader import get_template
 from django.views import static as dj_static
+from django.conf import settings
+from django.contrib.sites.models import Site
 
+
+def get_utc_time(time_str, format='%Y-%m-%d %H:%M:%S'):
+    time, plus_minus, hour_offset, minute_offset = \
+        re.match('([^\+]+) ([\+-])([0-9][0-9])([0-9][0-9])', time_str).groups()
+    time = datetime.datetime.strptime(time, format)
+    if plus_minus == '+':
+        time -= datetime.timedelta(hours=int(hour_offset), minutes=int(minute_offset))
+    else:
+        time += datetime.timedelta(hours=int(hour_offset), minutes=int(minute_offset))
+    return time
+
+
+def get_site_from_settings():
+    if hasattr(settings, 'SITE'):
+        return settings.SITE
+    else:
+        return Site.objects.get(id=settings.SITE_ID)
 
 
 def get_template_by_site_and_lang(template_name, sub_dir='ho600_lib',
