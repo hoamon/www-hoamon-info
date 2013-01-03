@@ -152,6 +152,7 @@ TEMPLATE_CONTEXT_PROCESSORS =  (
 )
 
 
+_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'django-debug-toolbar'))
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -160,6 +161,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'mediagenerator.middleware.MediaMiddleware',
 )
 
@@ -191,6 +193,14 @@ ANOTHER_DEPENDS_MODULES = (
 )
 
 
+_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'django-guardian'))
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend', # this is default
+    'guardian.backends.ObjectPermissionBackend',
+)
+ANONYMOUS_USER_ID = -1
+
+
 _insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'django-mediagenerator'))
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -204,10 +214,39 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'tastypie',
+    'guardian',
     'ho600_lib',
 
+    'debug_toolbar',
     'mediagenerator', # must be last
 )
+
+
+INTERNAL_IPS = ('127.0.0.1', '192.168.1.1', '192.168.1.2', '192.168.1.254', )
+DEBUG_TOOLBAR_PANELS = (
+    'debug_toolbar.panels.version.VersionDebugPanel',
+    'debug_toolbar.panels.timer.TimerDebugPanel',
+    'debug_toolbar.panels.settings_vars.SettingsVarsDebugPanel',
+    'debug_toolbar.panels.headers.HeaderDebugPanel',
+    'debug_toolbar.panels.request_vars.RequestVarsDebugPanel',
+    'debug_toolbar.panels.template.TemplateDebugPanel',
+    'debug_toolbar.panels.sql.SQLDebugPanel',
+    'debug_toolbar.panels.signals.SignalDebugPanel',
+    'debug_toolbar.panels.logger.LoggingPanel',
+)
+def custom_show_toolbar(request):
+    if request.META.get('REMOTE_ADDR') in INTERNAL_IPS:
+        return DEBUG  # Always show toolbar, for example purposes only.
+    else:
+        return False
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS': False,
+    'SHOW_TOOLBAR_CALLBACK': custom_show_toolbar,
+    'EXTRA_SIGNALS': [],
+    'HIDE_DJANGO_SQL': False,
+    'TAG': 'div',
+    'ENABLE_STACKTRACES' : True,
+}
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
