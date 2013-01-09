@@ -30,12 +30,46 @@
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import os, sys
+import zipfile
+from urllib2 import Request, urlopen, URLError, HTTPError
 from shutil import rmtree, copytree
 from advance_hg import AdvanceHG
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if root not in sys.path:
     sys.path.insert(0, root)
 from trunk import settings
+
+
+def unzip(file_name, dest_dir):
+    zfile = zipfile.ZipFile(file_name)
+    for name in zfile.namelist():
+        (dirname, filename) = os.path.split(name)
+        dirname = os.path.join(dest_dir, dirname)
+        if not os.path.exists(dirname): os.makedirs(dirname)
+        if name.endswith('/'):
+            if not os.path.exists(os.path.join(dirname, filename)):
+                os.makedirs(os.path.join(dirname, filename))
+        else:
+            fd = open(os.path.join(dirname, filename), "wb")
+            fd.write(zfile.read(name))
+            fd.close()
+    return True
+
+
+def download_file(url, file_name, dest_dir):
+    req = Request(url)
+    try:
+        f = urlopen(req)
+    except HTTPError, e:
+        print "HTTP Error:", e.code, url
+    except URLError, e:
+        print "URL Error:", e.reason, url
+    else:
+        print "\tDownloading: " + url
+        local_file = open(os.path.join(dest_dir, file_name), "wb")
+        local_file.write(f.read())
+        local_file.close()
+    return True
 
 
 
@@ -46,9 +80,10 @@ class Rargs:
 
 # get all depends_modules by hg pull or clone
 ahg = AdvanceHG(run_in_function=True)
-pwd = os.path.dirname(os.path.abspath(__file__))
+PWD = os.path.dirname(os.path.abspath(__file__))
 a = Rargs(['-j'])
-ahg.pullAll('', '--pullall', os.path.join(pwd, '..'), a)
+ROOT = os.path.join(PWD, '..')
+ahg.pullAll('', '--pullall', ROOT, a)
 
 # delete all depends modules in trunk/moduels/
 trunk_dir = settings.TRUNK
@@ -65,3 +100,32 @@ for app_name in MODULES:
     if os.path.isdir(old_app_dir):
         rmtree(old_app_dir)
         print '== Delete dir: %s'%old_app_dir
+
+print '== Find Downloads == <<<'
+for ps in ahg.rConfig('downloads', '.', 'depends_modules.conf'):
+    dest_dir = os.path.join(ROOT, ps[0])
+    if os.path.isdir(dest_dir):
+        rmtree(dest_dir)
+        print '== Delete dir: %s' % dest_dir
+    dir, file_name = os.path.split(ps[1])
+    if download_file(ps[1], file_name, os.path.join(ROOT, 'asset')):
+        if '.zip' in file_name.lower():
+            unzip(os.path.join(ROOT, 'asset', file_name), os.path.join(ROOT, ps[0]))
+        elif '.tgz' in file_name.lower() or '.gz' in file_name.lower():
+            raise Exception('Not Yet!')
+print '>>> == Find Downloads =='
+
+print '== Find Copies == <<<'
+for ps in ahg.rConfig('copies', '.', 'depends_modules.conf'):
+    to_file, from_file = ps
+    to_file = os.path.join(ROOT, to_file)
+    from_file = os.path.join(ROOT, from_file)
+    to_dir = os.path.dirname(to_file)
+    if os.path.isdir(from_file) and os.path.isdir(to_dir):
+        rmtree(to_dir)
+    if not os.path.isdir(to_dir):
+        os.makedirs(to_dir)
+    print from_file
+    print to_file
+    copytree(from_file, to_file)
+print '>>> == Find Copies =='
