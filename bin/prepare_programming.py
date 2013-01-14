@@ -102,30 +102,40 @@ for app_name in MODULES:
         print '== Delete dir: %s'%old_app_dir
 
 print '== Find Downloads == <<<'
-for ps in ahg.rConfig('downloads', '.', 'depends_modules.conf'):
-    dest_dir = os.path.join(ROOT, ps[0])
-    if os.path.isdir(dest_dir):
-        rmtree(dest_dir)
-        print '== Delete dir: %s' % dest_dir
-    dir, file_name = os.path.split(ps[1])
-    if download_file(ps[1], file_name, os.path.join(ROOT, 'asset')):
-        if '.zip' in file_name.lower():
-            unzip(os.path.join(ROOT, 'asset', file_name), os.path.join(ROOT, ps[0]))
-        elif '.tgz' in file_name.lower() or '.gz' in file_name.lower():
-            raise Exception('Not Yet!')
+try:
+    pss = ahg.rConfig('downloads', '.', 'depends_modules.conf')
+except ValueError:
+    print '\t No Set Downloads'
+else:
+    for ps in pss:
+        dest_dir = os.path.join(ROOT, ps[0])
+        if os.path.isdir(dest_dir):
+            rmtree(dest_dir)
+            print '== Delete dir: %s' % dest_dir
+        dir, file_name = os.path.split(ps[1])
+        if download_file(ps[1], file_name, os.path.join(ROOT, 'asset')):
+            if '.zip' in file_name.lower():
+                unzip(os.path.join(ROOT, 'asset', file_name), os.path.join(ROOT, ps[0]))
+            elif '.tgz' in file_name.lower() or '.gz' in file_name.lower():
+                raise Exception('Not Yet!')
 print '>>> == Find Downloads =='
 
 print '== Find Copies == <<<'
-for ps in ahg.rConfig('copies', '.', 'depends_modules.conf'):
-    to_file, from_file = ps
-    to_file = os.path.join(ROOT, to_file)
-    from_file = os.path.join(ROOT, from_file)
-    to_dir = os.path.dirname(to_file)
-    if os.path.isdir(from_file) and os.path.isdir(to_dir):
-        rmtree(to_dir)
-    if not os.path.isdir(to_dir):
-        os.makedirs(to_dir)
-    print from_file
-    print to_file
-    copytree(from_file, to_file)
+try:
+    pss = ahg.rConfig('copies', '.', 'depends_modules.conf')
+except ValueError:
+    print '\t No Set Copies'
+else:
+    for ps in pss:
+        to_file, from_file = ps
+        to_file = os.path.join(ROOT, to_file)
+        from_file = os.path.join(ROOT, from_file)
+        to_dir = os.path.dirname(to_file)
+        if os.path.isdir(from_file) and os.path.isdir(to_dir):
+            rmtree(to_dir)
+        if not os.path.isdir(to_dir):
+            os.makedirs(to_dir)
+        print from_file
+        print to_file
+        copytree(from_file, to_file)
 print '>>> == Find Copies =='
