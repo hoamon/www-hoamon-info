@@ -1,5 +1,5 @@
 """
-WSGI config for trunk project.
+WSGI config for hoamon_info project.
 
 This module contains the WSGI application used by Django's development server
 and any production WSGI deployments. It should expose a module-level variable
@@ -13,11 +13,9 @@ middleware here, or combine a Django application with an application of another
 framework.
 
 """
-import os, sys
-TRUNK = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, TRUNK)
+import os
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hoamon_info.settings")
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
