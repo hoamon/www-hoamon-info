@@ -52,6 +52,9 @@
         FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
         HAS_SOURCE:  {{ has_source|lower }}
       };
+      $(document).ready(function(){
+        $('#version').text(DOCUMENTATION_OPTIONS['VERSION']);
+      });
     </script>
     {%- for scriptfile in script_files -%}
         {#- Hack to filter out jquery.js auto-included by Sphinx since jquery is
@@ -308,6 +311,7 @@
     {%- endif -%}
     {%- if show_sphinx -%}
       Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+      Version is <span id="version">default</span>.
     {%- endif -%}
     </footer>
 {%- endblock -%}
