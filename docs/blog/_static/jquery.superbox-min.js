@@ -1,1 +1,1 @@
-../../../asset/jquery-superbox-0.9.1/jquery.superbox-min.js
+../../../asset/jquery_superbox/jquery-superbox-0.9.1/jquery.superbox-min.js

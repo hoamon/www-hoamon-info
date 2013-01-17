@@ -3,6 +3,9 @@
 .*\.gpg$
 _build/
 ^docs-of-ho600-django-gae-default-trunk/_build
+^docs/blog/blog/
+^asset/jquery-superbox-0.9.1.zip
+^asset/jquery_superbox/
 
 local_settings.py$
 ^trunk/apache2.conf
