@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><!--
+Copyright 2007, Google Inc.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+ 1. Redistributions of source code must retain the above copyright notice,
+    this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+ 3. Neither the name of Google Inc. nor the names of its contributors may be
+    used to endorse or promote products derived from this software without
+    specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<title>Gears Database Demo</title>
+<script type="text/javascript" src="hello_world_database_files/gears_init.js"></script>
+<script type="text/javascript" src="hello_world_database_files/sample.js"></script>
+<script>
+var localServer = google.gears.factory.create('beta.localserver');
+var store = localServer.createManagedStore('test-store');
+store.manifestUrl = 'site-manifest.txt';
+store.checkForUpdate();
+</script>
+<link rel="stylesheet" type="text/css" href="hello_world_database_files/sample.css">
+</head><body style="width: 100%">
+<h1>「離線同步協定應用技術」功能展示</h1>
+<div id="view-source"></div>
+<p>每 10 秒抓 /online/\d+ 的網址，若成功則顯示「網路有通」，失敗則顯示「網路沒通」。但在測試時，請使用瀏覽器工具列上的「檔案」=>「離線模式」，
+因為使用這個「離線模式」，則在抓取遠端網頁時，會馬上判定離線，如果是使用拔網路線的方式，則對某些瀏覽器來說，它還是會癡癡地等待遠端網頁的回傳，會等待非常久後才會告知「抓取失敗」。</p>
+<div id="isConnected" class="hidden">網路有通 <input type="submit" onClick="submitThreePhrases();" value="送出最新的三個數據"/></div>
+
+<div id="isDisconnected" class="hidden">網路沒通</div>
+
+<br/>
+<br/>
+
+<form onsubmit="handleSubmit(); return false;">
+  <b>請輸入數據。此數據將儲存在本機瀏覽器的資料庫中。</b><br>
+  <table>
+    <tbody><tr>
+      <td valign="middle"><input id="submitValue" style="width: 20em;" type="text"></td>
+      <td valign="middle"><input value="儲存" type="submit"></td>
+    </tr>
+  </tbody></table>
+</form>
+
+<p><b>最新輸入的三個數據，分別是：</b>
+
+</p><p><span id="status"><span id="phrase0">(1)</span><br><span id="phrase1">(2)</span><br><span id="phrase2">(3)</span><br></span>
+
+</p><p><i>本頁乃利用「離線同步協定應用技術」將你輸入的文句紀錄在本機硬碟中，如果你關閉瀏覽器後再重新瀏覽本頁面時，你輸入過的文句依然會顯示在本頁面上</i>
+
+<!-- ====================================== -->
+<!-- End HTML code.  Begin JavaScript code. -->
+
+<script>
+var submitThreePhrases = function() {
+    var elm0 = getElementById('phrase0');
+    var elm1 = getElementById('phrase1');
+    var elm2 = getElementById('phrase2');
+    alert('在網路有通的情況下，可以把 ' + elm0.innerHTML + ', '
+        + elm1.innerHTML + ', ' + elm2.innerHTML + ' 三個值送到遠端伺服器。');
+}
+</script>
+<script>
+
+var db;
+init();
+
+// Open this page's local database.
+function init() {
+  var success = false;
+
+  if (window.google && google.gears) {
+    try {
+      db = google.gears.factory.create('beta.database');
+
+      if (db) {
+        db.open('database-demo');
+        db.execute('create table if not exists Demo' +
+                   ' (Phrase varchar(255), Timestamp int)');
+
+        success = true;
+        // Initialize the UI at startup.
+        displayRecentPhrases();
+      }
+
+    } catch (ex) {
+      setError('Could not create database: ' + ex.message);
+    }
+  }
+
+  // Enable or disable UI elements
+
+  var inputs = document.forms[0].elements;
+  for (var i = 0, el; el = inputs[i]; i++) {
+    el.disabled = !success;
+  }
+
+}
+
+function handleSubmit() {
+  if (!google.gears.factory || !db) {
+    return;
+  }
+
+  var elm = getElementById('submitValue');
+  var phrase = elm.value;
+  var currTime = new Date().getTime();
+
+  // Insert the new item.
+  // The Gears database automatically escapes/unescapes inserted values.
+  db.execute('insert into Demo values (?, ?)', [phrase, currTime]);
+
+  // Update the UI.
+  elm.value = '';
+  displayRecentPhrases();
+}
+
+
+function displayRecentPhrases() {
+  var recentPhrases = ['', '', ''];
+
+  // Get the 3 most recent entries. Delete any others.
+  var rs = db.execute('select * from Demo order by Timestamp desc');
+  var index = 0;
+  while (rs.isValidRow()) {
+    if (index < 3) {
+      recentPhrases[index] = rs.field(0);
+    } else {
+      db.execute('delete from Demo where Timestamp=?', [rs.field(1)]);
+    }
+    ++index;
+    rs.next();
+  }
+  rs.close();
+
+  var status = getElementById('status');
+  status.innerHTML = '';
+  for (var i = 0; i < recentPhrases.length; ++i) {
+    var id = 'phrase' + i;
+    status.innerHTML += '<span id="' + id + '"></span><br>';
+    var bullet = '(' + (i + 1) + ') ';
+    setTextContent(getElementById(id), bullet + recentPhrases[i]);
+  }
+}
+</script>
+
+<script>
+/**
+* The ParentWorkerPool of Monitor whether the system is online or offline
+*
+* Alex(blackanger.z@gmail.com)
+* 2009.3
+*/
+var isOnline = function(){
+    workerPool = google.gears.factory.create('beta.workerpool');
+
+    workerPool.onmessage = function(a, b, message) {
+        if (message.sender == monitorchildWorkerId) {
+            if(message.text == 'online'){
+                var elm = getElementById('isConnected');
+                elm.style.display = 'inline';
+                var elm = getElementById('isDisconnected');
+                elm.style.display = 'none';
+            }else if(message.text == 'offline'){
+                var elm = getElementById('isConnected');
+                elm.style.display = 'none';
+                var elm = getElementById('isDisconnected');
+                elm.style.display = 'inline';
+            }
+        }
+    };
+
+    var monitorchildWorkerId = workerPool.createWorkerFromUrl('/_d/hello_world_database_files/childworkerpools.js');
+    workerPool.sendMessage(window.location + '/../../online/', monitorchildWorkerId);
+    //workerPool.sendMessage(window.location + '?monitor', monitorchildWorkerId);
+}
+
+isOnline();
+</script>
+</p></body></html>

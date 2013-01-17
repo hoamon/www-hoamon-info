@@ -1,0 +1,65 @@
+{#-
+    modern5/layout.html
+    ~~~~~~~~~~~~~~~~~~~
+
+    Layout for Modern5 theme.
+
+    :copyright: Copyright 2012 by Vlad Riscutia and contributors (see
+    CONTRIBUTORS file)
+    :license: FreeBSD, see LICENSE file
+-#}
+
+{%- extends "boilerplate/layout.html" -%}
+
+{%- block extrahead -%}
+    {{ super() }}
+
+    <script type="text/javascript">
+        var hrefs = window.location.href.split('?');
+        if (hrefs.length >= 2) {
+            window.location = hrefs[0];
+        }
+        $(document).ready(function () {
+            // Adjusts document height if sidebar is taller
+            var documentwrapper = document.getElementsByClassName("documentwrapper")[0];
+            var sidebar = document.getElementsByClassName("sidebar")[0];
+
+            if (sidebar.offsetHeight > documentwrapper.offsetHeight)
+            {
+                documentwrapper.style.minHeight = sidebar.offsetHeight + "px";
+            }
+
+            // Scroll to content if on small screen
+            if (screen.width < 480)
+            {
+                $(document).scrollTop(document.getElementsByClassName("document")[0].offsetTop - 44);
+            }
+        });
+    </script>
+    <meta content="{{ title|escape }}" property="og:title"></meta>
+    <meta content="hoamon's sandbox" property="og:site_name"></meta>
+    <style>
+        header {
+            background: -moz-linear-gradient(left,  rgba(30,87,153,1) 0%, rgba(6,80,122,0.93) 15%, rgba(32,124,202,0.8) 40%, rgba(125,185,232,0.5) 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(30,87,153,1)), color-stop(15%,rgba(6,80,122,0.93)), color-stop(40%,rgba(32,124,202,0.8)), color-stop(100%,rgba(125,185,232,0.5))); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(left,  rgba(30,87,153,1) 0%,rgba(6,80,122,0.93) 15%,rgba(32,124,202,0.8) 40%,rgba(125,185,232,0.5) 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(left,  rgba(30,87,153,1) 0%,rgba(6,80,122,0.93) 15%,rgba(32,124,202,0.8) 40%,rgba(125,185,232,0.5) 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(left,  rgba(30,87,153,1) 0%,rgba(6,80,122,0.93) 15%,rgba(32,124,202,0.8) 40%,rgba(125,185,232,0.5) 100%); /* IE10+ */
+            background: linear-gradient(to right,  rgba(30,87,153,1) 0%,rgba(6,80,122,0.93) 15%,rgba(32,124,202,0.8) 40%,rgba(125,185,232,0.5) 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#807db9e8',GradientType=1 ); /* IE6-9 */
+        }
+        article.document img {
+          vertical-align: middle;
+          border: 3px solid #C4C8CC;
+          -moz-box-shadow: 3px 3px 5px #888;
+          -moz-border-radius-bottomright: 13px;
+          -webkit-box-shadow: 3px 3px 5px #888;
+          -webkit-border-bottom-right-radius: 13px;
+          -ms-interpolation-mode: bicubic;
+        }
+        p.caption {
+            border-left: #C4C8CC 3px solid;
+            border-bottom: #C4C8CC 3px solid;
+        }
+    </style>
+{%- endblock -%}

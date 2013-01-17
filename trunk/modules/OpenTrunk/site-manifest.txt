@@ -1,0 +1,12 @@
+// site-manifest.txt
+{
+  "betaManifestVersion": 1,
+  "version": "Version 5.1",
+  "entries": [
+    { "url": "hello_world_database.html" },
+    { "url": "hello_world_database_files/gears_init.js" },
+    { "url": "hello_world_database_files/sample.js" },
+    { "url": "hello_world_database_files/sample.css" },
+    { "url": "hello_world_database_files/childworkerpools.js" }
+  ]
+}

@@ -1,0 +1,407 @@
+<!doctype html><!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>在分散式版本控制器中使用 Fork 來輔助 Branch &mdash; hoamon&#39;s sandbox</title><!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="../../../_static/style.css" type="text/css">
+  <link rel="stylesheet" href="../../../_static/modern5.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/webfont.css" type="text/css"><link rel="shortcut icon" href="../../../_static/favicon.ico" /><!-- Load modernizr and JQuery -->
+  <script src="../../../_static/modernizr-2.0.6.min.js"></script>
+  <!-- Grab Google CDN's jQuery, fall back to local if offline -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../../../_static/jquery-1.6.2.min.js"><\/script>')</script><link rel="top" title="hoamon&#39;s sandbox" href="../../../index.html" /><link rel="next" title="我支持人民擁槍權" href="rights_of_people_own_guns.html" /><link rel="prev" title="我反對同性婚姻合法化" href="../19/homosexual_marriage_in_law.html" /><link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/hoamon/DFdn" /><script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '106dcf7355bc-116',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script><script type="text/javascript" src="../../../_static/underscore.js"></script><script type="text/javascript" src="../../../_static/doctools.js"></script><script type="text/javascript" src="../../../_static/disqus.js"></script>
+
+    <script type="text/javascript">
+        var hrefs = window.location.href.split('?');
+        if (hrefs.length >= 2) {
+            window.location = hrefs[0];
+        }
+        $(document).ready(function () {
+            // Adjusts document height if sidebar is taller
+            var documentwrapper = document.getElementsByClassName("documentwrapper")[0];
+            var sidebar = document.getElementsByClassName("sidebar")[0];
+
+            if (sidebar.offsetHeight > documentwrapper.offsetHeight)
+            {
+                documentwrapper.style.minHeight = sidebar.offsetHeight + "px";
+            }
+
+            // Scroll to content if on small screen
+            if (screen.width < 480)
+            {
+                $(document).scrollTop(document.getElementsByClassName("document")[0].offsetTop - 44);
+            }
+        });
+    </script>
+    <meta content="在分散式版本控制器中使用 Fork 來輔助 Branch" property="og:title"></meta>
+    <meta content="hoamon's sandbox" property="og:site_name"></meta>
+    <style>
+        header {
+            background: -moz-linear-gradient(left,  rgba(30,87,153,1) 0%, rgba(6,80,122,0.93) 15%, rgba(32,124,202,0.8) 40%, rgba(125,185,232,0.5) 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(30,87,153,1)), color-stop(15%,rgba(6,80,122,0.93)), color-stop(40%,rgba(32,124,202,0.8)), color-stop(100%,rgba(125,185,232,0.5))); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(left,  rgba(30,87,153,1) 0%,rgba(6,80,122,0.93) 15%,rgba(32,124,202,0.8) 40%,rgba(125,185,232,0.5) 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(left,  rgba(30,87,153,1) 0%,rgba(6,80,122,0.93) 15%,rgba(32,124,202,0.8) 40%,rgba(125,185,232,0.5) 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(left,  rgba(30,87,153,1) 0%,rgba(6,80,122,0.93) 15%,rgba(32,124,202,0.8) 40%,rgba(125,185,232,0.5) 100%); /* IE10+ */
+            background: linear-gradient(to right,  rgba(30,87,153,1) 0%,rgba(6,80,122,0.93) 15%,rgba(32,124,202,0.8) 40%,rgba(125,185,232,0.5) 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#807db9e8',GradientType=1 ); /* IE6-9 */
+        }
+        article.document img {
+          vertical-align: middle;
+          border: 3px solid #C4C8CC;
+          -moz-box-shadow: 3px 3px 5px #888;
+          -moz-border-radius-bottomright: 13px;
+          -webkit-box-shadow: 3px 3px 5px #888;
+          -webkit-border-bottom-right-radius: 13px;
+          -ms-interpolation-mode: bicubic;
+        }
+        p.caption {
+            border-left: #C4C8CC 3px solid;
+            border-bottom: #C4C8CC 3px solid;
+        }
+    </style></head>
+<body>
+  <div id="container"><header>
+      <hgroup>
+        <div id="gplus_fb" style="float: right;">
+            <div id="fb-root"></div>
+            <!-- Place this tag where you want the +1 button to render. -->
+            <div style="float: right" class="g-plusone" data-href="http://www.hoamon.info/blog/"
+                 data-size="tall" data-width="550" data-annotation="inline"></div>
+            <div style="float: right" class="fb-like" data-href="http://www.hoamon.info/blog/"
+                 data-send="false" data-width="550" data-show-faces="true"></div>
+        </div>
+        <h1><a href="/blog/">hoamon&#39;s sandbox</a></h1>
+        <h2>&#34;sandbox&#34; is a jargon of Version Control System.</h2>
+      </hgroup>
+    </header>
+<nav class="clearfix">
+      <ul class="main-navigation"><li class="quicklink"><div class="rss">
+        <a href="http://feeds.feedburner.com/hoamon/DFdn" title="Subscribe via RSS"><span class="webfont">B</span></a>
+    </div></li><li class="main-nav" title="All articles">
+          <a href="/blog/">Home</a>
+        </li>
+        <li class="main-nav" title="Articles in Chinese">
+          <a href="../../../categories/chinese.html">Chinese</a>
+        </li>
+        <li class="main-nav" title="Articles in English">
+          <a href="../../../categories/english.html">English</a>
+        </li>
+        </ul>
+    </nav><div class="main"><div class="content clearfix"><div class="documentwrapper"><div class="related">
+        <ul>
+            <li class="right"><a href="../19/homosexual_marriage_in_law.html">我反對同性婚姻合法化</a> &raquo; </li>
+            <li class="left"> &laquo; <a href="rights_of_people_own_guns.html">我支持人民擁槍權</a></li>
+        </ul>
+    </div><article class="document">
+              <div class="timestamp postmeta">
+            <span>十二月 18, 2012</span>
+        </div>
+    <div class="section" id="fork-branch">
+<h1>在分散式版本控制器中使用 Fork 來輔助 Branch</h1>
+<div class="figure align-center">
+<img alt="../../../_images/branches_in_another_fork.png" src="../../../_images/branches_in_another_fork.png" style="width: 600px;" />
+<p class="caption">2f40672 乃 default branch; 以其為基礎，向上開設 6 個 branches</p>
+</div>
+<p>團體協同程式開發時，在新舊功能開發及維護之際，在人員分工不同元件之際，我們往往利用 branch 方式來孤立程式碼的撰寫，使其不與其他元件相混。</p>
+<p>然 branch 的使用常常使程式新手不知所措，甚而把程式碼攪得比義式麵條更難分更解。本文即介紹另一種方法： fork ，在某些環境下，可輔助程式新手得到類似利用 branch 的功能。</p>
+<!-- more --><p>其實 fork 就是 clone ，只是當我們把儲存庫放置於 <a class="reference external" href="https://bitbucket.org/">Bitbucket.org</a> 或 <a class="reference external" href="https://github.com/">Github.com</a> 時，它能幫我們把 <a class="reference external" href="https://bitbucket.org/hoamon/A">https://bitbucket.org/hoamon/A</a> fork 成 <a class="reference external" href="https://bitbucket.org/hoamon/B">https://bitbucket.org/hoamon/B</a> 。不然，我們通常使用 clone 指令，把 <a class="reference external" href="https://bitbucket.org/hoamon/A">https://bitbucket.org/hoamon/A</a> 下載成 local_A 專案，再把 local_A 專案佈置到 <a class="reference external" href="https://hg.you-domain.com/B">https://hg.you-domain.com/B</a> 去。</p>
+<p>因為 hg, git 的分散式控制特性，所以當我們把專案 clone 到另一個伺服器 <a class="reference external" href="https://bitbucket.org/hoamon/B">https://bitbucket.org/hoamon/B</a> 去操作時，它的意義就像是開了 branch 一樣，差別是開 branch 方式是可以讓整個團隊都收到 changeset ，而放到另一個伺服器則只有能讀取該伺服器的工程師看得到你所修改的 changeset 。</p>
+<p>接下來，筆者以自身的個人網站專案為範例。筆者的個人網站 <a class="reference external" href="https://bitbucket.org/hoamon/www-hoamon-info">https://bitbucket.org/hoamon/www-hoamon-info</a> ，主要是放置個人資訊及部落格文章之用，因為是公開資訊，所以在 bitbucket 上管理時，就直接開 public 專案。然而，某些部落格文章在撰寫時，並不是一蹴可及，如果文章寫作手法是埋兵伏將，前文論點與後文大相逕庭，若是文章寫到一半， push 到 public 儲存庫後，被好奇之人率先解讀，反而會造成不少困惱。</p>
+<p>為此，筆者將 www-hoamon-info fork 到 <a class="reference external" href="https://bitbucket.org/hoamon/www-hoamon-info-drafts">https://bitbucket.org/hoamon/www-hoamon-info-drafts</a> ，並在 www-hoamon-info-drafts 作草稿文章的寫作，待定稿後才 push 回 www-hoamon-info 專案。而 www-hoamon-info-drafts 就設定為 private 專案以避免過早洩露資訊。</p>
+<p>bitbucket 的 fork 按鈕如下圖：</p>
+<div class="figure align-center">
+<img alt="../../../_images/fork_button.png" src="../../../_images/fork_button.png" style="width: 600px;" />
+</div>
+<p>點選後，出現新專案的資訊填寫表單：</p>
+<div class="figure align-center">
+<img alt="../../../_images/new_repo.png" src="../../../_images/new_repo.png" style="width: 600px;" />
+</div>
+<p>其中要注意的是 fork 時，也可針對該專案的不同 tags, branches 作選擇，若是選擇某一 branch 或是 tip 本身就是某一個 branch ，則 hg clone 的行為是把該 branch 最頂頭的那個 changeset 抓出來，並一路往它的父 changeset 抓取。這樣子的 fork 是看不到其他 branch 的最頂頭 changeset 的。</p>
+<p>所以對一個不太敢用 branch 的工程師，他可以先用 fork 頂著，當他要開發 a1 元件時，就把原專案 fork 到 xxx-a1 ，然後在這裡修修改改; 要開發 b3 元件時，再從原專案 fork 到 xxx-b3 去修改。等 xxx-a1 元件修改完成後，就特別指定 push 的任置，把 xxx-a1 的 changeset push 回 <a class="reference external" href="https://bitbucket.org/hoamon/xxx">https://bitbucket.org/hoamon/xxx</a> 去。如果遇到 xxx 已有他人新增的 changeset ，那新手工程師也只要 pull xxx -u 回來，作一次 merge ，就能把 xxx-a1 所有修改全 push 回 xxx 了。下面命令列是開發 xxx-a1 時，對應上面腳本所用到的指令：</p>
+<div class="highlight-bash"><div class="highlight"><pre>hoamon@nb ~/ <span class="nv">$ </span>hg clone https://bitbucket.org/hoamon/xxx-a1
+hoamon@nb ~/xxx-a1 <span class="nv">$ </span><span class="nb">cd </span>xxx-a1
+hoamon@nb ~/xxx-a1 <span class="nv">$ </span><span class="c">#&quot;Do someting one; write codes...&quot;</span>
+hoamon@nb ~/xxx-a1 <span class="nv">$ </span>hg commit -m <span class="s2">&quot;write note one&quot;</span>
+hoamon@nb ~/xxx-a1 <span class="nv">$ </span><span class="c">#&quot;Do someting two; write codes...&quot;</span>
+hoamon@nb ~/xxx-a1 <span class="nv">$ </span>hg commit -m <span class="s2">&quot;write note two&quot;</span>
+hoamon@nb ~/xxx-a1 <span class="nv">$ </span><span class="c">#&quot;Do someting three; write codes...&quot;</span>
+hoamon@nb ~/xxx-a1 <span class="nv">$ </span>hg commit -m <span class="s2">&quot;write note three&quot;</span>
+hoamon@nb ~/xxx-a1 <span class="nv">$ </span>hg pull -u https://bitbucket.org/hoamon/xxx <span class="c">#抓原專案的新 changeset</span>
+hoamon@nb ~/xxx-a1 <span class="nv">$ </span>hg merge
+hoamon@nb ~/xxx-a1 <span class="nv">$ </span>hg di <span class="c">#檢查別人寫的東西，沒問題就 commit</span>
+hoamon@nb ~/xxx-a1 <span class="nv">$ </span>hg commit -m <span class="s2">&quot;merge for ...&quot;</span>
+hoamon@nb ~/xxx-a1 <span class="nv">$ </span>hg push <span class="c">#預設值是 push 到 https://bitbucket.org/hoamon/xxx-a1</span>
+hoamon@nb ~/xxx-a1 <span class="nv">$ </span>hg push https://bitbucket.org/hoamon/xxx <span class="c">#這是 push 到 xxx</span>
+</pre></div>
+</div>
+<div class="section" id="id1">
+<h2>Fork + Branch</h2>
+<p>又如果你是一位還算了解 branch 用法的程式設計師，那一樣是可以利用 Fork 形式來幫你整理程式碼。</p>
+<p>像是原專案已經有多個程式設計師開了 branch 在修改了，你覺得不想再湊上一腳。而且手上多個元件，自己也得開多個 branch 來處理，如果別人的再加上自己的，那不會天下大亂嗎? </p>
+<p>以我的個人網站為例，把 www-hoamon-info fork 到 www-hoamon-info-drafts 後，我開始要撰寫多篇文章，但把每篇文章視為一個元件，希望在撰寫時，不要互有影響。於是以 2f40672 changeset 為底，陸續建立 6 個 branches ，一篇文章一個。待完成一篇，就把該 branch 關閉，並 merge 回 default ，再 push 到 <a class="reference external" href="https://bitbucket.org/hoamon/www-hoamon-info">https://bitbucket.org/hoamon/www-hoamon-info</a> 。以下是相關的指令：</p>
+<div class="highlight-bash"><div class="highlight"><pre>hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span>hg update default
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span>hg branch <span class="s2">&quot;article one&quot;</span> <span class="c">#建立文章一的 branch</span>
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span>hg add somefile_1.rst
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span><span class="c"># write some note for somefile_1.rst</span>
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span>hg commit -m <span class="s2">&quot;write note for somefile_1&quot;</span>
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span>hg update default <span class="c">#要再回到 default branch</span>
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span>hg branch <span class="s2">&quot;article two&quot;</span> <span class="c">#建立文章二的 branch</span>
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span>hg add somefile_2.rst
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span><span class="c"># write some note for somefile_2.rst</span>
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span>hg commit -m <span class="s2">&quot;write note for somefile_2&quot;</span>
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span>... <span class="c">#建立多篇文章的 branch</span>
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span>hg update <span class="s2">&quot;article two&quot;</span> <span class="c">#要回到 article two branch</span>
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span><span class="c"># write some lines for somefile_2.rst</span>
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span>hg commit --close-branch -m <span class="s2">&quot;done for somefile_2&quot;</span> <span class="c"># 假設得到的是 123:abc1234 的 changeset</span>
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span>hg update default
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span>hg merge -r abc1234
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span>hg commit -m <span class="s2">&quot;merge for article two&quot;</span>
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span>hg push <span class="c">#預設值是 push 到 https://bitbucket.org/hoamon/www-hoamon-info-drafts</span>
+hoamon@nb ~/www-hoamon-info-drafts <span class="nv">$ </span>hg push --new-branch <span class="s2">&quot;article two&quot;</span> https://bitbucket.org/hoamon/www-hoamon-info <span class="c">#這是 push 到 www-hoamon-info</span>
+</pre></div>
+</div>
+<p>如下圖，我完成 &#8220;Rights of People Own Guns&#8221; 一文後，把該 branch 合併至 default ，得到 7ecfcfc changeset 。這是 www-hoamon-info-drafts 的分枝圖。</p>
+<div class="figure align-center">
+<img alt="../../../_images/forked.png" src="../../../_images/forked.png" style="width: 600px;" />
+</div>
+<p>把 7ecfcfc push 到 www-hoamon-info 後，可以從下圖看到， www-hoamon-info 也只會拿到 7ecfcfc 母系的所有 changeset ，在這裡看不到 skill_of_teacher 、 do_my_best 、 colombo …等 branch 的 changeset 。</p>
+<div class="figure align-center">
+<img alt="../../../_images/original.png" src="../../../_images/original.png" style="width: 600px;" />
+</div>
+<p>利用 fork+branch ，我就能確保自己開的 branches 不會與別人開的 branches 有太多彼此互相影響的機會，降低程式碼攪亂的機會。</p>
+</div>
+<div class="section" id="id2">
+<h2>重點提示</h2>
+<p>在 push 回原專案時，用 hg push &#8211;new-branch &#8220;article two&#8221; 時，這 &#8211;new-branch &#8220;article two&#8221; 的意思是限定只送出 &#8220;article two&#8221; branch 的 changeset ，要不然它會視為你是要把手頭上( fork 出來的那個儲存庫)的所有 changeset 全 push 出去。</p>
+</div>
+</div>
+
+    <script type="text/javascript">
+        document.write(unescape('%3Cdiv class="g-plusone" data-href="')
+            + window.location.href.split('?')[0]
+            + unescape('" data-size="tall" data-width="600" data-annotation="inline"%3E%3C/div%3E'));
+    </script>
+    <script type="text/javascript">
+        document.write(unescape('%3Cdiv class="fb-like" data-href="')
+            + window.location.href.split('?')[0]
+            + unescape('" data-send="true" data-width="600" data-show-faces="true"%3E%3C/div%3E'));
+    </script>
+    <hr/>
+    <div class="postmeta">
+        <div class="author">
+            <span>Posted by hoamon</span>
+        </div>
+        <div class="categories">
+            <span>
+                Filed under:
+                <a href="../../../categories/chinese.html">chinese</a></span>
+        </div>
+        <div class="tags">
+            <span>
+                Tags:
+                <a href="../../../tags/python.html">python</a>, <a href="../../../tags/mercurial.html">mercurial</a>, <a href="../../../tags/bitbucket.html">bitbucket</a></span>
+        </div>
+        
+    </div>
+    <div id="disqus_thread"></div><script type="text/javascript">    var disqus_shortname = "hoamoninfo";    var disqus_identifier = "2012/12/18/use_fork_to_enhance_branch";    disqus_thread();</script><noscript>Please enable JavaScript to view the    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></article><div class="related">
+        <ul>
+            <li class="right"><a href="../19/homosexual_marriage_in_law.html">我反對同性婚姻合法化</a> &raquo; </li>
+            <li class="left"> &laquo; <a href="rights_of_people_own_guns.html">我支持人民擁槍權</a></li>
+        </ul>
+    </div></div><aside class="sidebar"><section><!-- ads.html -->
+<section><div class="widget" id="about_me">
+    <h1>工商廣告</h1>
+    <a href="../../11/05/startssl_com_web_ssl_retailer.html">StartSSL.com Web SSL 憑證代購</a>
+</section></section><section><!-- about_me.html -->
+<section><div class="widget" id="about_me">
+    <h1>About</h1>
+    <p><a href="/">My Details</a></p>
+    <p><a href="http://feeds.feedburner.com/hoamon/DFdn"><img src="http://feeds.feedburner.com/~fc/hoamon/DFdn?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+    <p><a href="http://www.pagerankchecker.info/" target="_blank"><img src="http://www.pagerankchecker.info/pagerank-button.php?url=www.hoamon.info" title="PageRank Checker" border="0px"></img></a></p>
+</section></section><section><!-- cc.html -->
+<section><div class="widget" id="license">
+    <h1>Public License</h1>
+    <div style="text-align: center;">
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">
+            <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0">
+        </a>
+    </div>
+    <span href="http://purl.org/dc/dcmitype/Text" rel="dct:type">
+        <div style="font-size: 12px;">
+            <span href="http://purl.org/dc/dcmitype/Text" rel="dct:type">Hoamon.info/blog/</span>
+            by <a href="http://www.hoamon.info/" rel="cc:attributionURL">hoamon</a>
+            is licensed under a
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+        </div>
+    </span>
+
+    <div style="text-align: center;">
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/tw/" rel="license">
+            <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/tw/88x31.png">
+        </a>
+    </div>
+    <span href="http://purl.org/dc/dcmitype/Text" rel="dct:type">
+        <div style="font-size: 12px;">
+            <span href="http://purl.org/dc/dcmitype/Text" rel="dct:type">Hoamon.info/blog/</span>
+            為 <a href="http://www.hoamon.info/" rel="cc:attributionURL">hoamon</a> 所創作，
+            係採用
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/tw/" rel="license">創用 CC 姓名標示-相同方式分享 3.0 台灣 授權條款</a>授權.
+        </div>
+    </span>
+</section></section><section><div class="widget">
+    <h1>Recent Posts</h1>
+    <ul><li>
+            <a href="../../../2013/01/14/006202_rise_to_limit_in_a_day.html">有看過債券基金漲停嗎?</a>
+        </li><li>
+            <a href="../../../2013/01/12/higher_education_charge.html">我支持大學自由調整學費</a>
+        </li><li>
+            <a href="../../../2013/01/12/caution__a_thief.html">注意! 有賊</a>
+        </li><li>
+            <a href="../../../2013/01/12/what_is_performance.html">什麼是績效?! --- 『不公平的代價』一書之部份讀後感(1)</a>
+        </li><li>
+            <a href="../23/public_key_cryptography_in_open_http_tunnel.html">公錀加密在開放式 Http 連線的應用</a>
+        </li><li>
+            <a href="../19/homosexual_marriage_in_law.html">我反對同性婚姻合法化</a>
+        </li><li>
+            <a href="#">在分散式版本控制器中使用 Fork 來輔助 Branch</a>
+        </li><li>
+            <a href="rights_of_people_own_guns.html">我支持人民擁槍權</a>
+        </li><li>
+            <a href="../15/2012_investment_result.html">2012 年的被動投資回顧</a>
+        </li><li>
+            <a href="../15/2013_capital_tax_type.html">2013 年，我選擇核實課徵證券所得稅</a>
+        </li><li>
+            <a href="../14/_raw___html__problem_in_tinkerer.html">"raw:: html" problem in Tinkerer</a>
+        </li><li>
+            <a href="../13/eat_the_next_year_rice.html">寅吃卯年糧，卯吃寅人糧</a>
+        </li><li>
+            <a href="../13/it_is_your_life.html">那是你的命!</a>
+        </li><li>
+            <a href="../13/the_winner_is____.html">得獎的是...</a>
+        </li><li>
+            <a href="../10/bitbucket_billing_plan.html">Bitbucket 付費方案真是佛心來著</a>
+        </li><li>
+            <a href="../../11/25/public_debt_law.html">公共債務法草案爭議</a>
+        </li><li>
+            <a href="../../11/21/monospaced_fonts_of_netbeans_in_ubuntu.html">Monospaced fonts of Netbeans in Ubuntu</a>
+        </li><li>
+            <a href="../../11/05/tax_havens.html">逃稅天堂是世界貧富差距巨增的催化劑 --- 「逃稅天堂」讀後感</a>
+        </li><li>
+            <a href="../../11/05/wealth_gap.html">貧富差距</a>
+        </li><li>
+            <a href="../../11/05/startssl_com_web_ssl_retailer.html">StartSSL.com Web SSL 憑證代購</a>
+        </li><li>
+            <a href="../../11/04/ho600_s_ssl_certification.html">Ho600's SSL Certification</a>
+        </li><li>
+            <a href="../../11/04/change.html">人生必須不停地改變 - 新部落格開站宣言</a>
+        </li><li>
+            <a href="../../../2009/07/01/1000-1001-999-1001-2009-1-1-5-2008-12.html">黑天鵝效應讀後心得</a>
+        </li></ul>
+</div>
+</section><section><!-- custom_search.html -->
+<section><div class="widget" id="custom_search">
+    <h1>Search</h1>
+    <form method="get" action="http://www.google.com/custom">
+        <input type="hidden" name="domains" value="www.hoamon.info" />
+        <input type="hidden" name="sitesearch" value="www.hoamon.info/blog/" />
+        <p><input type="text" name="q" size="25" maxlength="255" value="" /></p>
+        <p><input type="submit" value="Google Search" /></p>
+    </form>
+</section></section><section><div class="widget">
+    <h1>Categories</h1>
+    <ul><li><a href="../../../categories/chinese.html">chinese</a> (22)</li><li><a href="../../../categories/english.html">english</a> (1)</li></ul>
+</div></section><section><div class="widget">
+    <h1>Tags</h1><a href="../../../tags/aboutme.html">aboutme</a> (1), <a href="../../../tags/advertisement.html">advertisement</a> (2), <a href="../../../tags/aes.html">aes</a> (1), <a href="../../../tags/bio-enzyme.com.html">bio-enzyme.com</a> (1), <a href="../../../tags/bitbucket.html">bitbucket</a> (2), <a href="../../../tags/bond.html">bond</a> (1), <a href="../../../tags/book review.html">book review</a> (1), <a href="../../../tags/chang-mao.html">chang-mao</a> (1), <a href="../../../tags/construction management.html">construction management</a> (1), <a href="../../../tags/education.html">education</a> (2), <a href="../../../tags/finance.html">finance</a> (7), <a href="../../../tags/future.html">future</a> (1), <a href="../../../tags/ho600.html">ho600</a> (1), <a href="../../../tags/home.html">home</a> (1), <a href="../../../tags/http.html">http</a> (1), <a href="../../../tags/https.html">https</a> (1), <a href="../../../tags/human right.html">human right</a> (1), <a href="../../../tags/iclean.html">iclean</a> (1), <a href="../../../tags/investment.html">investment</a> (3), <a href="../../../tags/labor safety and health.html">labor safety and health</a> (1), <a href="../../../tags/latex.html">latex</a> (1), <a href="../../../tags/linux.html">linux</a> (1), <a href="../../../tags/mercurial.html">mercurial</a> (2), <a href="../../../tags/netbeans.html">netbeans</a> (1), <a href="../../../tags/option.html">option</a> (1), <a href="../../../tags/policy.html">policy</a> (1), <a href="../../../tags/politics.html">politics</a> (7), <a href="../../../tags/public key cryptography.html">public key cryptography</a> (1), <a href="../../../tags/python.html">python</a> (3), <a href="../../../tags/rsa.html">rsa</a> (1), <a href="../../../tags/sphinx.html">sphinx</a> (1), <a href="../../../tags/ssl.html">ssl</a> (2), <a href="../../../tags/startssl.html">startssl</a> (2), <a href="../../../tags/startup.html">startup</a> (1), <a href="../../../tags/tax.html">tax</a> (2), <a href="../../../tags/tinkerer.html">tinkerer</a> (1), <a href="../../../tags/ubuntu.html">ubuntu</a> (2)</div></section><section><!-- javascript.html -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=427606900621352";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<link rel="stylesheet" href="../../../_static/jquery.superbox.css" type="text/css" />
+<script type="text/javascript" src="../../../_static/jquery.superbox-min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.figure img').each(function(){
+            var src = $(this).attr('src');
+            var $p = $(this).next();
+            if ($p.hasClass('caption')){
+                var title = $p.text();
+            } else {
+                var title = 'No title';
+            }
+            $(this).wrap($('<a>').attr('title', title).attr('href', src).attr('rel', 'superbox[gallery][my_gallery]'));
+        });
+        $.superbox.settings = {
+            boxId: "superbox", // Id attribute of the "superbox" element
+            boxClasses: "", // Class of the "superbox" element
+            overlayOpacity: .6, // Background opaqueness
+            loadTxt: "Loading...", // Loading text
+            closeTxt: "Close", // "Close" button text
+            prevTxt: " <- ", // "Previous" button text
+            nextTxt: " -> " // "Next" button text
+        };
+        $.superbox();
+    });
+</script>
+</section></aside></div></div><footer>&copy; Copyright 2006-2012, hoamon. Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.</footer></div> <!--! end of #container --><!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-29493957-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+  <script>
+    var linkwithin_site_id = 1527897;
+  </script>
+  <script src="http://www.linkwithin.com/widget.js"></script>
+  <a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a>
+    <style media="screen" type="text/css">
+        #fork_me { display: none; }
+
+        @media only screen and (min-width: 768px) {
+            #fork_me { display: inline; }
+        }
+    </style>
+  <a id="fork_me" href="http://bitbucket.org/hoamon/www-hoamon-info">
+      <img alt="Fork me" src="/blog/_static/fork_me.png" style="position: fixed; top: 0; left: 0; border 0" />
+  </a>
+</body>
+</html>

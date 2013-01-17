@@ -1,0 +1,85 @@
+#INFO
+# run with python2.7 will raise AttributeError in below block:
+# and we should change """except ImportError:""" => """except (ImportError, AttributeError):"""
+
+# source from /usr/lib/python2.7/dist-packages/httplib2/__init__.py
+### Build the appropriate socket wrapper for ssl
+##try:
+##    import ssl # python 2.6
+##    _ssl_wrap_socket = ssl.wrap_socket
+##except (ImportError, AttributeError):
+##    def _ssl_wrap_socket(sock, key_file, cert_file):
+##        ssl_sock = socket.ssl(sock, key_file, cert_file)
+##        return httplib.FakeSocket(sock, ssl_sock)
+
+application: www-hoamon
+version: 1
+
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+builtins:
+#- remote_api: on
+#- django_wsgi: on
+#- appstats: on
+
+inbound_services:
+#- warmup
+#- mail
+
+libraries:
+#- name: lxml
+#  version: latest
+#- name: django
+#  version: latest
+
+handlers:
+- url: /robots.txt
+  static_files: media/robots.txt
+  upload: media/robots.txt
+  expiration: "365d"
+
+- url: /favicon.ico
+  static_files: media/favicon.ico
+  upload: media/favicon.ico
+  expiration: "365d"
+
+- url: /courses/([^/\.]+)/
+  static_files: modules/course/\1/index.html
+  upload: modules/course/([^/\.]+)/index.html
+  login: admin
+
+- url: /courses/
+  static_dir: modules/course/
+  login: admin
+
+- url: /course/([^/\.]+)/
+  static_files: modules/course/\1/index.html
+  upload: modules/course/([^/\.]+)/index.html
+  login: admin
+
+- url: /course/
+  static_dir: modules/course/
+  login: admin
+
+- url: /blog/
+  static_files: modules/blog/index.html
+  upload: modules/blog/index.html
+
+- url: /blog/
+  static_dir: modules/blog/
+
+#- url: /([^/\.]+)
+#  static_files: modules/www/\1.html
+#  upload: modules/www/([^/\.]+).html
+
+- url: /OpenTrunk/
+  static_dir: modules/OpenTrunk/
+
+- url: /
+  static_files: modules/www/index.html
+  upload: modules/www/index.html
+
+- url: /
+  static_dir: modules/www

@@ -1,0 +1,258 @@
+{#
+    haiku/layout.html
+    ~~~~~~~~~~~~~~~~~
+
+    Sphinx layout template for the haiku theme.
+
+    :copyright: Copyright 2007-2011 by the Sphinx team, see AUTHORS.
+    :license: BSD, see LICENSE for details.
+#}
+{% extends "basic/layout.html" %}
+{% set title = 'Hoamon.info' %}
+{% set docstitle = "" %}
+
+{% set script_files = "" %}
+{% set css_files = css_files %}
+
+{# do not display relbars #}
+{% block relbar1 %}{% endblock %}
+{% block relbar2 %}{% endblock %}
+{% block linktags %}{% endblock %}
+
+{% block extrahead %}
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+
+    {% set JQUERY_VERSION, JQUERYUI_VERSION = "1.8.2", "1.8.24" %}
+    <script type="text/javascript">
+        function self_joined_jquery () {
+            document.write(unescape('%3Cscript src="_static/jquery-{{JQUERY_VERSION}}.min.js" type="text/javascript"%3E%3C/script%3E'));
+            document.write(unescape('%3Cscript src="_static/jquery-ui-{{JQUERYUI_VERSION}}.custom.min.js" type="text/javascript"%3E%3C/script%3E'));
+            document.write(unescape('%3Clink rel="stylesheet" title="default" type="text/css" media="screen" href="_static/blitzer/jquery-ui-{{JQUERYUI_VERSION}}.custom.css" /%3E'));
+            if (typeof console) {
+                console.log('Use self-joined jquery-ui files');
+            }
+        }
+        if (typeof google == 'undefined') {
+            self_joined_jquery();
+        } else {
+            try {
+                google.load("jquery", "{{ JQUERY_VERSION }}");
+                google.load("jqueryui", "{{ JQUERYUI_VERSION }}");
+                document.write(unescape('%3Clink rel="stylesheet" title="default" type="text/css" media="screen" href="//ajax.googleapis.com/ajax/libs/jqueryui/{{ JQUERYUI_VERSION }}/themes/blitzer/jquery-ui.css" /%3E'));
+            } catch(error) {
+                self_joined_jquery();
+                if (typeof console) {
+                    console.log('Failure on google.load');
+                }
+            }
+        }
+    </script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/searchtools.js"></script>
+    <script type="text/javascript">
+        jQuery(function() { Search.loadIndex("searchindex.js"); });
+    </script>
+    {% if pagename == "arabic" %}
+        <style>div.section { direction: RTL; }</style>
+    {% endif %}
+
+    <link rel="top" title="Hoamon.info 0.0.0 documentation" href="/" />
+{% endblock %}
+
+{% block content %}
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=427606900621352";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class="header">
+        <ul id="left_nav">
+            <li>
+                <a href="/"><img src="_static/customLogo.png" /></a>
+            </li>
+            <li id="header_title">
+                Hoamon.info
+            </li>
+            <li>
+                <a href="http://www.pagerankchecker.info/" target="_blank"><img src="http://www.pagerankchecker.info/pagerank-button.php?url=www.hoamon.info" title="PageRank Checker" border="0px" /></a>
+            </li>
+        </ul>
+        <a href="/">
+          <img class="logo" src="_static/top_scroll.png" alt="Logo"/>
+        </a>
+        <ul id="right_nav">
+            <li class='{%- if project == "Hoamon.info" and pagename in ["index", "search", "english", "zhong-wen", "espanol", "ri-ben-yu", "portugues", "deutsch", "arabic", "francais", "russkij", "hangug-ui"] %}isme{% endif %}'><a href="/">My Detail</a></li>
+            <li class='{%- if pagename in ["course", "courses"]
+                            or project in ["Startup Company Practice in Internet",
+                                            "Engineering Economy",
+                                            "Management Mathematics",
+                                            "Engineering Contract",
+                                            "A Software Company of One Man",
+                                            "Low Cost Google Cloud Construction of Small and Medium Companies",
+                                            ] %}isme{% endif %}'><a href="/course.html">Course</a></li>
+            <li class='{%- if pagename in ["paper"] %}isme{% endif %}'><a href="/paper.html">Paper</a></li>
+            <li><a href="/blog/">New Blog</a></li>
+            <li><a href="http://blog.hoamon.info/">Old Blog</a></li>
+        </ul>
+    </div>
+
+    <div class="topnav">
+        {%- if project == "Hoamon.info" and pagename in ["index", "search", "english", "zhong-wen", "espanol", "ri-ben-yu", "portugues", "deutsch",
+            "arabic", "francais", "russkij", "hangug-ui"] %}
+            <ul id="tabs">
+                <li class='{%- if pagename == "english" %}isme{% endif %}'><a href="/english.html#">English</a></li>
+                <li class='{%- if pagename == "zhong-wen" %}isme{% endif %}'><a href="/zhong-wen.html#">正體中文</a></li>
+                <li class='{%- if pagename == "espanol" %}isme{% endif %}'><a href="/espanol.html#">español</a><li>
+                <li class='{%- if pagename == "ri-ben-yu" %}isme{% endif %}'><a href="/ri-ben-yu.html#">日本語</a><li>
+                <li class='{%- if pagename == "portugues" %}isme{% endif %}'><a href="/portugues.html#">português</a><li>
+                <li class='{%- if pagename == "deutsch" %}isme{% endif %}'><a href="/deutsch.html#">deutsch</a><li>
+                <li class='{%- if pagename == "arabic" %}isme{% endif %}'><a href="/arabic.html#">العربية</a><li>
+                <li class='{%- if pagename == "francais" %}isme{% endif %}'><a href="/francais.html#">français</a><li>
+                <li class='{%- if pagename == "russkij" %}isme{% endif %}'><a href="/russkij.html#">русский</a><li>
+                <li class='{%- if pagename == "hangug-ui" %}isme{% endif %}'><a href="/hangug-ui.html#">한국의</a><li>
+            </ul>
+
+            <div style="clear: both;"></div>
+        {%- endif %}
+
+        <ul id="social_share" style="min-height: 80px;">
+            <li id="google_button">
+                <!-- Place this tag where you want the +1 button to render. -->
+                {%- if project == "Hoamon.info" and pagename in ["index", "search", "course", "english", "zhong-wen", "espanol", "ri-ben-yu", "portugues", "deutsch", "arabic", "francais", "russkij", "hangug-ui"] %}
+                    <div class="g-plusone" data-href="http://www.hoamon.info/"
+                         data-size="tall" data-annotation="inline" data-width="350"></div>
+                {% else %}
+                    <div class="g-plusone"
+                         data-size="tall" data-annotation="inline" data-width="350"></div>
+                {% endif %}
+
+                <!-- Place this tag after the last +1 button tag. -->
+                <script type="text/javascript">
+                  (function() {
+                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                    po.src = 'https://apis.google.com/js/plusone.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                  })();
+                </script>
+            </li>
+            <li id="facebook_button">
+                {%- if project == "Hoamon.info" and pagename in ["index", "search", "course", "english", "zhong-wen", "espanol", "ri-ben-yu", "portugues", "deutsch", "arabic", "francais", "russkij", "hangug-ui"] %}
+                    <div class="fb-like" data-href="http://www.hoamon.info/"
+                         data-send="true" data-show-faces="true" data-width="350"></div>
+                {% else %}
+                    <script type="text/javascript">
+                            document.write(unescape('%3Cdiv class="fb-like" data-href="')
+                                + window.location.href.split('?')[0]
+                                + unescape('" data-send="true" data-width="350" data-show-faces="true"%3E%3C/div%3E'));
+                    </script>
+                {% endif %}
+
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="content" style="clear: both;">
+        {%- if project == "Startup Company Practice in Internet" and pagename != 'index' %}
+            <div><a href="/course/startup-company/">回目錄</a></div>
+        {% endif %}
+        {% block body %}
+        {% endblock %}
+
+        <hr/>
+
+        <h3>Any Suggestion are Welcome~</h3>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'hoamoninfo'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        {%- if pagename != "search" %}
+            <hr/>
+
+            <div style="float: right; text-align: right;">
+                {%- if project == "Hoamon.info" %}
+                    <h3>Quick Search for Urls match "^/[^/]+#?$"</h3>
+                {% else %}
+                    <h3>Quick Search for "{{ project }}"</h3>
+                {% endif %}
+                <form class="search" action="search.html" method="get">
+                    <input type="text" name="q">
+                    <input type="submit" value="Go">
+                    <input type="hidden" name="check_keywords" value="yes">
+                    <input type="hidden" name="area" value="default">
+                </form>
+                <p class="searchtip" style="font-size: 90%">
+                    Enter search terms or a module, class or function name.
+                </p>
+                <h3>Show Source of This Page</h3>
+                <a href="_sources/{{ pagename }}.txt" target="{{ pagename }}">Show Raw .rst File</a>
+            </div>
+            <div style="clear: both;"></div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <div class="footer" style="margin-top: 20px;">
+        <div>
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">
+                <img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0">
+            </a>
+        </div>
+        <span href="http://purl.org/dc/dcmitype/Text" rel="dct:type">
+            <div style="font-size: 12px;">
+                <span href="http://purl.org/dc/dcmitype/Text" rel="dct:type">Hoamon.info</span>
+                by <a href="http://www.hoamon.info/" rel="cc:attributionURL">hoamon</a> [<a href="#footnote_star">*</a>]
+                is licensed under a
+                <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+            </div>
+        </span>
+        &copy; Copyright 2012, hoamon.  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+        and hosted on <a href="https://developers.google.com/appengine/">Google App Engine</a>. <br/>
+        [<a name="footnote_star" class="notice">*</a>] All this site excepts the three scrolls in background that were created by my wife( <a alt="http://www.GraceBlue.info/"
+        href="http://www.graceblue.info/">Grace</a> ), and also are licensed under CC BY-SA 3.0 .
+    </div>
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-29493957-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+    <style media="screen" type="text/css">
+        #fork_me { display: none; }
+
+        @media only screen and (min-width: 768px) {
+            #fork_me { display: inline; }
+        }
+    </style>
+    <a id="fork_me" href="http://bitbucket.org/hoamon/www-hoamon-info">
+        <img alt="Fork me" src="/_static/fork_me.png" style="position: fixed; top: 0; left: 0; border 0" />
+    </a>
+{% endblock %}

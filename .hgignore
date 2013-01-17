@@ -1,7 +1,7 @@
 .*\.swp$
 .*\.pyc$
 .*\.gpg$
-^docs/_build
+_build/
 ^docs-of-ho600-django-gae-default-trunk/_build
 
 local_settings.py$
