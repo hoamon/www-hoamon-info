@@ -63,7 +63,7 @@ def get_blogger_posts(blogger_id):
             count += 1
             s = html2text(e.content[0].value)
             filepath = re.sub('^http://blog.hoamon.info/', '', e.link)
-            filename = os.path.basename(filepath).replace('.html', '.rst')
+            filename = re.sub('.html$', '.rst', os.path.basename(filepath))
             dirname = os.path.join('blogger', os.path.dirname(filepath), '01')
             if not os.path.isdir(dirname):
                 os.makedirs(dirname)
