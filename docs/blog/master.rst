@@ -31,4 +31,6 @@ Sitemap
    2012/11/05/startssl_com_web_ssl_retailer
    2012/11/04/ho600_s_ssl_certification
    2012/11/04/change
+   2010/10/01/htc-wifi
    2009/07/01/1000-1001-999-1001-2009-1-1-5-2008-12
+   2007/10/01/blog-post_1929
