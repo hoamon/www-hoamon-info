@@ -1,0 +1,40 @@
+破了我個人的紀錄： 以 59 分 58 秒完成 10 公里路跑
+================================================================================
+
+今天(2011-04-23)，第一次在 60 分鐘內跑完了 10 公里。
+
+
+
+
+最大的不同在於使用小跨步的跑法，雖然步頻要加快，心跳數也比大跨步高(* 1)。不過，對肌肉而言比較輕鬆，所以在尾段時，還能用更快速度前進。
+
+
+
+
+註1 使用 `ALATECH 的心率計`_觀察每分鐘心跳數。
+
+
+
+
+`.. image::
+https://lh5.googleusercontent.com/_eKM9lHjTZjs/TLrtIAOmZLI/AAAAAAAACqg/XsNNQ-
+RpSmo/s400/PPP1000953.JPG
+`_
+From `Taitung Triathlon`_
+
+
+
+.. _ALATECH 的心率計: https://ecvip.pchome.com.tw/?0xc3164884dcc88025a8ef93b2
+    703d78dccc2f84d54919d62004e4247b2d9f0f63254e8eb03eeea92480c11ad564783e870
+    9577736d00d4b1d9093e34931da4af5eaa556873e30266d112b95a0acb61d3d1efd618170
+    7ffd99
+.. _觀察每分鐘心跳數。: https://picasaweb.google.com/lh/photo/GYD6XupjFS9vPIy7a8Vh
+    9A?feat=embedwebsite
+.. _Taitung Triathlon:
+    https://picasaweb.google.com/hoamon/TaitungTriathlon?feat=embedwebsite
+
+
+.. author:: default
+.. categories:: chinese
+.. tags:: jog
+.. comments::

@@ -1,0 +1,28 @@
+請捐錢給維基百科(2011年)
+================================================================================
+
+除了熱情人士貢獻詞條外，也需要有人貢獻「頻寬」、「伺服器」、「審查詞條編輯」的資源。與「詞條」一樣，資源不會憑空產生。總要有人拿錢去拉專線、組裝伺服器，處
+理法律問題…
+
+以往，我都是捐 $5
+塊美金。今年他們有新的捐款管道，提供永豐銀行的帳戶，所以可以直接捐新台幣。為慶祝新管道(這又是一個要花人力的地方，總要有人去談新台幣款項與
+wikipedia 組識的出入方法吧!)，所以今年我捐了 NT $600 ，是用 WebATM 轉的。用銀行轉帳的方式，對 wikipedia
+最好，它們不會被扣手續費。
+
+`前往捐款`_。
+
+使用 bank transfer 時，它會給你一組代碼，是讓你去轉帳時(臨櫃、 WebATM 都行)填到附註欄用的。
+
+另外，捐款後有一個附加好處，它們不知道是用 cookie 還是 IP 方式? 讓有捐過錢的人，看不到「捐款呼籲」。
+
+.. _前往捐款: https://donate.wikimedia.org/wiki/Special:FundraiserLandingPage
+    ?uselang=zh&country=TW&template=Lp-layout-default&appeal-template=Appeal-
+    template-default&appeal=Appeal-Brandon&form-template=Form-template-
+    default&form-countryspecific=Form-countryspecific-variable1&utm_medium=si
+    tenotice&utm_source=B11_Donate_Brandon_AvsB&utm_campaign=C11_1114_AvsB_TW
+
+
+.. author:: default
+.. categories:: chinese
+.. tags:: 
+.. comments::

@@ -1,0 +1,19 @@
+哈哈哈~ Python 在 2011 的 1 月站上了第 5 名
+================================================================================
+
+`.. image:: http://3.bp.blogspot.com/_eKM9lHjTZjs/TSkIV_P0tyI/AAAAAAAACzY
+/SCpH6IX-ZBc/s400/x.png
+`_
+
+From `http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html`_
+
+.. _: http://3.bp.blogspot.com/_eKM9lHjTZjs/TSkIV_P0tyI/AAAAAAAACzY
+    /SCpH6IX-ZBc/s1600/x.png
+.. _http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html:
+    http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html
+
+
+.. author:: default
+.. categories:: chinese
+.. tags:: python
+.. comments::
