@@ -58,6 +58,7 @@ def get_blogger_posts(blogger_id):
 
     while 1:
         l = link % index
+        print l
         d = feedparser.parse(l)
         for e in d.entries:
             count += 1
@@ -72,6 +73,21 @@ def get_blogger_posts(blogger_id):
             title = e.title + '\n' + '='*80 + '\n\n'
             file.write(title)
             file.write(s)
+
+            id = re.sub('^.*\-([0-9]+)$', '\\1', e.id)
+            cd = feedparser.parse('http://blog.hoamon.info/feeds/%s/comments/default'%id)
+            cdes = cd.entries[:]
+            if len(cdes) > 0:
+                file.write('\n\nOld Comments in Blogger\n'+'-'*80+'\n\n')
+                cdes.reverse()
+                for ce in cdes:
+                    name = ce.author_detail.get('name', 'No Name')
+                    href = ce.author_detail.get('href', 'No Href')
+                    author = '\n\n`%s <%s>`_ at %s:\n'%(name, href, ce.updated)
+                    file.write(author+'^'*(len(author)+10)+'\n\n')
+                    cs = html2text(ce.content[0].value)
+                    file.write(cs)
+
             if hasattr(e, 'tags'):
                 meta = META % {'tags': ', '.join([i['term'] for i in e.tags])}
             else:
