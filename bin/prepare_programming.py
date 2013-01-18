@@ -32,7 +32,7 @@
 import os, sys
 import zipfile
 from urllib2 import Request, urlopen, URLError, HTTPError
-from shutil import rmtree, copytree
+from shutil import rmtree, copytree, move
 from advance_hg import AdvanceHG
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if root not in sys.path:
@@ -118,6 +118,8 @@ else:
                 unzip(os.path.join(ROOT, 'asset', file_name), os.path.join(ROOT, ps[0]))
             elif '.tgz' in file_name.lower() or '.gz' in file_name.lower():
                 raise Exception('Not Yet!')
+            else:
+                move(os.path.join(ROOT, 'asset', file_name), os.path.join(ROOT, ps[0]))
 print '>>> == Find Downloads =='
 
 print '== Find Copies == <<<'
