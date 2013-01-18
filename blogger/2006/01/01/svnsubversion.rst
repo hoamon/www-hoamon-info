@@ -87,6 +87,48 @@ mercurial.html`_) 了，最大的優點是可離線操作，不像 svn 如果沒
     http://hoamon.blogspot.com/2009/03/from-subversion-to-mercurial.html
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`bestlong <http://blog.bestlong.idv.tw/>`_ at 2007-03-27T23:00:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+文章中所述的這一篇文章的連接已經不存在了。可以改成：
+http://svn.stu.edu.tw/svnbook/
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2007-03-28T09:13:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+謝謝 bestlong ，已更正。
+
+`avhacker <http://www.blogger.com/profile/09299249735499162122>`_ at 2007-07-07T12:13:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+建議你試試 perforce, 效能好、功能強，而且有非常 friendly 的 GUI(還不只一個)。
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2007-07-07T14:24:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+是這個軟體嗎： http://www.google.com.tw/url?sa=t&ct=res&cd=1&url=http%3A%2F%2Fwww.pe
+rforce.com%2F&ei=eTGPRq0cneCwAtHziZ8I&usg=AFQjCNHwtOtpnZRe7FBQHk1oILolC7WmyQ&
+sig2=vpHXiHRth5xcUigYtWsQ2w
+它好像不是 Open Source 的，而且還要花錢買。
+
+`avhacker <http://www.blogger.com/profile/09299249735499162122>`_ at 2007-07-08T15:38:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+它不是 open source 的，但不付錢的話也可以讓 2 個 user、5 個 workspace
+使用(http://www.perforce.com/perforce/price.html).
+重點是真的好用，雖然貴了點.
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2010-01-27T08:06:36.608+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+現在我已經改用 Mercurial/Hg(http://hoamon.blogspot.com/2009/03/from-subversion-to-
+mercurial.html) 了，最大的優點是可離線操作，不像 svn 如果沒有中央伺服器，有些工作就沒辦法作了。
+
 .. author:: default
 .. categories:: chinese
 .. tags:: program, subversion

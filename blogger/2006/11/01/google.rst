@@ -48,6 +48,21 @@ per-L系統是一個利己也利google的系統，所以我推薦給google，希
     http://taiwan.cnet.com/enterprise/column/0,2000062893,20104829,00.htm
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2009-03-17T21:59:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+原來 Google 已提供這個功能了，不過目前有些中文書，還是沒法匯入。
+
+`hoamon的圖書館`_
+
+.. _hoamon的圖書館: http://books.google.com.tw/books?uid=9599559104256217166
+
+
 .. author:: default
 .. categories:: chinese
 .. tags:: python, perl, google, book
