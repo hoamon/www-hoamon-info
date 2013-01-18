@@ -94,6 +94,21 @@ album.hoamon.info / demo
 .. _測試站: http://ptrac.hoamon.info/
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`yungyuc <http://www.blogger.com/profile/03040900487805390584>`_ at 2007-03-27T00:36:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Debian 有包 trac，我猜 ubuntu 也會有。懶的話 (像我) 就會直接用人家包好的 trac。
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2007-03-27T08:57:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+我的習慣是網頁程式抓原廠的，而桌面程式、函式庫…這些，才用 linux 套件的。
+
 .. author:: default
 .. categories:: chinese
 .. tags:: wiki, trac, subversion, sqlite, python, request ticket, apache, mod_python

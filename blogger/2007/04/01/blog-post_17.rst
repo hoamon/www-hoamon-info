@@ -22,6 +22,16 @@
 .. _http://twd.tesri.gov.tw/twd/: http://twd.tesri.gov.tw/twd/
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2011-10-07T16:17:13.571+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+這個計劃似乎是死了。
+
 .. author:: default
 .. categories:: chinese
 .. tags:: open source, biology

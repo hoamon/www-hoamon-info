@@ -46,6 +46,18 @@ DL0gt0/4.png?imgdl=1
     AbDKq2U/3.png?imgdl=1
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`dannyumd <http://www.blogger.com/profile/01286584374946207318>`_ at 2008-03-15T04:37:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+嗨嗨！不知道您有否在關注Project Indiana呢？小弟的Blog稍稍簡介了一下，有空還請賞光來逛逛：
+
+http://danny-umd.blogspot.com/2008/03/sun-microsystems-project-indiana.html
+
 .. author:: default
 .. categories:: chinese
 .. tags:: solaris

@@ -24,6 +24,26 @@ export CLASSPATH=$JAVA_HOME/lib
 .. _簡單講義: http://down.hoamon.info/presentation/PythonDevUseEclipse.html
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`yungyuc <http://www.blogger.com/profile/03040900487805390584>`_ at 2007-04-14T15:44:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Maybe you can give easyeclipse a try.
+
+`newdict <http://www.newdict.com>`_ at 2007-04-15T13:07:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+直接把sun的jdk路径放到/etc/eclipse/java_home文件的最前边就可以了
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2007-04-15T13:28:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+我還是喜歡某種程度的 DIY 。像是我不會自己編輯 Linux 核心，但對 LAMP 應用，我都是一個一個裝的，很不喜歡用 AppServ 程式。
+
 .. author:: default
 .. categories:: chinese
 .. tags:: java, eclipse, PyDev, subversion

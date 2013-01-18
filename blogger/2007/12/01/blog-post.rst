@@ -43,6 +43,16 @@
     /survivorship-bias.html
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`Howdy! <http://www.blogger.com/profile/00717722499874252573>`_ at 2007-12-11T11:04:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is quite thought-provoking!
+
 .. author:: default
 .. categories:: chinese
 .. tags:: investment

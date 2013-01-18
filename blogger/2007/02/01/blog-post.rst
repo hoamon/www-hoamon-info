@@ -128,6 +128,25 @@ dic 給列印出來
 另外，大家也可以注意到，在資料的 i/o 上，利用系統上的 STDIN 也可以讓你的程式更精簡一點。不過，該不該用，還是在於你的 tradeoff
 (取捨)。
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`micmic <http://www.blogger.com/profile/14469716380183411089>`_ at 2007-03-09T19:12:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+php 可改成
+
+02--$lines = file('./hash.tables');
+03--foreach($lines as $line){
+04--list($k,$v)=explode(',',$line);
+05--$k_arr[trim($v)].=isset($k_arr[trim($v)])?"$k,":trim($v)."=>$k,";
+06--}
+07--echo implode("\n",$k_arr);
+
+少兩行
+
 .. author:: default
 .. categories:: chinese
 .. tags:: python, algorithm, php, perl, data structure

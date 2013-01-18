@@ -30,6 +30,16 @@ Google所參加的組織
 .. _ - Python 語言: http://www.python.org/psf/
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2007-06-03T09:13:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+而且， Python 的爸爸 Guido van Rossum 也在 Google 上班。
+
 .. author:: default
 .. categories:: chinese
 .. tags:: open source, odf, java, fsf, eclipse, python, oasis, google, osdl, mozilla

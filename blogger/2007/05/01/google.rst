@@ -28,6 +28,37 @@ Yahoo! Mail 要用 Gmail `_，如果是希望樂透中頭獎的話，或許今�
     http://hoamon.blogspot.com/2007/05/gmail.html
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`Thinker <http://www.blogger.com/profile/16439665275994623395>`_ at 2007-05-10T11:35:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+google 是己經有 email 代管的 service, 還包括 google group 等。我有些朋友，就將公司的 email 全交給
+google 代管。
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2007-05-10T12:19:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+是呀，早上跟老婆說這件事的時候，她說她早就知道了。嘿~難道全天下中，我是最後一個知道的?
+
+`yungyuc <http://www.blogger.com/profile/03040900487805390584>`_ at 2007-05-10T15:20:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+我只知道 Google App 我已經用了一年了...
+
+不過 Google App Edu 是新服務。
+
+`Chung-Kai <http://www.blogger.com/profile/00717722499874252573>`_ at 2007-05-28T09:53:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+I found you have many good ideas and reflection. We probably could
+investigate some issues related to instructional technology, write the paper
+and submit it to AACE together. The three major conferences: ED-MEDIA,
+E-learn, and SITE. FYI!http://www.aace.org/default.htm
+
 .. author:: default
 .. categories:: chinese
 .. tags:: google

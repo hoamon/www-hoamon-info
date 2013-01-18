@@ -66,6 +66,27 @@ staticview.py 是延伸了 django.views.static 的程式，多了一項功能，
     http://openbookplatform.googlecode.com/svn/trunk/utils/staticview.py
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`yungyuc <http://www.blogger.com/profile/03040900487805390584>`_ at 2007-05-12T00:38:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+我看不出 http://www.djangoproject.com/documentation/static_file 哪裡有說不能用在產用
+(production) 模式裡；只是不建議，不是不能用。
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2007-05-12T10:07:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+我是在`這裡`_看到的，但因為文件我是跳著看的，所以我沒有看到 static_files 這一篇。感謝 yungyuc 。等我看完
+static_files ，再重寫本文。
+
+.. _這裡: http://www.djangoproject.com/documentation/modpython/#serving-
+    media-files
+
+
 .. author:: default
 .. categories:: chinese
 .. tags:: django

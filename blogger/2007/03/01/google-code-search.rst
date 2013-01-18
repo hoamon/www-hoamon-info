@@ -12,6 +12,19 @@ Google Code Search
 .. _code search: http://www.google.com/codesearch
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`Joseph <http://www.blogger.com/profile/06127412439655943231>`_ at 2007-06-22T03:21:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+google's programmers search engine http://devshots.com
+
+Devshots returns Google search results, but emphasize on programming related
+sites and resources. So the search result will be smart and accurate.
+
 .. author:: default
 .. categories:: chinese
 .. tags:: code.google.com, search, python

@@ -57,6 +57,20 @@ now you can put /somepath/tmp/birthday.py in the cron table.
 .. _django-users: http://groups.google.com/group/django-users?lnk=ig
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2007-11-25T19:19:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After i posted this comment on `django-users`_, i found the keyword is "use
+models outside django", not "without web server".
+
+.. _django-users: http://groups.google.com/group/django-users
+
+
 .. author:: default
 .. categories:: chinese
 .. tags:: django

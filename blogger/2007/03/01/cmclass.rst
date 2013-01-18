@@ -88,6 +88,30 @@ for (t_k , t_v) in s_times.items():
 .. _dictionary(hash): http://hoamon.blogspot.com/2007/02/blog-post.html
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`Thinker <http://www.blogger.com/profile/16439665275994623395>`_ at 2007-03-07T00:19:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+針對這個題目，我寫了一篇文章，進行推論
+http://heaven.branda.to/~thinker/GinGin_CGI.py/show_id_doc/226
+
+`FourDollars <http://www.blogger.com/profile/05027047996196141367>`_ at 2007-03-08T18:00:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+我用 C 來求解 http://fourdollars.blogspot.com/2007/03/cmclass_08.html
+
+`John <http://www.blogger.com/profile/13541786001236243588>`_ at 2007-06-28T01:17:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`用Prolog 的解法`_
+
+.. _用Prolog 的解法: http://thevault13.blogspot.com/2007/06/cmclass.html
+
+
 .. author:: default
 .. categories:: chinese
 .. tags:: set, hash, python, matlab, math, dictionary, cmclass

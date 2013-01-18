@@ -38,6 +38,28 @@ lock 動作，單一檔同時間只允許1個程設師修改，而且不可以�
     http://chinesetrad.joelonsoftware.com/Articles/TheJoelTest.html
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`遊手好閒的石頭成 <http://blog.roodo.com/rocksaying/archives/2687531.html>`_ at 2007-03-28T11:48:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+深有同感。
+「`運用訊息溝通網絡及軟體工程方法建立開放源碼專案之個人淺見`_」
+
+建立 軟體專案 的訊息溝通網絡組織中最基本也最容易被忽視的第一步，就是使用版本控制工具 (Version control
+tools)。版本控制工具和訊息溝通有什麼關係？很不直覺，但卻是事實。
+
+以 CVS/SVN 這類工具為例，它傳遞與通知訊息的功能其實比電子郵件更有效率。 SVN 的固定動作是 Update → accept change →
+Commit → add/modify/revert → Update (repeat) 。往往我在 Update 時，就可以透過其他人在 Commit
+時留下的訊息，了解到專案的進程或待辦事項...
+
+.. _運用訊息溝通網絡及軟體工程方法建立開放源碼專案之個人淺見:
+    http://blog.roodo.com/rocksaying/archives/2687531.html
+
+
 .. author:: default
 .. categories:: chinese
 .. tags:: subversion, cvs

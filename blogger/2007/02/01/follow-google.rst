@@ -13,6 +13,16 @@ Follow Google!
     http://taiwan.cnet.com/news/software/0,2000064574,20111865,00.htm
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2011-10-07T15:55:52.968+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+真不曉得，我當時怎麼會把 MySQL 當作是 Google 的武器呢?
+
 .. author:: default
 .. categories:: chinese
 .. tags:: python, google

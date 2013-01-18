@@ -156,6 +156,28 @@ if __name__ == '__main__':
 .. _pulp: http://www.jeannot.org/%7Ejs/code/index.en.html#PuLP
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`Anthony <http://www.blogger.com/profile/14091179204316586820>`_ at 2008-04-17T06:09:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Via your blog, I found out the existence of pulp. It may be easier than
+swiging glpk, which I have been struggling with for days.
+
+Thanks!
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2008-04-17T09:16:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+but after days, i found the lp_solve lib is better. you can also use python
+to call the lp_solve. `lp_solve 安裝`_
+
+.. _lp_solve 安裝: http://hoamon.blogspot.com/2007/10/lpsolve.html
+
+
 .. author:: default
 .. categories:: chinese
 .. tags:: pulp, lp, python, glpk

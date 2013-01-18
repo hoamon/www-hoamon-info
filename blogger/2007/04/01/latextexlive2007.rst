@@ -78,6 +78,26 @@ TEXMFSYSVAR=/usr/local/texlive/2007/texmf-var; export TEXMFSYSVAR
 .. _成果: http://down.hoamon.info/texlive_utf8.pdf
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`Cris <http://www.blogger.com/profile/06540595948394037530>`_ at 2007-07-19T20:02:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+請問有沒有texlive的相關教學或說明？小弟是windows XP 32bit
+
+`xiang <http://www.blogger.com/profile/15320285482872160538>`_ at 2007-12-06T21:18:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+> 這是 pdflatex 還無法正確處理中文目錄(應該是 bug )
+
+在\end{CJK}前面加上\newpage，可能可以解決問題。
+我不知道原因，但是我自己這么做確實可以讓pdflatex正確顯示中文目錄和其它各種需要顯示中文的操作。
+
+try it.
+
 .. author:: default
 .. categories:: chinese
 .. tags:: latex

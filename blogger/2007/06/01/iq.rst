@@ -14,6 +14,17 @@
     http://tw.news.yahoo.com/article/url/d/a/070622/8/g7wk.html
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`marty_huang <http://www.blogger.com/profile/16444362019653849379>`_ at 2007-07-12T00:51:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is really an interestin' study since I am also the eldest child. I am
+just curious if the research findings apply to Asian people, though. Haha~
+
 .. author:: default
 .. categories:: chinese
 .. tags:: 

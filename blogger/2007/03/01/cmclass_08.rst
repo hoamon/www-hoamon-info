@@ -12,6 +12,18 @@
 .. _Python: http://hoamon.blogspot.com/2007/12/blog-post_20.html
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`Thinker <http://www.blogger.com/profile/16439665275994623395>`_ at 2007-03-09T00:20:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+sorry, 我再次用 dynamic programming 的技巧 :P
+
+http://heaven.branda.to/~thinker/GinGin_CGI.py/show_id_doc/230
+
 .. author:: default
 .. categories:: chinese
 .. tags:: set, python, perl, math, cmclass
