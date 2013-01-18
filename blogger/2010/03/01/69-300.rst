@@ -1,0 +1,60 @@
+台指期6月合約與9月合約的價差居然將近 300 點
+================================================================================
+
+依照期貨價格公式來說：
+
+`.. image:: http://latex.codecogs.com/gif.latex?F_0%20*%20e%20^%20{-rT}%20=%2
+0E(S_T)*e^{-kT}
+`_
+
+第T期期貨價格的折現值應當是現貨在第T期期望值的折現值，不同的是期貨用無風險利率來折現，在未來現貨則是股利來折現。
+
+所以我們可以得到
+
+`.. image:: http://latex.codecogs.com/gif.latex?F_0%20=%20E(S_T)*e^{(r-k)T}
+`_
+
+這個公式，在 k = r 時，代表現貨的股利報酬等於無風險利率則無系統風險，而在 k > r ，會有正的系統風險。
+
+`.. image:: http://latex.codecogs.com/gif.latex?F_0%20%3C%20E(S_T)
+`_
+
+這也說明在 k > r 下，期貨價格會低於現貨期望值的價格，讓期貨買方能有額外利潤，這額外利潤是因為他承擔「系統風險」所得到的報酬，所以也稱之為「風險補貼
+risk premium」。
+
+一般來說，市場多半是處在正系統風險中，所以期貨價格與現貨價格之間通常存在著逆價差的現象，如下圖：
+
+`.. image:: http://1.bp.blogspot.com/_eKM9lHjTZjs/S5iCFPqynaI/AAAAAAAACd8/etC
+UMyThEQw/s400/future_price.png
+`_
+
+愈遠期的期貨價格愈便宜。
+
+但大家有沒有注意到 9 月與 6 月之間的差額(約 300 點)遠高於 3 月與 6 月，及 9 月與 12
+月的差額(約100點)。這是不是代表我們有一套利機會呢? 就是買 9 月合約，並賣出 6 月合約來鎖定約 200 點的價差。
+
+首先，請各位想想，在新興市場中，雖然市場效率通常不佳，但這樣一個簡單明瞭的原理，有學過「期貨與選撫權」的學生都應該知道的，卻沒有人作套利動作而讓價差收斂，
+這樣的現象一定不單純。
+
+原因就出在「除息」，國內的上市公司多半都是選擇 7 到 9 月之間作除權息的發放，而除權不會扣大盤點數，但除息會。這 200
+點的價差，就代表著法人對今年上市公司的現金配息的預估。以目前 7800 的大盤指數來說，今年上市公司的現金殖利率平均約為 2.56 % 。
+
+延伸閱讀： `元大期貨經理 林士農： 除權息與時間差`_
+
+.. _依照期貨價格公式來說：: http://www.codecogs.com/eqnedit.php?latex=F_0%20*%20e%20
+    ^%20{-rT}%20=%20E(S_T)*e^{-kT}
+.. _所以我們可以得到:
+    http://www.codecogs.com/eqnedit.php?latex=F_0%20=%20E(S_T)*e^{(r-k)T}
+.. _這個公式，在 k = r 時，代表現貨的股利報酬等於無風險利率則無系統風險，而在 k > r ，會有正的系統風險。:
+    http://www.codecogs.com/eqnedit.php?latex=F_0%20%3C%20E(S_T)
+.. _一般來說，市場多半是處在正系統風險中，所以期貨價格與現貨價格之間通常存在著逆價差的現象，如下圖：: http://1.bp.blogspo
+    t.com/_eKM9lHjTZjs/S5iCFPqynaI/AAAAAAAACd8/etCUMyThEQw/s1600-h/future_pri
+    ce.png
+.. _元大期貨經理 林士農： 除權息與時間差:
+    http://www.yuantafutures.com.tw/ytf/fm/fm_04_03.htm
+
+
+.. author:: default
+.. categories:: chinese
+.. tags:: investment, finance, future
+.. comments::
