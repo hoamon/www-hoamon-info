@@ -59,6 +59,10 @@ def get_blogger_posts(blogger_id):
     while 1:
         l = link % index
         print l
+        # get posts by link
+        #        <link rel="service.post" type="application/atom+xml"
+        #            title="hoamon&#39;s sandbox - Atom"
+        #            href="http://www.blogger.com/feeds/398420085248706856/posts/default" />
         d = feedparser.parse(l)
         for e in d.entries:
             count += 1
@@ -75,6 +79,7 @@ def get_blogger_posts(blogger_id):
             file.write(s)
 
             id = re.sub('^.*\-([0-9]+)$', '\\1', e.id)
+            # get comment of one post
             cd = feedparser.parse('http://blog.hoamon.info/feeds/%s/comments/default'%id)
             cdes = cd.entries[:]
             if len(cdes) > 0:
