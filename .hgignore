@@ -6,6 +6,7 @@ _build/
 ^docs/blog/blog/
 ^asset/jquery-superbox-0.9.1.zip
 ^asset/jquery_superbox/
+^bin/html2rst.py
 
 local_settings.py$
 ^trunk/apache2.conf
