@@ -89,6 +89,96 @@ pgpauth`_ 的私錀(我並未設定密碼)就放在 comment 中，請自取用�
 .. _此篇: http://hoamon.blogspot.com/2009/05/pgp-linuxmacwindows.html
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2009-05-02T06:31:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+django-pgpauth 私錀：
+
+-----BEGIN PGP PRIVATE KEY BLOCK-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+lQG7BEnn2OYRBACKCvr7c20dwnS8G1FZaY65k42S+Ix9UvA6lcOUVdMTWsBb2ypz
+S+f1hKp3aGzz8kOG7ZOQyZdtsSqUCtHquNdJ9GtREiVmTL/sk0Nld5ldzQynrKli
+6uUXeQBsYxpzDF4+IqL9sEnSjx5WlOy/uV42XYLE/v6QDYZi1FwGf5SsywCgtIz5
+6hJAgyZA8euz8OGNBOgMQQED/1XKyytzhoD6O6m+Oxt7W1Dc1h112q5QjfYDDNOQ
+LpAIn82WPJmUvJ1hfgsupi0SivVMn4qvbZN9xCtiYAjsPbJyh/QRc9sQbJs9tkD2
+v1v9liog2ocEC6JFB+tpMc9nm5Xu4w0ZBzdNJP6Xp083Jblmfrh/qcS3SZ1NUxOy
+Qt9IA/9OPhis3NzOBl8Yulw2qZt/K2FmiC+aaKEGT8BiVPUiknTwtykE0OKAXoM7
+2fJGpedIg1LPLNAHoNPRalgRreLZ1VuEFj+s2iYdCpu2unB5zExryRpaSq9v/Fep
+SqkBfqP51SsHMx9K8YR0xiP/HuL82LaRwHQPf4BZvD9s7JkGfgAAn1oYSWMFLtl4
+gtp0MWsrHbmbdaPaCTu0tWRqYW5nby1wZ3BhdXRoIChleGFtcGxlIHBncCBrZXkg
+b2YgaHR0cDovL2NvZGUuZ29vZ2xlLmNvbS9wL2RqYW5nby1wZ3BhdXRoLyBldmVy
+eW9uZSBjYW4gdGFrZXMgdGhlIHByaXZhdGUga2V5LCBzbyBkb24ndCB1c2UgdGhp
+cyBrZXkgZm9yIGVuY3J5cHQuKSA8aG9hbW9uK2RqYW5nby1wZ3BhdXRoQGdtYWls
+LmNvbT6IYAQTEQIAIAUCSefY5gIbAwYLCQgHAwIEFQIIAwQWAgMBAh4BAheAAAoJ
+EP0OgQVQ9/ksKXMAn0qquaGa5YMiMhHd5cCqBTj7bT57AJ9l9zLbjBBndwSFPAsk
+d0Aw744iG50BMQRJ59jmEAQAwq/S4BwdcUhlEH1VE49E6QSPtFAWQzhVopy3aIWg
+hdlv3HVIaVYJtpolYTsMI+QEo3nodoRJ7I5puCdVuA2GYJBeKmSXDCXDax9bD5qJ
+pXjgxSJ4MHPHwVkattXWaH1K9AlTyLSKqnk1Xo6Yh+j046Myt8a+513YJx8sNnTA
++T8AAwUD/0IB/3cScCWrxn6DLJls31+ZAypKJcZCrZ1L0MOLmBI9iJnSIHu1bZAG
+OjX9pYT8AkagL0LTVBo+UI+0S3ulESF2RcICThxShPF6MsOk3EBBRJ3srf5SRanK
+wgGjAX4XePgUShrJjggGP4Hy/ZKQaFSOmQqHz5BQIFXmJZ5ddZs6AAD0D5BEB9OK
+L91H8BFjEiNzSJf1sLp8GTCZn4JiDbwPiQ4aiEkEGBECAAkFAknn2OYCGwwACgkQ
+/Q6BBVD3+SwdxQCgh2HNQV0q83s3SJQeHMwMKa435LcAn012i/UJl74ft550cCm3
+n9OJf888
+=clAK
+-----END PGP PRIVATE KEY BLOCK-----
+
+`LAK <http://www.blogger.com/profile/11000117822298959379>`_ at 2009-05-02T14:49:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+請問一下...
+django-pgpauth 私錀
+要如何使用
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2009-05-02T14:54:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+把該私錀內容儲到一個純文字檔後，然後用 FireGPG 的金錀管理程式匯入，我並沒有設定密碼。
+
+FireGPG 相關加解密方法請看`如何使用 PGP (Linux/Mac/Windows 皆適用)來加解密及簽章驗證`_。
+
+.. _如何使用 PGP (Linux/Mac/Windows 皆適用)來加解密及簽章驗證:
+    http://hoamon.blogspot.com/2009/05/pgp-linuxmacwindows.html
+
+
+`Li <http://www.blogger.com/profile/12223494448226362754>`_ at 2009-05-08T21:27:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+密鑰其實也沒多少安全性，除非你把他塞到一個連不上網的地方。
+密鑰的確很難攻破，但是你的電腦卻簡單多了。或者，可以用社交工程騙取私鑰。
+希望各位在使用上仍以小心為主。
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2009-07-02T07:01:13.013+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TO Li:
+就「保密」的技術性難度上，非對稱性公私錀技術目前的確是比較好的。如果不使用這個，那我想也沒什麼工具可用了。
+
+而社交工程乃是利用人自己的「笨」，這不管是用什麼技術都是一樣的。因為任何保密技術至少都需要有一個人知道，而如果那個人就是一個笨蛋，那天底下真是沒有秘密了。
+
+`easy PGP <http://www.blogger.com/profile/06838660695597946077>`_ at 2010-04-14T09:14:17.055+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+密鑰(或稱金鑰, Key)的保護才是最重要的. 如假設, 每台電腦都可能有木馬程式, 雖然密文別人看不懂, 但你自己要解開密文必須使用私鑰,
+而要用私鑰就必須要密碼(password), 私鑰放在你電腦上(keyring), 木馬程式可能偷走它, 而你輸入密碼時可能有key
+logger會偷窺你的私鑰密碼.
+
+要保護Key最好的方法是用HSM(hardware Secure Module), 可參考下列URL:
+http://www.asiapeak.com/hsm.php
+http://www.asiapeak.com/Download/hsm-intro.pdf
+
+PGP加密參考文章:
+http://www.asiapeak.com/PGPTheory.php
+
+Web-Based的PGP 加密伺服器:
+http://www.ezpgp.com/index-tw.htm
+
 .. author:: default
 .. categories:: chinese
 .. tags:: linux, web, pgp

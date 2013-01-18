@@ -22,6 +22,21 @@ From `光頭照`_
     saweb.google.com/lh/photo/8niKXqBk_v400kgnDg4EZA?feat=embedwebsite
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`Microtiger <http://www.blogger.com/profile/11959228962835108919>`_ at 2009-07-08T13:48:21.290+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+COOL,国中的时候我也留过光头，Very cool，工作啦留短发！呵呵
+
+`Howdy! <http://www.blogger.com/profile/00717722499874252573>`_ at 2009-07-12T11:14:17.309+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is really COOL! Look like a shufu style. Lovely :D
+
 .. author:: default
 .. categories:: chinese
 .. tags:: personal

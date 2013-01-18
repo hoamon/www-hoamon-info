@@ -73,6 +73,54 @@ DgJpH02E/s400/Screenshot-1.png
     Syxw1p8J7wI/AAAAAAAACUI/cR4DgJpH02E/s1600-h/Screenshot-1.png
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`c9s <http://www.blogger.com/profile/05514217676033260267>`_ at 2009-03-15T12:13:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+其實長輩你要用 diff 的話，vim 提供了 vimdiff 以及 gvimdiff (圖形介面) 倒是一個可用的方案。
+
+gvimdiff file1 file2
+
+可以簡單使用 o (obtain) , p (put)
+並利用 C-w l|h 切換視窗。
+
+另外也可直接從 vim command-line 下:
+:diffsplit [filename]
+
+以及
+:diffthis
+
+vertical vimdiff:
+To make these commands use a vertical split, prepend |:vertical|. Examples: >
+
+:vert diffsplit main.c~
+:vert diffpatch /tmp/diff
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2009-03-15T14:46:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+to c9s:
+不過，我不只是要用 vim 比較檔案，還要能夠結合 mercurial 作同一檔案的版本比較。這部份， vim 有方便的解法嗎?
+
+`c9s <http://www.blogger.com/profile/05514217676033260267>`_ at 2009-03-15T15:12:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+mercurial 我沒有研究過。
+不過我想應該是要透過 mercurial 設定 external diff program 來呼叫 vimdiff. :-)
+
+下面幾篇我找到的不知道對你有沒有幫助。
+http://grml.org/mercurial/
+http://stackoverflow.com/questions/399606/mercurial-no-editor-appears-when-
+merge-conflicts-are-detected
+
+這篇就有講到 diff 的相關設定了。但要直接呼叫的話可能需要寫一個 wrapper script.
+http://naleid.com/blog/2008/11/25/my-mercurial-setup-plus-some-useful-shims-
+and-jigs/
+
 .. author:: default
 .. categories:: chinese
 .. tags:: mercurial, vim, eclipse, netbeans

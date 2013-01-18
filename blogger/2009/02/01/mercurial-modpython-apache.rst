@@ -78,6 +78,21 @@ information
 你就會在 https://hg.yoursite.name/ 中，看到 trachg 、 product/product1 、
 product/XXXproduct ... 的儲存庫了。
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`yungyuc <http://www.blogger.com/profile/03040900487805390584>`_ at 2009-02-11T23:24:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+為什麼用比較麻煩的 mod_python，不用 fcgi?
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2009-02-12T06:53:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+嘿嘿~因為我用習慣 mod_python 了。還沒有機會裝 fastcgi
+
 .. author:: default
 .. categories:: chinese
 .. tags:: mercurial, apache, mod_python

@@ -53,6 +53,17 @@ $post_form.append($input);
     users/browse_thread/thread/1c4fae7a3dd1982e/4938233a7341c0a0
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`Mark Jones <http://www.blogger.com/profile/13752616108639637270>`_ at 2009-03-04T22:50:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+That's fine and dandy if the browser has javascript enabled. But I use
+NoScript all the time, your AJAX version won't work for me....
+
 .. author:: default
 .. categories:: chinese
 .. tags:: http, django, jquery, ajax, python

@@ -51,6 +51,114 @@ speed with the most important advances in the sport.
 .. _N: http://www.barnesandnoble.com/
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`ami <http://www.blogger.com/profile/12148278515058251291>`_ at 2009-11-16T17:40:05.661+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+GOOD!!!`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.
+`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`
+_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_
+`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`
+.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_`.`_
+
+.. _.: http://mycommend.com/
+.. _.: http://howkang.com/
+.. _.: http://top-prize.com/
+.. _.: http://av-score.com/
+.. _.: http://cat-floor.com/
+.. _.: http://sex543.com/
+.. _.: http://sex-picker.com/
+.. _.: http://wacoolsite.com/
+.. _.: http://leibibi.com/
+.. _.: http://welljob.com.tw/
+.. _.: http://healthylohas.com.tw/
+.. _.: http://phtourass.com.tw/
+.. _.: http://bitobi.com.tw/
+.. _.: http://yes-queen.com/
+.. _.: http://jey.com.tw/
+.. _.: http://942hala.com/
+.. _.: http://bestfit-shoe.com/
+.. _.: http://bhfow.com/
+.. _.: http://cllgater.com/
+.. _.: http://dx258.com/
+.. _.: http://av758.com/
+.. _.: http://bestikiss.com/
+.. _.: http://cartido.com/
+.. _.: http://club165.net/
+.. _.: http://hala543.com/
+.. _.: http://renata.idv.tw/
+.. _.: http://samlong.idv.tw/
+.. _.: http://lovecookie.com.tw/
+.. _.: http://huaishengah.com.tw/
+.. _.: http://higogo.com.tw/
+.. _.: http://s168.com.tw/
+.. _.: http://artiamp.com.tw/
+.. _.: http://maltose.com.tw/
+.. _.: http://booksking.com.tw/
+.. _.: http://konwen.com.tw/
+.. _.: http://goodgame.com.tw/
+.. _.: http://kotobuki-tk.com.tw/
+.. _.: http://ubiz.com.tw/
+.. _.: http://bbq39.com.tw/
+.. _.: http://kyoho168.idv.tw/
+.. _.: http://colortek.com.tw/
+.. _.: http://cw123.com.tw/
+.. _.: http://elpaso.com.tw/
+.. _.: http://cheri.com.tw/
+.. _.: http://ecfamily.idv.tw/
+.. _.: http://e-law.com.tw/
+.. _.: http://tungshuai.com.tw/
+.. _.: http://alibo.idv.tw/
+.. _.: http://orgahome.com.tw/
+.. _.: http://dwai.com.tw/
+.. _.: http://sweet-el.com.tw/
+.. _.: http://clnwoman.com.tw/
+.. _.: http://gvps.com.tw/
+.. _.: http://hideyoshi.com.tw/
+.. _.: http://kgmall.com.tw/
+.. _.: http://graceadsl.idv.tw/
+.. _.: http://dreamhouse.idv.tw/
+.. _.: http://findtea.com.tw/
+.. _.: http://newswire.com.tw/
+.. _.: http://lt16888.com.tw/
+.. _.: http://kiel.com.tw/
+.. _.: http://sogikmd.com.tw/
+.. _.: http://mhms.com.tw/
+.. _.: http://ptok.com.tw/
+.. _.: http://mounyung.com.tw/
+.. _.: http://shopping-ez.com.tw/
+.. _.: http://bgl.com.tw/
+.. _.: http://digifocus.com.tw/
+.. _.: http://minyi-auto.com.tw/
+.. _.: http://lacol.com.tw/
+.. _.: http://cpbio.com.tw/
+.. _.: http://jingmama.com.tw/
+.. _.: http://high-life.com.tw/
+.. _.: http://k555.com.tw/
+.. _.: http://artofliving.com.tw/
+.. _.: http://lionkingtaiwan.com.tw/
+.. _.: http://giftgo.com.tw/
+.. _.: http://power-factory.com.tw/
+.. _.: http://hans-tool.com.tw/
+.. _.: http://queenj.com.tw/
+.. _.: http://lawyer-chen.com.tw/
+.. _.: http://astir.com.tw/
+.. _.: http://youngshop.com.tw/
+.. _.: http://chayi.com.tw/
+.. _.: http://pro-con.com.tw/
+.. _.: http://foldcat.com.tw/
+.. _.: http://www.meimei888.com/
+
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2009-11-16T18:09:37.467+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+to ami: 看樣子，你應該是來打廣告的(或是作 page rank)。
+
 .. author:: default
 .. categories:: chinese
 .. tags:: athletes, book

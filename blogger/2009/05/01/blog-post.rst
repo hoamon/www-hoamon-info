@@ -26,6 +26,16 @@
 .. _這則新聞: http://www.libertytimes.com.tw/2009/new/may/2/today-p1-3.htm
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`Howdy! <http://www.blogger.com/profile/16444362019653849379>`_ at 2009-05-03T08:39:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is very informative. Lovely!
+
 .. author:: default
 .. categories:: chinese
 .. tags:: investment, swap

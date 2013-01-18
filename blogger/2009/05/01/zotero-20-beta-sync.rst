@@ -17,6 +17,16 @@ Zotero 2.0 Beta: 提供 Sync 功能
 .. _Zotero: http://www.zotero.org/
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`yungyuc <http://www.blogger.com/profile/03040900487805390584>`_ at 2009-06-08T19:02:30.451+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+It can attachment. Use webdav.
+
 .. author:: default
 .. categories:: chinese
 .. tags:: firefox, zotero

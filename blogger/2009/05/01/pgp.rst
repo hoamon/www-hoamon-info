@@ -97,6 +97,17 @@ f62ZXHzE/s400/Screenshot-Sign+manager-1.png
     07iQlw07I/AAAAAAAAB3I/WFPf62ZXHzE/s1600-h/Screenshot-Sign+manager-1.png
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`BlueT <http://www.blogger.com/profile/04554845589075517086>`_ at 2009-05-22T06:01:07.100+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We had few GPG sign party before, maybe we can sign each other's key next
+time :D
+
 .. author:: default
 .. categories:: chinese
 .. tags:: linux, windows, mac, pgp

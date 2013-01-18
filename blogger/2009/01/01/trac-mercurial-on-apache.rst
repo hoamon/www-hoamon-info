@@ -18,6 +18,31 @@ os.environ['HGENCODING'] 的話，它就會預設為 ascii ，這就是造成 ch
 
 我還是不太懂 os 及 sys 的差別是什麼?
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`Willie Wu <http://www.blogger.com/profile/11242009037751251792>`_ at 2009-01-22T00:43:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+請試試看設定 apache 設定檔：
+
+SetEnv HGENCODING utf8
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2009-01-22T08:53:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+我設
+
+SetEnv HGENCODING utf8
+
+或是
+
+SetEnv HGENCODING UTF-8
+
+都沒有用。謝謝。
+
 .. author:: default
 .. categories:: chinese
 .. tags:: mercurial, trac, python, apache

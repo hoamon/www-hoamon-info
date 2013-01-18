@@ -25,6 +25,23 @@ Linux 上送進中文檔名的檔案，則目前的 Linux distro 多半預設為
 當使用者在 Windows 上送檔案進 mercurial 儲存庫後，到 Linux 中收檔案時，則 Linux 上的檔案會變成 ??????.doc,
 ??????.txt 等等，但如果使用者是在 Linux 上 add 中文檔名的檔案，那在 Windows 中，就「根本」無法 update 了。
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`Willie Wu <http://www.blogger.com/profile/11242009037751251792>`_ at 2009-05-27T00:48:51.826+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Mercurial 有 fixutf8 extension，可以將 Windows 上 cp950 的檔名於 commit 時轉成 utf8
+(反過來就是將 cp950 轉回 utf8)，可以試試看。
+
+不過 Mercurial 1.2.1 沒有包到 ctypes，所以可能得抓 nightly build：
+
+http://code.google.com/p/mercurial-nightly-builds/downloads/list
+
+我自己使用結果是可以正常顯示的。
+
 .. author:: default
 .. categories:: chinese
 .. tags:: linux, windows

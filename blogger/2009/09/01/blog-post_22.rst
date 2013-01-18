@@ -84,6 +84,16 @@ _」。
 .. _計算尺: http://zh.wikipedia.org/zh-hant/%E8%AE%A1%E7%AE%97%E5%B0%BA
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`程式匠人 <http://www.blogger.com/profile/07184969245526856368>`_ at 2009-09-27T03:36:42.631+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+我要拍手！
+
 .. author:: default
 .. categories:: chinese
 .. tags:: investment, politic, environment
