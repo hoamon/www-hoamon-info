@@ -1,0 +1,45 @@
+總算看到一張從 70 年代以來的臺股線圖
+================================================================================
+
+圖在：`http://www.wretch.cc/blog/tw0050/21639597`_ 。
+1971 年時，臺股大約是在 116 點左右。如果在當時有個以指數高低點作上下限的長期投資人，他大概會選擇 200 點左右買進，在 1000
+    點左右賣出，這個策略可以安全地渡過 15 年，到了 1987 年時，**他一定會拋光所有持股，然後再也追不上臺股**。
+
+
+
+
+
+或許他會悔恨一輩子，也或許他會在 8000 點時全買回來，然後修正上下限為 9000 ~ 6000
+。但不管如何修正，他總是以為`後視鏡中的事物比真實還接近`_，一直依賴後視鏡中的景像作判斷，結果卻忘了『認真向前看』。
+
+
+
+
+這個現象我常拿來反對那些說：『 6000 點以下勇敢買進， 9000 點以上鐵心賣出』的人。過去我都是用`港股`_在 90
+年代的點位為例，但今天好不容易發現臺股線圖，以後我就改用這個故事了。
+
+
+我想一個正常人開車除了專心看前面外，偶爾才需要去看看後視鏡吧，期待你別成為一個只用後視鏡開車的投資人。
+
+
+
+
+而我呢? 我是一個請司機開車的`被動投資人`_。
+
+
+
+.. _http://www.wretch.cc/blog/tw0050/21639597:
+    http://www.wretch.cc/blog/tw0050/21639597
+.. _後視鏡中的事物比真實還接近: http://en.wikipedia.org/wiki/Objects_in_the_Rear_View_
+    Mirror_May_Appear_Closer_than_They_Are
+.. _港股: http://www.google.com/finance?chdnp=1&chdd=1&chds=1&chdv=1&chvs=m
+    aximized&chdeh=0&chfdeh=0&chdet=1334398317807&chddm=912728&chls=IntervalB
+    asedLine&q=INDEXHANGSENG:HSI&ntsp=0
+.. _被動投資人:
+    http://blog.hoamon.info/search?q=%E8%A2%AB%E5%8B%95%E6%8A%95%E8%B3%87
+
+
+.. author:: default
+.. categories:: chinese
+.. tags:: investment, finance, history
+.. comments::
