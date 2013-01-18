@@ -70,6 +70,44 @@ zotero 管理，也因 zotero 的透通性，所以可以快速匯出給其他�
     http://down.hoamon.info/zotero.mpeg
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`Willie Wu <http://www.blogger.com/profile/11242009037751251792>`_ at 2008-07-17T14:35:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Cool!! 你是用甚麼軟體錄的呀？
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2008-07-17T16:40:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+用 gtk-recordmydesktop 錄製，再用 mencoder 轉檔。轉檔參數為
+
+# mencoder 轉出檔.ogg -ofps 26000/1001 -vf scale=800:600:0:0,harddup -sws 10 -af
+resample=22050:0:1 -srate 22050 -oac mp3lame -lameopts
+cbr:br=128:aq=4:vol=0.5:mode=3:highpassfreq=0:lowpassfreq=0 -ovc x264
+-x264encopts qp=2:me=hex:nodct_decimate:nointerlaced:no8x8dct:threads=1:nofas
+t_pskip:nobrdo:trellis=1:scenecut=40:chroma_qp_offset=0:ip_factor=1.4:pb_fact
+or=1.3:nomixed_refs:noglobal_header:nobime:keyint=250:keyint_min=25:frameref=
+1:bframes=0:nob_adapt:nob_pyramid:noweight_b:subq=5:chroma_me:nocabac:nodeblo
+ck -o out_h264_mp3_nobf.avi
+
+最後用 avidemux 剪輯。
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2008-07-17T16:43:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Linux 中的螢幕錄影轉檔請看
+http://www.showmedo.com/videos/video?name=1820010&fromSeriesID=182 。
+
+`Howdy! <http://www.blogger.com/profile/16444362019653849379>`_ at 2008-09-30T04:34:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We are required to use Zotero in a IT Leadership class this semester, but I
+am still staying with Endnote right now. Need to push myself a bit~lol
+
 .. author:: default
 .. categories:: chinese
 .. tags:: firefox, totero

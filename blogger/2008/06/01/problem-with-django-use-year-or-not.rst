@@ -39,6 +39,21 @@ Can you see??
 
 if i have no subversion, i will write a bug after a debug.
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2009-11-13T07:49:16.010+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+because i type wrong word:
+
+In this line:
++ sc = sc.filter(date__get=datetime.date(Y.date.year, 1, 1),
+
+i should use "date_gte", not date_get
+
 .. author:: default
 .. categories:: chinese
 .. tags:: django, subversion, python

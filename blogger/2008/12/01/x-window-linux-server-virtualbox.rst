@@ -36,6 +36,38 @@ VBoxManage controlvm GuestOSName poweroff
     http://hoamon.blogspot.com/2007/11/virtualbox-guest-os-host-os-linux.html
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`ChuanQi <http://www.blogger.com/profile/04202397968032198453>`_ at 2008-12-18T17:54:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Hi,
+
+Nice share!
+
+a. How do you bridge the connection for windows server and host network ?
+
+b. how do you auto boot the vm?
+
+Cheers,
+
+CQ
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2008-12-18T19:42:00.000+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+to ChuanQi:
+> a. How do you bridge the connection for windows server and host network ?
+> b. how do you auto boot the vm?
+Please take a look at the last paragraph of this article. I show how can i
+open a vm in the boot time and use nat mode for outside user connections.
+Beacuse i don't trust the Windows that doesn't install any anti-virus
+software, i just open some ports for outside user with nat mode and never
+allow the windows living in evil network with bridge mode.
+
 .. author:: default
 .. categories:: chinese
 .. tags:: linux, virtualbox, virtual machine
