@@ -24,6 +24,21 @@ Firefox3.6+, chrome4+, safari4+ 的話，之後就不用再下載了。
 .. _Google Code: http://code.google.com/p/zipcode-3plus2/
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`hoamon <http://openid-provider.appspot.com/hoamon>`_ at 2010-08-19T22:42:17.538+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test openid from http://openid-provider.appspot.com/ with google account
+
+`hoamon <http://openid-provider.appspot.com/hoamon>`_ at 2010-09-16T16:14:17.674+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test again
+
 .. author:: default
 .. categories:: chinese
 .. tags:: javascript, zipcode, html5, google app engine

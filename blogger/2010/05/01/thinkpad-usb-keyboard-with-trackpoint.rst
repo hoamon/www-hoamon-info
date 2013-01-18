@@ -48,6 +48,25 @@ TrackPoint" "Evdev Wheel Emulation Timeout" 8 200
     http://www.thinkwiki.org/wiki/How_to_configure_the_TrackPoint
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`Chu-Siang Lai <http://www.blogger.com/profile/14870058826358437830>`_ at 2012-05-08T00:21:16.846+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Hello，應該是 `How to configure the TrackPoint`_ 才對喔 :P
+
+.. _How to configure the TrackPoint:
+    http://www.thinkwiki.org/wiki/How_to_configure_the_TrackPoint
+
+
+`何岳峰 <http://www.blogger.com/profile/03979063804278011312>`_ at 2012-05-08T08:14:05.023+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+感謝，已修正。
+
 .. author:: default
 .. categories:: chinese
 .. tags:: linux, ubuntu

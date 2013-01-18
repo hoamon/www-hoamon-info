@@ -41,6 +41,25 @@ AuthorizedKeysFile /home/ssh-keys/%u/authorized_keys
     linux-with-ecryptfs/
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`beta <http://www.blogger.com/profile/10209698907962040867>`_ at 2010-06-04T10:27:47.770+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+hoamon大大，到底「昇級」對，還是「升級」？
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2010-06-04T13:11:20.161+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+to beta:
+從 `教育部國語重編辭典教育本`_中，看來應該是「升級」對。感謝，已修正本文。
+
+.. _教育部國語重編辭典教育本: http://dict.revised.moe.edu.tw/
+
+
 .. author:: default
 .. categories:: chinese
 .. tags:: ecryptfs, linux, ssh, thinkpad, ibm, ubuntu
