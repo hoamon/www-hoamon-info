@@ -36,6 +36,21 @@ Chrome, Firefox 上，卻是看到 A 用 A.hoamon.info ，但 B, C 用的是 wha
 .. _教學文章: http://www.study-area.org/tips/certs/certs.html#apache
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`Wei-Yin Chen <http://www.blogger.com/profile/10888634502335775621>`_ at 2011-04-25T10:05:44.027+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This might be related: http://en.wikipedia.org/wiki/Server_Name_Indication
+
+`何岳峰 hoamon <http://www.blogger.com/profile/03979063804278011312>`_ at 2011-04-25T12:22:18.429+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Thank you for the comment, i got it.
+
 .. author:: default
 .. categories:: chinese
 .. tags:: ie, linux, ssl, windows, chrome, apache

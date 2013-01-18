@@ -170,6 +170,36 @@ HU70xJI/AAAAAAAAC2k/suEDpCZswL0/s400/svm.png
     HU70xJI/AAAAAAAAC2k/suEDpCZswL0/s1600/svm.png
 
 
+Old Comments in Blogger
+--------------------------------------------------------------------------------
+
+
+
+`幽憂的幻想 <http://www.blogger.com/profile/16212423611894166859>`_ at 2012-07-30T23:03:12.229+08:00:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+我是新手想找libsvm的參考
+執行了您的程式碼發現以下問題:
+Traceback (most recent call last):
+File "C:\Users\Allen\Documents\python\svm_example(random)_original.py", line
+84, in
+test()
+File "C:\Users\Allen\Documents\python\svm_example(random)_original.py", line
+42, in test
+m = svm_train(Y, x, '-c 4')
+File "C:\Python27\lib\svmutil.py", line 119, in svm_train
+prob = svm_problem(y, x, isKernel=(param.kernel_type == PRECOMPUTED))
+File "C:\Python27\lib\svm.py", line 83, in __init__
+tmp_xi, tmp_idx = gen_svm_nodearray(xi,isKernel=isKernel)
+File "C:\Python27\lib\svm.py", line 48, in gen_svm_nodearray
+xi = [0] + xi # idx should start from 1
+TypeError: can only concatenate list (not "tuple") to list
+
+請問我出了甚麼問題?
+svm_train(x,y)可以一維對二維嗎?
+
+麻煩您了
+
 .. author:: default
 .. categories:: chinese
 .. tags:: libsvm, linux, python, windows, math, cmclass
