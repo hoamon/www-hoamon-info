@@ -1,0 +1,43 @@
+hoamon的系統公鑰
+================================================================================
+
+put below in .ssh/authorized_keys2
+
+ssh-dss AAAAB3NzaC1kc3MAAAEAe2bxqI0lFHvbaSe5mdKwwh/IYyyPBHBkI/Z6hMP6irOVz19jk
+HoMqdz0fFiTTKkga5m1/cdQR3LV5beCoKLJs2+U1JpoxDicsiSL+30pT7T0X4Ao+0BcFnKvWE5/io
+8e7ARDyLUYNCXz5tEvwrCcUNAMP8YaaXPny3D0kw4E8GEf9nb0VP5gFFBfkvPnJAyqyhaFpbp3Ofa
+Z6pvR0N+Lmk6n7iQvC6J0L2CSbVmcUZh41ICl7BSuI7mSRxcrIYWuYKbbgJZq5PQJf0SuX03vpFGp
+p7bkp/P1juwmjzwfakhWQhFK7IVmPuyEILUnhqG4uQPbwlQ8KAN628mPa3+5wQAAABUAoUdmS2xF+
+3t7YkDBLEfoFHadVx8AAAEAAl75ANqoxY1Xmel4Ox6fBxil7nBVCpP/G/kYOPycEqn7U8pItxHcE3
+8bJoBFwsEFWL0vpkpoP0toJWu6jYfdPcsDqISgtry5V2PtFeHaGYjw8p/NPXqwP2ov8hKz1YV+MmZ
+isv+NH22KccVHeokdrPKLavigGYAh9qGMt5fIByvaNsnW3Kw2JKLcq/dxZKbMn4z610Qnt8Nklau5
+c6V55t89aKiiqp1OnxqTwkiFTU/QXH56nTNNCADZZhGIeKnNLxIjt+pQbEDdo2zrRz/3+yf1Lu3KC
+hdxWwYxNJJjEymb55BuDC7SxmDqIFdNxICDM+cK0P7uarG8ObgVM1nBbgAAAQAz1seUsb9PNUXhhu
+qubbtkD58WznCScVO2rHsAH3tJhDmVKEPGn/PByn2wu37wgLtV3kHPcUSHDoYimoRAsdggH4VryvZ
+dHlh/TqoXMGKbH7MwT0OBdzkh+7zkIs7wHfqgKby3ol5V3gnweBy2aqkRA3UdWIp6NPNBuBFk6cTd
+ttTUc/xkn74zGI1Zeqc7NSIz5Sbhm+ItYnE4SiRQxXp6YqIqn4JdFBUYH3wy2fYkJqSQXZ2MLb7sT
+f4C0jUABCpi2JD3jdlGpiyWL4KzSJDsYGUlmTyNU4ol8de7I4Kztm/zpa/Ewd3Zpmcot+KQTB92eJ
+TDxEBBLwipFzvgxVQO dsa-key-20051120
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAtwpR6rIgAKGQTrCfmMe0oiaPncOj1AHtzEi+7AV3R
+1kbCTt96kc0bkQ7NXDdh0sIwAFfvOdDJLeQYfn9h18cj6Y/pcYD7XBpg2f4ZtET9fDnNBaF5NBDXg
+7v0YDDSKIAev5by6/R0aQ1x+SJ9lh5mS/McmKHZaMZBf2HZJr25lJNsXkfRs9uRxDMPj+dPEFhyC1
+NH0etrhknlmRcTomOZbISZLFiQGvRpJ5xNEW1BJlu16P0PoOjINP1pSRHvyoNdlbrfxFXgB6gXtSA
+7UgjTq/WkKd4cfMoXNfV9zjKQ7951+ZlzE29fdlGJF7dIsQqGQSmxn+AM4qPYtAsOcawtw==
+hoamon@core2duo
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA5UaPccsI4Ui8NYl7kVkoxbMipRKss5gJKsvPozl5s
+dGgHoyhVTUB/OM1Lp7fQnN2XEDNgCsf0rqJpOX04jEs7sKYgtXq1vkPX1dg03ccwoUPm9MAv4djBc
+9XLxOBSIKygaf/ocY6tB1w1ehc2X0lZpRyGjviwL93/Vpq4x7dVvNs6KXn6zHiJDV0Sdbh9oD7Ptl
+v6kTC/WYjjDYHXt+rQ6vIl38Sa++QB3aEzv8A90sn3uYbphtbslA3hSWkW6t4VyF+kBxZieiBF0Xu
+qL+GVIOr4nIfOxqUfmDwjtnB6QXTk/Ss6mFQj18wbDxl8T6Yja4Y+vniegpLMX+GaqPTgw==
+hoamon@ibmhoamon
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzS3wCPtQQJS1mBpKDpjMbOu/C79l/104uPjqsWx70
+QCdTA+iavMzQYL1ucJoRcFBs/UmXOMomJKys9N2tx0zq5jzwXZRVoCTooGNtEbG3tR34AncAhDtkI
+tG/VfqaLUXvRy9U2e6iomoWEt074fgKZ7MSpkH+SXRPWOaApx+JzAKvAEZ9XYTKxW1fSYXe/pQu3S
+3UiiviHVxTRcmyTvSmIrW5sZAPLwmfTMNFGX1YAUpBGq8ilL6akeQkuAjDoV73zRTcPrp+khJeIJE
+v1n2RW50fbMmlVYvByzbA9m4/GVYXAVhxKkYlt+qtR5D28kFwLegMHHcCFvZnPc+5DkpEQ==
+hoamon@ibmhoamon.passwd
+
+.. author:: default
+.. categories:: chinese
+.. tags:: ssh
+.. comments::

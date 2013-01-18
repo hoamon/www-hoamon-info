@@ -1,0 +1,19 @@
+Follow Google!
+================================================================================
+
+剛剛看到這則新聞`Google股價逼近500美元
+超三大競爭對手總和`_。心裡覺得非常高興，一個優質的企業也能在投資人的心中排行前茅。說它優質倒不是因為賺錢的能力，而是 Google
+有一個中心思想：Don't do evil !(這是對比那家公司，請各位看倌發揮想像力吧!)
+
+而 Google 有四項武器： Linux 、 MySQL 、Python 及 C 語言。
+
+很高興我現在正在學習 Python 、使用 Python 。你呢!
+
+.. _Google股價逼近500美元 超三大競爭對手總和:
+    http://taiwan.cnet.com/news/software/0,2000064574,20111865,00.htm
+
+
+.. author:: default
+.. categories:: chinese
+.. tags:: python, google
+.. comments::
