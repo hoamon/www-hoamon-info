@@ -1,0 +1,14 @@
+2009 • 客家桐花祭 三山國王客家文化節
+================================================================================
+
+4月25、26日在宜蘭舉行，找個機會去踏青吧! 詳請請上 `http://hakka.ilanlun.com/`_ 。
+
+PS 網站是學弟用 Django 作的。
+
+.. _http://hakka.ilanlun.com/: http://hakka.ilanlun.com/
+
+
+.. author:: default
+.. categories:: chinese
+.. tags:: django
+.. comments::
