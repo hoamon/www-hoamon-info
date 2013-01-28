@@ -33,6 +33,7 @@ import os, sys
 import zipfile
 from urllib2 import Request, urlopen, URLError, HTTPError
 from shutil import rmtree, copytree
+from distutils import dir_util
 from advance_hg import AdvanceHG
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if root not in sys.path:
@@ -131,11 +132,9 @@ else:
         to_file = os.path.join(ROOT, to_file)
         from_file = os.path.join(ROOT, from_file)
         to_dir = os.path.dirname(to_file)
-        if os.path.isdir(from_file) and os.path.isdir(to_dir):
-            rmtree(to_dir)
         if not os.path.isdir(to_dir):
             os.makedirs(to_dir)
         print from_file
         print to_file
-        copytree(from_file, to_file)
+        dir_util.copy_tree(from_file, to_file)
 print '>>> == Find Copies =='
