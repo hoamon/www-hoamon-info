@@ -2,7 +2,7 @@
 我支持人民擁槍權
 ================================================================================
 
-.. figure:: Machine-gun_with_night_vision_sight.JPG
+.. figure:: Machine-gun_with_night_vision_sight.jpg
     :width: 600px
     :align: center
 
