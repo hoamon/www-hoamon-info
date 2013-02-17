@@ -9,6 +9,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2013/02/17/vote_for_006202_settlement
    2013/01/14/006202_rise_to_limit_in_a_day
    2013/01/12/higher_education_charge
    2013/01/12/caution__a_thief
