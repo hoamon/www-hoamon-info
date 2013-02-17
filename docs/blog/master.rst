@@ -9,8 +9,8 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
-   2013/02/17/of_the_1___by_the_1___for_the_1__from_the_price_of_inequality
-   2013/02/17/hoamon_is_reading_at_ncnu
+   #2013/02/17/of_the_1___by_the_1___for_the_1__from_the_price_of_inequality
+   #2013/02/17/hoamon_is_reading_at_ncnu
    2013/02/17/vote_for_006202_settlement
    2013/01/14/006202_rise_to_limit_in_a_day
    2013/01/12/higher_education_charge

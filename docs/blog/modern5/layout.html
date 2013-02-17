@@ -21,7 +21,7 @@
         }
         $(document).ready(function () {
             // Adjusts document height if sidebar is taller
-            var documentwrapper = document.getElementsByClassName("documentwrapper")[0];
+            var documentwrapper = document.getElementsByTagName("article")[0];
             var sidebar = document.getElementsByClassName("sidebar")[0];
 
             if (sidebar.offsetHeight > documentwrapper.offsetHeight)
@@ -32,7 +32,7 @@
             // Scroll to content if on small screen
             if (screen.width < 480)
             {
-                $(document).scrollTop(document.getElementsByClassName("document")[0].offsetTop - 44);
+                $(document).scrollTop(document.getElementsByTagName("article")[0].offsetTop - 44);
             }
         });
     </script>
@@ -48,7 +48,7 @@
             background: linear-gradient(to right,  rgba(30,87,153,1) 0%,rgba(6,80,122,0.93) 15%,rgba(32,124,202,0.8) 40%,rgba(125,185,232,0.5) 100%); /* W3C */
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#807db9e8',GradientType=1 ); /* IE6-9 */
         }
-        article.document img {
+        article img {
           vertical-align: middle;
           border: 3px solid #C4C8CC;
           -moz-box-shadow: 3px 3px 5px #888;

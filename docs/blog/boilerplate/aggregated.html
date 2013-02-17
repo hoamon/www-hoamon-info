@@ -15,7 +15,7 @@
 
 {%- block body -%}
     {%- for metadata in posts -%}
-        {{ timestamp(metadata.date, timestamp_format) }}
+        {{ timestamp(metadata.formatted_date) }}
         {{ metadata.body }}
         <div class="g-plusone" data-href="http://www.hoamon.info/blog/{{ pathto(metadata.link) }}"
             data-size="tall" data-width="600" data-annotation="inline"></div>

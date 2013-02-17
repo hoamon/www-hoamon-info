@@ -12,7 +12,7 @@
 {%- extends "layout.html" -%}
 
 {%- block body -%}
-    {{ timestamp(metadata.date, timestamp_format) }}
+    {{ timestamp(metadata.formatted_date) }}
     {{ body }}
     <script type="text/javascript">
         document.write(unescape('%3Cdiv class="g-plusone" data-href="')
