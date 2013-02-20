@@ -8,7 +8,7 @@
     :license: BSD, see LICENSE for details.
 #}
 {% extends "basic/layout.html" %}
-{% set title = 'Hoamon.info' %}
+{% set title = 'hoamon.info' %}
 {% set docstitle = "" %}
 
 {% set script_files = "" %}
@@ -57,7 +57,7 @@
         <style>div.section { direction: RTL; }</style>
     {% endif %}
 
-    <link rel="top" title="Hoamon.info 0.0.0 documentation" href="/" />
+    <link rel="top" title="hoamon.info 0.0.0 documentation" href="/" />
 {% endblock %}
 
 {% block content %}
@@ -76,7 +76,7 @@
                 <a href="/"><img src="_static/customLogo.png" /></a>
             </li>
             <li id="header_title">
-                Hoamon.info
+                hoamon.info
             </li>
             <li>
                 <a href="http://www.pagerankchecker.info/" target="_blank"><img src="http://www.pagerankchecker.info/pagerank-button.php?url=www.hoamon.info" title="PageRank Checker" border="0px" /></a>
@@ -86,7 +86,7 @@
           <img class="logo" src="_static/top_scroll.png" alt="Logo"/>
         </a>
         <ul id="right_nav">
-            <li class='{%- if project == "Hoamon.info" and pagename in ["index", "search", "english", "zhong-wen", "espanol", "ri-ben-yu", "portugues", "deutsch", "arabic", "francais", "russkij", "hangug-ui"] %}isme{% endif %}'><a href="/">My Detail</a></li>
+            <li class='{%- if project == "hoamon.info" and pagename in ["index", "search", "english", "zhong-wen", "espanol", "ri-ben-yu", "portugues", "deutsch", "arabic", "francais", "russkij", "hangug-ui"] %}isme{% endif %}'><a href="/">My Detail</a></li>
             <li class='{%- if pagename in ["course", "courses"]
                             or project in ["Startup Company Practice in Internet",
                                             "Engineering Economy",
@@ -102,19 +102,19 @@
     </div>
 
     <div class="topnav">
-        {%- if project == "Hoamon.info" and pagename in ["index", "search", "english", "zhong-wen", "espanol", "ri-ben-yu", "portugues", "deutsch",
+        {%- if project == "hoamon.info" and pagename in ["index", "search", "english", "zhong-wen", "espanol", "ri-ben-yu", "portugues", "deutsch",
             "arabic", "francais", "russkij", "hangug-ui"] %}
             <ul id="tabs">
-                <li class='{%- if pagename == "english" %}isme{% endif %}'><a href="/english.html#">English</a></li>
-                <li class='{%- if pagename == "zhong-wen" %}isme{% endif %}'><a href="/zhong-wen.html#">正體中文</a></li>
-                <li class='{%- if pagename == "espanol" %}isme{% endif %}'><a href="/espanol.html#">español</a><li>
-                <li class='{%- if pagename == "ri-ben-yu" %}isme{% endif %}'><a href="/ri-ben-yu.html#">日本語</a><li>
-                <li class='{%- if pagename == "portugues" %}isme{% endif %}'><a href="/portugues.html#">português</a><li>
-                <li class='{%- if pagename == "deutsch" %}isme{% endif %}'><a href="/deutsch.html#">deutsch</a><li>
-                <li class='{%- if pagename == "arabic" %}isme{% endif %}'><a href="/arabic.html#">العربية</a><li>
-                <li class='{%- if pagename == "francais" %}isme{% endif %}'><a href="/francais.html#">français</a><li>
-                <li class='{%- if pagename == "russkij" %}isme{% endif %}'><a href="/russkij.html#">русский</a><li>
-                <li class='{%- if pagename == "hangug-ui" %}isme{% endif %}'><a href="/hangug-ui.html#">한국의</a><li>
+                <li class='{%- if pagename == "english" %}isme{% endif %}'><a href="/english.html">English</a></li>
+                <li class='{%- if pagename == "zhong-wen" %}isme{% endif %}'><a href="/zhong-wen.html">正體中文</a></li>
+                <li class='{%- if pagename == "espanol" %}isme{% endif %}'><a href="/espanol.html">español</a><li>
+                <li class='{%- if pagename == "ri-ben-yu" %}isme{% endif %}'><a href="/ri-ben-yu.html">日本語</a><li>
+                <li class='{%- if pagename == "portugues" %}isme{% endif %}'><a href="/portugues.html">português</a><li>
+                <li class='{%- if pagename == "deutsch" %}isme{% endif %}'><a href="/deutsch.html">deutsch</a><li>
+                <li class='{%- if pagename == "arabic" %}isme{% endif %}'><a href="/arabic.html">العربية</a><li>
+                <li class='{%- if pagename == "francais" %}isme{% endif %}'><a href="/francais.html">français</a><li>
+                <li class='{%- if pagename == "russkij" %}isme{% endif %}'><a href="/russkij.html">русский</a><li>
+                <li class='{%- if pagename == "hangug-ui" %}isme{% endif %}'><a href="/hangug-ui.html">한국의</a><li>
             </ul>
 
             <div style="clear: both;"></div>
@@ -123,7 +123,7 @@
         <ul id="social_share" style="min-height: 80px;">
             <li id="google_button">
                 <!-- Place this tag where you want the +1 button to render. -->
-                {%- if project == "Hoamon.info" and pagename in ["index", "search", "course", "english", "zhong-wen", "espanol", "ri-ben-yu", "portugues", "deutsch", "arabic", "francais", "russkij", "hangug-ui"] %}
+                {%- if project == "hoamon.info" and pagename in ["index", "search", "course", "english", "zhong-wen", "espanol", "ri-ben-yu", "portugues", "deutsch", "arabic", "francais", "russkij", "hangug-ui"] %}
                     <div class="g-plusone" data-href="http://www.hoamon.info/"
                          data-size="tall" data-annotation="inline" data-width="350"></div>
                 {% else %}
@@ -141,7 +141,7 @@
                 </script>
             </li>
             <li id="facebook_button">
-                {%- if project == "Hoamon.info" and pagename in ["index", "search", "course", "english", "zhong-wen", "espanol", "ri-ben-yu", "portugues", "deutsch", "arabic", "francais", "russkij", "hangug-ui"] %}
+                {%- if project == "hoamon.info" and pagename in ["index", "search", "course", "english", "zhong-wen", "espanol", "ri-ben-yu", "portugues", "deutsch", "arabic", "francais", "russkij", "hangug-ui"] %}
                     <div class="fb-like" data-href="http://www.hoamon.info/"
                          data-send="true" data-show-faces="true" data-width="350"></div>
                 {% else %}
@@ -188,7 +188,7 @@
             <hr/>
 
             <div style="float: right; text-align: right;">
-                {%- if project == "Hoamon.info" %}
+                {%- if project == "hoamon.info" %}
                     <h3>Quick Search for Urls match "^/[^/]+#?$"</h3>
                 {% else %}
                     <h3>Quick Search for "{{ project }}"</h3>
@@ -219,7 +219,7 @@
         </div>
         <span href="http://purl.org/dc/dcmitype/Text" rel="dct:type">
             <div style="font-size: 12px;">
-                <span href="http://purl.org/dc/dcmitype/Text" rel="dct:type">Hoamon.info</span>
+                <span href="http://purl.org/dc/dcmitype/Text" rel="dct:type">hoamon.info</span>
                 by <a href="http://www.hoamon.info/" rel="cc:attributionURL">hoamon</a> [<a href="#footnote_star">*</a>]
                 is licensed under a
                 <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.

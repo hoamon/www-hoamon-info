@@ -42,7 +42,7 @@ This website was born in the some day of the second millennium.  Meanwhile,
 a big internet wave slapped to everyone.  Inevitably i bought a domain name from
 `Hinet.net <http://www.hinet.net/>`_ in Taiwan, too.  It was named Amon.idv.tw.
 On 15 December 2006, i registered a more globalizing domain was called
-`Hoamon.info <http://www.hoamon.info/>`_ from
+`hoamon.info <http://www.hoamon.info/>`_ from
 `Godaddy.com <http://www.godaddy.com/>`_ .
 
 The first version of this site was wrote in pure html.  According to time sequence,

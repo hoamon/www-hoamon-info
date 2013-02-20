@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Hoamon.info'
+project = u'hoamon.info'
 copyright = u'2012, hoamon'
 
 # The version info for the project you're documenting, acts as replacement for
