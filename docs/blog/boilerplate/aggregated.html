@@ -17,6 +17,7 @@
     {%- for metadata in posts -%}
         {{ timestamp(metadata.formatted_date) }}
         {{ metadata.body }}
+        <br/>
         <div class="g-plusone" data-href="http://www.hoamon.info/blog/{{ pathto(metadata.link) }}"
             data-size="tall" data-width="600" data-annotation="inline"></div>
         <div class="fb-like" data-href="http://www.hoamon.info/blog/{{ pathto(metadata.link) }}"
