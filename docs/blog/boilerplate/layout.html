@@ -24,8 +24,8 @@
   {%- set titlesuffix = "" -%}
 {%- endif -%}
 
-{%- set prevchar = prevchar is not defined and ' &raquo; ' or prevchar -%}
-{%- set nextchar = nextchar is not defined and ' &laquo; ' or nextchar -%}
+{%- set prevchar = prevchar is not defined and ' &laquo; ' or prevchar -%}
+{%- set nextchar = nextchar is not defined and ' &raquo; ' or nextchar -%}
 {%- set archivechar = archivechar is not defined and ' &mdash; ' or archivechar -%}
 
 {%- if rss_service -%}
@@ -82,14 +82,14 @@
 {%- macro relbar() -%}
     {%- if prev or next -%}
         <ul class="related clearfix">
-            <li class="right">
+            <li class="left">
             {%- if prev -%}
-                <a href="{{ prev.link|e }}">{{ prev.title }}</a>{{ prevchar }}
+                {{ prevchar }}<a href="{{ prev.link|e }}">{{ prev.title }}</a>
             {%- endif -%}
             </li>
-            <li class="left">
+            <li class="right">
             {%- if next -%}
-                {{ nextchar }}<a href="{{ next.link|e }}">{{ next.title }}</a>
+                <a href="{{ next.link|e }}">{{ next.title }}</a>{{ nextchar }}
             {%- endif -%}
             </li>
         </ul>
@@ -286,7 +286,6 @@
             <div class="main wrapper clearfix">
             {%- block document -%}
                   <article>
-                    {%- block relbar1 -%}{{ relbar() }}{% endblock -%}
                     {% block body -%} {% endblock -%}
                     {%- block relbar2 -%}{{ relbar() }}{% endblock -%}
                   </article>
