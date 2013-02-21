@@ -18,6 +18,8 @@
         var hrefs = window.location.href.split('?');
         if (hrefs.length >= 2) {
             window.location = hrefs[0];
+        } else {
+            var HREF = window.location.href.split('#')[0];
         }
         $(document).ready(function () {
             // Adjusts document height if sidebar is taller
