@@ -36,6 +36,19 @@
 Changelog
 ================================================================================
 
+release-1.0.4
+--------------------------------------------------------------------------------
+
+ * add "downloads" and "copies" in depends_modules.conf
+ * import django-guardian and django-debug-toolbar library
+ * modify "ho600_lib.get_template_by_site_and_lang" to change template finding flow
+ * add "ho600_lib.static" and  "ho600_lib.media" function in ho600_lib/__init__.py for url discovering in templates
+ * add "ho600_lib.get_site_from_settings" to get the SITE is user browsing
+ * add "bin/monitor_file_and_make_html.sh" to automatically generating sphinx-document
+ * add "bin/symbol_to_unicode.py" to convert code(ex, "\u65b0") to "新", for example
+ * add taiwan post code data(臺灣地區郵遞區號前3碼一覽表_9912.xls, 2011/8/15 version) in taiwan_postcode.json
+ * add a PostCode Model
+
 release-1.0.3
 --------------------------------------------------------------------------------
 
