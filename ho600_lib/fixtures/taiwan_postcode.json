@@ -1,0 +1,4347 @@
+[
+    {
+        "pk": "tw000",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "臺灣",
+            "parent": null
+        }
+    },
+    {
+        "pk": "tw001",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "臺北市",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw002",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "基隆市",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw003",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "新北市",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw004",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "宜蘭縣",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw005",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "新竹市",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw006",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "新竹縣",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw007",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "桃園縣",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw008",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "苗栗縣",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw009",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "臺中市",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw010",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "彰化縣",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw011",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "南投縣",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw012",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "嘉義市",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw013",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "嘉義縣",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw014",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "雲林縣",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw015",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "臺南市",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw016",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "高雄市",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw017",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "澎湖縣",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw018",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "屏東縣",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw019",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "臺東縣",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw020",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "花蓮縣",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw021",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "金門縣",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw022",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "連江縣",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw023",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "",
+            "name": "南海諸島",
+            "parent": "tw000"
+        }
+    },
+    {
+        "pk": "tw100",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "100",
+            "name": "中正區",
+            "parent": "tw001"
+        }
+    },
+    {
+        "pk": "tw103",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "103",
+            "name": "大同區",
+            "parent": "tw001"
+        }
+    },
+    {
+        "pk": "tw104",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "104",
+            "name": "中山區",
+            "parent": "tw001"
+        }
+    },
+    {
+        "pk": "tw105",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "105",
+            "name": "松山區",
+            "parent": "tw001"
+        }
+    },
+    {
+        "pk": "tw106",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "106",
+            "name": "大安區",
+            "parent": "tw001"
+        }
+    },
+    {
+        "pk": "tw108",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "108",
+            "name": "萬華區",
+            "parent": "tw001"
+        }
+    },
+    {
+        "pk": "tw110",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "110",
+            "name": "信義區",
+            "parent": "tw001"
+        }
+    },
+    {
+        "pk": "tw111",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "111",
+            "name": "士林區",
+            "parent": "tw001"
+        }
+    },
+    {
+        "pk": "tw112",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "112",
+            "name": "北投區",
+            "parent": "tw001"
+        }
+    },
+    {
+        "pk": "tw114",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "114",
+            "name": "內湖區",
+            "parent": "tw001"
+        }
+    },
+    {
+        "pk": "tw115",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "115",
+            "name": "南港區",
+            "parent": "tw001"
+        }
+    },
+    {
+        "pk": "tw116",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "116",
+            "name": "文山區",
+            "parent": "tw001"
+        }
+    },
+    {
+        "pk": "tw200",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "200",
+            "name": "仁愛區",
+            "parent": "tw002"
+        }
+    },
+    {
+        "pk": "tw201",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "201",
+            "name": "信義區",
+            "parent": "tw002"
+        }
+    },
+    {
+        "pk": "tw202",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "202",
+            "name": "中正區",
+            "parent": "tw002"
+        }
+    },
+    {
+        "pk": "tw203",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "203",
+            "name": "中山區",
+            "parent": "tw002"
+        }
+    },
+    {
+        "pk": "tw204",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "204",
+            "name": "安樂區",
+            "parent": "tw002"
+        }
+    },
+    {
+        "pk": "tw205",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "205",
+            "name": "暖暖區",
+            "parent": "tw002"
+        }
+    },
+    {
+        "pk": "tw206",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "206",
+            "name": "七堵區",
+            "parent": "tw002"
+        }
+    },
+    {
+        "pk": "tw207",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "207",
+            "name": "萬里區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw208",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "208",
+            "name": "金山區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw209",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "209",
+            "name": "南竿",
+            "parent": "tw022"
+        }
+    },
+    {
+        "pk": "tw210",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "210",
+            "name": "北竿",
+            "parent": "tw022"
+        }
+    },
+    {
+        "pk": "tw211",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "211",
+            "name": "莒光",
+            "parent": "tw022"
+        }
+    },
+    {
+        "pk": "tw212",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "212",
+            "name": "東引",
+            "parent": "tw022"
+        }
+    },
+    {
+        "pk": "tw220",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "220",
+            "name": "板橋區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw221",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "221",
+            "name": "汐止區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw222",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "222",
+            "name": "深坑區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw223",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "223",
+            "name": "石碇區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw224",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "224",
+            "name": "瑞芳區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw226",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "226",
+            "name": "平溪區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw227",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "227",
+            "name": "雙溪區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw228",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "228",
+            "name": "貢寮區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw231",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "231",
+            "name": "新店區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw232",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "232",
+            "name": "坪林區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw233",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "233",
+            "name": "烏來區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw234",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "234",
+            "name": "永和區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw235",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "235",
+            "name": "中和區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw236",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "236",
+            "name": "土城區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw237",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "237",
+            "name": "三峽區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw238",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "238",
+            "name": "樹林區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw239",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "239",
+            "name": "鶯歌區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw241",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "241",
+            "name": "三重區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw242",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "242",
+            "name": "新莊區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw243",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "243",
+            "name": "泰山區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw244",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "244",
+            "name": "林口區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw247",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "247",
+            "name": "蘆洲區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw248",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "248",
+            "name": "五股區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw249",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "249",
+            "name": "八里區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw251",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "251",
+            "name": "淡水區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw252",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "252",
+            "name": "三芝區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw253",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "253",
+            "name": "石門區",
+            "parent": "tw003"
+        }
+    },
+    {
+        "pk": "tw260",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "260",
+            "name": "宜蘭",
+            "parent": "tw004"
+        }
+    },
+    {
+        "pk": "tw261",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "261",
+            "name": "頭城",
+            "parent": "tw004"
+        }
+    },
+    {
+        "pk": "tw262",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "262",
+            "name": "礁溪",
+            "parent": "tw004"
+        }
+    },
+    {
+        "pk": "tw263",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "263",
+            "name": "壯圍",
+            "parent": "tw004"
+        }
+    },
+    {
+        "pk": "tw264",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "264",
+            "name": "員山",
+            "parent": "tw004"
+        }
+    },
+    {
+        "pk": "tw265",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "265",
+            "name": "羅東",
+            "parent": "tw004"
+        }
+    },
+    {
+        "pk": "tw266",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "266",
+            "name": "三星",
+            "parent": "tw004"
+        }
+    },
+    {
+        "pk": "tw267",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "267",
+            "name": "大同",
+            "parent": "tw004"
+        }
+    },
+    {
+        "pk": "tw268",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "268",
+            "name": "五結",
+            "parent": "tw004"
+        }
+    },
+    {
+        "pk": "tw269",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "269",
+            "name": "冬山",
+            "parent": "tw004"
+        }
+    },
+    {
+        "pk": "tw270",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "270",
+            "name": "蘇澳",
+            "parent": "tw004"
+        }
+    },
+    {
+        "pk": "tw272",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "272",
+            "name": "南澳",
+            "parent": "tw004"
+        }
+    },
+    {
+        "pk": "tw290",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "290",
+            "name": "釣魚台列嶼",
+            "parent": "tw004"
+        }
+    },
+    {
+        "pk": "tw300-北區",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "300",
+            "name": "北區",
+            "parent": "tw005"
+        }
+    },
+    {
+        "pk": "tw300-東區",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "300",
+            "name": "東區",
+            "parent": "tw005"
+        }
+    },
+    {
+        "pk": "tw300-香山區",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "300",
+            "name": "香山區",
+            "parent": "tw005"
+        }
+    },
+    {
+        "pk": "tw302",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "302",
+            "name": "竹北",
+            "parent": "tw006"
+        }
+    },
+    {
+        "pk": "tw303",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "303",
+            "name": "湖口",
+            "parent": "tw006"
+        }
+    },
+    {
+        "pk": "tw304",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "304",
+            "name": "新豐",
+            "parent": "tw006"
+        }
+    },
+    {
+        "pk": "tw305",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "305",
+            "name": "新埔",
+            "parent": "tw006"
+        }
+    },
+    {
+        "pk": "tw306",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "306",
+            "name": "關西",
+            "parent": "tw006"
+        }
+    },
+    {
+        "pk": "tw307",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "307",
+            "name": "芎林",
+            "parent": "tw006"
+        }
+    },
+    {
+        "pk": "tw308",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "308",
+            "name": "寶山",
+            "parent": "tw006"
+        }
+    },
+    {
+        "pk": "tw310",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "310",
+            "name": "竹東",
+            "parent": "tw006"
+        }
+    },
+    {
+        "pk": "tw311",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "311",
+            "name": "五峰",
+            "parent": "tw006"
+        }
+    },
+    {
+        "pk": "tw312",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "312",
+            "name": "橫山",
+            "parent": "tw006"
+        }
+    },
+    {
+        "pk": "tw313",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "313",
+            "name": "尖石",
+            "parent": "tw006"
+        }
+    },
+    {
+        "pk": "tw314",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "314",
+            "name": "北埔",
+            "parent": "tw006"
+        }
+    },
+    {
+        "pk": "tw315",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "315",
+            "name": "峨眉",
+            "parent": "tw006"
+        }
+    },
+    {
+        "pk": "tw320",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "320",
+            "name": "中壢",
+            "parent": "tw007"
+        }
+    },
+    {
+        "pk": "tw324",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "324",
+            "name": "平鎮",
+            "parent": "tw007"
+        }
+    },
+    {
+        "pk": "tw325",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "325",
+            "name": "龍潭",
+            "parent": "tw007"
+        }
+    },
+    {
+        "pk": "tw326",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "326",
+            "name": "楊梅",
+            "parent": "tw007"
+        }
+    },
+    {
+        "pk": "tw327",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "327",
+            "name": "新屋",
+            "parent": "tw007"
+        }
+    },
+    {
+        "pk": "tw328",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "328",
+            "name": "觀音",
+            "parent": "tw007"
+        }
+    },
+    {
+        "pk": "tw330",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "330",
+            "name": "桃園",
+            "parent": "tw007"
+        }
+    },
+    {
+        "pk": "tw333",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "333",
+            "name": "龜山",
+            "parent": "tw007"
+        }
+    },
+    {
+        "pk": "tw334",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "334",
+            "name": "八德",
+            "parent": "tw007"
+        }
+    },
+    {
+        "pk": "tw335",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "335",
+            "name": "大溪",
+            "parent": "tw007"
+        }
+    },
+    {
+        "pk": "tw336",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "336",
+            "name": "復興",
+            "parent": "tw007"
+        }
+    },
+    {
+        "pk": "tw337",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "337",
+            "name": "大園",
+            "parent": "tw007"
+        }
+    },
+    {
+        "pk": "tw338",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "338",
+            "name": "蘆竹",
+            "parent": "tw007"
+        }
+    },
+    {
+        "pk": "tw350",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "350",
+            "name": "竹南",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw351",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "351",
+            "name": "頭份",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw352",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "352",
+            "name": "三灣",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw353",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "353",
+            "name": "南庄",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw354",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "354",
+            "name": "獅潭",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw356",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "356",
+            "name": "後龍",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw357",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "357",
+            "name": "通霄",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw358",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "358",
+            "name": "苑裡",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw360",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "360",
+            "name": "苗栗",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw361",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "361",
+            "name": "造橋",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw362",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "362",
+            "name": "頭屋",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw363",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "363",
+            "name": "公館",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw364",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "364",
+            "name": "大湖",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw365",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "365",
+            "name": "泰安",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw366",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "366",
+            "name": "銅鑼",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw367",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "367",
+            "name": "三義",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw368",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "368",
+            "name": "西湖",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw369",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "369",
+            "name": "卓蘭",
+            "parent": "tw008"
+        }
+    },
+    {
+        "pk": "tw400",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "400",
+            "name": "中區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw401",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "401",
+            "name": "東區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw402",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "402",
+            "name": "南區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw403",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "403",
+            "name": "西區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw404",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "404",
+            "name": "北區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw406",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "406",
+            "name": "北屯區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw407",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "407",
+            "name": "西屯區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw408",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "408",
+            "name": "南屯區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw411",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "411",
+            "name": "太平區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw412",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "412",
+            "name": "大里區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw413",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "413",
+            "name": "霧峰區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw414",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "414",
+            "name": "烏日區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw420",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "420",
+            "name": "豐原區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw421",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "421",
+            "name": "后里區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw422",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "422",
+            "name": "石岡區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw423",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "423",
+            "name": "東勢區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw424",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "424",
+            "name": "和平區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw426",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "426",
+            "name": "新社區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw427",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "427",
+            "name": "潭子區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw428",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "428",
+            "name": "大雅區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw429",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "429",
+            "name": "神岡區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw432",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "432",
+            "name": "大肚區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw433",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "433",
+            "name": "沙鹿區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw434",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "434",
+            "name": "龍井區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw435",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "435",
+            "name": "梧棲區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw436",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "436",
+            "name": "清水區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw437",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "437",
+            "name": "大甲區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw438",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "438",
+            "name": "外埔區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw439",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "439",
+            "name": "大安區",
+            "parent": "tw009"
+        }
+    },
+    {
+        "pk": "tw500",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "500",
+            "name": "彰化",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw502",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "502",
+            "name": "芬園",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw503",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "503",
+            "name": "花壇",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw504",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "504",
+            "name": "秀水",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw505",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "505",
+            "name": "鹿港",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw506",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "506",
+            "name": "福興",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw507",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "507",
+            "name": "線西",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw508",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "508",
+            "name": "和美",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw509",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "509",
+            "name": "伸港",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw510",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "510",
+            "name": "員林",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw511",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "511",
+            "name": "社頭",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw512",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "512",
+            "name": "永靖",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw513",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "513",
+            "name": "埔心",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw514",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "514",
+            "name": "溪湖",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw515",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "515",
+            "name": "大村",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw516",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "516",
+            "name": "埔鹽",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw520",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "520",
+            "name": "田中",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw521",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "521",
+            "name": "北斗",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw522",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "522",
+            "name": "田尾",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw523",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "523",
+            "name": "埤頭",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw524",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "524",
+            "name": "溪州",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw525",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "525",
+            "name": "竹塘",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw526",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "526",
+            "name": "二林",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw527",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "527",
+            "name": "大城",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw528",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "528",
+            "name": "芳苑",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw530",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "530",
+            "name": "二水",
+            "parent": "tw010"
+        }
+    },
+    {
+        "pk": "tw540",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "540",
+            "name": "南投",
+            "parent": "tw011"
+        }
+    },
+    {
+        "pk": "tw541",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "541",
+            "name": "中寮",
+            "parent": "tw011"
+        }
+    },
+    {
+        "pk": "tw542",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "542",
+            "name": "草屯",
+            "parent": "tw011"
+        }
+    },
+    {
+        "pk": "tw544",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "544",
+            "name": "國姓",
+            "parent": "tw011"
+        }
+    },
+    {
+        "pk": "tw545",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "545",
+            "name": "埔里",
+            "parent": "tw011"
+        }
+    },
+    {
+        "pk": "tw546",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "546",
+            "name": "仁愛",
+            "parent": "tw011"
+        }
+    },
+    {
+        "pk": "tw551",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "551",
+            "name": "名間",
+            "parent": "tw011"
+        }
+    },
+    {
+        "pk": "tw552",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "552",
+            "name": "集集",
+            "parent": "tw011"
+        }
+    },
+    {
+        "pk": "tw553",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "553",
+            "name": "水里",
+            "parent": "tw011"
+        }
+    },
+    {
+        "pk": "tw555",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "555",
+            "name": "魚池",
+            "parent": "tw011"
+        }
+    },
+    {
+        "pk": "tw556",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "556",
+            "name": "信義",
+            "parent": "tw011"
+        }
+    },
+    {
+        "pk": "tw557",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "557",
+            "name": "竹山",
+            "parent": "tw011"
+        }
+    },
+    {
+        "pk": "tw558",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "558",
+            "name": "鹿谷",
+            "parent": "tw011"
+        }
+    },
+    {
+        "pk": "tw600-東區",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "600",
+            "name": "東區",
+            "parent": "tw012"
+        }
+    },
+    {
+        "pk": "tw600-西區",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "600",
+            "name": "西區",
+            "parent": "tw012"
+        }
+    },
+    {
+        "pk": "tw602",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "602",
+            "name": "番路",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw603",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "603",
+            "name": "梅山",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw604",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "604",
+            "name": "竹崎",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw605",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "605",
+            "name": "阿里山",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw606",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "606",
+            "name": "中埔",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw607",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "607",
+            "name": "大埔",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw608",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "608",
+            "name": "水上",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw611",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "611",
+            "name": "鹿草",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw612",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "612",
+            "name": "太保",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw613",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "613",
+            "name": "朴子",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw614",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "614",
+            "name": "東石",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw615",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "615",
+            "name": "六腳",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw616",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "616",
+            "name": "新港",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw621",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "621",
+            "name": "民雄",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw622",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "622",
+            "name": "大林",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw623",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "623",
+            "name": "溪口",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw624",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "624",
+            "name": "義竹",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw625",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "625",
+            "name": "布袋",
+            "parent": "tw013"
+        }
+    },
+    {
+        "pk": "tw630",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "630",
+            "name": "斗南",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw631",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "631",
+            "name": "大埤",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw632",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "632",
+            "name": "虎尾",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw633",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "633",
+            "name": "土庫",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw634",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "634",
+            "name": "褒忠",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw635",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "635",
+            "name": "東勢",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw636",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "636",
+            "name": "臺西",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw637",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "637",
+            "name": "崙背",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw638",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "638",
+            "name": "麥寮",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw640",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "640",
+            "name": "斗六",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw643",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "643",
+            "name": "林內",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw646",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "646",
+            "name": "古坑",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw647",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "647",
+            "name": "莿桐",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw648",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "648",
+            "name": "西螺",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw649",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "649",
+            "name": "二崙",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw651",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "651",
+            "name": "北港",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw652",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "652",
+            "name": "水林",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw653",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "653",
+            "name": "口湖",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw654",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "654",
+            "name": "四湖",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw655",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "655",
+            "name": "元長",
+            "parent": "tw014"
+        }
+    },
+    {
+        "pk": "tw700",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "700",
+            "name": "中西區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw701",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "701",
+            "name": "東區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw702",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "702",
+            "name": "南區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw704",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "704",
+            "name": "北區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw708",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "708",
+            "name": "安平區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw709",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "709",
+            "name": "安南區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw710",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "710",
+            "name": "永康區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw711",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "711",
+            "name": "歸仁區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw712",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "712",
+            "name": "新化區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw713",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "713",
+            "name": "左鎮區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw714",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "714",
+            "name": "玉井區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw715",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "715",
+            "name": "楠西區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw716",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "716",
+            "name": "南化區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw717",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "717",
+            "name": "仁德區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw718",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "718",
+            "name": "關廟區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw719",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "719",
+            "name": "龍崎區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw720",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "720",
+            "name": "官田區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw721",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "721",
+            "name": "麻豆區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw722",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "722",
+            "name": "佳里區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw723",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "723",
+            "name": "西港區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw724",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "724",
+            "name": "七股區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw725",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "725",
+            "name": "將軍區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw726",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "726",
+            "name": "學甲區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw727",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "727",
+            "name": "北門區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw730",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "730",
+            "name": "新營區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw731",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "731",
+            "name": "後壁區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw732",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "732",
+            "name": "白河區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw733",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "733",
+            "name": "東山區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw734",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "734",
+            "name": "六甲區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw735",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "735",
+            "name": "下營區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw736",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "736",
+            "name": "柳營區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw737",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "737",
+            "name": "鹽水區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw741",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "741",
+            "name": "善化區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw742",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "742",
+            "name": "大內區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw743",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "743",
+            "name": "山上區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw744",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "744",
+            "name": "新市區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw745",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "745",
+            "name": "安定區",
+            "parent": "tw015"
+        }
+    },
+    {
+        "pk": "tw800",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "800",
+            "name": "新興區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw801",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "801",
+            "name": "前金區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw802",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "802",
+            "name": "苓雅區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw803",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "803",
+            "name": "鹽埕區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw804",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "804",
+            "name": "鼓山區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw805",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "805",
+            "name": "旗津區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw806",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "806",
+            "name": "前鎮區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw807",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "807",
+            "name": "三民區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw811",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "811",
+            "name": "楠梓區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw812",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "812",
+            "name": "小港區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw813",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "813",
+            "name": "左營區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw814",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "814",
+            "name": "仁武區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw815",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "815",
+            "name": "大社區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw817",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "817",
+            "name": "東沙",
+            "parent": "tw023"
+        }
+    },
+    {
+        "pk": "tw819",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "819",
+            "name": "南沙",
+            "parent": "tw023"
+        }
+    },
+    {
+        "pk": "tw820",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "820",
+            "name": "岡山區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw821",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "821",
+            "name": "路竹區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw822",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "822",
+            "name": "阿蓮區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw823",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "823",
+            "name": "田寮區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw824",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "824",
+            "name": "燕巢區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw825",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "825",
+            "name": "橋頭區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw826",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "826",
+            "name": "梓官區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw827",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "827",
+            "name": "彌陀區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw828",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "828",
+            "name": "永安區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw829",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "829",
+            "name": "湖內區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw830",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "830",
+            "name": "鳳山區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw831",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "831",
+            "name": "大寮區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw832",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "832",
+            "name": "林園區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw833",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "833",
+            "name": "鳥松區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw840",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "840",
+            "name": "大樹區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw842",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "842",
+            "name": "旗山區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw843",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "843",
+            "name": "美濃區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw844",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "844",
+            "name": "六龜區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw845",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "845",
+            "name": "內門區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw846",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "846",
+            "name": "杉林區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw847",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "847",
+            "name": "甲仙區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw848",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "848",
+            "name": "桃源區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw849",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "849",
+            "name": "那瑪夏區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw851",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "851",
+            "name": "茂林區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw852",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "852",
+            "name": "茄萣區",
+            "parent": "tw016"
+        }
+    },
+    {
+        "pk": "tw880",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "880",
+            "name": "馬公",
+            "parent": "tw017"
+        }
+    },
+    {
+        "pk": "tw881",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "881",
+            "name": "西嶼",
+            "parent": "tw017"
+        }
+    },
+    {
+        "pk": "tw882",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "882",
+            "name": "望安",
+            "parent": "tw017"
+        }
+    },
+    {
+        "pk": "tw883",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "883",
+            "name": "七美",
+            "parent": "tw017"
+        }
+    },
+    {
+        "pk": "tw884",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "884",
+            "name": "白沙",
+            "parent": "tw017"
+        }
+    },
+    {
+        "pk": "tw885",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "885",
+            "name": "湖西",
+            "parent": "tw017"
+        }
+    },
+    {
+        "pk": "tw890",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "890",
+            "name": "金沙",
+            "parent": "tw021"
+        }
+    },
+    {
+        "pk": "tw891",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "891",
+            "name": "金湖",
+            "parent": "tw021"
+        }
+    },
+    {
+        "pk": "tw892",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "892",
+            "name": "金寧",
+            "parent": "tw021"
+        }
+    },
+    {
+        "pk": "tw893",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "893",
+            "name": "金城",
+            "parent": "tw021"
+        }
+    },
+    {
+        "pk": "tw894",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "894",
+            "name": "烈嶼",
+            "parent": "tw021"
+        }
+    },
+    {
+        "pk": "tw896",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "896",
+            "name": "烏坵",
+            "parent": "tw021"
+        }
+    },
+    {
+        "pk": "tw900",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "900",
+            "name": "屏東",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw901",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "901",
+            "name": "三地門",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw902",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "902",
+            "name": "霧臺",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw903",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "903",
+            "name": "瑪家",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw904",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "904",
+            "name": "九如",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw905",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "905",
+            "name": "里港",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw906",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "906",
+            "name": "高樹",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw907",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "907",
+            "name": "盬埔",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw908",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "908",
+            "name": "長治",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw909",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "909",
+            "name": "麟洛",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw911",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "911",
+            "name": "竹田",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw912",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "912",
+            "name": "內埔",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw913",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "913",
+            "name": "萬丹",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw920",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "920",
+            "name": "潮州",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw921",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "921",
+            "name": "泰武",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw922",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "922",
+            "name": "來義",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw923",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "923",
+            "name": "萬巒",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw924",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "924",
+            "name": "崁頂",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw925",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "925",
+            "name": "新埤",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw926",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "926",
+            "name": "南州",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw927",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "927",
+            "name": "林邊",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw928",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "928",
+            "name": "東港",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw929",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "929",
+            "name": "琉球",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw931",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "931",
+            "name": "佳冬",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw932",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "932",
+            "name": "新園",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw940",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "940",
+            "name": "枋寮",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw941",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "941",
+            "name": "枋山",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw942",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "942",
+            "name": "春日",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw943",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "943",
+            "name": "獅子",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw944",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "944",
+            "name": "車城",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw945",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "945",
+            "name": "牡丹",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw946",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "946",
+            "name": "恆春",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw947",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "947",
+            "name": "滿州",
+            "parent": "tw018"
+        }
+    },
+    {
+        "pk": "tw950",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "950",
+            "name": "臺東",
+            "parent": "tw019"
+        }
+    },
+    {
+        "pk": "tw951",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "951",
+            "name": "綠島",
+            "parent": "tw019"
+        }
+    },
+    {
+        "pk": "tw952",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "952",
+            "name": "蘭嶼",
+            "parent": "tw019"
+        }
+    },
+    {
+        "pk": "tw953",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "953",
+            "name": "延平",
+            "parent": "tw019"
+        }
+    },
+    {
+        "pk": "tw954",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "954",
+            "name": "卑南",
+            "parent": "tw019"
+        }
+    },
+    {
+        "pk": "tw955",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "955",
+            "name": "鹿野",
+            "parent": "tw019"
+        }
+    },
+    {
+        "pk": "tw956",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "956",
+            "name": "關山",
+            "parent": "tw019"
+        }
+    },
+    {
+        "pk": "tw957",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "957",
+            "name": "海端",
+            "parent": "tw019"
+        }
+    },
+    {
+        "pk": "tw958",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "958",
+            "name": "池上",
+            "parent": "tw019"
+        }
+    },
+    {
+        "pk": "tw959",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "959",
+            "name": "東河",
+            "parent": "tw019"
+        }
+    },
+    {
+        "pk": "tw961",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "961",
+            "name": "成功",
+            "parent": "tw019"
+        }
+    },
+    {
+        "pk": "tw962",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "962",
+            "name": "長濱",
+            "parent": "tw019"
+        }
+    },
+    {
+        "pk": "tw963",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "963",
+            "name": "太麻里",
+            "parent": "tw019"
+        }
+    },
+    {
+        "pk": "tw964",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "964",
+            "name": "金峰",
+            "parent": "tw019"
+        }
+    },
+    {
+        "pk": "tw965",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "965",
+            "name": "大武",
+            "parent": "tw019"
+        }
+    },
+    {
+        "pk": "tw966",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "966",
+            "name": "達仁",
+            "parent": "tw019"
+        }
+    },
+    {
+        "pk": "tw970",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "970",
+            "name": "花蓮",
+            "parent": "tw020"
+        }
+    },
+    {
+        "pk": "tw971",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "971",
+            "name": "新城",
+            "parent": "tw020"
+        }
+    },
+    {
+        "pk": "tw972",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "972",
+            "name": "秀林",
+            "parent": "tw020"
+        }
+    },
+    {
+        "pk": "tw973",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "973",
+            "name": "吉安",
+            "parent": "tw020"
+        }
+    },
+    {
+        "pk": "tw974",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "974",
+            "name": "壽豐",
+            "parent": "tw020"
+        }
+    },
+    {
+        "pk": "tw975",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "975",
+            "name": "鳳林",
+            "parent": "tw020"
+        }
+    },
+    {
+        "pk": "tw976",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "976",
+            "name": "光復",
+            "parent": "tw020"
+        }
+    },
+    {
+        "pk": "tw977",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "977",
+            "name": "豐濱",
+            "parent": "tw020"
+        }
+    },
+    {
+        "pk": "tw978",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "978",
+            "name": "瑞穗",
+            "parent": "tw020"
+        }
+    },
+    {
+        "pk": "tw979",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "979",
+            "name": "萬榮",
+            "parent": "tw020"
+        }
+    },
+    {
+        "pk": "tw981",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "981",
+            "name": "玉里",
+            "parent": "tw020"
+        }
+    },
+    {
+        "pk": "tw982",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "982",
+            "name": "卓溪",
+            "parent": "tw020"
+        }
+    },
+    {
+        "pk": "tw983",
+        "model": "ho600_lib.postcode",
+        "fields": {
+            "note": "",
+            "extra_name": null,
+            "code": "983",
+            "name": "富里",
+            "parent": "tw020"
+        }
+    }
+]
