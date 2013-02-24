@@ -29,6 +29,67 @@
 #NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-from django.db import models
+from django.db import models as M
 
-# Create your models here.
+
+
+class PostCode(M.Model):
+    """ About:
+
+            A model collects post code data
+
+        Usage:
+
+            In your another models.py, put some code like below:
+
+                from ho600_lib.models import PostCode
+                class SomeYourPlace(PostCode):
+                    pass
+
+            And copy a json exmaple likes ROOT/ho600_lib/fixtures/taiwan_postcode.py
+            to your modules/fixtures/ and rename "model" value to be "yourmodule.someyourplace"
+    """
+    id = M.CharField(verbose_name='post code', primary_key=True, max_length=32)
+    code = M.CharField(verbose_name='post code', max_length=6, null=True)
+    name = M.CharField(verbose_name='name', max_length=32)
+    extra_name = M.CharField(verbose_name='extra name', max_length=128, null=True)
+    note = M.TextField(default='')
+    parent = M.ForeignKey('self', related_name='child_set', null=True)
+
+
+    class Meta:
+        """ It will not generate a database table when 'abstract' set True
+        """
+        abstract = True
+        abstract = False
+
+
+
+    def __str__(self):
+        return '%s: %s(code: %s)' % (self.id, self.name, self.code)
+
+
+    def __unicode__(self):
+        return u'%s: %s(code: %s)' % (self.id, self.name, self.code)
+
+
+    def has_this_child(self, child):
+        if self == child:
+            return True
+        else:
+            for c in self.child_set.all():
+                if c.has_this_child(child):
+                    return True
+        return False
+
+
+
+    def get_all_child_set_as_list(self, level=0, max_level=0):
+        if max_level > 0 and level > max_level:
+            return []
+        else:
+            list = [(level, self)]
+            for c in self.child_set.all().order_by('id'):
+                sub_list = c.get_all_child_set_as_list(level=level+1, max_level=max_level)
+                list.extend(sub_list)
+            return list
