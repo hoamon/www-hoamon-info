@@ -60,10 +60,13 @@ XXXYYYZZZ 代表特定版本的 changeset 碼，若無設定代表 tip ，\
     目前僅支援 mercurial 儲存庫。若是使用 GitHub 專案請參考 \
     `hg-git <http://hg-git.github.com/>`_ 。
 
+預設載入 django-mediagenerator, django-tastypie, django-guardian, django-debug-toolbar 等四個 django-based 模組，\
+另外載入 jstree, jQuery-URL-Parser 等二個 js 函式庫。
+
 bin/
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-目前有兩個執行命令：
+執行命令有：
 
 prepare_programming.py
 ................................................................................
@@ -76,6 +79,21 @@ prepare_programming.py
 (有登記在 settings.INSTALLED_APPS 及 settings.ANOTHER_DEPENDS_MODULES ) 刪除，以確保在開發程式時，\
 所載入的 module 一定是 settings.py 中有指定特別版本、特別位置的 module 。
 
+又如果專案程式並不是使用 hg 或 git 控管，而是單用 .zip 儲存。則也用使用 [downloads] 作設定。
+
+下載後的專案及檔案，可再利用 [copies] 設定將部份資料文件複製到其他位置中。
+
+.. code-block:: conf
+
+    [downloads]
+    asset/Project = https://yoursite.com/yourfile.zip
+
+    [copies]
+    trunk/modules/p1/file.txt = asset/Project/file/example.conf
+
+上面的範例是將 https://yoursite.com/yourfile.zip 下載下來，解壓縮到 asset/Project 資料夾。\
+並把 asset/Project/file/example.conf 檔案複製到 trunk/modules/p1/file.txt 中。
+
 before_deployment.py
 ................................................................................
 
@@ -85,6 +103,35 @@ before_deployment.py
 這裡的行為主要是把 settings.INSTALLED_APPS 及 settings.ANOTHER_DEPENDS_MODULES 有登記的 \
 modules (扣除 django 自己帶入的)，複製一份到 trunk/depends_modules/ 。\
 這樣在 deployment 時，只需把 trunk/ 整包上傳即可。
+
+symbol_to_unicode.py
+................................................................................
+
+django dumpdata 的內容，在非 ASCII 編碼下，它會顯示 \\u65b0 ，而非「新」這個字。\
+執行如下指令：
+
+.. code-block:: bash
+
+    $ bin/symbol_to_unicode.py old.json > new.json
+
+則 new.json 內容會是一般人看得懂的文字，而不是 \\uXXXX 。
+
+monitor_file_and_make_html.sh
+................................................................................
+
+觀察特定資料夾內文件是否有修改，若有修改則立即執行 make html 指令( sphinx )，\
+執行方式如下：
+
+.. code-block:: bash
+
+    $ bin/monitor_file_and_make_html.sh docs-of-ho600-django-gae-default-trunk
+
+執行後，它會持續等待，當 docs-of-ho600-django-gae-default-trunk/ 內有文件被更新，\
+則在該資料夾自動編譯 document 。
+
+.. note::
+
+    本程式只能在 Unix-like 系統中執行。
 
 conf_example/
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -146,9 +193,56 @@ ho600_lib/
 方便作 django-based 程式開發的函式庫，主要有 bugrecord 功能，在執行程式時，\
 若發生 404|500 錯誤時，能紀錄在資料庫內。
 
+樣版選擇順序: get_template_by_site_and_lang
+................................................................................
+
 .. todo::
 
-    目前 ho600_lib 仍未實作。
+    @hoamon: 先直接看程式碼
+
+樣版中 static/media 檔案的 url 找尋
+................................................................................
+
+.. todo::
+
+    @hoamon: 先直接看程式碼
+
+得知使用者以什麼網域名稱瀏覽： get_site_from_settings
+
+.. todo::
+
+    @hoamon: 先直接看程式碼
+
+PostCode Model
+................................................................................
+
+郵遞區號的資料表，目前已放置臺灣 3 碼郵遞區號資料( ho600_lib/fixtures/taiwan_postcode.json )，\
+資料來源版本為 `http://download.post.gov.tw/post/download/臺灣地區郵遞區號前3碼一覽表_9912.xls
+<http://download.post.gov.tw/post/download/臺灣地區郵遞區號前3碼一覽表_9912.xls>`_ (2011/8/15 version) 。\
+
+使用方式是在你自己所寫 moduels 的 models.py 建立另一個 model ，如：
+
+.. code-block:: python
+
+    # filename: mymodules/models.py
+    from ho600_lib.models impor PostCode as PC
+    class PostCode(PC):
+        pass
+
+這樣在 syncdb 後，資料庫會產生一個 mymodules_postcode 資料表。若是需要使用 taiwan_postcode.json 資料，\
+則先把 ho600_lib/fixtures/taiwan_postcode.json \
+複製到 mymodules/fixtures/my_taiwan_postcode.json ，一定要更名，要不然系統上會同時有兩個 taiwan_postcode.json。
+
+my_taiwan_postcode.json 中的 model: "ho600_lib.postcode" 須修改為 model: "mymodules.postcode"，\
+再來執行 ./manage.py loadddata my_taiwan_postcode.json ，就可把臺灣 3 碼郵遞區號資料匯入 mymodules_postcode 資料表。
+
+其中，要注意的是 PostCode.id 並不是用連續自然數為值，而是要自定的且必須為 unique 。\
+如： “臺灣” 的 id 為 "tw000"、\
+"臺北市" 為 "tw001" ，而 "臺中市南區" 為 "tw402“ 。但因為 ”新竹市“ 、 "嘉義市" 全市只有 1 個郵遞區號，\
+前者為 300 ，後者為 600 ，所以 "新竹市北區“ 的 id 為 “tw300-北區” ， "嘉義市東區" 的 id 為 “tw600-東區” 。\
+也就是把 parent.id + self.name 作為 self.id 。
+
+id 不為連續自然數的好處，在於系統資料要作統整時，不同來源的 PostCode 其 id 勢必為相同。
 
 H6_lib/
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -167,7 +261,8 @@ trunk/depends_modules/
 在使用 jenkins 發佈應用專案時，利用 bin/before_deployment.py 可將 \
 settings.INSTALLED_APPS 中所需的 modules (扣除 django 自己的)全複製到 \
 trunk/depends_modules/ 下。這樣 jenkins 發佈時，就只需要把 trunk/ 上傳至伺服器。\
-目標伺服器就不需要預先安裝特定 pure-python 函式庫，但還是要裝 django 函式庫。
+目標伺服器就不需要預先安裝特定 pure-python 函式庫，\
+但還是要裝 django 函式庫以及其他需事先編譯的函式庫如： PIL 、 numpy 、 scipy …等。
 
 trunk/modules/
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

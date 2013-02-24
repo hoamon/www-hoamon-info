@@ -64,11 +64,12 @@ def get_template_by_site_and_lang(template_name, sub_dir='ho600_lib',
                                         show_template_filename=False):
     """ the order of finding template:
 
-        for lang_name in lang_names:
-            if domain_name/module_name/lang_name/template_name: return
-            if domain_name/module_name/template_name: return
-            if module_name/lang_name/template_name: return
-        module_name/template_name
+            lang_names = ['user_prefer_lang'] + [settings.LANGUAGE_CODE]
+
+            for lang_name in lang_names:
+                if domain_name/module_name/lang_name/template_name: return
+                if module_name/lang_name/template_name: return
+            module_name/template_name
     """
     from django.conf import settings
     from django.contrib.sites.models import Site
@@ -82,12 +83,11 @@ def get_template_by_site_and_lang(template_name, sub_dir='ho600_lib',
     else:
         site = Site.objects.all().order_by('id')[0].domain
 
-    langs = [lang] + [l[0] for l in settings.LANGUAGES[:]] + ['']
+    langs = [lang] + [settings.LANGUAGE_CODE]
 
     for lang in langs:
         paths = []
         paths.append(os.path.join(site, sub_dir, lang, template_name))
-        paths.append(os.path.join(site, sub_dir, template_name))
         paths.append(os.path.join(sub_dir, lang, template_name))
         for path in paths:
             try:
@@ -103,7 +103,8 @@ def get_template_by_site_and_lang(template_name, sub_dir='ho600_lib',
     try:
         return get_template(path)
     except TemplateDoesNotExist:
-        raise TemplateDoesNotExist('site: %s, sub_dir: %s, lang: %s, template_name:%s'%(site, sub_dir, lang, template_name))
+        raise TemplateDoesNotExist('site: %s, sub_dir: %s, lang: %s, template_name:%s'
+                                    %(site, sub_dir, lang, template_name))
 
 
 def static(R, *args, **kw):
