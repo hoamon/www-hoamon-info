@@ -79,6 +79,7 @@ If you have any question,
 
 
 urlpatterns += patterns('',
+    url(r'^ho600_lib/', include('ho600_lib.example_urls')),
     #<<< default view on any urls, you shoule remove me and put yours.
     url(r'', ho600_default_view)
     #>>> default view on any urls, you shoule remove me and put yours.
