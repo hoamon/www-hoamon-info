@@ -26,6 +26,9 @@ handlers:
   static_files: trunk/_generated_media/robots.txt
   upload: trunk/_generated_media/robots.txt
 
+- url: /static/CACHE
+  static_dir: trunk/compressor-static/CACHE
+
 - url: /production_mediagenerator
   static_dir: trunk/_generated_media
 

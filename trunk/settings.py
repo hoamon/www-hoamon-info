@@ -1,6 +1,6 @@
 # Django settings for trunk project.
 
-import os, sys
+import os, sys, datetime
 
 
 def _insert_sys_path(index, path):
@@ -70,7 +70,18 @@ else:
         }
     }
 
+DEBUG = False
+
 TEMPLATE_DEBUG = DEBUG
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'default_trunk_cache',
+    }
+}
+
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -114,7 +125,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(TRUNK, 'static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -133,6 +144,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -162,7 +174,7 @@ MIDDLEWARE_CLASSES = (
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'mediagenerator.middleware.MediaMiddleware',
+    #'mediagenerator.middleware.MediaMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -201,6 +213,14 @@ AUTHENTICATION_BACKENDS = (
 ANONYMOUS_USER_ID = -1
 
 
+_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'django_compressor'))
+_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'versiontools')) # needed by django_compressor
+_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'django-appconf')) # needed by django_compressor
+_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'six')) # needed by django-appconf
+_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'BeautifulSoup')) # optional needed by django_compressor+lxml
+_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'html5lib', 'python')) # optional needed by django_compressor
+_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'slimit', 'src')) # optional needed by django_compressor
+
 _insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'django-mediagenerator'))
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -218,7 +238,12 @@ INSTALLED_APPS = (
     'ho600_lib',
 
     'debug_toolbar',
-    'mediagenerator', # must be last
+
+    'appconf',
+    'versiontools',
+    'compressor',
+
+    #'mediagenerator', # must be last
 )
 
 
@@ -293,6 +318,17 @@ LOGGING = {
 API_LIMIT_PER_PAGE = 25
 TASTYPIE_FULL_DEBUG = DEBUG
 # <<< django-tastypie
+
+
+# django-compressor >>>
+COMPRESS_ENABLED = not DEBUG
+COMPRESS_URL = STATIC_URL
+COMPRESS_ROOT = os.path.join(TRUNK, 'compressor-static')
+if DEBUG:
+    STATIC_VERSION = lambda: '?v=%s' % datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+else:
+    STATIC_VERSION = ''
+# <<< django-compressor
 
 
 # mediagenerator >>>

@@ -1,3 +1,5 @@
+import os
+
 from django.conf.urls import patterns, include, url
 from django.conf import settings
 from django.contrib.admin.views.decorators import staff_member_required
@@ -16,8 +18,6 @@ urlpatterns = patterns('',
         {'document_root' : '_generated_media', 'show_indexes' : settings.DEBUG}),
     url(r'^production_mediagenerator/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root' : '_generated_media', 'show_indexes' : settings.DEBUG}),
-    url(r'^static/admin/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root' : 'django_admin_media', 'show_indexes' : settings.DEBUG}),
     url(r'^__docs__/?$', need_staff_login_serve,
         {'document_root': '__docs__', 'path': 'index.html', 'show_indexes': settings.DEBUG}),
     url(r'^__docs__/(?P<path>.*)$', need_staff_login_serve,
@@ -79,7 +79,10 @@ If you have any question,
 
 
 urlpatterns += patterns('',
-    url(r'^ho600_lib/', include('ho600_lib.example_urls')),
+    url(r'^static/(ho600_lib/.*)$', static.serve,
+        {'document_root' : os.path.join(settings.ROOT, 'ho600_lib', 'static'),
+        'show_indexes' : settings.DEBUG}, name='ho600_lib_static'),
+    url(r'^ho600_lib/', include('ho600_lib.example_urls'), name='ho600_lib'),
     #<<< default view on any urls, you shoule remove me and put yours.
     url(r'', ho600_default_view)
     #>>> default view on any urls, you shoule remove me and put yours.
