@@ -20,12 +20,22 @@ _insert_sys_path(0, TRUNK_PARENT)
 
 # use the below to set up third party libraries
 #_insert_sys_path(0, os.path.join(os.path.dirname(TRUNK), 'asset', 'SOME-LIB-DIR'))
+_insert_sys_path(0, os.path.join(os.path.dirname(TRUNK), 'asset', 'django-gae-backends'))
 
 
 if os.environ.get('APPLICATION_ID', ''):
     SDK_MODE = 'appengine'
+    EMAIL_BACKEND = "gae_backends.mail.EmailBackend"
+    MEMCACHE = {
+        'BACKEND': 'gae_backends.memcache.MemcacheCache',
+    }
 else:
     SDK_MODE = 'puredjango'
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    MEMCACHE = {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake'
+    }
 
 
 if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
@@ -70,16 +80,14 @@ else:
         }
     }
 
-DEBUG = False
-
 TEMPLATE_DEBUG = DEBUG
-
 
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
         'LOCATION': 'default_trunk_cache',
-    }
+    },
+    'COMPRESSOR_CACHE': MEMCACHE,
 }
 
 
@@ -174,7 +182,8 @@ MIDDLEWARE_CLASSES = (
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-    #'mediagenerator.middleware.MediaMiddleware',
+    'mediagenerator.middleware.MediaMiddleware',
+    #'ho600_lib.middleware.Handle500Middleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -243,7 +252,7 @@ INSTALLED_APPS = (
     'versiontools',
     'compressor',
 
-    #'mediagenerator', # must be last
+    'mediagenerator', # must be last
 )
 
 
@@ -319,15 +328,21 @@ API_LIMIT_PER_PAGE = 25
 TASTYPIE_FULL_DEBUG = DEBUG
 # <<< django-tastypie
 
-
 # django-compressor >>>
 COMPRESS_ENABLED = not DEBUG
+COMPRESS_OFFLINE = not DEBUG
+COMPRESS_OFFLINE_MANIFEST = os.path.join(TRUNK, 'compressor-static', 'manifest.json')
+COMPRESS_CACHE_BACKEND = 'COMPRESSOR_CACHE'
 COMPRESS_URL = STATIC_URL
 COMPRESS_ROOT = os.path.join(TRUNK, 'compressor-static')
+COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter',
+                        'compressor.filters.yui.YUICSSFilter',
+                        'compressor.filters.cssmin.CSSMinFilter']
+COMPRESS_YUI_BINARY = 'java -jar %s' % os.path.join(ROOT, 'asset', 'yuicompressor-2.4.7.jar')
 if DEBUG:
-    STATIC_VERSION = lambda: '?v=%s' % datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+    SV_ = STATIC_VERSION = lambda: '?v=%s' % datetime.datetime.now().strftime('%Y%m%d%H%M%S.%f')
 else:
-    STATIC_VERSION = ''
+    SV_ = STATIC_VERSION = ''
 # <<< django-compressor
 
 
@@ -338,7 +353,7 @@ PRODUCTION_MEDIA_URL = '/production_mediagenerator/'
 GLOBAL_MEDIA_DIRS = (os.path.join(TRUNK, 'media'),
                         os.path.join(TRUNK, 'modules'),
                         #ROOT,  # if you run in GAE mode, this ROOT directory will raise a IOError on ./trunk/_generate_media .
-                                # for example: the media file laies on ./my_module/media/xxx.js , 
+                                # for example: the media file laies on ./my_module/media/xxx.js ,
                                 # you should use os.path.join(ROOT, 'my_module', 'media') here and
                                 # ('bundle_xxx.js',
                                 #   'xxx.js'),
