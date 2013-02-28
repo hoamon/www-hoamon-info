@@ -33,7 +33,7 @@ handlers:
   static_dir: trunk/static
 
 - url: /production_mediagenerator
-  static_dir: trunk/_generated_media
+  static_dir: trunk/mediagenerator-static
 
 - url: /__docs__/
   static_files: trunk/__docs__/index.html

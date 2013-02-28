@@ -68,7 +68,6 @@ elif (os.environ.get('UWSGI_ORIGINAL_PROC_NAME', None) or
 else:
     # Running in development, so use a local MySQL database.
     DEBUG = True
-    DEBUG = False
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
@@ -362,6 +361,7 @@ else:
 MEDIA_DEV_MODE = DEBUG
 DEV_MEDIA_URL = '/mediagenerator/'
 PRODUCTION_MEDIA_URL = '/production_mediagenerator/'
+GENERATED_MEDIA_DIR = 'mediagenerator-static'
 GLOBAL_MEDIA_DIRS = (join(TRUNK, 'media'),
                         join(TRUNK, 'modules'),
                         #ROOT,  # if you run in GAE mode,
@@ -382,7 +382,7 @@ MEDIA_GENERATORS = (
 COPY_MEDIA_FILETYPES = ('gif', 'jpg', 'jpeg', 'png', 'svg', 'svgz',
                                      'ico', 'swf', 'ttf', 'otf', 'eot')
 IGNORE_APP_MEDIA_DIRS = ('django.contrib.admin', )
-MEDIA_BUNDLES = (
+MEDIA_BUNDLES = [
     # put {% include_media "bundle.css" %} in template.html
     ('jquery.css',
         'jquery.css',
@@ -393,7 +393,7 @@ MEDIA_BUNDLES = (
         'jquery.js',
         'jqueryui.js',
     ),
-)
+]
 
 ROOT_MEDIA_FILTERS = {
     'js': 'mediagenerator.filters.yuicompressor.YUICompressor',
@@ -433,18 +433,29 @@ for app in INSTALLED_APPS:
     try:
         app_settings = __import__('.'.join([app, 'settings']))
     except ImportError:
-        continue
+        pass
     else:
-        for v in dir(app_settings):
+        for v in dir(app_settings.settings):
             if len(v) >= 2 and v[:2] != '__':
-                globals()[v] = getattr(app_settings, v)
+                globals()[v] = getattr(app_settings.settings, v)
 
     try:
-        local_app_settings = __import__('.'.join([app, 'local_settings']))
+        local_app_settings.local_settings = __import__('.'.join([app, 'local_settings']))
     except ImportError:
-        continue
+        pass
     else:
-        for v in dir(local_app_settings):
+        for v in dir(local_app_settings.local_settings):
             if len(v) >= 2 and v[:2] != '__' and hasattr(app_settings, v):
-                globals()[v] = getattr(local_app_settings, v)
+                globals()[v] = getattr(local_app_settings.local_settings, v)
+
+    try:
+        generator_settings = __import__('.'.join([app, 'mediagenerator_settings']))
+    except ImportError:
+        pass
+    else:
+        if hasattr(generator_settings.mediagenerator_settings, 'MEDIA_BUNDLES'):
+            for mb in getattr(generator_settings.mediagenerator_settings, 'MEDIA_BUNDLES'):
+                ori = [l[0] for l in MEDIA_BUNDLES]
+                if mb[0] not in ori:
+                    MEDIA_BUNDLES.append(mb)
 # <<< load another settings and local_settings of other modules

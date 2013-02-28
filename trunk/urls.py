@@ -15,19 +15,19 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^(?P<path>(favicon.ico|robots.txt))$', 'django.views.static.serve',
-        {'document_root' : '_generated_media', 'show_indexes' : settings.DEBUG}),
+        {'document_root' : os.path.join(settings.TRUNK, 'static'), 'show_indexes' : settings.DEBUG}),
     # for django-compressor
     url(r'^static/CACHE/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root' : os.path.join(settings.TRUNK, 'compressor-static', 'CACHE'), 'show_indexes' : settings.DEBUG}),
 
     # for django-mediagenerator
     url(r'^production_mediagenerator/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root' : '_generated_media', 'show_indexes' : settings.DEBUG}),
+        {'document_root' : os.path.join(settings.TRUNK, 'mediagenerator-static'), 'show_indexes' : settings.DEBUG}),
 
     url(r'^__docs__/?$', need_staff_login_serve,
-        {'document_root': '__docs__', 'path': 'index.html', 'show_indexes': settings.DEBUG}),
+        {'document_root': os.path.join(settings.TRUNK, '__docs__'), 'path': 'index.html', 'show_indexes': settings.DEBUG}),
     url(r'^__docs__/(?P<path>.*)$', need_staff_login_serve,
-        {'document_root' : '__docs__', 'show_indexes' : settings.DEBUG}),
+        {'document_root' : os.path.join(settings.TRUNK, '__docs__'), 'show_indexes' : settings.DEBUG}),
     # Examples:
     # url(r'^$', 'trunk.views.home', name='home'),
     # url(r'^trunk/', include('trunk.foo.urls')),

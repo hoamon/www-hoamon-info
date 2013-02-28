@@ -1,4 +1,4 @@
-import os
+import os, datetime
 
 from django.conf.urls import patterns, include, url
 from django.conf import settings
@@ -15,12 +15,22 @@ from django.contrib import admin
 admin.autodiscover()
 
 
-def example(R):
-    t = get_template('ho600_lib/example.html')
-    html = t.render(RequestContext(R, {'settings': settings}))
+def compressor_example(R):
+    t0 = datetime.datetime.now()
+    t = get_template('ho600_lib/compressor_example.html')
+    html = t.render(RequestContext(R, {'time': (datetime.datetime.now()-t0)}))
+    return HttpResponse(html)
+
+
+def mediagenerator_example(R):
+    t0 = datetime.datetime.now()
+    t = get_template('ho600_lib/mediagenerator_example.html')
+    html = t.render(RequestContext(R, {'time': (datetime.datetime.now()-t0)}))
     return HttpResponse(html)
 
 
 urlpatterns = patterns('',
-    url(r'', example),
+    url(r'compressor/', compressor_example),
+    url(r'mediagenerator/', mediagenerator_example),
+    url(r'', mediagenerator_example),
 )
