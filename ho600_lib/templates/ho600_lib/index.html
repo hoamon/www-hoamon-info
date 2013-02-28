@@ -1,0 +1,81 @@
+<!--
+# Copyright (c) 2013, ho600.com
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification,
+# are permitted provided that the following conditions are met:
+#
+#     Redistributions of source code must retain the above copyright notice,
+#     this list of conditions and the following disclaimer.
+#
+#     Redistributions in binary form must
+#     reproduce the above copyright notice, this list of conditions and the
+#     following disclaimer in the documentation and/or other materials provided
+#     with the distribution.
+#
+#     Neither the name of the ho600.com nor the names of its contributors
+#     may be used to endorse or promote products derived from this software
+#     without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+# INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+# OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+# NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+# EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+{% load ho600_tags %}{% load media %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>{% block title %}{% endblock %}Bug Record System</title>
+    <link rel="stylesheet" title="default" type="text/css" media="screen" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/themes/redmond/jquery-ui.css" />
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        if (typeof google == 'undefined') {
+            document.write(unescape('%3Cscript src="{{ settings.STATIC_URL }}ho600_lib/jquery-1.4.4.min.js" type="text/javascript"%3E%3C/script%3E'));
+            document.write(unescape('%3Cscript src="{{ settings.STATIC_URL }}ho600_lib/jquery-ui-1.8.7.custom.min.js" type="text/javascript"%3E%3C/script%3E'));
+            document.write(unescape('%3Clink rel="stylesheet" title="default" type="text/css" media="screen" href="{{ settings.STATIC_URL }}ho600_lib/jquery-ui-1.8.7/redmond/jquery-ui-1.8.7.custom.css" /%3E'));
+        } else {
+            google.load("jquery", "1.4.4");
+            google.load("jqueryui", "1.8.7");
+        }
+        var CSRFMIDDLEWARETOKEN;
+    </script>
+    {% include_media "bugrecord_bundle.js" %}
+    <style>
+        table { border-collapse: collapse; }
+        tr.odd { background-color: #E9E9E9; }
+        .notice { color: red; }
+        img#loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            CSRFMIDDLEWARETOKEN = $('input[name=csrfmiddlewaretoken]').val();
+        });
+    </script>
+</head>
+<body id="id_body">{% csrf_token %}
+    {% block menu %}
+	<div id="menu" align="center">
+        <a href="{% url ho600_lib.views.rBugList %}">Index</a>
+	</div>
+    {% endblock %}
+
+    <div class="content">{% block content %}{% endblock %}</div>
+
+	<div id="footer" align="center">
+		<p>Copyright &copy; 2011 | Programmed by <a href="http://www.ho600.com/" target="_ho600">Ho600.com</a></p>
+	</div>
+    {% loading %}
+</body>
+</html>
