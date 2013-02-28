@@ -14,7 +14,7 @@ local_settings.py$
 ^trunk/nginx.conf
 ^trunk/.livereload
 ^trunk/.gaedata
-^trunk/_generated_media/
+^trunk/mediagenerator-static/
 ^trunk/_generated_media_names.py
 ^trunk/django_admin_media
 ^trunk/depends_modules/ho600_lib
