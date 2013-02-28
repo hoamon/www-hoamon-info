@@ -73,7 +73,6 @@ urlpatterns += patterns('',
 )
 
 def ho600_default_view(R):
-    a = 1 / 0
     import os
     _o = ''
     if settings.DEBUG:
