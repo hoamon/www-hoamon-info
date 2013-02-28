@@ -29,20 +29,5 @@
 #NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import re, datetime
-from django.conf import settings as dj_settings
-
-
-
-def settings(R):
-    version = R.META.get('CURRENT_VERSION_ID', '__ondjangoserver__')
-    if version != '__djangoserver__':
-        r = re.match('[^-]+-([^-]+)-.*-([^-]+)\.[0-9]+', version)
-        if not r: version = '__version__'
-        else: version = '-'.join(r.groups())
-    d = {}
-    for k in dir(dj_settings):
-        d[k] = getattr(dj_settings, k)
-    d['version'] = version
-    d['now'] = datetime.datetime.now()
-    return {'settings': d}
+def checkCanViewBugPage():
+    return True
