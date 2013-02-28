@@ -29,11 +29,14 @@
 #NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+import re
 from django.conf import settings
 from django import template
+from django import forms
 from mediagenerator.generators.bundles.utils import _render_include_media
 from mediagenerator import utils
 
+from ho600_lib.models import Option
 
 register = template.Library()
 

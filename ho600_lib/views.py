@@ -35,15 +35,11 @@ from django.template import TemplateDoesNotExist, RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
 from django.http import HttpResponseForbidden, HttpResponseNotFound, HttpResponseServerError
 from django.utils import simplejson as json
-from django.views.debug import ExceptionReporter
 
 from ho600_lib import ajax_controller
 from ho600_lib import AJAXForbiddenError
 from ho600_lib.models import Option, BugKind, BugPage
-try:
-    from ho600_lib.local_settings import checkCanViewBugPage
-except ImportError:
-    raise ImportError('You have no checkCanViewBugPage decorator function, please create one by yourself')
+from django.conf import settings
 
 import re
 import os
@@ -54,13 +50,11 @@ import datetime
 
 
 @ajax_controller.register
-@checkCanViewBugPage
 def testBug(R):
     a = 1 / 0
 
 
 @ajax_controller.register
-@checkCanViewBugPage
 def testAjax(R):
     raise AJAXForbiddenError('for test AJAXForbiddenError')
     raise KeyError('for test KeyError')
@@ -72,7 +66,6 @@ def testAjax(R):
 
 
 @ajax_controller.register
-@checkCanViewBugPage
 def solvedOrQuit(R):
     try:
         bug_kind = BugKind.objects.get(id=R.DATA.get('bug_kind_id', 0))
@@ -84,7 +77,6 @@ def solvedOrQuit(R):
 
 
 @ajax_controller.register
-@checkCanViewBugPage
 def search(R):
     bug_kinds = []
     code = R.DATA.get('code', None)
@@ -134,38 +126,6 @@ def search(R):
     return {'total_count': len(bug_kinds), 'bug_kinds': bks}
 
 
-def recordHttp500Error(R, *args, **kw):
-    """ Create a technical server error response. The last three arguments are
-        the values returned from sys.exc_info().
-    """
-    reporter = ExceptionReporter(R, *sys.exc_info())
-    #phase I, record bug page html
-    bp = BugPage(html=reporter.get_traceback_html())
-    bp.save()
-    #phase II, record request's detail
-    bp.saveWithRequest(request=R)
-    #phase III, search the same bug kind
-    bp.kind = bp.findBugKind()
-    bp.save()
-#    log = Log()
-#    log.makeHTTP500Log(user=R.user if hasattr(R, 'user') else None, bug_page=bp,
-#        url=R.META['PATH_INFO'])
-
-    if R.is_ajax():
-        return HttpResponseServerError(bp.code, mimetype='text/plain')
-    else:
-        f = os.path.join(R.META.get('HTTP_HOST', ''), '500.html')
-        try:
-            t = get_template(f)
-        except TemplateDoesNotExist:
-            try:
-                t = get_template('500.html')
-            except TemplateDoesNotExist:
-                t = get_template(os.path.join('ho600_lib', '500.html'))
-        html = t.render(RequestContext(R, {'bug_page': bp}))
-        return HttpResponseServerError(html)
-
-
 def recordHttp404Error(R, template_name='404.html'):
     if not R.META.get('HTTP_REFERER', '') or not R.META.get('PATH_INFO', ''):
         #log_id = None
@@ -197,7 +157,6 @@ def recordHttp404Error(R, template_name='404.html'):
         return HttpResponseNotFound(html)
 
 
-@checkCanViewBugPage
 def rBugKind(R, id):
     try:
         bug_kind = BugKind.objects.get(id=id)
@@ -208,7 +167,6 @@ def rBugKind(R, id):
     return HttpResponse(html)
 
 
-@checkCanViewBugPage
 def rBugKindHtml(R, id):
     try:
         bug_kind = BugKind.objects.get(id=id)
@@ -217,7 +175,6 @@ def rBugKindHtml(R, id):
     return HttpResponse(bug_kind.html)
 
 
-@checkCanViewBugPage
 def rBugPage(R, code):
     try:
         bug_page = BugPage.objects.filter(code=code).order_by('-id')[0]
@@ -228,7 +185,6 @@ def rBugPage(R, code):
     return HttpResponse(html)
 
 
-@checkCanViewBugPage
 def rBugPageHtml(R, code):
     try:
         bug_page = BugPage.objects.filter(code=code).order_by('-id')[0]
@@ -240,7 +196,6 @@ def rBugPageHtml(R, code):
         return HttpResponse(bug_page.kind.html)
 
 
-@checkCanViewBugPage
 def rBugList(R):
     bk_query = BugKind.objects.filter(is_solved=False).order_by('-create_time')
     total_count = bk_query.count()

@@ -1,5 +1,5 @@
 <!--
-# Copyright (c) 2010, ho600.com
+# Copyright (c) 2013, ho600.com
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification,
@@ -28,7 +28,7 @@
 # NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 # EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-{% load ho600_bugrecord_tags %}
+{% load ho600_tags %}{% load media %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
@@ -38,15 +38,16 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
         if (typeof google == 'undefined') {
-            document.write(unescape('%3Cscript src="/ho600_bugrecord/media/jquery-1.4.4.min.js" type="text/javascript"%3E%3C/script%3E'));
-            document.write(unescape('%3Cscript src="/ho600_bugrecord/media/jquery-ui-1.8.7.custom.min.js" type="text/javascript"%3E%3C/script%3E'));
-            document.write(unescape('%3Clink rel="stylesheet" title="default" type="text/css" media="screen" href="/ho600_bugrecord/media/jquery-ui-1.8.7/redmond/jquery-ui-1.8.7.custom.css" /%3E'));
+            document.write(unescape('%3Cscript src="{{ settings.STATIC_URL }}ho600_lib/jquery-1.4.4.min.js" type="text/javascript"%3E%3C/script%3E'));
+            document.write(unescape('%3Cscript src="{{ settings.STATIC_URL }}ho600_lib/jquery-ui-1.8.7.custom.min.js" type="text/javascript"%3E%3C/script%3E'));
+            document.write(unescape('%3Clink rel="stylesheet" title="default" type="text/css" media="screen" href="{{ settings.STATIC_URL }}ho600_lib/jquery-ui-1.8.7/redmond/jquery-ui-1.8.7.custom.css" /%3E'));
         } else {
             google.load("jquery", "1.4.4");
             google.load("jqueryui", "1.8.7");
         }
+        var CSRFMIDDLEWARETOKEN;
     </script>
-    <script type="text/javascript" src="/ho600_bugrecord/media/ho600_bugrecord.js"></script>
+    {% include_media "bugrecord_bundle.js" %}
     <style>
         table { border-collapse: collapse; }
         tr.odd { background-color: #E9E9E9; }
@@ -57,11 +58,16 @@
             left: 50%;
         }
     </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            CSRFMIDDLEWARETOKEN = $('input[name=csrfmiddlewaretoken]').val();
+        });
+    </script>
 </head>
-<body id="id_body">
+<body id="id_body">{% csrf_token %}
     {% block menu %}
 	<div id="menu" align="center">
-        <a href="{% url ho600_bugrecord.views.rBugList %}">Index</a>
+        <a href="{% url ho600_lib.views.rBugList %}">Index</a>
 	</div>
     {% endblock %}
 

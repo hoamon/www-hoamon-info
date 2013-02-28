@@ -1,5 +1,5 @@
-{% extends 'ho600_bugrecord/index.html' %}
-{% load ho600_bugrecord_tags %}
+{% extends 'ho600_lib/index.html' %}
+{% load ho600_tags %}
 
 {% comment %}
 # Copyright (c) 2010, ho600.com
@@ -99,7 +99,7 @@
             <tr class="{% cycle odd,even %}" title="Note: {{ bk.note|safe }};">
                 <td align="center">{{ forloop.counter }}</td>
                 <td><a target="bug_kind_{{ bk.id }}"
-                       href="{% url ho600_bugrecord.views.rBugKind bk.id %}">
+                       href="{% url ho600_lib.views.rBugKind bk.id %}">
                         {{ bk.type.value|safe }}
                     </a>
                 </td>
@@ -122,7 +122,7 @@
                 <td>{{ bk.create_time|date:"Y-m-d H:i:s" }}</td>
                 <td>
                     {% for bug_page in bk.r10BugPages %}
-                        <a target="bug_page_{{ bug_page.code }}" href="{% url ho600_bugrecord.views.rBugPage bug_page.code %}">{{ bug_page.code }}</a>,
+                        <a target="bug_page_{{ bug_page.code }}" href="{% url ho600_lib.views.rBugPage bug_page.code %}">{{ bug_page.code }}</a>,
                     {% endfor %}
                 </td>
                 <td _id="{{ bk.id }}">{% if bk.is_solved %}

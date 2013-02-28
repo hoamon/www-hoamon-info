@@ -1,5 +1,5 @@
-{% extends 'ho600_bugrecord/index.html' %}
-{% load ho600_bugrecord_tags %}
+{% extends 'ho600_lib/index.html' %}
+{% load ho600_tags %}
 
 {% comment %}
 # Copyright (c) 2010, ho600.com
@@ -32,21 +32,55 @@
 # EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 {% endcomment %}
 
-{% block title %}{{ bug_page.code }} :: {% endblock %}
+{% block title %}{{ bug_kind.type.value }} :: {% endblock %}
 
 {% block menu %}{% endblock %}
 
 {% block content %}
+{% csrf_token %}
 <center>
-<div style="overflow: auto; width: 100%; height: 200px;">
-<table border="1">
+<table border="1" id="id_bug_kind">
     <thead>
         <tr>
-            <th>Kind:</th>
-            <td colspan="6" class="notice">{{ bug_page.kind.type.value }}</td>
+            <th>Type</th>
+            <td colspan="5">{{ bug_kind.type.value|safe }}</td>
+        </tr>
+        <tr>
+            <th>Command</th>
+            <th>Is solved</th>
+            <th>Request url</th>
+            <th>File name</th>
+            <th>Line no</th>
+            <th>Create time</th>
         </tr>
     </thead>
     <tbody>
+        {% with bug_kind as bk %}
+            <tr title="Note: {{ bk.note|safe }}">
+                <td _id="{{ bk.id }}" is_single_bug_kind="true">{% if bk.is_solved %}
+                        {% setupButton "solvedOrQuit:Not Solved" %}
+                    {% else %}
+                        {% setupButton "solvedOrQuit:Solved" %}
+                    {% endif %}
+                </td>
+                <td align="center" class="{% if not bug_page.is_solved %}notice{% endif %}">{{ bk.is_solved }}</td>
+                <td>{{ bk.request_url.value|safe }}</td>
+                <td>{{ bk.file_name.value|safe }}</td>
+                <td align="right">{{ bk.line_no }}</td>
+                <td>{{ bk.create_time|date:"Y-m-d H:i:s" }}</td>
+            </tr>
+        {% endwith %}
+    </tbody>
+</table>
+<br/>
+<br/>
+
+{% for bug_page in bug_kind.rAllBugPages %}
+<table border="1">
+    <thead>
+        <tr>
+            <th colspan="7">{{ forloop.counter }}</th>
+        </tr>
         <tr>
             <th>Code:</th>
             <th>User:</th>
@@ -56,36 +90,41 @@
             <th>create time:</th>
             <th>solved time:</th>
         </tr>
+    </thead>
+    <tbody>
         <tr>
-            <td align="center"><a target="bug_page_html_{{ bug_page.code }}"
-                href="{% url ho600_bugrecord.views.rBugPageHtml bug_page.code %}">
+            <td align="center"><a target="bug_page_{{ bug_page.code }}"
+                href="{% url ho600_lib.views.rBugPage bug_page.code %}">
                     {{ bug_page.code }}
                 </a>
             </td>
-            <td>{{ bug_page.username|default_if_none:"" }}</td>
-            <td>{{ bug_page.remote_addr|default_if_none:"" }}</td>
-            <td>{{ bug_page.method|default_if_none:"" }}</td>
+            <td>{{ bug_page.username }}</td>
+            <td>{{ bug_page.remote_addr }}</td>
+            <td>{{ bug_page.method }}</td>
             <td align="center" class="{% if not bug_page.is_solved %}notice{% endif %}">{{ bug_page.is_solved }}</td>
             <td>{{ bug_page.create_time|date:"Y-m-d H:i:s" }}</td>
             <td>{{ bug_page.solved_time|date:"Y-m-d H:i:s" }}</td>
         </tr>
         <tr>
             <th>GET:</th>
-            <td colspan="6"><pre>{{ bug_page.GET|default_if_none:"" }}</pre></td>
+            <td colspan="6"><pre>{{ bug_page.GET }}</pre></td>
         </tr>
         <tr>
             <th>POST:</th>
-            <td colspan="6"><pre>{{ bug_page.POST|default_if_none:"" }}</pre></td>
+            <td colspan="6"><pre>{{ bug_page.POST }}</pre></td>
         </tr>
         <tr>
             <th>COOKIES:</th>
-            <td colspan="6"><pre>{{ bug_page.COOKIES|default_if_none:"" }}</pre></td>
+            <td colspan="6"><pre>{{ bug_page.COOKIES }}</pre></td>
         </tr>
     </tbody>
 </table>
-</div>
+<br/>
+<br/>
+{% endfor %}
 
-<iframe width="100%" height="650px" src="{% url ho600_bugrecord.views.rBugPageHtml bug_page.code %}">
+<iframe width="100%" height="650px" src="{% url ho600_lib.views.rBugKindHtml bug_kind.id %}">
 </iframe>
+
 </center>
 {% endblock %}

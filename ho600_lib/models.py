@@ -136,7 +136,7 @@ class BugKind(M.Model):
     tracker = M.CharField(verbose_name=_('Tracker'), max_length=512, null=True)
     create_time = M.DateTimeField(verbose_name=_('Create Time'), auto_now_add=True)
     is_solved = M.BooleanField(verbose_name=_('Is Solved?'), default=False)
-    solved_time = M.DateTimeField(verbose_name=_('Solved Time'))
+    solved_time = M.DateTimeField(verbose_name=_('Solved Time'), null=True)
 
 
     @classmethod
@@ -210,7 +210,7 @@ class BugPage(M.Model):
     html = M.TextField(verbose_name=_('Bug Page'))
     is_solved = M.BooleanField(verbose_name=_('Is Solved'), default=False)
     create_time = M.DateTimeField(verbose_name=_('Create Time'), auto_now_add=True)
-    solved_time = M.DateTimeField(verbose_name=_('Solved Time'))
+    solved_time = M.DateTimeField(verbose_name=_('Solved Time'), null=True)
 
 
     def find_bug_kind(self):
@@ -269,7 +269,7 @@ class BugPage(M.Model):
             self.html = ''
             self.solved_time = NOW()
 
-        if self.id: self.kind = self.findBugKind()
+        if self.id: self.kind = self.find_bug_kind()
 
         super(BugPage, self).save()
 

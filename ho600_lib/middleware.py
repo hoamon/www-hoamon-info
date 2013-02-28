@@ -28,18 +28,56 @@
 # OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 # NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 # EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-import re, datetime
+
+import re, datetime, sys
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.contrib.sessions.models import Session
-from django.http import HttpResponseRedirect
 from django.core.exceptions import MultipleObjectsReturned
-
+from django.template import TemplateDoesNotExist, RequestContext
+from django.template.loader import get_template
+from django.views.debug import ExceptionReporter
+from django.http import HttpResponseRedirect
+from django.http import HttpResponseForbidden, HttpResponseNotFound, HttpResponseServerError
 from django.conf import settings
+from django.utils import simplejson as json
+
+from ho600_lib import get_template_by_site_and_lang
+from ho600_lib.models import BugPage
+
 
 
 
 class Handle500Middleware(object):
     def process_exception(self, request, exception):
-        print exception.message
+        """ Create a technical server error response. The last three arguments are
+            the values returned from sys.exc_info().
+        """
+        reporter = ExceptionReporter(request, *sys.exc_info())
+        #phase I, record bug page html
+        bp = BugPage(html=reporter.get_traceback_html())
+        bp.save()
+        #phase II, record request's detail
+        bp.save_with_request(request=request)
+        #phase III, search the same bug kind
+        bp.kind = bp.find_bug_kind()
+        bp.save()
+
+        if request.is_ajax():
+            return HttpResponseServerError(json.dumps({'code': bp.code}), mimetype='application/json')
+        else:
+            if settings.DEBUG:
+                pass
+            else:
+                try:
+                    t = get_template_by_site_and_lang('500.html', sub_dir='')
+                except TemplateDoesNotExist:
+                    try:
+                        t = get_template('500.html')
+                    except TemplateDoesNotExist:
+                        t = get_template_by_site_and_lang('500.html', sub_dir='ho600_lib')
+                html = t.render(RequestContext(request, {'bug_page': bp}))
+                return HttpResponseServerError(html)
+
+
 

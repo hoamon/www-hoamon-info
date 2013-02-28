@@ -1,0 +1,77 @@
+{% load i18n %}{% load ho600_tags %}{% load media %}
+{% include_media "ho600_jquery.js" %}
+<script type="text/javascript">
+    var DEBUG = {% if settings.DEBUG %}true{% else %}false{% endif %};
+    var JQUERY_CSS = '{{ settings.STATIC_URL }}smoothness/jquery-ui-1.9.2.custom.min.css" %}';
+    var JQUERY_JS = '{% url "simple_filem.urls.static" "jquery-1.8.3.js" %}';
+    var JQUERYUI_JS = '{% url "simple_filem.urls.static" "jquery-ui-1.9.2.custom.js" %}';
+    var API_URL = '{% url "api" %}lastest/';
+    var JSTREE_CSS_URL = '{% url "simple_filem.urls.media" "tree-themes/default/style.css" %}';
+    var USE_TYPE = "{{ use_type }}";
+    var SAVE_OPENED = USE_TYPE + "_jstree_open";
+    var SAVE_SELECTED = USE_TYPE + "_jstree_select";
+    var CSRFMIDDLEWARETOKEN;
+    var jQuery13 = jQuery.noConflict(true);
+</script>
+
+<script type="text/javascript" src="/jsi18n/"></script>
+{% use_jqueryui "1.8.3" "1.9.2" "smoothness" %}
+{% include_media "simple_filem_bundle.css" %}
+{% include_media "simple_filem_bundle.js" %}
+
+<style type="text/css">@import url(/media/plupload/jquery.ui.plupload/css/jquery.ui.plupload.css);</style>
+<style type="text/css">
+    .plupload_scroll {
+        max-height: 300px;
+        min-height: 288px;
+        _height: 300px;
+        overflow-y: auto;
+    }
+</style>
+<script type="text/javascript" src="/media/plupload/plupload.full.js"></script>
+<script type="text/javascript" src="/media/plupload/jquery.ui.plupload/jquery.ui.plupload.js"></script>
+<script type="text/javascript" src="/media/plupload/i18n/zh_TW.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        // Vertical splitter. Set min/max/starting sizes for the left pane.
+        jQuery13("#MySplitter").splitter({
+            splitVertical: true,
+            outline: true,
+            sizeLeft: true,
+            cookie: "docksplitter",
+            resizeTo: window
+        });
+        // Horizontal splitter, nested in the right pane of the vertical splitter.
+        jQuery13("#RightPane").splitter({
+            splitHorizontal: true,
+            sizeTop: true
+        });
+
+
+        CSRFMIDDLEWARETOKEN = $('input[name=csrfmiddlewaretoken]').val();
+        $('input[type=submit]').button();
+        $("#thumb_size").slider({
+            range: "min",
+            value: 50,
+            min: 0,
+            max: 100,
+            step: 10,
+            slide: function( event, ui ) {
+            }
+        });
+
+        $('input[name=create_project_dialog]').click(create_project_dialog);
+        $('input[name=upload_files_dialog]').click(upload_files_dialog);
+
+        var url_fsegment_id = $.url(window.location.href).fsegment('1');
+        if (url_fsegment_id && Number(url_fsegment_id)){
+            $.cookie(SAVE_SELECTED, url_fsegment_id);
+        }
+        init_tree();
+        init_upload_files_dialog();
+    });
+</script>
+
+{% block js_and_css %}{% endblock %}
+</head>

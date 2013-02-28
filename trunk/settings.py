@@ -185,7 +185,7 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'mediagenerator.middleware.MediaMiddleware',
-    #'ho600_lib.middleware.Handle500Middleware',
+    'ho600_lib.middleware.Handle500Middleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -428,7 +428,6 @@ else:
                     print('Upload settings.%s to %s' % (v, getattr(local_settings, v)))
     from local_settings import *
 
-
 for app in INSTALLED_APPS:
     try:
         app_settings = __import__('.'.join([app, 'settings']))
@@ -437,25 +436,11 @@ for app in INSTALLED_APPS:
     else:
         for v in dir(app_settings.settings):
             if len(v) >= 2 and v[:2] != '__':
-                globals()[v] = getattr(app_settings.settings, v)
-
-    try:
-        local_app_settings.local_settings = __import__('.'.join([app, 'local_settings']))
-    except ImportError:
-        pass
-    else:
-        for v in dir(local_app_settings.local_settings):
-            if len(v) >= 2 and v[:2] != '__' and hasattr(app_settings, v):
-                globals()[v] = getattr(local_app_settings.local_settings, v)
-
-    try:
-        generator_settings = __import__('.'.join([app, 'mediagenerator_settings']))
-    except ImportError:
-        pass
-    else:
-        if hasattr(generator_settings.mediagenerator_settings, 'MEDIA_BUNDLES'):
-            for mb in getattr(generator_settings.mediagenerator_settings, 'MEDIA_BUNDLES'):
-                ori = [l[0] for l in MEDIA_BUNDLES]
-                if mb[0] not in ori:
-                    MEDIA_BUNDLES.append(mb)
+                if v != 'MEDIA_BUNDLES':
+                    globals()[v] = getattr(app_settings.settings, v)
+                elif hasattr(app_settings.settings, 'MEDIA_BUNDLES'):
+                    for mb in getattr(app_settings.settings, 'MEDIA_BUNDLES'):
+                        ori = [l[0] for l in MEDIA_BUNDLES]
+                        if mb[0] not in ori:
+                            MEDIA_BUNDLES.append(mb)
 # <<< load another settings and local_settings of other modules
