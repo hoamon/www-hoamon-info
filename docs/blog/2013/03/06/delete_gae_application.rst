@@ -3,7 +3,7 @@
 
 .. figure:: https://developers.google.com/appengine/images/appengine-silver-120x30.gif
 
-    圖片來源： `https://developers.google.com/appengine/downloads`_
+    圖片來源： `https://developers.google.com/appengine/downloads <https://developers.google.com/appengine/downloads>`_
 
 有朋友問我如何刪除 GAE 中的應用程式。因為每個人最多只能開 10 個應用程式，\
 如果有不需要再用到的，當然還是把它刪一刪，不然，就要花 5000 USD 去買個無限量的資格。
