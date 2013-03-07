@@ -122,7 +122,7 @@ PGP keys
     | Now key ID: 0x29E21FFB |email|
     | Expiry date: 2016-07-20
     | Fingerprint: E2E5 89C4 9C36 44CB 18BA FDF5 D946 6001 29E2 1FFB
-    | Download here: `http://www.hoamon.info/_static/YUEH-FENG_29E21FFB.asc </_static/YUEH-FENG_29E21FFB.asc>`_
+    | Download here: `http://www.hoamon.info/hoamon.asc </hoamon.asc>`_ , `http://www.hoamon.info/_static/YUEH-FENG_29E21FFB.asc </_static/YUEH-FENG_29E21FFB.asc>`_
     | Used key ID: 0x244E7AEB |email|
     | Expiry date: No limit( but i don't use it anymore, except sign my new keys )
     | Fingerprint: 39D5 9857 E340 2EB5 F3AD C7E8 98D0 4DDD 244E 7AEB
