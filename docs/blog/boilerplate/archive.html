@@ -15,7 +15,12 @@
     <script type="text/javascript">
         var PATH_ = window.location.pathname.replace(/[^\/]+$/, "");
         function set_fb_button_2 (path) {
-            var length = path.match(/(\.\.\/)/g).length;
+            var re1 = path.match(/(\.\.\/)/g);
+            if (re1) {
+                var length = re1.length;
+            } else {
+                var length = 0;
+            }
             var path = path.replace(/(\.\.\/)/g, "");
             var re = RegExp("([^\/]+\/){"+length+"}$");
             var dir = PATH_.replace(re, "");
