@@ -50,12 +50,15 @@ def checkCanViewBugPage(view_function):
             return HttpResponseForbidden('You(%s) have no right to view this page'%username, mimetype='text/plain')
     innerFunction.func_name = view_function.func_name
     return innerFunction
-    
+
 
 MEDIA_BUNDLES = [
     ('bugrecord_bundle.js',
         'ho600_lib/ho600_lib.js',
     ),
+]
+
+_Test_mediagenerator_speed = [
     ('mediagenerator_example.css',
         'ho600_lib/s1.css',
         'ho600_lib/s2.css',
@@ -359,5 +362,3 @@ MEDIA_BUNDLES = [
         'ho600_lib/s3.css',
     ),
 ]
-
-
