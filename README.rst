@@ -6,7 +6,7 @@ go to
 
     latest documents: https://ho600-django-gae-default-trunk.readthedocs.org/en/latest/ (目前只有中文版文件)
 
-    release-1.0.4 documents: https://ho600-django-gae-default-trunk.readthedocs.org/en/release-1.0.4/ (目前只有中文版文件)
+    release-1.0.5 documents: https://ho600-django-gae-default-trunk.readthedocs.org/en/release-1.0.5/ (目前只有中文版文件)
 
 AND
 
