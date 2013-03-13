@@ -76,7 +76,7 @@ class Handle500Middleware(object):
                         t = get_template('500.html')
                     except TemplateDoesNotExist:
                         t = get_template_by_site_and_lang('500.html', sub_dir='ho600_lib')
-                html = t.render(RequestContext(request, {'bug_page': bp}))
+                html = t.render(RequestContext(request, {'request': request, 'bug_page': bp}))
                 return HttpResponseServerError(html)
 
 
