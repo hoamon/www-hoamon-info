@@ -206,6 +206,9 @@ ho600_lib/
         ...
         'ho600_lib.middleware.Handle500Middleware',
     )
+    INTERNAL_IPS = ('127.0.0.1', '1.2.3.4', )
+
+另外則是要把開發者自己的 IP 登錄到 INTERNAL_IPS 變數中，才可以看到 bug page 。
 
 樣版選擇順序: get_template_by_site_and_lang
 ................................................................................
