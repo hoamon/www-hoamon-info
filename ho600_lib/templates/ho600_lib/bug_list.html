@@ -1,0 +1,139 @@
+{% extends 'ho600_lib/index.html' %}
+{% load ho600_tags %}
+
+{% comment %}
+# Copyright (c) 2010, ho600.com
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification,
+# are permitted provided that the following conditions are met:
+#
+#     Redistributions of source code must retain the above copyright notice,
+#     this list of conditions and the following disclaimer.
+#
+#     Redistributions in binary form must
+#     reproduce the above copyright notice, this list of conditions and the
+#     following disclaimer in the documentation and/or other materials provided
+#     with the distribution.
+#
+#     Neither the name of the ho600.com nor the names of its contributors
+#     may be used to endorse or promote products derived from this software
+#     without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+# INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+# OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+# NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+# EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+{% endcomment %}
+
+{% block content %}
+<center>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Bug code:</th>
+            <th>Create time after:</th>
+            <th>Create time before:</th>
+            <th>Is solved:</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input id="id_code" size="20" type="text" /></td>
+            <td><input id="id_start_date" size="20" type="text" class="date" /></td>
+            <td><input id="id_end_date" size="20" type="text" class="date" /></td>
+            <td><select id="id_is_solved">
+                    <option value=""></option>
+                    <option value="True">True</option>
+                    <option value="False">False</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Type:</th>
+            <td colspan="4">{% rSelect "type-option" %}</td>
+        </tr>
+        <tr>
+            <th>Request url:</th>
+            <td colspan="4">{% rSelect "request_url-option" %}</td>
+        </tr>
+        <tr>
+            <th>File name:</th>
+            <td colspan="4">{% rSelect "file_name-option" %}</td>
+        </tr>
+    </tbody>
+</table>
+
+<br/>
+
+{% setupButton "search:Search" %}
+{% setupButton "clear:Clear" %}
+
+<br/><br/>
+
+<div>There are <span id="id_total_count" class="notice">{{ total_count }}</span>
+    record<span id="id_pluralize">{% if total_count %}{{ total_count|pluralize }}{% endif %}</span>
+    <span id="id_no_search">were not solved</span>.</div>
+<table border="1" id="id_bug_kinds">
+    <thead>
+        <tr>
+            <th width="20px">&nbsp;</th>
+            <th>Type</th>
+            <th>Request url</th>
+            <th>File name</th>
+            <th>Line no</th>
+            <th>Is solved</th>
+            <th>Create time</th>
+            <th>Lastest 10 bug codes</th>
+            <th>Command</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for bk in bug_kinds %}
+            <tr class="{% cycle odd,even %}" title="Note: {{ bk.note|safe }};">
+                <td align="center">{{ forloop.counter }}</td>
+                <td><a target="bug_kind_{{ bk.id }}"
+                       href="{% url ho600_lib.views.rBugKind bk.id %}">
+                        {{ bk.type.value|safe }}
+                    </a>
+                </td>
+                <td title="{{ bk.request_url.value|safe }}">
+                    {% if bk.request_url.value|slice:"36:" %}
+                        ... {{ bk.request_url.value|safe|slice:"12:36" }} ...
+                    {% else %}
+                        {{ bk.request_url.value|safe }}
+                    {% endif %}
+                </td>
+                <td title="{{ bk.file_name.value|safe }}">
+                    {% if bk.file_name.value|slice:"36:" %}
+                        ... {{ bk.file_name.value|safe|slice:"12:36" }} ...
+                    {% else %}
+                        {{ bk.file_name.value|safe }}
+                    {% endif %}
+                </td>
+                <td align="right">{{ bk.line_no }}</td>
+                <td align="center" class="{% if not bk.is_solved %}notice{% endif %}">{{ bk.is_solved }}</td>
+                <td>{{ bk.create_time|date:"Y-m-d H:i:s" }}</td>
+                <td>
+                    {% for bug_page in bk.r10BugPages %}
+                        <a target="bug_page_{{ bug_page.code }}" href="{% url ho600_lib.views.rBugPage bug_page.code %}">{{ bug_page.code }}</a>,
+                    {% endfor %}
+                </td>
+                <td _id="{{ bk.id }}">{% if bk.is_solved %}
+                        {% setupButton "solvedOrQuit:Not Solved" %}
+                    {% else %}
+                        {% setupButton "solvedOrQuit:Solved" %}
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</center>
+{% endblock %}

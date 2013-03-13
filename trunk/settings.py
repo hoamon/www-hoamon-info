@@ -1,6 +1,7 @@
 # Django settings for trunk project.
 
-import os, sys
+import os, sys, datetime
+from os.path import join
 
 
 def _insert_sys_path(index, path):
@@ -12,20 +13,30 @@ def _insert_sys_path(index, path):
 
 TRUNK = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(TRUNK)
-_insert_sys_path(0, os.path.join(TRUNK, 'depends_modules'))
-_insert_sys_path(0, os.path.join(TRUNK, 'modules'))
+_insert_sys_path(0, join(TRUNK, 'depends_modules'))
+_insert_sys_path(0, join(TRUNK, 'modules'))
 _insert_sys_path(0, TRUNK)
 TRUNK_PARENT = os.path.dirname(TRUNK)
 _insert_sys_path(0, TRUNK_PARENT)
 
 # use the below to set up third party libraries
-#_insert_sys_path(0, os.path.join(os.path.dirname(TRUNK), 'asset', 'SOME-LIB-DIR'))
+#_insert_sys_path(0, join(os.path.dirname(TRUNK), 'asset', 'SOME-LIB-DIR'))
 
 
 if os.environ.get('APPLICATION_ID', ''):
+    _insert_sys_path(0, join(os.path.dirname(TRUNK), 'asset', 'django-gae-backends'))
     SDK_MODE = 'appengine'
+    EMAIL_BACKEND = "gae_backends.mail.EmailBackend"
+    MEMCACHE = {
+        'BACKEND': 'gae_backends.memcache.MemcacheCache',
+    }
 else:
     SDK_MODE = 'puredjango'
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    MEMCACHE = {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake'
+    }
 
 
 if (os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
@@ -72,6 +83,15 @@ else:
 
 TEMPLATE_DEBUG = DEBUG
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'default_trunk_cache',
+    },
+    'COMPRESSOR_CACHE': MEMCACHE,
+}
+
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -114,7 +134,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = join(TRUNK, 'static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -122,6 +142,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+    join(TRUNK, 'media'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -133,6 +154,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -152,7 +174,7 @@ TEMPLATE_CONTEXT_PROCESSORS =  (
 )
 
 
-_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'django-debug-toolbar'))
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'django-debug-toolbar'))
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -163,6 +185,8 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'mediagenerator.middleware.MediaMiddleware',
+    # and please set a INTERNAL_IPS variable, like INTERNAL_IPS = ('127.0.0.1', '1.2.3.4',)
+    'ho600_lib.middleware.Handle500Middleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -171,14 +195,15 @@ ROOT_URLCONF = 'urls'
 WSGI_APPLICATION = 'wsgi.application'
 
 TEMPLATE_DIRS = (
+    join(TRUNK, 'templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
 
-_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'mimeparse-0.1.3')) # needed by django-tastypie
-_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'python-dateutil-1.5')) # needed by django-tastypie
-_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'django-tastypie'))
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'mimeparse-0.1.3')) # needed by django-tastypie
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'python-dateutil-1.5')) # needed by django-tastypie
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'django-tastypie'))
 # and Optional modules:
 # python_digest (https://bitbucket.org/akoha/python-digest/)
 # lxml (http://lxml.de/) if using the XML serializer
@@ -186,14 +211,7 @@ _insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'django-tastypie'))
 # biplist (http://explorapp.com/biplist/) if using the binary plist serializer
 
 
-# the modules were needed by INSTALLED_APPS
-ANOTHER_DEPENDS_MODULES = (
-    'mimeparse',
-    'dateutil',
-)
-
-
-_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'django-guardian'))
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'django-guardian'))
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend', # this is default
     'guardian.backends.ObjectPermissionBackend',
@@ -201,7 +219,28 @@ AUTHENTICATION_BACKENDS = (
 ANONYMOUS_USER_ID = -1
 
 
-_insert_sys_path(0, os.path.join(TRUNK_PARENT, 'asset', 'django-mediagenerator'))
+# the modules were needed by INSTALLED_APPS
+# for bin/before_deployment.py
+ANOTHER_DEPENDS_MODULES = (
+    'mimeparse',
+    'dateutil',
+
+    'six',
+    'BeautifulSoup',
+    'html5lib',
+    'slimit',
+)
+
+
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'django_compressor'))
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'versiontools')) # needed by django_compressor
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'django-appconf')) # needed by django_compressor
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'six')) # needed by django-appconf
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'BeautifulSoup')) # optional needed by django_compressor+lxml
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'html5lib', 'python')) # optional needed by django_compressor
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'slimit', 'src')) # optional needed by django_compressor
+
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'django-mediagenerator'))
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -218,10 +257,16 @@ INSTALLED_APPS = (
     'ho600_lib',
 
     'debug_toolbar',
+
+    'appconf',
+    'versiontools',
+    'compressor',
+
     'mediagenerator', # must be last
 )
 
 
+# django-debug_toolbar <<<
 INTERNAL_IPS = ('127.0.0.1', '192.168.1.1', '192.168.1.2', '192.168.1.254', )
 DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.version.VersionDebugPanel',
@@ -247,6 +292,7 @@ DEBUG_TOOLBAR_CONFIG = {
     'TAG': 'div',
     'ENABLE_STACKTRACES' : True,
 }
+# >>> django-debug_toolbar
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -294,16 +340,35 @@ API_LIMIT_PER_PAGE = 25
 TASTYPIE_FULL_DEBUG = DEBUG
 # <<< django-tastypie
 
+# django-compressor >>>
+COMPRESS_ENABLED = not DEBUG
+COMPRESS_OFFLINE = not DEBUG
+COMPRESS_OFFLINE_MANIFEST = join(TRUNK, 'compressor-static', 'manifest.json')
+COMPRESS_CACHE_BACKEND = 'COMPRESSOR_CACHE'
+COMPRESS_URL = STATIC_URL
+COMPRESS_ROOT = join(TRUNK, 'compressor-static')
+COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter',
+                        'compressor.filters.yui.YUICSSFilter',
+                        'compressor.filters.cssmin.CSSMinFilter']
+COMPRESS_YUI_BINARY = 'java -jar %s' % join(ROOT, 'asset', 'yuicompressor-2.4.7.jar')
+if DEBUG:
+    SV_ = STATIC_VERSION = lambda: '?v=%s' % datetime.datetime.now().strftime('%Y%m%d%H%M%S.%f')
+else:
+    SV_ = STATIC_VERSION = ''
+# <<< django-compressor
+
 
 # mediagenerator >>>
 MEDIA_DEV_MODE = DEBUG
 DEV_MEDIA_URL = '/mediagenerator/'
 PRODUCTION_MEDIA_URL = '/production_mediagenerator/'
-GLOBAL_MEDIA_DIRS = (os.path.join(TRUNK, 'media'),
-                        os.path.join(TRUNK, 'modules'),
-                        #ROOT,  # if you run in GAE mode, this ROOT directory will raise a IOError on ./trunk/_generate_media .
-                                # for example: the media file laies on ./my_module/media/xxx.js , 
-                                # you should use os.path.join(ROOT, 'my_module', 'media') here and
+GENERATED_MEDIA_DIR = 'mediagenerator-static'
+GLOBAL_MEDIA_DIRS = (join(TRUNK, 'media'),
+                        join(TRUNK, 'modules'),
+                        #ROOT,  # if you run in GAE mode,
+                                # this ROOT directory will raise a IOError on ./trunk/_generate_media .
+                                # for example: the media file laies on ./my_module/media/xxx.js ,
+                                # you should use join(ROOT, 'my_module', 'media') here and
                                 # ('bundle_xxx.js',
                                 #   'xxx.js'),
                                 # in MEDIA_BUNDLES.
@@ -318,7 +383,7 @@ MEDIA_GENERATORS = (
 COPY_MEDIA_FILETYPES = ('gif', 'jpg', 'jpeg', 'png', 'svg', 'svgz',
                                      'ico', 'swf', 'ttf', 'otf', 'eot')
 IGNORE_APP_MEDIA_DIRS = ('django.contrib.admin', )
-MEDIA_BUNDLES = (
+MEDIA_BUNDLES = [
     # put {% include_media "bundle.css" %} in template.html
     ('jquery.css',
         'jquery.css',
@@ -329,14 +394,14 @@ MEDIA_BUNDLES = (
         'jquery.js',
         'jqueryui.js',
     ),
-)
+]
 
 ROOT_MEDIA_FILTERS = {
     'js': 'mediagenerator.filters.yuicompressor.YUICompressor',
     'css': 'mediagenerator.filters.yuicompressor.YUICompressor',
 }
 
-YUICOMPRESSOR_PATH = os.path.join(TRUNK_PARENT, 'asset', 'yuicompressor-2.4.7.jar')
+YUICOMPRESSOR_PATH = join(TRUNK_PARENT, 'asset', 'yuicompressor-2.4.7.jar')
 # <<< mediagenerator
 
 
@@ -364,23 +429,19 @@ else:
                     print('Upload settings.%s to %s' % (v, getattr(local_settings, v)))
     from local_settings import *
 
-
 for app in INSTALLED_APPS:
     try:
         app_settings = __import__('.'.join([app, 'settings']))
     except ImportError:
-        continue
+        pass
     else:
-        for v in dir(app_settings):
+        for v in dir(app_settings.settings):
             if len(v) >= 2 and v[:2] != '__':
-                globals()[v] = getattr(app_settings, v)
-
-    try:
-        local_app_settings = __import__('.'.join([app, 'local_settings']))
-    except ImportError:
-        continue
-    else:
-        for v in dir(local_app_settings):
-            if len(v) >= 2 and v[:2] != '__' and hasattr(app_settings, v):
-                globals()[v] = getattr(local_app_settings, v)
+                if v != 'MEDIA_BUNDLES':
+                    globals()[v] = getattr(app_settings.settings, v)
+                elif hasattr(app_settings.settings, 'MEDIA_BUNDLES'):
+                    for mb in getattr(app_settings.settings, 'MEDIA_BUNDLES'):
+                        ori = [l[0] for l in MEDIA_BUNDLES]
+                        if mb[0] not in ori:
+                            MEDIA_BUNDLES.append(mb)
 # <<< load another settings and local_settings of other modules

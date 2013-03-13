@@ -191,7 +191,24 @@ ho600_lib/
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 方便作 django-based 程式開發的函式庫，主要有 bugrecord 功能，在執行程式時，\
-若發生 404|500 錯誤時，能紀錄在資料庫內。
+若發生 500 錯誤時，能紀錄在資料庫內。
+
+設定方式如下，只要把 ho600_lib.middleware.Handle500Middleware 加入 MIDDLEWARE_CLASSES 中，\
+這樣在 DEBUG = False 或是 ajax request 發生 500 錯誤時，都會紀錄到資料庫中，\
+預設瀏覽 bugpage 的連結是 http://localhost:XXXX/ho600_lib/buglist/ 。
+
+.. code-block:: python
+    :linenos:
+
+    #settings.py
+
+    MIDDLEWARE_CLASSES = (
+        ...
+        'ho600_lib.middleware.Handle500Middleware',
+    )
+    INTERNAL_IPS = ('127.0.0.1', '1.2.3.4', )
+
+另外則是要把開發者自己的 IP 登錄到 INTERNAL_IPS 變數中，才可以看到 bug page 。
 
 樣版選擇順序: get_template_by_site_and_lang
 ................................................................................
@@ -208,6 +225,7 @@ ho600_lib/
     @hoamon: 先直接看程式碼
 
 得知使用者以什麼網域名稱瀏覽： get_site_from_settings
+................................................................................
 
 .. todo::
 

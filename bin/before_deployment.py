@@ -30,42 +30,57 @@
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import os, sys
+from os.path import join
 from shutil import copy, rmtree, copytree, ignore_patterns
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if root not in sys.path:
     sys.path.insert(0, root)
 from trunk import settings
 trunk_dir = settings.TRUNK
-module_dir = os.path.join(trunk_dir, 'depends_modules')
+module_dir = join(trunk_dir, 'depends_modules')
 
-# copy moduels to trunk/depends_modules/
+# copy modules to trunk/depends_modules/
 if hasattr(settings, 'ANOTHER_DEPENDS_MODULES'):
     MODULES = settings.ANOTHER_DEPENDS_MODULES + settings.INSTALLED_APPS
 else:
     MODULES = settings.INSTALLED_APPS
+
 for app_name in MODULES:
     app_name = app_name.split('.')[0]
-    if 'django' == app_name: continue
+    if app_name in ('django', 'ho600_lib'): continue
 
-    old_app_dir = os.path.join(module_dir, app_name)
+    old_app_dir = join(module_dir, app_name)
     if os.path.isdir(old_app_dir):
+        print '\t\tdelete: %s' % old_app_dir
         rmtree(old_app_dir)
 
     app = __import__(app_name)
     app_from_dir = os.path.dirname(app.__file__)
-    if os.path.join(trunk_dir, 'modules') in app_from_dir:
+    if (join(trunk_dir, 'modules') in app_from_dir
+        or join(trunk_dir, 'depends_modules') in app_from_dir):
         continue
 
-    app_to_dir = os.path.join(module_dir, app_name)
+    app_to_dir = join(module_dir, app_name)
 
     print '%s == copy ==> %s' % (os.path.basename(app_from_dir), app_to_dir)
     copytree(app_from_dir, app_to_dir, ignore=ignore_patterns('*.pyc', '.hg'))
     print '\tDone for %s' % os.path.basename(app_to_dir)
 
-# run ./manage.py generatemedia to export static media file
-r = os.popen('%s generatemedia'%os.path.join(trunk_dir, 'manage.py'))
+if os.path.isdir(join(module_dir, 'ho600_lib')):
+    rmtree(join(module_dir, 'ho600_lib'))
+print '%s == copy ==> %s' % (os.path.basename(join(root, 'ho600_lib')), join(module_dir, 'ho600_lib'))
+copytree(join(root, 'ho600_lib'), join(module_dir, 'ho600_lib'),
+        ignore=ignore_patterns('*.pyc', '.hg'))
+print '\tDone for %s' % os.path.basename(join(module_dir, 'ho600_lib'))
+
+# run ./manage.py collectstatic to collectstatic static files
+r = os.popen('%s collectstatic --noinput'%join(trunk_dir, 'manage.py'))
 print(r.read())
 
-# copy favicon.ico and robots.txt after ./manage.py generatemedia
-copy(os.path.join(trunk_dir, 'media/favicon.ico'), os.path.join(trunk_dir, '_generated_media'))
-copy(os.path.join(trunk_dir, 'media/robots.txt'), os.path.join(trunk_dir, '_generated_media'))
+# run ./manage.py generatemedia to export static media files
+r = os.popen('%s generatemedia'%join(trunk_dir, 'manage.py'))
+print(r.read())
+
+# run ./manage.py compress --settings=compressor_settings to export static media files
+r = os.popen('%s compress --settings=compressor_settings'%join(trunk_dir, 'manage.py'))
+print(r.read())
