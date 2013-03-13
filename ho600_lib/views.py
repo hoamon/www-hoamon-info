@@ -49,11 +49,23 @@ import types
 import datetime
 
 
+def check_internal_ips(function):
+    def _inner_function(*args, **kw):
+        R = args[0]
+        if hasattr(settings, 'INTERNAL_IPS') and R.META.get('REMOTE_ADDR') in settings.INTERNAL_IPS:
+            return function(*args, **kw)
+        else:
+            return HttpResponseForbidden('You have no right!!!')
+    return _inner_function
+
+
+@check_internal_ips
 @ajax_controller.register
 def testBug(R):
     a = 1 / 0
 
 
+@check_internal_ips
 @ajax_controller.register
 def testAjax(R):
     raise AJAXForbiddenError('for test AJAXForbiddenError')
@@ -65,6 +77,7 @@ def testAjax(R):
     return HttpResponse(str(d), mimetype='text/plain')
 
 
+@check_internal_ips
 @ajax_controller.register
 def solvedOrQuit(R):
     try:
@@ -76,6 +89,7 @@ def solvedOrQuit(R):
     return {'is_solved': bug_kind.is_solved}
 
 
+@check_internal_ips
 @ajax_controller.register
 def search(R):
     bug_kinds = []
@@ -126,6 +140,7 @@ def search(R):
     return {'total_count': len(bug_kinds), 'bug_kinds': bks}
 
 
+@check_internal_ips
 def recordHttp404Error(R, template_name='404.html'):
     if not R.META.get('HTTP_REFERER', '') or not R.META.get('PATH_INFO', ''):
         #log_id = None
@@ -157,6 +172,7 @@ def recordHttp404Error(R, template_name='404.html'):
         return HttpResponseNotFound(html)
 
 
+@check_internal_ips
 def rBugKind(R, id):
     try:
         bug_kind = BugKind.objects.get(id=id)
@@ -167,6 +183,7 @@ def rBugKind(R, id):
     return HttpResponse(html)
 
 
+@check_internal_ips
 def rBugKindHtml(R, id):
     try:
         bug_kind = BugKind.objects.get(id=id)
@@ -175,6 +192,7 @@ def rBugKindHtml(R, id):
     return HttpResponse(bug_kind.html)
 
 
+@check_internal_ips
 def rBugPage(R, code):
     try:
         bug_page = BugPage.objects.filter(code=code).order_by('-id')[0]
@@ -185,6 +203,7 @@ def rBugPage(R, code):
     return HttpResponse(html)
 
 
+@check_internal_ips
 def rBugPageHtml(R, code):
     try:
         bug_page = BugPage.objects.filter(code=code).order_by('-id')[0]
@@ -196,6 +215,7 @@ def rBugPageHtml(R, code):
         return HttpResponse(bug_page.kind.html)
 
 
+@check_internal_ips
 def rBugList(R):
     bk_query = BugKind.objects.filter(is_solved=False).order_by('-create_time')
     total_count = bk_query.count()

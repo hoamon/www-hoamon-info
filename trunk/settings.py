@@ -185,6 +185,7 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'mediagenerator.middleware.MediaMiddleware',
+    # and please set a INTERNAL_IPS variable, like INTERNAL_IPS = ('127.0.0.1', '1.2.3.4',)
     'ho600_lib.middleware.Handle500Middleware',
 )
 
