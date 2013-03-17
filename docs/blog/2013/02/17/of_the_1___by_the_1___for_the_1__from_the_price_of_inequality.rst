@@ -1,6 +1,13 @@
 1% 所有、1% 所治、1% 所享 --- 『不公平的代價』一書之部份讀後感 (2)
 ================================================================================
 
+.. raw:: html
+
+    <p>
+        <iframe width="420" height="315"
+            src="http://www.youtube.com/embed/DJ70hiltOdw" frameborder="0" allowfullscreen="on"> </iframe>
+    </p>
+
 未完。
 
 
