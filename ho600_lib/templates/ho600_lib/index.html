@@ -45,7 +45,6 @@
             google.load("jquery", "1.4.4");
             google.load("jqueryui", "1.8.7");
         }
-        var CSRFMIDDLEWARETOKEN;
     </script>
     {% include_media "bugrecord_bundle.js" %}
     <style>
@@ -60,7 +59,75 @@
     </style>
     <script type="text/javascript">
         $(document).ready(function(){
-            CSRFMIDDLEWARETOKEN = $('input[name=csrfmiddlewaretoken]').val();
+            var AJAX_URL = '/ho600_lib/ajax/';
+            var CSRFMIDDLEWARETOKEN = $('input[name=csrfmiddlewaretoken]').val();
+            var bugrecord = $.bugrecord(AJAX_URL, CSRFMIDDLEWARETOKEN);
+            $('.clear').click(bugrecord.clear);
+            $('.search').click(bugrecord.search);
+            $('.solvedOrQuit').click(bugrecord.solvedOrQuit);
+
+            $.datepicker.setDefaults({dateFormat: 'yy-mm-dd'});
+            $('input.date').each(function() {
+                $(this).datepicker({
+                    changeMonth: true,
+                    changeYear: true
+                });
+            });
+
+            $('img#loading').ajaxStop(function(){
+                var $img = $(this);
+                if($img.attr('status') != 'disable'){
+                    $('#id_body').css('opacity', 1);
+                    $img.hide();
+                }
+            });
+            $('img#loading').ajaxStart(function(){
+                var $img = $(this);
+                if($img.attr('status') != 'disable'){
+                    $('#id_body').css('opacity', 0.25);
+                    $img.css('z-index', 10000).show();
+                }
+            });
+        });
+
+        $(document).ajaxError(function(envent, request, settings){
+            $('#id_body').append($('<div id="id_ajaxErrorDialog"></div>'));
+            var $ajaxErrorDialog = $('#id_ajaxErrorDialog', $('#id_body'));
+            if (request['status'] == '0'){
+                var title = 'Connection Error';
+                var message = '<p>It has no network betweed You and us.</p><p>You can try to browse <a href="http://www.google.com/" target="_blank">Google</a> to check your network status.<br/>Please try again later!</p>';
+            } else {
+                var title = 'Runtime Error';
+                if (request['status'] == '500') {
+                    var code = request['responseText'];
+                    var link = '<a href="'+AJAX_URL+'../bugpage/'+code+'/" target="_blank">'+code+'</a>';;
+                    var message = 'Web program has a problem[Error code: '+link+'].<br/>This error report has been accepted by programmer.<br/>Please try again later!';
+                } else if (request['status'] == '404') {
+                    var list = request['responseText'].split('<>');
+                    var path = list[0];
+                    var code = list[1];
+                    var message = 'Could not request ' + path + ' [Error code: '+code+']<br/>This error report has been accepted by programmer.<br/>Please try again later!';
+                } else if (request['status'] == '403') {
+                    var code = request['responseText'];
+                    var message = 'System deny your request, because <span class="notice">[ '+code+' ]</span>';
+                } else if (request['status'] == '200') {
+                    var message = request['responseText'];
+                } else {
+                    var code = request['responseText'];
+                    var message = 'Web program has a problem[Error code: '+request['status']+','+code+'].<br/>This error report has been accepted by programmer.<br/>Please try again later!';
+                }
+            }
+            $ajaxErrorDialog.html(message).dialog({
+                title: title,
+                modal: true,
+                overlay: {opacity: 0.8, background: "black"},
+                buttons: {
+                    'Close': function(){
+                        $ajaxErrorDialog.dialog('close');
+                    }
+                },
+                width: 500
+            });
         });
     </script>
 </head>

@@ -66,9 +66,7 @@ class Handle500Middleware(object):
         if request.is_ajax():
             return HttpResponseServerError(json.dumps({'code': bp.code}), mimetype='application/json')
         else:
-            if settings.DEBUG:
-                pass
-            else:
+            if not settings.DEBUG or request.META.get('REMOTE_ADDR', '') in settings.INTERNAL_IPS:
                 try:
                     t = get_template_by_site_and_lang('500.html', sub_dir='')
                 except TemplateDoesNotExist:

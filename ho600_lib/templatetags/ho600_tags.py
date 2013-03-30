@@ -42,7 +42,10 @@ register = template.Library()
 
 @register.simple_tag
 def use_jqueryui(jquery_version, jqueryui_version, theme_name):
-    return """<script type="text/javascript">
+    return """<link rel="stylesheet" title="default" type="text/css" media="screen" href="//ajax.googleapis.com/ajax/libs/jqueryui/%(jqueryui_version)s/themes/%(theme_name)s/jquery-ui.css" />
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/%(jquery_version)s/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/%(jqueryui_version)s/jquery-ui.min.js"></script>
+    <script type="text/javascript">
             function self_joined_jquery () {
                 if (JQUERY_CSS && JQUERY_JS && JQUERYUI_JS){
                     document.write(unescape('%%3Clink rel="stylesheet" title="default" type="text/css" media="screen" href="'+JQUERY_CSS+'" /%%3E'));
@@ -57,18 +60,16 @@ def use_jqueryui(jquery_version, jqueryui_version, theme_name):
                     }
                 }
             }
-            if (%(DEBUG)s || typeof google == 'undefined') {
+            if (%(DEBUG)s) {
+                self_joined_jquery();
+            } else if (typeof jQuery == 'undefined') {
+                if (typeof console) {
+                    console.log('Failure on loading google libs!!!');
+                }
                 self_joined_jquery();
             } else {
-                try {
-                    google.load("jquery", "%(jquery_version)s");
-                    google.load("jqueryui", "%(jqueryui_version)s");
-                    document.write(unescape('%%3Clink rel="stylesheet" title="default" type="text/css" media="screen" href="//ajax.googleapis.com/ajax/libs/jqueryui/%(jqueryui_version)s/themes/%(theme_name)s/jquery-ui.css" /%%3E'));
-                } catch(error) {
-                    self_joined_jquery();
-                    if (typeof console) {
-                        console.log('Failure on google.load');
-                    }
+                if (typeof console) {
+                    console.log('Well done on loading google libs!!!');
                 }
             }
         </script>""" % {

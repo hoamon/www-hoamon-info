@@ -138,3 +138,16 @@ else:
         print to_file
         dir_util.copy_tree(from_file, to_file)
 print '>>> == Find Copies =='
+
+print '== Find Deletes == <<<'
+try:
+    pss = ahg.rConfig('copies', '.', 'depends_modules.conf')
+except ValueError:
+    print '\t No Set Deletes'
+else:
+    for ps in pss:
+        none, del_file = ps
+        del_file = os.path.join(ROOT, del_file)
+        print del_file
+        rmtree(del_file)
+print '>>> == Find Deletes =='

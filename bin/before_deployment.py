@@ -84,3 +84,7 @@ print(r.read())
 # run ./manage.py compress --settings=compressor_settings to export static media files
 r = os.popen('%s compress --settings=compressor_settings'%join(trunk_dir, 'manage.py'))
 print(r.read())
+
+# run ./manage.py compress --settings=compressor_settings to export static media files
+r = os.popen('%s collectstatic --noinput'%join(trunk_dir, 'manage.py'))
+print(r.read())
