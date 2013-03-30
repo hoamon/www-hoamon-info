@@ -36,6 +36,19 @@
 Changelog
 ================================================================================
 
+release-1.0.6
+--------------------------------------------------------------------------------
+
+ * auto append from INSTALLED_APPS.settings.MEDIA_BUNDLES
+ * seprate the ANOTHER_DEPENDS_MODULES
+ * ROOT.local_settings should be loaded in the last;
+ * updating depending libs on django-tastypie
+ * refactoring loading google hosting libs
+ * add collectstatic command in bin/before_deployment.py
+ * set absolute path for mediagenerator-static
+ * use jQuery plugin style to set custom library
+ * import ho600-django-gae-federated-auth lib
+
 release-1.0.5
 --------------------------------------------------------------------------------
 
