@@ -289,6 +289,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
+    'django.contrib.humanize',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'tastypie',
@@ -298,7 +299,16 @@ INSTALLED_APPS = [
     'social_auth',
     'federated_auth',
 
-    'debug_toolbar',
+    'debug_toolbar',    # if you don't want this app, then change "DEBUG_TOOLBAR_CONFIG"(likes below)
+                        # in your local_settings.py.
+                        #DEBUG_TOOLBAR_CONFIG = {
+                        #    'INTERCEPT_REDIRECTS': False,
+                        #    'SHOW_TOOLBAR_CALLBACK': lambda R: False,
+                        #    'EXTRA_SIGNALS': [],
+                        #    'HIDE_DJANGO_SQL': False,
+                        #    'TAG': 'div',
+                        #    'ENABLE_STACKTRACES' : True,
+                        #}
 
     'appconf',
     'versiontools',
@@ -404,6 +414,9 @@ COMPRESS_ROOT = join(TRUNK, 'compressor-static')
 COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter',
                         'compressor.filters.yui.YUICSSFilter',
                         'compressor.filters.cssmin.CSSMinFilter']
+COMPRESS_PRECOMPILERS = (
+                            ('text/x-scss', 'scss {infile} {outfile}'),
+                        )
 COMPRESS_YUI_BINARY = 'java -jar %s' % join(ROOT, 'asset', 'yuicompressor-2.4.7.jar')
 if DEBUG:
     SV_ = STATIC_VERSION = lambda: '?v=%s' % datetime.datetime.now().strftime('%Y%m%d%H%M%S.%f')
