@@ -114,7 +114,17 @@ If you have any question,
     return HttpResponse(html)
 
 
+js_info_dict = {
+    'packages': ('federated_auth', ),
+}
+
+
 urlpatterns += patterns('',
+    url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog', js_info_dict),
+    url(r'^social_auth/', include('social_auth.urls'), name='social_auth'), # needed by federated_auth
+    url(r'^federated_auth/', include('federated_auth.urls'), name='federated_auth'),
+
     url(r'^ho600_lib/', include('ho600_lib.urls'), name='ho600_lib'),
     #<<< default view on any urls, you shoule remove me and put yours.
     url(r'', ho600_default_view)

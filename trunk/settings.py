@@ -307,8 +307,17 @@ INSTALLED_APPS = [
     'mediagenerator', # must be last
 ]
 
-# ho600-django-gae-federated-auth
+# ho600-django-gae-federated-auth <<<
 LOGIN = '/federated_auth/'
+GOOGLE_OAUTH2_CLIENT_ID      = ''
+GOOGLE_OAUTH2_CLIENT_SECRET  = ''
+
+FACEBOOK_APP_ID              = ''
+FACEBOOK_API_SECRET          = ''
+
+YAHOO_CONSUMER_KEY        = ''
+YAHOO_CONSUMER_SECRET     = ''
+# >>> ho600-django-gae-federated-auth
 
 
 # django-debug_toolbar <<<

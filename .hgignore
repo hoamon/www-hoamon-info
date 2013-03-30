@@ -8,6 +8,7 @@
 ^asset/six.*
 ^asset/slimit.*
 ^asset/BeautifulSoup.*
+^asset/pyasn1.*
 
 local_settings.py$
 ^trunk/apache2.conf
