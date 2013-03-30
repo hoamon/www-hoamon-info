@@ -141,7 +141,7 @@ print '>>> == Find Copies =='
 
 print '== Find Deletes == <<<'
 try:
-    pss = ahg.rConfig('copies', '.', 'depends_modules.conf')
+    pss = ahg.rConfig('deletes', '.', 'depends_modules.conf')
 except ValueError:
     print '\t No Set Deletes'
 else:
