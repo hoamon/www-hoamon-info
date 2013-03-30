@@ -426,7 +426,7 @@ else:
                 raise NonSetError('Please set the variable "%s" in settings.py first!' % v)
             else:
                 if DEBUG:
-                    print('Upload settings.%s to %s' % (v, getattr(local_settings, v)))
+                    print('Update settings.%s to %s' % (v, getattr(local_settings, v)))
     from local_settings import *
 
 for app in INSTALLED_APPS:
