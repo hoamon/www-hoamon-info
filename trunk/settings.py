@@ -22,6 +22,9 @@ _insert_sys_path(0, TRUNK_PARENT)
 # use the below to set up third party libraries
 #_insert_sys_path(0, join(os.path.dirname(TRUNK), 'asset', 'SOME-LIB-DIR'))
 
+# the modules were needed by INSTALLED_APPS
+# for bin/before_deployment.py
+ANOTHER_DEPENDS_MODULES = []
 
 if os.environ.get('APPLICATION_ID', ''):
     _insert_sys_path(0, join(os.path.dirname(TRUNK), 'asset', 'django-gae-backends'))
@@ -108,6 +111,12 @@ TIME_ZONE = 'Asia/Taipei'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'zh-tw'
 
+LANGUAGES = (
+    ('en-us', 'English(United States)'),
+    ('zh-tw', u'\u6b63\u9ad4\u4e2d\u6587(Taiwan, R.O.C.)'),
+    ('zh-cn', u'\u7b80\u4f53\u4e2d\u6587(Mainland China)'),
+)
+
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
@@ -171,6 +180,7 @@ TEMPLATE_LOADERS = (
 TEMPLATE_CONTEXT_PROCESSORS =  (
     'django.contrib.auth.context_processors.auth',
     'ho600_lib.context_processors.settings',
+    'social_auth.context_processors.social_auth_by_type_backends',
 )
 
 
@@ -203,7 +213,16 @@ TEMPLATE_DIRS = (
 
 _insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'mimeparse-0.1.3')) # needed by django-tastypie
 _insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'python-dateutil-1.5')) # needed by django-tastypie
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'rose')) # needed by django-tastypie
 _insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'django-tastypie'))
+# the modules were needed by INSTALLED_APPS
+# for bin/before_deployment.py
+ANOTHER_DEPENDS_MODULES += [
+    'mimeparse',
+    'dateutil',
+    'rose',
+]
+
 # and Optional modules:
 # python_digest (https://bitbucket.org/akoha/python-digest/)
 # lxml (http://lxml.de/) if using the XML serializer
@@ -219,19 +238,6 @@ AUTHENTICATION_BACKENDS = (
 ANONYMOUS_USER_ID = -1
 
 
-# the modules were needed by INSTALLED_APPS
-# for bin/before_deployment.py
-ANOTHER_DEPENDS_MODULES = (
-    'mimeparse',
-    'dateutil',
-
-    'six',
-    'BeautifulSoup',
-    'html5lib',
-    'slimit',
-)
-
-
 _insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'django_compressor'))
 _insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'versiontools')) # needed by django_compressor
 _insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'django-appconf')) # needed by django_compressor
@@ -239,9 +245,42 @@ _insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'six')) # needed by django-appco
 _insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'BeautifulSoup')) # optional needed by django_compressor+lxml
 _insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'html5lib', 'python')) # optional needed by django_compressor
 _insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'slimit', 'src')) # optional needed by django_compressor
+# the modules were needed by INSTALLED_APPS
+# for bin/before_deployment.py
+ANOTHER_DEPENDS_MODULES += [
+    'six',
+    'BeautifulSoup',
+    'html5lib',
+    'slimit',
+]
+
+
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'httplib2', 'python2'))
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'python-openid'))
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'python-oauth2'))
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'django-social-auth'))
+# the modules were needed by INSTALLED_APPS
+# for bin/before_deployment.py
+ANOTHER_DEPENDS_MODULES += [
+    'httplib2',
+    'openid',
+    'oauth2',
+]
+
+
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'pyasn1', 'pyasn1-0.1.6'))
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'python-rsa'))
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'ho600-django-gae-federated-auth'))
+# the modules were needed by INSTALLED_APPS
+# for bin/before_deployment.py
+ANOTHER_DEPENDS_MODULES += [
+    'pyasn1',
+    'rsa',
+]
 
 _insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'django-mediagenerator'))
-INSTALLED_APPS = (
+
+INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -256,6 +295,9 @@ INSTALLED_APPS = (
     'guardian',
     'ho600_lib',
 
+    'social_auth',
+    'federated_auth',
+
     'debug_toolbar',
 
     'appconf',
@@ -263,7 +305,19 @@ INSTALLED_APPS = (
     'compressor',
 
     'mediagenerator', # must be last
-)
+]
+
+# ho600-django-gae-federated-auth <<<
+LOGIN = '/federated_auth/'
+GOOGLE_OAUTH2_CLIENT_ID      = ''
+GOOGLE_OAUTH2_CLIENT_SECRET  = ''
+
+FACEBOOK_APP_ID              = ''
+FACEBOOK_API_SECRET          = ''
+
+YAHOO_CONSUMER_KEY        = ''
+YAHOO_CONSUMER_SECRET     = ''
+# >>> ho600-django-gae-federated-auth
 
 
 # django-debug_toolbar <<<
@@ -362,7 +416,7 @@ else:
 MEDIA_DEV_MODE = DEBUG
 DEV_MEDIA_URL = '/mediagenerator/'
 PRODUCTION_MEDIA_URL = '/production_mediagenerator/'
-GENERATED_MEDIA_DIR = 'mediagenerator-static'
+GENERATED_MEDIA_DIR = join(TRUNK, 'mediagenerator-static')
 GLOBAL_MEDIA_DIRS = (join(TRUNK, 'media'),
                         join(TRUNK, 'modules'),
                         #ROOT,  # if you run in GAE mode,
@@ -415,27 +469,25 @@ class NonSetError(Exception):
 
 
 # load another settings and local_settings of other modules >>>
-try:
-    import local_settings
-except ImportError:
-    pass
-else:
-    for v in dir(local_settings):
-        if len(v) >= 2 and v[:2] != '__':
-            if not locals().has_key(v):
-                raise NonSetError('Please set the variable "%s" in settings.py first!' % v)
-            else:
-                if DEBUG:
-                    print('Upload settings.%s to %s' % (v, getattr(local_settings, v)))
-    from local_settings import *
-
+# load INSTALLED_APPS.settings first and check any variables in INSTALLED_APPS.local_settings
+# if the variables set in INSTALLED_APPS.settings then replace value of INSTALLED_APPS.settings
+# in the last, load all variables were set before in ROOT/local_settings.py.
 for app in INSTALLED_APPS:
     try:
         app_settings = __import__('.'.join([app, 'settings']))
     except ImportError:
         pass
     else:
+        try:
+            local_settings = __import__('.'.join([app, 'local_settings']))
+        except ImportError:
+            local_settings = False
         for v in dir(app_settings.settings):
+
+            if local_settings and hasattr(local_settings.local_settings, v):
+                setattr(app_settings.settings, v,
+                    getattr(local_settings.local_settings, v))
+
             if len(v) >= 2 and v[:2] != '__':
                 if v != 'MEDIA_BUNDLES':
                     globals()[v] = getattr(app_settings.settings, v)
@@ -444,4 +496,18 @@ for app in INSTALLED_APPS:
                         ori = [l[0] for l in MEDIA_BUNDLES]
                         if mb[0] not in ori:
                             MEDIA_BUNDLES.append(mb)
+try:
+    import local_settings
+except ImportError:
+    pass
+else:
+    for v in dir(local_settings):
+        if len(v) >= 2 and v[:2] != '__':
+            if not locals().has_key(v):
+                raise NonSetError('Please set the variable "%s" in settings.py or INSTALLED_APPS/settings.py first!' % v)
+            else:
+                if DEBUG:
+                    print('Update settings.%s to %s' % (v, getattr(local_settings, v)))
+    from local_settings import *
+
 # <<< load another settings and local_settings of other modules

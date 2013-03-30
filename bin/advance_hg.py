@@ -140,11 +140,23 @@ class AdvanceHG(object):
 
         paths = self.rPaths(directory)
 
-        remote = hg.repository(ui0, paths[-1][-1])
-        repo.pull(remote, force=True)
+        try:
+            remote = hg.repository(ui0, paths[-1][-1])
+        except:
+            ui0.write(u'\t problem in hg.repository \n')
+            return
+        try:
+            repo.pull(remote, force=True)
+        except:
+            ui0.write(u'\t problem in repo.pull\n')
+            return
         if not version:
             version = 'tip'
-        hg.update(repo, version)
+        try:
+            hg.update(repo, version)
+        except:
+            ui0.write(u'\t problem in hg.update\n')
+            return
         ui0.write(u'\t 更新至 %s 版\n' % version)
 
 

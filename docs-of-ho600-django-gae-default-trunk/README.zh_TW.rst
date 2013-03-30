@@ -91,8 +91,13 @@ prepare_programming.py
     [copies]
     trunk/modules/p1/file.txt = asset/Project/file/example.conf
 
+    [deletes]
+    None = asset/ho600-django-gae-federated-auth/ho600_lib
+
 上面的範例是將 https://yoursite.com/yourfile.zip 下載下來，解壓縮到 asset/Project 資料夾。\
 並把 asset/Project/file/example.conf 檔案複製到 trunk/modules/p1/file.txt 中。
+
+另外可把 asset/ho600-django-gae-federated-auth/ho600_lib 刪除，避免與 ROOT/ho600_lib 混肴。
 
 before_deployment.py
 ................................................................................
@@ -210,6 +215,12 @@ ho600_lib/
 
 另外則是要把開發者自己的 IP 登錄到 INTERNAL_IPS 變數中，才可以看到 bug page 。
 
+Template Tags
+................................................................................
+
+在樣版中可使用 {% use_jqueryui "jquery_version" "jqueryui_version" "theme_name" %} 來載入 jQuery 相關檔案。\
+此法所載入的 jQuery 會以 Google host 為基準作載入。
+
 樣版選擇順序: get_template_by_site_and_lang
 ................................................................................
 
@@ -288,13 +299,26 @@ trunk/modules/
 配置應用專案所開發的 modules 位置。不過如果「應用專案」本身並不是一個獨立網站，\
 而是以 module 的形式存在者，建議是把 module 配置與 ho600_lib 同一層級，也就是根目錄的位置。
 
+trunk/settings.py
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Django 程式預設的設定檔檔名。另也可在 INSTALLED_APPS 配置 settings.py 檔，如： ho600_lib/settings.py 。\
+ho600_lib/settings.py 中的變數載入可覆寫 trunk/settings.py 中的變數，惟有多個 INSTALLED_APPS 時，\
+並無法保證它們的覆寫順序（此點請注意）。
+
+但在 settings.py 中，目前 **只有 MEDIA_BUNDLES 變數是採 append 行為** 而不是覆寫，\
+此變數供 django-mediagenerator 使用。
+
 trunk/local_settings.py
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 不被 hg 控管的本地設定檔，本檔案所設定的參數會覆蓋 trunk/settings.py 的設定，\
-但設定時，有一限制： 在 local_settings 的參數名稱必須預先存在 trunk/settings.py 中，\
-這是確保開發者在本地自行開發後，也必須記得把該參數登記到 trunk/settings.py ，\
+但設定時，有一限制： 在 local_settings 的參數名稱必須\
+預先存在 trunk/settings.py 或 INSTALLED_APPS/settings.py 中，\
+這是確保開發者在本地自行開發後，也必須記得把該參數登記到 trunk/settings.py 、 INSTALLED_APPS/settings.py 中，\
 以利其他開發者更正自己的 trunk/settings.py 。
+
+且 local_settings.py 的載入順序為最後一個，確保它會覆寫所有 settings.py 所設定過的變數值。
 
 --------------------------------------------------------------------------------
 實際應用範例

@@ -54,8 +54,12 @@ def checkCanViewBugPage(view_function):
 
 MEDIA_BUNDLES = [
     ('bugrecord_bundle.js',
+        'ho600_lib/jQuery-URL-Parser/purl.js',
         'ho600_lib/ho600_lib.js',
     ),
+]
+
+_Test_mediagenerator_speed = [
     ('mediagenerator_example.css',
         'ho600_lib/s1.css',
         'ho600_lib/s2.css',
