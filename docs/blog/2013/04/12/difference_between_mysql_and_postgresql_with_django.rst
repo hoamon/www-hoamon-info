@@ -1,4 +1,4 @@
-Django 在使用 MySQL 或 PostgreSQL 時的差別
+Django 在使用 MySQL 或 PostgreSQL 時的差別(關於 autocommit )
 ================================================================================
 
 .. figure:: mysql.png
