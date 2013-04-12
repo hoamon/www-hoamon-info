@@ -133,6 +133,6 @@ PostgresQL 會直接對該句作 rollback 動作，這樣就不會引發 Postgre
 上面是改用 autocommit=True 後的 SQL LOG 。發生 ERROR 後，還是可以一直跑後續的 SQL 語句。
 
 .. author:: default
-.. categories:: none
-.. tags:: none
+.. categories:: chinese
+.. tags:: python, django, mysql, postgresql
 .. comments::
