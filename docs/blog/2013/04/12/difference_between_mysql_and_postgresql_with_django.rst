@@ -37,8 +37,7 @@ Django 在使用 MySQL 或 PostgreSQL 時的差別(關於 autocommit )
 下面是預設執行時所產生的 SQL LOG(settings.DATABASES['default']['OPTIONS']['autocommit']=False)， \
 Django(或 psycopg2) 會以 read committed 模式去跑 transaction 。\
 所以在跑一批 SQL 語句時，會在前面加上 BEGIN ，並在最後面會加上 END ，\
-但本批次的 SQL 語句中途有錯（current transaction is aborted, commands ignored until end of transaction block），\
-所以被 PostgresQL 中斷執行，並自動補上 ROLLBACK 。
+但本批次的 SQL 語句中途有錯（relation "xxx_cache" does not exist）。
 
 .. code-block:: sql
 
@@ -74,7 +73,7 @@ Django(或 psycopg2) 會以 read committed 模式去跑 transaction 。\
                     WHERE "ho600_lib_bugpage"."code" = '8Z69'
     LOG:  statement: ROLLBACK
 
-也因為如此，本來系統在執行出錯時，是會被我們的 bugrecord 模組捕抓到，\
+也因為如此，此 SQL 執行出錯會被我們的 bugrecord 模組捕抓到，\
 並偷天換日地把實際錯誤寫入資料庫，再拋出一個提醒用戶的 500 頁面，\
 雖然它還是 HTTP500 ，但它是我們預料中的 HTTP500 。
 
