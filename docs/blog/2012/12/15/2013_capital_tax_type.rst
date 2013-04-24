@@ -28,7 +28,7 @@
 得繳出 7,500 元的證所稅。而利用 2013 證所稅上路前，來回操作一下，\
 多花了 540 元，以後可以少掉 7,500 元，很划算地。\
 而如果你對這 7,500 的去處有興趣的話，\
-請見 `這 <http://www.hoamon.info/blog/2013/04/14/there_are_so_many_hungers_in_the_world.html>`_ 。
+請見 :doc:`這 <../../../2013/04/14/there_are_so_many_hungers_in_the_world>` 。
 
 是的，我要正義，但不當笨蛋。
 
