@@ -9,7 +9,7 @@
     本圖( stock.jpg )部份內容含有 `Gentleface.com <http://findicons.com/icon/267784/hand_pro>`_ 製作之內容，非全屬 hoamon 所創作
 
 上周二(2012/12/11)，我到證券公司填下「核實課徵申請書」了。\
-會這麼做，當然是要呼應我之前一直強調課徵證券所得稅是符合租稅正義的稅制。
+會這麼做，當然是要呼應我之前一直強調 `課徵證券所得稅是符合租稅正義的稅制 <http://paper.hoamon.info/e-papers/finance/zheng-suo-shui>`_ 。
 
 .. more::
 
