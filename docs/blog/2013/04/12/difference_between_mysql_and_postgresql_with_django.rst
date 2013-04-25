@@ -18,6 +18,8 @@ Django 在使用 MySQL 或 PostgreSQL 時的差別(關於 autocommit )
 一切應該是馬照跑、舞照跳的。但世事如此美好，人類怎麼能進步呢？ \
 有問題就是給我們成長的機會。
 
+.. more::
+
 所以我們遇到一個 DatabaseError 訊息。
 
 .. raw:: html
@@ -28,8 +30,6 @@ Django 在使用 MySQL 或 PostgreSQL 時的差別(關於 autocommit )
 這個問題出現時，往往與真正出錯的訊息無關，它是指我們的錯誤報告儲存工具無法把本次錯誤訊息紀錄下來。\
 也就是本次錯誤可能是因為 IntegrityError 或是 DatabaseError(欄位值超過 model 預設長度) ... 等，\
 但是它一律出現 DatabaseError(current transaction is aborted, commands ignored until end of transaction block) 。
-
-.. more::
 
 原因就出在我們過去使用 MySQL InnoDB 時，並未開啟 autocommit 。但到了 PostgreSQL 時，\
 它預設使用 read committed 模式。
