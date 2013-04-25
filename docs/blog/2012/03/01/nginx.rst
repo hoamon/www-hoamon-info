@@ -105,7 +105,7 @@ daemonize=true 則表示指令打完後，它就背景處理了，想要把這�
 
 以下是 nginx.conf 的設定範例：
 
-.. code-block:: conf
+.. code-block:: ini
     :linenos:
 
     user www-data; # 子行程用的是 www-data 帳號
@@ -246,7 +246,7 @@ www.whatever-you-want.com.tw 只是單純的靜態網站，\
 
 系統管理員再把 nginx.conf 原本的 fastcgi_pass 127.0.0.1:3033 設定改如下：
 
-.. code-block:: conf
+.. code-block:: ini
 
     fastcgi_pass unix:/home/someproject/django.socket;
 
