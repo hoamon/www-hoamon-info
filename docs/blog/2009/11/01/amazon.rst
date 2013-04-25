@@ -51,7 +51,7 @@
 
 它在 11 月 5 日時出第一批貨，共 5 本書，因為其他 2 本尚未出版，我是預購的，下面是出貨單：
 
-.. code-block:: plain
+.. code-block:: ini
 
     Qty Item Price Shipped Subtotal
     -------------------------------

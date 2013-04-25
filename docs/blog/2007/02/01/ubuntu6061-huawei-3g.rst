@@ -25,7 +25,7 @@ Ubuntu 6.06.1 + HUAWEI 3G 網卡 + 中華電信
 
 下面是我的 3G 網卡設定檔，檔名則為 /etc/wvdial.conf ，但請先安裝好 wvdial 軟體。
 
-.. code-block:: plain
+.. code-block:: ini
 
     [Dialer Defaults]
     Init1 = ATZ
@@ -49,7 +49,7 @@ Ubuntu 6.06.1 + HUAWEI 3G 網卡 + 中華電信
 
 啟動指令是：
 
-.. code-blck:: bash
+.. code-block:: bash
 
     # wvdial &
 

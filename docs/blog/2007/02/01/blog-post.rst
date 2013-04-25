@@ -24,7 +24,7 @@
 
 請使用任一的程式語言將上述文字檔格式改成如下：
 
-.. code-block:: plain
+.. code-block:: ini
 
     7500 => AB,QQ,WXY,
     8888 => WWW,
