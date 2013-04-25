@@ -14,7 +14,7 @@ article h2 { font-size: 1.8em; }
 article h3 { font-size: 1.2em; }
 article p { line-height: 1.7; margin-top: 30px;}
 
-.highlight { font-size: .8em; }
+.highlight { font-size: 1.em; }
 
 aside.sidebar h1 { font-size: 1.2em; }
 aside.sidebar { font-size: 1em; }
