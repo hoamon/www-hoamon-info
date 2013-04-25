@@ -12,6 +12,8 @@
 得再花費一段力氣，如出書、建物流體系…等。但 Google Adsense 卻讓出版者簡單即能獲得利益，\
 只要網頁使用者瀏覽網頁之際也點選了 Google Adsense 提供的廣告，那麼 Google 就會拿出一部份他在這個廣告所獲得利潤給網頁出版者。
 
+.. more::
+
 談到這，請熱心的讀者不要為了「讓我多賺點錢」去點選 Google Adsense 的廣告。原因有二：
 
 1.  申請 Google Adsense 時，有條款禁止網頁出版者鼓勵瀏覽者點選 Google Adsense 廣告。

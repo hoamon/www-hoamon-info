@@ -10,6 +10,8 @@ Trac安裝筆記(下)
 2.  設定 apache.conf
 3.  設定 .htpasswd
 
+.. more::
+
 1 的步驟看各家套件， Ubuntu 的是這樣：
 
 .. code-block:: bash

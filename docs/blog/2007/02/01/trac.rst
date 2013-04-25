@@ -12,6 +12,8 @@ Trac 官網： http://trac.edgewall.org/ (原 http://trac.edgewall.com/ )\
 它本來應是一間公司，不過現在改成 .org 的，站上也沒看見任何販賣及商業支援的資訊，\
 應該不會是搞 Python 的，都賺不了錢吧!希望是錢賺太多，不想賺了。
 
+.. more::
+
 安裝 Trac ，要先決定兩個部份：資料庫及應用伺服器。
 
 資料庫方面，與 Python 配合度最高的是 SQLite ，官方也是推薦這個資料庫管理系統，\
