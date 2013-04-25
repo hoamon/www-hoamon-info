@@ -46,4 +46,9 @@ Sitemap
    2009/11/01/amazon
    2009/07/01/1000-1001-999-1001-2009-1-1-5-2008-12
    2007/10/01/blog-post_1929
+   2007/02/01/python-def.rst
+   2007/02/01/python-lambda.rst
+   2007/02/01/python-listhash-def.rst
+   2007/02/01/python.rst
+   2007/02/01/pythonpdb.rst
    1900/01/01/suggestion
