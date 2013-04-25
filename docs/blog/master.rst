@@ -46,6 +46,12 @@ Sitemap
    2009/11/01/amazon
    2009/07/01/1000-1001-999-1001-2009-1-1-5-2008-12
    2007/10/01/blog-post_1929
+   2007/02/01/trac_27
+   2007/02/01/trac
+   2007/02/01/ubuntu6061-huawei-3g
+   2007/02/01/hoamon
+   2007/02/01/google-adsense
+   2007/02/01/follow-google
    2007/02/01/blog-post
    2007/02/01/python-def
    2007/02/01/python-lambda
