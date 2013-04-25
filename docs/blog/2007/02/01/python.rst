@@ -5,9 +5,18 @@ Python: 可變物件
 
 .. more::
 
-可變物件常見的有 list 及 dictionary(hash)。
+可變物件常見的有 :doc:`list 及 dictionary(hash) <./python-listhash-def>` 。
 
-不可變物件常見的是 tuple 。
+不可變物件常見的是 tuple :
+
+.. code-block:: python
+    :linenos:
+
+    TUPLE = (1, 2, 3)
+    TUPLE[1] = 4 # throw TypeError
+
+第 2 行執行時，會丟出 TypeError: 'tuple' object does not support item assignment 。\
+因為 tuple 型別一經建構就不得修改。
 
 .. author:: default
 .. categories:: chinese
