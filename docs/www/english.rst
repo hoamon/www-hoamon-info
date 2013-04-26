@@ -100,7 +100,7 @@ Contact
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     * E-mail: |email|
-    * Post Address( Must delivered by `Chunghwa Post Co., Ltd. <http://www.post.gov.tw/>`_ ): P.O.Box 123 Nantou County 54599 Taiwan R.O.C
+    * Post Address( Must delivered by `Chunghwa Post Co., Ltd. <http://www.post.gov.tw/>`_ ): P.O.Box 123 Puli, Nantou County 54599 Taiwan R.O.C
     * My Address: Please call me.
     * Mobile phone: |phone| or |public_phone|
     * Forum: http://groups.google.com/group/askhoamon
