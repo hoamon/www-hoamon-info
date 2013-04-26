@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import tinkerer
+import tinkerer, datetime
 import tinkerer.paths
 
 # **************************************************************
@@ -17,7 +17,7 @@ tagline = '"sandbox" is a jargon of Version Control System.'
 author = 'Ho, Yueh-Feng &lt;<a href="http://www.hoamon.info/">http://<b>hoamon</b>.info/</a>&gt;'
 
 # Change this to your copyright string
-copyright = '2006-2013, Yueh-Feng Ho'# + author
+copyright = '2006-%s, Yueh-Feng Ho(hoamon)'%datetime.datetime.today().year
 
 # Change this to your blog root URL (required for RSS feed)
 website = 'http://www.hoamon.info/blog/'
