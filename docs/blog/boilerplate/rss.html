@@ -3,14 +3,14 @@
     <channel>
         <title>{{ title }}</title>
         <link>{{ link }}</link>
-        <description>{{ description }}</description>
+        <description>{{ tagline }}</description>
         <language>{{ language }}</language>
         <pubDate>{{ pubDate }}</pubDate>
         {% for item in items %}
         <item>
             <link>{{ item.link }}</link>
             <guid>{{ item.link }}</guid>
-            <title>{{ item.title }}</title>
+            <title><![CDATA[{{ item.title }}]]></title>
             <description><![CDATA[{{ item.description }}]]></description>
             {%- for category in item.categories %}
             <category><![CDATA[ {{ category }} ]]></category>

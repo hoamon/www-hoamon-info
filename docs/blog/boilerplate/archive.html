@@ -4,7 +4,7 @@
 
     Archive page.
 
-    :copyright: Copyright 2011-2012 by Vlad Riscutia and contributors (see
+    :copyright: Copyright 2011-2013 by Vlad Riscutia and contributors (see
     CONTRIBUTORS file)
     :license: FreeBSD, see LICENSE file
 -#}
@@ -24,7 +24,7 @@
             var path = path.replace(/(\.\.\/)/g, "");
             var re = RegExp("([^\/]+\/){"+length+"}$");
             var dir = PATH_.replace(re, "");
-            var s = '<div class="fb-like" data-href="http://www.hoamon.info'+dir+path+'" data-send="true" data-width="600" data-show-faces="true"></div>';
+            var s = '<div class="fb-like" data-href="http://www.hoamon.info'+dir+path+'" data-send="true" data-width="400" data-show-faces="true"></div>';
             //console.log(s);
             document.write(s);
         }
@@ -42,14 +42,18 @@
                     <div class="postmeta">
                         <br/>
                         <div class="g-plusone" data-href="{{ pathto(metadata.link) }}"
-                            data-size="tall" data-width="600" data-annotation="inline"></div>
+                            data-size="tall" data-width="400" data-annotation="inline"></div>
                         <script type="text/javascript">
                             set_fb_button_2("{{ pathto(metadata.link) }}");
                         </script>
                     </div>
                     {{ post_meta(metadata, metadata.comment_count) }}
                 </li>
-                {%- if not loop.last -%}<li><div class="separator summary_separator"></div></li>{%- endif -%}
+                {%- if not loop.last -%}
+                    </ul>
+                    <div class="separator summary_separator"></div>
+                    <ul>
+                {%- endif -%}
                 {%- endfor -%}
             </ul>
         </div>
