@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'hoamon.info'
-copyright = u'2006 ~ %s, hoamon'%datetime.datetime.today().year
+copyright = '2006 ~ %s, Yueh-Feng Ho(hoamon)'%datetime.datetime.today().year
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
