@@ -30,7 +30,7 @@
 #NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import os
+import os, re
 from optparse import OptionParser, OptionGroup
 from mercurial import ui, hg, error, commands
 
@@ -142,14 +142,14 @@ class AdvanceHG(object):
 
         try:
             remote = hg.repository(ui0, paths[-1][-1])
-        except:
-            ui0.write(u'\t problem in hg.repository \n')
-            return
-        try:
-            repo.pull(remote, force=True)
-        except:
-            ui0.write(u'\t problem in repo.pull\n')
-            return
+        except error.Abort:
+            r = os.popen('cd %s && hg pull -u' % (directory))
+        else:
+            try:
+                repo.pull(remote, force=True)
+            except:
+                ui0.write(u'\t problem in repo.pull\n')
+                return
         if not version:
             version = 'tip'
         try:
@@ -196,7 +196,10 @@ class AdvanceHG(object):
             proxy = ''
 
         ui0.setconfig('http_proxy', 'host', proxy)
-        repo = self.pullall_directory.split(':')[0]
+	if self.pullall_directory[1] == ':':
+            repo = ':'.join(self.pullall_directory.split(':')[0:2])
+	else:
+	    repo = self.pullall_directory.split(':')[0]
         self.pull(repo)
 
         if not depends:
