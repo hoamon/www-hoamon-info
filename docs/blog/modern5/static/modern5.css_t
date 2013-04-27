@@ -96,7 +96,10 @@ footer { padding: 5px 20px; }
 {%- set text_color = "#0c0501" -%}
 {%- set link_color = "#0b7dc0" -%}
 
-body { background-color: {{ theme_color_light }}; }
+body {
+    background: {{ theme_color_light }} url('') no-repeat center center;
+    background-attachment:fixed;
+}
 
 header { background-color: {{ theme_color }}; }
 header a, header a:visited, header a:hover, headera:active { color: {{ header_color }}; text-decoration: none; }

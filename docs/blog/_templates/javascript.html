@@ -2,7 +2,7 @@
 <script type="text/javascript">
   (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
+    po.src = '//apis.google.com/js/plusone.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 </script>
@@ -18,6 +18,13 @@
 <!--<link rel="stylesheet" href="{{ pathto('_static/' + 'jquery.superbox.css', 1) }}" type="text/css" />
 <script type="text/javascript" src="{{ pathto('_static/' + 'jquery.superbox-min.js', 1) }}"></script>-->
 <script type="text/javascript">
+    var change_background_image = function () {
+        var d = new Date();
+        var number = d.getSeconds() % 7 + 1;
+        $('body').css('background-image', 'url("/blog/_static/'+number+'.JPG")');
+        console.log(number);
+        setTimeout('change_background_image()', 36000);
+    }
     $(document).ready(function(){
         $('.figure img').each(function(){
             var src = $(this).attr('src');
@@ -30,6 +37,7 @@
             $(this).wrap($('<a>').attr('target', '_blank').attr('title', title).attr('href', src));
             //.attr('rel', 'superbox[gallery][my_gallery]'));
         });
+        change_background_image();
 //        $.superbox.settings = {
 //            boxId: "superbox", // Id attribute of the "superbox" element
 //            boxClasses: "", // Class of the "superbox" element
