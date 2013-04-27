@@ -244,16 +244,16 @@
       {%- block header -%}
           <header>
             <hgroup>
-                <div id="gplus_fb" style="float: right;">
-                <div id="fb-root"></div>
-                <!-- Place this tag where you want the +1 button to render. -->
-                <div style="float: right" class="g-plusone" data-href="http://www.hoamon.info/blog/"
-                     data-size="tall" data-width="550" data-annotation="inline"></div>
-                <div style="float: right" class="fb-like" data-href="http://www.hoamon.info/blog/"
-                     data-send="false" data-width="550" data-show-faces="true"></div>
+                <div id="gplus_fb" style="width: 500px; float: right;">
+                    <div id="fb-root"></div>
+                    <!-- Place this tag where you want the +1 button to render. -->
+                    <div class="g-plusone" data-href="http://www.hoamon.info/blog/"
+                         data-size="tall" data-width="550" data-annotation="inline"></div>
+                    <div class="fb-like" data-href="http://www.hoamon.info/blog/"
+                         data-send="false" data-width="550" data-show-faces="true"></div>
                 </div>
-              <h1><a href="{{ pathto(pages[0][0]) }}">{{ shorttitle|e }}</a></h1>
-              <h2>{{ tagline|e }}</h2>
+                <h1><a href="{{ pathto(pages[0][0]) }}">{{ shorttitle|e }}</a></h1>
+                <h2>{{ tagline|e }}</h2>
             </hgroup>
           </header>
       {% endblock -%}
