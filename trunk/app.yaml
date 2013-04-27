@@ -87,3 +87,12 @@ handlers:
 
 - url: /
   static_dir: modules/www
+
+#- url: /__admin__/.*
+#  script: trunk.wsgi.application
+#  login: admin
+#
+#- url: /?.*
+#  script: trunk.wsgi.application
+#  login: required
+#  secure: always

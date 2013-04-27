@@ -29,20 +29,33 @@
 #NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import re, datetime
-from django.conf import settings as dj_settings
+import os, datetime
+
+from django.conf.urls import patterns, include, url
+from django.conf import settings
+from django.contrib.admin.views.decorators import staff_member_required
+from django.template.loader import get_template
+from django.template import RequestContext
+from django.views import static
+need_staff_login_serve = staff_member_required(static.serve)
+
+from django.http import HttpResponse
+
+# Uncomment the next two lines to enable the admin:
+from django.contrib import admin
+admin.autodiscover()
 
 
+urlpatterns = patterns('ho600_lib.views',
+    # Example:
+    # (r'^rcm5/', include('rcm5.foo.urls')),
 
-def settings(R):
-    version = R.META.get('CURRENT_VERSION_ID', '__ondjangoserver__')
-    if version != '__djangoserver__':
-        r = re.match('[^-]+-([^-]+)-.*-([^-]+)\.[0-9]+', version)
-        if not r: version = '__version__'
-        else: version = '-'.join(r.groups())
-    d = {}
-    for k in dir(dj_settings):
-        d[k] = getattr(dj_settings, k)
-    d['version'] = version
-    d['now'] = datetime.datetime.now()
-    return {'settings': d}
+    # Uncomment this for admin:
+    (r'^ajax/$', 'callback'),
+    url(r'^bugkind/(?P<id>[0-9]+)/$', 'rBugKind', name="rBugKind"),
+    url(r'^bugkind_html/(?P<id>[0-9]+)/$', 'rBugKindHtml', name="rBugKindHtml"),
+    url(r'^bugpage/(?P<code>[0-9A-Z\+\-\*\/]+)/$', 'rBugPage', name="rBugPage"),
+    url(r'^bugpage_html/(?P<code>[0-9A-Z\+\-\*\/]+)/$', 'rBugPageHtml', name="rBugPageHtml"),
+    url(r'^buglist/$', 'rBugList', name='rBugList'),
+    url(r'^$', 'rBugList', name='rBugList'),
+)

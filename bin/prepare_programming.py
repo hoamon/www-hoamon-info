@@ -29,10 +29,11 @@
 #NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import os, sys
-import zipfile
-from urllib2 import Request, urlopen, URLError, HTTPError
+import os, sys, re, urllib2
+import zipfile, base64
+from urllib2 import URLError, HTTPError
 from shutil import rmtree, copytree, move
+from distutils import dir_util
 from advance_hg import AdvanceHG
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if root not in sys.path:
@@ -57,9 +58,22 @@ def unzip(file_name, dest_dir):
 
 
 def download_file(url, file_name, dest_dir):
-    req = Request(url)
+    r = re.match('^(.*\/\/)([^:]+):([^:]+)@([^/]+/?)(.*)$', url)
+    if r:
+        http, username, password, site, tail = r.groups()
+        top_url = http+site
+        url = http+site+tail
+        password_mgr = urllib2.HTTPPasswordMgrWithDefaultRealm()
+        password_mgr.add_password(None, top_url, username, password)
+        handler = urllib2.HTTPDigestAuthHandler(password_mgr)
+        opener = urllib2.build_opener(handler)
+        urllib2.install_opener(opener)
+        req = urllib2.Request(url, "", {})
+    else:
+        req = urllib2.Request(url)
+
     try:
-        f = urlopen(req)
+        f = urllib2.urlopen(req)
     except HTTPError, e:
         print "HTTP Error:", e.code, url
     except URLError, e:
@@ -133,11 +147,23 @@ else:
         to_file = os.path.join(ROOT, to_file)
         from_file = os.path.join(ROOT, from_file)
         to_dir = os.path.dirname(to_file)
-        if os.path.isdir(from_file) and os.path.isdir(to_dir):
-            rmtree(to_dir)
         if not os.path.isdir(to_dir):
             os.makedirs(to_dir)
         print from_file
         print to_file
-        copytree(from_file, to_file)
+        dir_util.copy_tree(from_file, to_file)
 print '>>> == Find Copies =='
+
+print '== Find Deletes == <<<'
+try:
+    pss = ahg.rConfig('deletes', '.', 'depends_modules.conf')
+except ValueError:
+    print '\t No Set Deletes'
+else:
+    for ps in pss:
+        none, del_file = ps
+        del_file = os.path.join(ROOT, del_file)
+        print del_file
+        try: rmtree(del_file)
+        except OSError: continue
+print '>>> == Find Deletes =='

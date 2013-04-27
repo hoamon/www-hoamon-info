@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-#Copyright (c) 2012, ho600.com
+#Copyright (c) 2013, ho600.com
 #All rights reserved.
 #
 #Redistribution and use in source and binary forms, with or without modification,
@@ -29,17 +29,23 @@
 #NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+import re
 from django.conf import settings
 from django import template
+from django import forms
 from mediagenerator.generators.bundles.utils import _render_include_media
 from mediagenerator import utils
 
+from ho600_lib.models import Option
 
 register = template.Library()
 
 @register.simple_tag
 def use_jqueryui(jquery_version, jqueryui_version, theme_name):
-    return """<script type="text/javascript">
+    return """<link rel="stylesheet" title="default" type="text/css" media="screen" href="//ajax.googleapis.com/ajax/libs/jqueryui/%(jqueryui_version)s/themes/%(theme_name)s/jquery-ui.css" />
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/%(jquery_version)s/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/%(jqueryui_version)s/jquery-ui.min.js"></script>
+    <script type="text/javascript">
             function self_joined_jquery () {
                 if (JQUERY_CSS && JQUERY_JS && JQUERYUI_JS){
                     document.write(unescape('%%3Clink rel="stylesheet" title="default" type="text/css" media="screen" href="'+JQUERY_CSS+'" /%%3E'));
@@ -54,18 +60,16 @@ def use_jqueryui(jquery_version, jqueryui_version, theme_name):
                     }
                 }
             }
-            if (%(DEBUG)s || typeof google == 'undefined') {
+            if (%(DEBUG)s) {
+                self_joined_jquery();
+            } else if (typeof jQuery == 'undefined') {
+                if (typeof console) {
+                    console.log('Failure on loading google libs!!!');
+                }
                 self_joined_jquery();
             } else {
-                try {
-                    google.load("jquery", "%(jquery_version)s");
-                    google.load("jqueryui", "%(jqueryui_version)s");
-                    document.write(unescape('%%3Clink rel="stylesheet" title="default" type="text/css" media="screen" href="//ajax.googleapis.com/ajax/libs/jqueryui/%(jqueryui_version)s/themes/%(theme_name)s/jquery-ui.css" /%%3E'));
-                } catch(error) {
-                    self_joined_jquery();
-                    if (typeof console) {
-                        console.log('Failure on google.load');
-                    }
+                if (typeof console) {
+                    console.log('Well done on loading google libs!!!');
                 }
             }
         </script>""" % {
@@ -74,3 +78,36 @@ def use_jqueryui(jquery_version, jqueryui_version, theme_name):
             'jqueryui_version': jqueryui_version,
             'theme_name': theme_name,
         }
+
+
+@register.simple_tag
+def setupButton(args):
+    buttons = []
+    for i in re.split(' *, *', args):
+        class_name, button_note = re.split(' *: *', i)
+        buttons.append(
+            (u"""<button type="button" class="%s
+            ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+            role="button" aria-disabled="false">
+            <span class="ui-button-text">%s</span></button>"""
+            % (class_name, button_note)).encode('utf8'))
+    return ' '.join(buttons)
+
+
+@register.simple_tag
+def rSelect(swarm=''):
+    choices = [('', '')]
+    options = Option.objects.filter(swarm=swarm).order_by('-id')
+    if options.count() > 20:
+        options = options[:20]
+        choices.extend([(s.id, s.value) for s in options])
+        choices.append(('20', 'more...'))
+    else:
+        choices.extend([(s.id, s.value) for s in options])
+    select = forms.Select()
+    return select.render(swarm, '', {'id': 'id_%s'%swarm, 'class': swarm}, choices)
+
+
+@register.simple_tag
+def loading():
+    return """<img id="loading" style="display: none;" src="/static/ho600_lib/images/loading.gif"/>"""
