@@ -47,9 +47,6 @@
         FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
         HAS_SOURCE:  {{ has_source|lower }}
       };
-      $(document).ready(function(){
-        $('#version').text(DOCUMENTATION_OPTIONS['VERSION']);
-      });
     </script>
     {%- for scriptfile in script_files -%}
         {#- Hack to filter out jquery.js auto-included by Sphinx since jquery is
@@ -349,11 +346,6 @@
 
     </script>
 
-  <script>
-    var linkwithin_site_id = 1527897;
-  </script>
-  <script src="http://www.linkwithin.com/widget.js"></script>
-  <a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a>
     <style media="screen" type="text/css">
         #fork_me { display: none; }
 
