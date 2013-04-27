@@ -23,7 +23,8 @@
         var number = d.getDay();
         var $body = $('body');
         var ori_image = $body.css('background-image');
-        var new_image = 'url("/blog/_static/'+number+'.JPG")';
+        var l = window.location;
+        var new_image = 'url('+l.protocol+'//'+l.host+'/blog/_static/'+number+'.JPG)';
         if (ori_image != new_image) {
             $('body').css('background-image', new_image);
         }
