@@ -190,7 +190,7 @@ div.year div.postmeta { margin: 10px 0 10px 0; }
 
 div.year div.timestamp { color: {{ text_color }}; font-size: 1.4em; font-style: normal; font-weight: none; line-height: 1.5; margin-top: 0; }
 
-div.year h2 { margin-bottom: 0; margin-top: 0; }
+div.year h2 { margin-bottom: 0; margin-top: 0; line-height: 1.2em; }
 
 div.year_separator { width: 100%; border-top: 1px dotted {{ theme_color_light }}; }
 
