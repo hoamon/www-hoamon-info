@@ -20,12 +20,17 @@
 <script type="text/javascript">
     var change_background_image = function () {
         var d = new Date();
-        var number = d.getSeconds() % 7 + 1;
-        $('body').css('background-image', 'url("/blog/_static/'+number+'.JPG")');
-        console.log(number);
-        setTimeout('change_background_image()', 36000);
+        var number = d.getDay();
+        var $body = $('body');
+        var ori_image = $body.css('background-image');
+        var new_image = 'url("/blog/_static/'+number+'.JPG")';
+        if (ori_image != new_image) {
+            $('body').css('background-image', new_image);
+        }
+        setTimeout('change_background_image()', 6000);
     }
     $(document).ready(function(){
+        change_background_image();
         $('.figure img').each(function(){
             var src = $(this).attr('src');
             var $p = $(this).next();
@@ -37,7 +42,6 @@
             $(this).wrap($('<a>').attr('target', '_blank').attr('title', title).attr('href', src));
             //.attr('rel', 'superbox[gallery][my_gallery]'));
         });
-        change_background_image();
 //        $.superbox.settings = {
 //            boxId: "superbox", // Id attribute of the "superbox" element
 //            boxClasses: "", // Class of the "superbox" element
