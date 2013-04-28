@@ -22,13 +22,15 @@ if [ $is_me ] && [ $is_me == "me" ]; then
 
     exit 0
 
+elif [ $is_me ] && [ $is_me == "crontab" ]; then
+    version=${user}'-crontab'
 elif [ $is_me ]; then
     sub_version='-'${user}'-'`echo $is_me|sed 's/[^0-9a-zA-Z]//g'`
-    sub_version=${sub_version,,}
+    version=${version}${sub_version,,}
 else
-    sub_version="-"${user}"-"`date +%Y%m%d%H%M%S`
+    version=${version}"-"${user}"-"`date +%Y%m%d%H%M%S`
 fi
 
-echo $key | ${appcfg} update $trunk -A $app_id -e $user --passin -V ${version}${sub_version}
+echo $key | ${appcfg} update $trunk -A $app_id -e $user --passin -V ${version}
 
 exit 0
