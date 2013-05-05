@@ -19,7 +19,7 @@
                          (sidebars != []) -%}
 {%- set url_root = pathto('', 1) -%} {#- link to root url (like: '#', '../../') #}
 {%- if not embedded and docstitle -%}
-  {%- set titlesuffix = " &mdash; "|safe + docstitle|e -%}
+  {%- set titlesuffix = docstitle|e + " &mdash; "|safe -%}
 {%- else -%}
   {%- set titlesuffix = "" -%}
 {%- endif -%}
@@ -178,7 +178,7 @@
         {{ metatags }}
 
         {%- block htmltitle -%}
-             <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+             <title>{{ titlesuffix }}{{ title|striptags|e }}</title>
         {%- endblock %}
 
         {%- block css %}
