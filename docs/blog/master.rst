@@ -9,6 +9,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   #2013/05/06/test_paypal
    2013/04/14/there_are_so_many_hungers_in_the_world
    2013/04/12/difference_between_mysql_and_postgresql_with_django
    2013/03/06/why_not_kill_them_all
