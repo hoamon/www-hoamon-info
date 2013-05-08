@@ -36,7 +36,9 @@
                                     trunk/
                                             depends_modules/
                                             modules/
-                                            local_settings.py
+                                            settings.py
+                                            trunk_local_settings.py
+                                            wsgi.py
 
 asset/
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -309,16 +311,24 @@ ho600_lib/settings.py 中的變數載入可覆寫 trunk/settings.py 中的變數
 但在 settings.py 中，目前 **只有 MEDIA_BUNDLES 變數是採 append 行為** 而不是覆寫，\
 此變數供 django-mediagenerator 使用。
 
-trunk/local_settings.py
+trunk/trunk_local_settings.py
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 不被 hg 控管的本地設定檔，本檔案所設定的參數會覆蓋 trunk/settings.py 的設定，\
-但設定時，有一限制： 在 local_settings 的參數名稱必須\
+但設定時，有一限制： 在 trunk_local_settings 的參數名稱必須\
 預先存在 trunk/settings.py 或 INSTALLED_APPS/settings.py 中，\
 這是確保開發者在本地自行開發後，也必須記得把該參數登記到 trunk/settings.py 、 INSTALLED_APPS/settings.py 中，\
 以利其他開發者更正自己的 trunk/settings.py 。
 
-且 local_settings.py 的載入順序為最後一個，確保它會覆寫所有 settings.py 所設定過的變數值。
+且 trunk_local_settings.py 的載入順序為最後一個，確保它會覆寫所有 settings.py 所設定過的變數值。
+
+wsgi.py
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+執行在 uwsgi 模式或 Apache WSGI 模式下時，所須要的檔案。
+
+在 uwsgi 模式下運作時，有提供一 autoreload 的功能，也就是程式碼有變數，\
+可從 django 提供的判別函式得知，並能觸發 uwsgi 自動重啟。
 
 --------------------------------------------------------------------------------
 實際應用範例

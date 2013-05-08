@@ -36,6 +36,21 @@
 Changelog
 ================================================================================
 
+release-1.0.7
+--------------------------------------------------------------------------------
+
+ * add authentication function for download file
+ * import scss
+ * consider PostgreSQL default run on read commited mode
+ * add a Default BaseModel
+ * just show the root url of ho600_lib
+ * add a js function of converting tastypie-datetime
+ * make autoreload in uwsgi mode
+ * change trunk/local_settings.py to trunk/trunk_local_settings.py
+ * add a LoadAfterAppSettings class but put two variables: DEBUG and DATABASES of trunk_local_settings.py in the beginning side of trunk/settings.py
+ * static => staticsite
+ * change default database system from mysql to PostgreSQL
+
 release-1.0.6
 --------------------------------------------------------------------------------
 
