@@ -80,7 +80,6 @@ if ((os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
                 'NAME': 'ho600',                      # Or path to database file if using sqlite3.
                 }
             }
-        }
 elif ((os.environ.get('UWSGI_ORIGINAL_PROC_NAME', None)
             #INFO: if UWSGI_DEB_CONFNAME = 'ttainan', the MODE still is DEBUG(but only with nginx+uwsgi)
             and os.environ.get('UWSGI_DEB_CONFNAME', 'ttainan') != 'ttainan')
@@ -94,32 +93,32 @@ elif ((os.environ.get('UWSGI_ORIGINAL_PROC_NAME', None)
     if not DATABASES:
         DATABASES = {
             'default': {
-                'ENGINE': 'django.db.backends.mysql',
+                'ENGINE': 'django.db.backends.postgresql_psycopg2',
                 'USER': 'ho600',
                 'PASSWORD': 'ho600',
                 'HOST': 'localhost',
                 'NAME': 'ho600',
                 'OPTIONS': {
                     'autocommit': True,
+                    }
                 }
             }
-        }
 else:
     # Running in development, so use a local MySQL database.
     DEBUG = True
     if not DATABASES:
         DATABASES = {
             'default': {
-                'ENGINE': 'django.db.backends.mysql',
+                'ENGINE': 'django.db.backends.postgresql_psycopg2',
                 'USER': 'test_ho600',
                 'PASSWORD': 'test_ho600',
                 'HOST': 'localhost',
                 'NAME': 'test_ho600',
                 'OPTIONS': {
                     'autocommit': True,
+                    }
                 }
             }
-        }
 
 
 try:
