@@ -11,6 +11,8 @@
 ^asset/pyasn1.*
 
 local_settings.py$
+^trunk/trunk_local_settings.py$
+^trunk/wsgi_settings.py$
 ^trunk/apache2.conf
 ^trunk/nginx.conf
 ^trunk/.livereload
