@@ -30,19 +30,68 @@
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 from django.db import models as M
+from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.models import AnonymousUser
 from django.utils import simplejson as json
 from django.utils.translation import ugettext as _
 from django.utils.translation import ungettext
 
-from random import choice, randint
+from random import choice, randint, random
 from types import IntType, LongType
+from sha import sha
 
-import re, datetime, logging, settings, os
+from django.conf import settings
+import re, datetime, logging, os
 
 
 def NOW(): return datetime.datetime.now()
+
+
+
+class Ho600LibBaseModel(M.Model):
+    is_suspend = M.BooleanField(default=False)
+    creator = M.ForeignKey(User, null=True)
+    create_time = M.DateTimeField(verbose_name=_('Create Time'), auto_now_add=True)
+    update_time = M.DateTimeField(verbose_name=_('Last Update Time'), auto_now=True)
+    verify_key_value = M.CharField(verbose_name=_('Verify Key'), max_length=40, null=True, default='')
+
+
+    class Meta:
+        abstract = True
+
+
+
+    def save(self, *args, **kwgs):
+        if not self.verify_key_value:
+            self.verify_key_value = sha(str(random())).hexdigest()
+        super(Ho600LibBaseModel, self).save(*args, **kwgs)
+        for p in self._meta.permissions:
+            if p[0].startswith('own_'):
+                assign(p[0], self.creator, self)
+                break
+
+
+    def verify_key(self, key=''):
+        if not key and not self.verify_key_value:
+            while True:
+                self.verify_key_value = sha(str(random())).hexdigest()
+                try: self.save()
+                except IntegrityError, DatabaseError: pass
+                else: break
+            return self.verify_key_value
+        elif not key or key == self.verify_key_value:
+            return self.verify_key_value
+        else:
+            return False
+
+
+    def __str__(self):
+        return str(self.id)
+
+
+    def __unicode__(self):
+        return 'u"%s"' % self.__str__()
 
 
 
@@ -195,9 +244,9 @@ class BugKind(M.Model):
 REQUEST_URL_RE = re.compile('<th>Request URL:</th>[ \t]*<td>([^<]+)</td>', flags=re.I)
 FILENAME_LINE_NO_RE = re.compile('<th>Exception Location:</th>[ \t]*<td>([^<]+) +in +[^<]+, +line +([0-9]+)[^<]*</td>', flags=re.I)
 TYPE_NOTE_RE = re.compile('<div id="summary">[ \t]*<h1>([^<]+)</h1>[ \t]*<pre[^>]*>([^<]*)</pre>', flags=re.I)
-ROOT_RE = re.compile('^%s/'%os.path.dirname(os.path.abspath(settings.__file__)))
+ROOT_RE = re.compile('^%s/'%settings.ROOT)
 class BugPage(M.Model):
-    LETTER_SET = ('-', '+', '/', '*', '2', '3', '5', '6', '8', '9', 'A', 'J', 'K', 'L', 'N', 'Y', 'Z')
+    LETTER_SET = ('-', '+', '*', '2', '3', '5', '6', '8', '9', 'A', 'J', 'K', 'L', 'N', 'Y', 'Z')
 
     kind = M.ForeignKey(BugKind, null=True)
     code = M.CharField(verbose_name=_('Wrong Code'), max_length=4, null=True)
@@ -293,3 +342,12 @@ class BugPage(M.Model):
         self.post = self._get_plain_string(request.POST)[:500]
         self.cookies = self._get_plain_string(request.COOKIES)[:500]
         self.save()
+
+
+def save_bugpage(code):
+    bp = BugPage.objects.get(code=code)
+    filepath = os.path.join(settings.STATIC_ROOT, '%s.html'%code)
+    f = open(filepath, 'wb')
+    f.write(bp.html)
+    f.close()
+    return filepath
