@@ -81,12 +81,12 @@ if ((os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
                 }
             }
 elif ((os.environ.get('UWSGI_ORIGINAL_PROC_NAME', None)
-            #INFO: if UWSGI_DEB_CONFNAME = 'ttainan', the MODE still is DEBUG(but only with nginx+uwsgi)
-            and os.environ.get('UWSGI_DEB_CONFNAME', 'ttainan') != 'ttainan')
+            #INFO: if UWSGI_DEB_CONFNAME = 'tho600', the MODE still is DEBUG(but only with nginx+uwsgi)
+            and os.environ.get('UWSGI_DEB_CONFNAME', 'tho600') != 'tho600')
         or os.environ.get('AP_PARENT_PID', None)
 	or os.getenv('SETTINGS_MODE') == 'production'):
     #INFO: If You are running in the windows dos enviroment,
-    # and want to syncdb to the tainan_prod.
+    # and want to syncdb to the ho600_prod.
     # Please do the below line in the dos before syncdb
     # d:\> set SETTINGS_MODE=production
     DEBUG = False
