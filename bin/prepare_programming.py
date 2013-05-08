@@ -29,9 +29,9 @@
 #NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import os, sys
-import zipfile
-from urllib2 import Request, urlopen, URLError, HTTPError
+import os, sys, re, urllib2
+import zipfile, base64
+from urllib2 import URLError, HTTPError
 from shutil import rmtree, copytree
 from distutils import dir_util
 from advance_hg import AdvanceHG
@@ -58,9 +58,22 @@ def unzip(file_name, dest_dir):
 
 
 def download_file(url, file_name, dest_dir):
-    req = Request(url)
+    r = re.match('^(.*\/\/)([^:]+):([^:]+)@([^/]+/?)(.*)$', url)
+    if r:
+        http, username, password, site, tail = r.groups()
+        top_url = http+site
+        url = http+site+tail
+        password_mgr = urllib2.HTTPPasswordMgrWithDefaultRealm()
+        password_mgr.add_password(None, top_url, username, password)
+        handler = urllib2.HTTPDigestAuthHandler(password_mgr)
+        opener = urllib2.build_opener(handler)
+        urllib2.install_opener(opener)
+        req = urllib2.Request(url, "", {})
+    else:
+        req = urllib2.Request(url)
+
     try:
-        f = urlopen(req)
+        f = urllib2.urlopen(req)
     except HTTPError, e:
         print "HTTP Error:", e.code, url
     except URLError, e:
@@ -149,5 +162,6 @@ else:
         none, del_file = ps
         del_file = os.path.join(ROOT, del_file)
         print del_file
-        rmtree(del_file)
+        try: rmtree(del_file)
+        except OSError: continue
 print '>>> == Find Deletes =='

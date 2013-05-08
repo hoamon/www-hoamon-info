@@ -160,6 +160,11 @@
     $.ho600_lib = function (DEBUG) {
         DEBUG = DEBUG ? DEBUG : false;
         var d = {
+            convert_tastypie_datetime: function (s) {
+                var re = new RegExp('^([0-9]+)-([0-9]+)-([0-9]+).([0-9]+):([0-9]+):([0-9]+).([0-9]*)$');
+                var list = re.exec(s);
+                return list[1]+'-'+list[2]+'-'+list[3]+' '+list[4]+':'+list[5]+':'+list[6];
+            },
             get_debug: function () {
                 return DEBUG;
             },
@@ -200,6 +205,7 @@
         d['get_uri'] = d.get_resource_uri_from_xhr;
         d['er'] = d.error_object;
         d['debug'] = d.get_debug;
+        d['ctd'] = d.convert_tastypie_datetime;
         return d;
     };
 }) ($);

@@ -82,7 +82,7 @@ r = os.popen('%s generatemedia'%join(trunk_dir, 'manage.py'))
 print(r.read())
 
 # run ./manage.py compress --settings=compressor_settings to export static media files
-r = os.popen('%s compress --settings=compressor_settings'%join(trunk_dir, 'manage.py'))
+r = os.popen('%s compress --force'%join(trunk_dir, 'manage.py'))
 print(r.read())
 
 # run ./manage.py compress --settings=compressor_settings to export static media files
