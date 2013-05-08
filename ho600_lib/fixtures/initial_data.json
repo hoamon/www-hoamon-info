@@ -1,0 +1,4 @@
+[
+    { "pk": 1001, "model": "ho600_lib.option", "fields": { "swarm": "type-option", "value": "__none__" } }
+
+]
