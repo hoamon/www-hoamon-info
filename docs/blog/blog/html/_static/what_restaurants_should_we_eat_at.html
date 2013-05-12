@@ -114,6 +114,12 @@
             function calculate_microsecond (t) {
                 /* use a math function to reduce t value*/
                 var new_t = t - Math.ceil(Math.random() * 10);
+                var default_microsecond = $('#button').attr('default_microsecond');
+                if (new_t < 100 && new_t > -100) {
+                    new_t = t - 1;
+                } else if (new_t < -1.15 * default_microsecond) {
+                    new_t = t - 10;
+                }
                 return new_t;
             }
             function run_to_next (id) {
@@ -126,14 +132,21 @@
             }
             function click_button () {
                 var $button = $('#button');
+                var default_microsecond = $button.attr('default_microsecond');
                 var microsecond = Number($button.attr('microsecond'));
-                if (microsecond > 0) {
+                if (microsecond <= default_microsecond && microsecond >= -1.2 * default_microsecond) {
                     var new_microsecond = calculate_microsecond(microsecond);
                     $button.attr('microsecond', new_microsecond);
                     run_to_next($('.right_on').attr('id'));
-                    setTimeout('click_button()', new_microsecond);
+                    setTimeout('click_button()', Math.abs(new_microsecond));
                 } else {
-                    $button.attr('microsecond', $button.attr('default_microsecond'));
+                    $button.attr('microsecond', default_microsecond);
+                    var text = $('.right_on').text();
+                    if (text == '再來一次') {
+                        $('#message').addClass('notice').text(text);
+                    } else {
+                        $('#message').addClass('notice').text('去吃「'+text+'」吧!');
+                    }
                 }
             }
             $(document).ready(function () {
