@@ -1,0 +1,71 @@
+<!-- Document
+
+目的： 製作一個隨機選取餐廳的小工具，類似小瑪莉機台( https://www.google.com.tw/search?q=%E5%B0%8F%E7%91%AA%E8%8E%89 )。
+
+目標對象： 不知道要吃什麼的用戶。
+
+使用方法： 按下中央按鈕，則開始啟動，以順時針方向繞向，移動速度為初始快，
+    中間等差，尾端漸慢。到最後光環停下時，將餐廳名稱顯示在按鈕上面。
+
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- 在 Windows 中編輯純文字文件，其預設編碼為 Big5(嚴格講是 cp950)，所以要用下面這一行。 {
+            <meta http-equiv="Content-Type" content="text/html; charset=Big5">
+        } -->
+        <title>今天吃什麼？</title>
+
+        <!-- 使用 Google 所提供的 jQuery 靜態檔 { -->
+            <link rel="stylesheet" title="default" type="text/css" media="screen"
+                href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/blitzer/jquery-ui.css" />
+            <script type="text/javascript"
+                src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+            <script type="text/javascript"
+                src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+        <!-- } 使用 Google 所提供的 jQuery 靜態檔 -->
+
+        <script type="text/javascript">
+            function console_message (s) {
+                /*
+                 * 使用者瀏覽器若支援 console 物件，則印出 s 文句。
+                 */
+                if (typeof console){
+                    console.log(s);
+                }
+            }
+            function self_joined_jquery () {
+                /*
+                 * 若使用者無法從 Google Api Host Site 下載所需函式庫，
+                 * 則可使用自備的函式庫（但以下三個檔案需與本網頁 what_restaurants_should_we_eat_at.html 放置在同一資料夾中）。
+                 */
+                var JQUERY_CSS = './blitzer/jquery-ui-1.8.23.custom.css';
+                var JQUERY_JS = './jquery-1.8.0.min.js';
+                var JQUERYUI_JS = './jquery-ui-1.8.23.custom.min.js';
+                document.write(unescape('%3Clink rel="stylesheet" title="default" type="text/css" media="screen" href="'+JQUERY_CSS+'" /%3E'));
+                /* 上面執行結果為寫出此句：
+                 * <link rel="stylesheet" title="default" type="text/css" media="screen" href="./blitzer/jquery-ui-1.8.23.custom.css"> */
+
+                document.write(unescape('%3Cscript src="'+JQUERY_JS+'" type="text/javascript"%3E%3C/script%3E'));
+                /* 上面執行結果為寫出此句：
+                 * 《script src="./jquery-1.8.0.min.js" type="text/javascript"》《/script》 */
+
+                document.write(unescape('%3Cscript src="'+JQUERYUI_JS+'" type="text/javascript"%3E%3C/script%3E'));
+                /* 上面執行結果為寫出此句：
+                * 《script src="./jquery-ui-1.8.23.custom.min.js" type="text/javascript"》《/script》 */
+
+                console_message('Use self-joined jquery-ui files');
+            }
+            if (typeof jQuery == 'undefined') {
+                console_message('Failure on loading google libs!!!');
+                self_joined_jquery();
+            } else {
+                console_message('Well done on loading google libs!!!');
+            }
+        </script>
+    </head>
+    <body>
+        <h1>今天吃什麼？</h1>
+
+    </body>
+</html>
