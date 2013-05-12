@@ -2,10 +2,12 @@
 
 目的： 製作一個隨機選取餐廳的小工具，類似小瑪莉機台( https://www.google.com.tw/search?q=%E5%B0%8F%E7%91%AA%E8%8E%89 )。
 
-目標對象： 不知道要吃什麼的用戶。
+目標對象： 對於要吃什麼感到困惱的用戶。
 
-使用方法： 按下中央按鈕，則開始啟動，以順時針方向繞向，移動速度為初始快，
+使用方法： 按下中央按鈕，則開始啟動，以順時針方向繞圈，移動速度為初始快，
     中間等差，尾端漸慢。到最後光環停下時，將餐廳名稱顯示在按鈕上面。
+
+模擬劇情： 又是一個… TODO
 
 -->
 <html>
@@ -14,7 +16,7 @@
         <!-- 在 Windows 中編輯純文字文件，其預設編碼為 Big5(嚴格講是 cp950)，所以要用下面這一行。 {
             <meta http-equiv="Content-Type" content="text/html; charset=Big5">
         } -->
-        <title>今天吃什麼？</title>
+        <title>神呀！請給我一個餐廳</title>
 
         <!-- 使用 Google 所提供的 jQuery 靜態檔 { -->
             <link rel="stylesheet" title="default" type="text/css" media="screen"
@@ -63,9 +65,113 @@
                 console_message('Well done on loading google libs!!!');
             }
         </script>
+        <style>
+            #left_block {
+                width: 102px;
+                height: 612px;
+                float: left;
+            }
+            #center_block {
+                width: 408px;
+                height: 612px;
+                float: left;
+            }
+            #right_block {
+                width: 102px;
+                height: 612px;
+                float: left;
+            }
+            .notice {
+                color: red;
+            }
+            .choose {
+                width: 100px;
+                height: 100px;
+                border: 1px solid blue;
+                float: left;
+                text-align: center;
+                line-height: 100px;
+            }
+            #control_block {
+                width: 406px;
+                height: 406px;
+                float: left;
+                border: 1px solid blue;
+                text-align: center;
+            }
+            #control_block #message {
+                margin-top: 150px;
+            }
+            #control_block #button {
+                margin-top: 50px;
+            }
+            .right_on {
+                border: 1px dashed red;
+                background: yellow;
+            }
+        </style>
+        <script type="text/javascript">
+            function calculate_microsecond (t) {
+                /* use a math function to reduce t value*/
+                var new_t = t - Math.ceil(Math.random() * 10);
+                return new_t;
+            }
+            function run_to_next (id) {
+                id = Number(id) + 1;
+                if (id > 20) {
+                    id = 1;
+                }
+                $('.right_on').removeClass('right_on');
+                $('#'+id).addClass('right_on');
+            }
+            function click_button () {
+                var $button = $('#button');
+                var microsecond = Number($button.attr('microsecond'));
+                if (microsecond > 0) {
+                    var new_microsecond = calculate_microsecond(microsecond);
+                    $button.attr('microsecond', new_microsecond);
+                    run_to_next($('.right_on').attr('id'));
+                    setTimeout('click_button()', new_microsecond);
+                } else {
+                    $button.attr('microsecond', $button.attr('default_microsecond'));
+                }
+            }
+            $(document).ready(function () {
+                $('#button').button().click(click_button);
+            });
+        </script>
     </head>
     <body>
-        <h1>今天吃什麼？</h1>
-
+        <h1>今天吃什麼？ 問神比較準！</h1>
+        <div id="left_block">
+            <div class="choose right_on" id="1">你我他晚點</div>
+            <div class="choose" id="20">蓮園素食</div>
+            <div class="choose" id="19">噴水餐廳</div>
+            <div class="choose" id="18">博多豚骨拉麵</div>
+            <div class="choose" id="17">肯德基</div>
+            <div class="choose" id="16">東門7－11</div>
+        </div>
+        <div id="center_block">
+            <div class="choose" id="2">三元素食</div>
+            <div class="choose" id="3">達美樂</div>
+            <div class="choose" id="4">多福豆花</div>
+            <div class="choose" id="5">雪花素食</div>
+            <div id="control_block">
+                <div id="message">請點選下方按鈕</div>
+                <button id="button" microsecond="200" default_microsecond="200">神呀！請給我一個餐廳</button>
+            </div>
+            <div class="choose" id="15">旺來便當</div>
+            <div class="choose notice" id="14">再來一次</div>
+            <div class="choose" id="13">韓大姐料理</div>
+            <div class="choose" id="12">青島牛肉麵</div>
+        </div>
+        <div id="right_block">
+            <div class="choose" id="6">天慈素食</div>
+            <div class="choose" id="7">胡國雄古早麵</div>
+            <div class="choose" id="8">蘇媽媽湯圓</div>
+            <div class="choose" id="9">阿菊肉圓</div>
+            <div class="choose" id="10">王記蚵仔煎</div>
+            <div class="choose" id="11">台南虱目魚</div>
+        </div>
     </body>
 </html>
