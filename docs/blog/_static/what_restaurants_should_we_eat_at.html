@@ -116,7 +116,6 @@
             }
         </style>
         <script type="text/javascript">
-            var ts = [];
             function calculate_microsecond (t) {
                 /* 跑到下一格的時間預設是隨機減去 1 到 10 毫秒
                  * 但在 100 ~ -100 毫秒之間，則變成固定減 1 。
@@ -129,7 +128,6 @@
                 } else if (new_t < -1.15 * default_microsecond) {
                     new_t = t - 10;
                 }
-                ts.push(new_t);
                 return new_t;
             }
             function run_to_next (id) {
@@ -152,6 +150,7 @@
                  * 7. 顯示被選中的餐廳名稱。
                  */
                 var $button = $('#button');
+                $button.hide();
                 $('#message').removeClass('result').removeClass('notice');
                 var default_microsecond = $button.attr('default_microsecond');
                 var microsecond = Number($button.attr('microsecond'));
@@ -164,6 +163,7 @@
                 } else {
                     /* 執行完畢，已選出餐廳，並將速度回復到預設值 */
                     $button.attr('microsecond', default_microsecond);
+                    $button.show();
 
                     /* 顯示所選出的餐廳，或是「再來一次」 */
                     var text = $('.right_on').text();
