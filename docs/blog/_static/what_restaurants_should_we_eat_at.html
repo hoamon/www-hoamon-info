@@ -169,10 +169,10 @@
                     var text = $('.right_on').text();
                     if (text == '再來一次') {
                         $('#message').addClass('notice').text(text);
+                        $button.click();
                     } else {
                         $('#message').addClass('result').text('去吃「'+text+'」吧!');
                     }
-                    $('#res').text(ts);
                 }
             }
             $(document).ready(function () {
