@@ -66,6 +66,7 @@
             }
         </script>
         <style>
+            /* 這是 CSS 的註解方式 */
             #left_block {
                 width: 102px;
                 height: 612px;
@@ -83,6 +84,10 @@
             }
             .notice {
                 color: red;
+            }
+            .result {
+                color: blue;
+                font-weight: bold;
             }
             .choose {
                 width: 100px;
@@ -111,18 +116,24 @@
             }
         </style>
         <script type="text/javascript">
+            var ts = [];
             function calculate_microsecond (t) {
-                /* use a math function to reduce t value*/
-                var new_t = t - Math.ceil(Math.random() * 10);
+                /* 跑到下一格的時間預設是隨機減去 1 到 10 毫秒
+                 * 但在 100 ~ -100 毫秒之間，則變成固定減 1 。
+                 * 而在進入 -1.15 * default_microsecond 以下時，則固定減 10 。
+                 */
+                var new_t = t - Math.ceil(Math.random() * 20);
                 var default_microsecond = $('#button').attr('default_microsecond');
                 if (new_t < 100 && new_t > -100) {
                     new_t = t - 1;
                 } else if (new_t < -1.15 * default_microsecond) {
                     new_t = t - 10;
                 }
+                ts.push(new_t);
                 return new_t;
             }
             function run_to_next (id) {
+                /* 跑到下一格餐廳: 只要把 id 持續加 1 ，直到大於 20 時，再回到 1 即可 */
                 id = Number(id) + 1;
                 if (id > 20) {
                     id = 1;
@@ -131,25 +142,41 @@
                 $('#'+id).addClass('right_on');
             }
             function click_button () {
+                /* 使用者按下按鈕後所作的動作：
+                 * 1. 找出 default_microsecond 以決定時間變動的區間。
+                 * 2. 找出目前所跑的毫秒數。
+                 * 3. 叫用 calculate_microsecond 函式來得到下一步所要等待的「new_microsecond」毫秒數。
+                 * 4. 要求等待「new_microsecond」毫秒後，再跑到下一格。
+                 * 5. 改變被選中餐廳的格子外貌。
+                 * 6. 如果「new_microsecond」已經超過 -1.2 * default_microsecond ，則執行結束。
+                 * 7. 顯示被選中的餐廳名稱。
+                 */
                 var $button = $('#button');
+                $('#message').removeClass('result').removeClass('notice');
                 var default_microsecond = $button.attr('default_microsecond');
                 var microsecond = Number($button.attr('microsecond'));
+
                 if (microsecond <= default_microsecond && microsecond >= -1.2 * default_microsecond) {
                     var new_microsecond = calculate_microsecond(microsecond);
                     $button.attr('microsecond', new_microsecond);
                     run_to_next($('.right_on').attr('id'));
                     setTimeout('click_button()', Math.abs(new_microsecond));
                 } else {
+                    /* 執行完畢，已選出餐廳，並將速度回復到預設值 */
                     $button.attr('microsecond', default_microsecond);
+
+                    /* 顯示所選出的餐廳，或是「再來一次」 */
                     var text = $('.right_on').text();
                     if (text == '再來一次') {
                         $('#message').addClass('notice').text(text);
                     } else {
-                        $('#message').addClass('notice').text('去吃「'+text+'」吧!');
+                        $('#message').addClass('result').text('去吃「'+text+'」吧!');
                     }
+                    $('#res').text(ts);
                 }
             }
             $(document).ready(function () {
+                /* 將 click_button 函式登記到 button 的 click 事件上 */
                 $('#button').button().click(click_button);
             });
         </script>
@@ -186,5 +213,15 @@
             <div class="choose" id="10">王記蚵仔煎</div>
             <div class="choose" id="11">台南虱目魚</div>
         </div>
+
+        <div style="float: left; margin-left: 20px;">
+            <h3>移動速度的變動圖</h3>
+            <div>橫座標為回合，縱座標為毫秒。</div>
+            <a href="./microsecond_variation.png" target="microsecond_variation">
+                <img width="200px" src="./microsecond_variation.png" />
+            </a>
+            <div>點圖可放大顯示。</div>
+        </div>
     </body>
 </html>
+
