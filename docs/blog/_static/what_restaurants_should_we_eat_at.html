@@ -105,18 +105,31 @@
                 text-align: center;
             }
             #control_block #message {
-                margin-top: 150px;
+                margin-top: 20px;
             }
             #control_block #button {
-                margin-top: 50px;
+                margin-top: 20px;
             }
             #microsecond_variation_block {
                 float: left;
                 margin-left: 20px;
+                margin-bottom: 50px;
             }
             .right_on {
                 border: 1px dashed red;
                 background: yellow;
+            }
+            #license {
+                width: 150px;
+                margin-top: 20px;
+                margin-left: 20px;
+            }
+            .g-plusone {
+                margin-left: 20px;
+            }
+            .fb-like {
+                margin-top: 20px;
+                margin-left: 20px;
             }
         </style>
         <script type="text/javascript">
@@ -186,6 +199,22 @@
         </script>
     </head>
     <body>
+        <div id="fb-root"></div>
+        <script type="text/javascript">
+            (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = '//apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=427606900621352";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+
         <h1>今天吃什麼？ 問神比較準！</h1>
         <div id="left_block">
             <div class="choose right_on" id="1">你我他晚點</div>
@@ -201,6 +230,27 @@
             <div class="choose" id="4">多福豆花</div>
             <div class="choose" id="5">雪花素食</div>
             <div id="control_block">
+                <br/>
+                <div class="g-plusone" data-href="http://www.hoamon.info/blog/"
+                    data-size="tall" data-width="350" data-annotation="inline"></div>
+                <div class="fb-like" data-href="http://www.hoamon.info/blog/"
+                    data-send="false" data-width="350" data-show-faces="true"></div>
+
+        <div class="widget" id="license">
+            <div style="text-align: center;">
+                <a href="http://creativecommons.org/licenses/by-sa/3.0/tw/" rel="license">
+                    <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/tw/88x31.png">
+                </a>
+            </div>
+            <span href="http://purl.org/dc/dcmitype/Text" rel="dct:type">
+                <div style="font-size: 12px;">
+                    <span href="http://purl.org/dc/dcmitype/Text" rel="dct:type">hoamon.info/blog/</span>
+                    為 <a href="http://www.hoamon.info/" rel="cc:attributionURL">hoamon</a> 所創作，
+                    係採用
+                    <a href="http://creativecommons.org/licenses/by-sa/3.0/tw/" rel="license">創用 CC 姓名標示-相同方式分享 3.0 台灣 授權條款</a>授權.
+                </div>
+            </span>
+        </div>
                 <div id="message">請點選下方按鈕</div>
                 <button id="button" microsecond="200" default_microsecond="200">神呀！請給我一間餐廳</button>
             </div>
@@ -226,6 +276,7 @@
             </a>
             <div>點圖可放大顯示。</div>
         </div>
+
     </body>
 </html>
 
