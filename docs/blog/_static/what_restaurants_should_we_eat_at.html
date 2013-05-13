@@ -133,6 +133,9 @@
                 margin-top: 20px;
                 margin-left: 20px;
             }
+            #disqus {
+                width: 600px;
+            }
         </style>
         <script type="text/javascript">
             function calculate_microsecond (t) {
@@ -289,17 +292,19 @@
         </a>
 
         <div style="clear: both;"></div>
-        <h3>留個意見：</h3>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            var disqus_shortname = "hoamoninfo";
-            var disqus_identifier = "what_restaurants_should_we_eat_at";
-            disqus_thread();
-        </script>
-        <noscript>
-            Please enable JavaScript to view the
-                <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
+        <div id="disqus">
+            <h3>留個意見：</h3>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = "hoamoninfo";
+                var disqus_identifier = "what_restaurants_should_we_eat_at";
+                disqus_thread();
+            </script>
+            <noscript>
+                Please enable JavaScript to view the
+                    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+        </div>
     </body>
 </html>
 
