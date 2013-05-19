@@ -77,6 +77,12 @@ handlers:
 - url: /OpenTrunk/
   static_dir: modules/OpenTrunk/
 
+- url: /opentrunk/
+  static_dir: modules/OpenTrunk/
+
+- url: /_d/
+  static_dir: modules/OpenTrunk/
+
 - url: /hoamon.asc
   static_files: modules/www/_static/YUEH-FENG_29E21FFB.asc
   upload: modules/www/_static/YUEH-FENG_29E21FFB.asc
