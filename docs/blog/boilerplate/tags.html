@@ -12,8 +12,21 @@
 
 <div class="widget">
     <h1>{{ text_tags }} in Alphabet Order</h1>
-    {%- for tag, count in tags|dictsort -%}
-      <a href="{{ pathto('tags/' + taglinks[tag]|lower) }}">{{ tag }}</a> ({{ count }})
-      {%- if not loop.last -%}, {% endif -%}
-    {%- endfor -%}
+    <ul style="list-style: none;">
+        {%- set tag_first_name = "" -%}
+        <ul>
+
+        {%- for tag, count in tags|dictsort -%}
+            {%- if tag_first_name != tag.0 -%}
+                </ul>
+                <li><b>{{ tag.0|upper }}</b></li>
+                <ul>
+                    <li><a href="{{ pathto('tags/' + taglinks[tag]|lower) }}">{{ tag }}</a> ({{ count }})</li>
+                {%- set tag_first_name = tag.0 -%}
+            {%- else -%}
+                <li><a href="{{ pathto('tags/' + taglinks[tag]|lower) }}">{{ tag }}</a> ({{ count }})</li>
+            {%- endif %}
+        {%- endfor -%}
+        </ul>
+    </ul>
 </div>
