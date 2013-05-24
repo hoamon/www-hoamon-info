@@ -155,6 +155,7 @@
         {{ author(metadata.author) }}
         {{ category_list(metadata.filing["categories"]) }}
         {{ tag_list(metadata.filing["tags"]) }}
+        <div class="version_history">Version History: <a href="//bitbucket.org/hoamon/www-hoamon-info/src/{{ release|e }}/docs/blog/{{ metadata.link }}.rst?at=default">{{ release|e }}</a></a>
         {{ comment_count(comment_count_code) }}
         {%- block post_meta_extra -%}{%- endblock -%}
     </div>
@@ -316,7 +317,7 @@
           {%- endif -%}
           {%- if show_sphinx -%}
             Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and <a href="http://sphinx.pocoo.org/">Sphinx</a>.
-            Version is <span id="version">default</span>.
+            Version is <span>{{ release|e }}</span>.
           {%- endif -%}
           </footer>
       {%- endblock -%}

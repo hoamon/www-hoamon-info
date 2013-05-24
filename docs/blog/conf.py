@@ -81,7 +81,7 @@ import os
 source_suffix = tinkerer.source_suffix
 master_doc = tinkerer.master_doc
 version = tinkerer.__version__
-release = os.popen('hg id -n -i').read().replace(' ', '-').replace('+', '').replace('\n', '')
+release = os.popen('hg id -n -i').read().replace(' ', '-').replace('+', '').replace('\n', '').split('-')[0]
 html_title = project
 html_use_index = False
 html_show_sourcelink = False

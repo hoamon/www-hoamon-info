@@ -29,7 +29,6 @@ var change_background_image = function () {
 }
 $(document).ready(function(){
     change_background_image();
-    $('#version').text(DOCUMENTATION_OPTIONS['VERSION']);
     $('.figure img').each(function(){
         var src = $(this).attr('src');
         var $p = $(this).next();
