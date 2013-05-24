@@ -89,6 +89,7 @@
             <li class='{%- if project == "hoamon.info" and pagename in ["index", "search", "english", "zhong-wen", "espanol", "ri-ben-yu", "portugues", "deutsch", "arabic", "francais", "russkij", "hangug-ui"] %}isme{% endif %}'><a href="/">My Detail</a></li>
             <li class='{%- if pagename in ["course", "courses"]
                             or project in ["Startup Company Practice in Internet",
+                                            "Construction and Disaster Prevention Management",
                                             "Engineering Economy",
                                             "Management Mathematics",
                                             "Engineering Contract",
@@ -158,9 +159,38 @@
     </div>
 
     <div class="content" style="clear: both;">
-        {%- if project == "Startup Company Practice in Internet" and pagename != 'index' %}
-            <div><a href="/course/startup-company/">回目錄</a></div>
+        {%- if project == "hoamon.info" %}
+            <div style="float: right; margin-right: 10px;">
+                <a href="//bitbucket.org/hoamon/www-hoamon-info/history-node/{{ release|e }}/docs/www/{{ pagename }}.rst?at=default">Reversion History</a> and
+                <a href="//bitbucket.org/hoamon/www-hoamon-info/raw/{{ release|e }}/docs/www/{{ pagename }}.rst?at=default">Raw File</a> of
+                <b>this {{ pagename }}.html</b>
+            </div>
+        {% else %}
+            {%- for p0, p1, p2 in [
+                                    ("Startup Company Practice in Internet", "startup-company", "網路創業實務"),
+                                    ("Construction and Disaster Prevention Management", "construction-management", "營建與防災管理"),
+                                    ("Engineering Economy", "engineering-economy", "工程經濟"),
+                                    ("Management Mathematics", "management-mathematics", "管理數學"),
+                                    ("Engineering Contract", "engineering-contract", "工程契約"),
+                                    ("A Software Company of One Man", "a-software-company-of-one-man", "一人軟體公司"),
+                                    ("Low Cost Google Cloud Construction of Small and Medium Companies", "low-cost-google-cloud-construction-of-smc", "中小企業的低成本 Google Cloud 佈建"),
+                                    ] %}
+                {%- if project ==  p0 %}
+                    {%- if pagename != 'index' %}
+                        <div style="float: left; margin-left: 5px;"><a href="/course/{{ p1 }}/">回「{{ p2 }}」目錄</a></div>
+                    {% endif %}
+                    <div style="float: right; margin-right: 5px;">
+                        {%- if pagename != 'index' %}|{% endif %}
+                        <a href="//bitbucket.org/hoamon/{{ p1 }}/history-node/{{ release|e }}/{{ pagename }}.rst?at=default">Reversion History</a> and
+                        <a href="//bitbucket.org/hoamon/{{ p1 }}/raw/{{ release|e }}/{{ pagename }}.rst?at=default">Raw File</a> of
+                        <b>this {{ pagename }}.html</b>
+                    </div>
+                {% endif %}
+            {% endfor %}
         {% endif %}
+
+        <hr style="clear: both; width: 100%;" />
+
         {% block body %}
         {% endblock %}
 
@@ -189,7 +219,7 @@
 
             <div style="float: right; text-align: right;">
                 {%- if project == "hoamon.info" %}
-                    <h3>Quick Search for Urls match "^/[^/]+#?$"</h3>
+                    <h3>Quick Search for www.hoamon.info</h3>
                 {% else %}
                     <h3>Quick Search for "{{ project }}"</h3>
                 {% endif %}
@@ -199,11 +229,6 @@
                     <input type="hidden" name="check_keywords" value="yes">
                     <input type="hidden" name="area" value="default">
                 </form>
-                <p class="searchtip" style="font-size: 90%">
-                    Enter search terms or a module, class or function name.
-                </p>
-                <h3>Show Source of This Page</h3>
-                <a href="_sources/{{ pagename }}.txt" target="{{ pagename }}">Show Raw .rst File</a>
             </div>
             <div style="clear: both;"></div>
         {% endif %}
