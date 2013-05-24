@@ -27,6 +27,8 @@ var change_background_image = function () {
     }
     setTimeout('change_background_image()', 6000);
 }
+
+
 $(document).ready(function(){
     change_background_image();
     $('.figure img').each(function(){
