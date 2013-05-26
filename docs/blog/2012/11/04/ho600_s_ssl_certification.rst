@@ -62,11 +62,14 @@ https://www-Ho600.appspot.com/ ，擔心是不是被"釣到"了。
 <http://blog.hoamon.info/2011/04/how-to-get-free-https-web-certification.html>`_ 』，\
 其中幾個步驟要換掉：
 
-::
+.. code-block:: bash
 
- # openssl req -out CSR.csr -new -newkey rsa:2048 -nodes -keyout privateKey.key # 1. 生成私錀及 CSR 檔
- # openssl rsa -in privateKey.key -out unencryptedkey.pem # 2. 私錀格式換成 PEM 格式
- # cat ssl.crt sub.class2.server.ca.pem ca.pem > 600_com.pem # 3. 依序把憑證置入同一個 PEM 檔
+ $ openssl req -out CSR.csr -new -newkey rsa:2048 \
+     -nodes -keyout privateKey.key #1. 生成私錀及 CSR 檔
+ $ openssl rsa -in privateKey.key -out unencryptedkey.pem \
+     #2. 私錀格式換成 PEM 格式
+ $ cat ssl.crt sub.class2.server.ca.pem ca.pem \
+     > 600_com.pem #3. 依序把憑證置入同一個 PEM 檔
 
 1. 的指令是要生成 2048 長度的 RSA 私錀，而它的 CSR.csr 要貼到 StartSSL.com 的網站，\
 然後它們會問你要生給什麼網址使用的，如果是 wild card 就填 * ，也可以用多值方式明確填寫特定子網域，\
