@@ -37,7 +37,7 @@ StartSSL.com 有提供我們這些已作過 Personal Identity Validation 的人
 
 但書則是：
 
- 1. 所生成的 single name / wild card 憑證其組織必定為 **YUEH-FENG HO** ( 如下圖的 3 號框 )，這是受限於 StartSSL.com 的政策，無法修改。而綠標憑證則會是貴公司（組織）的名稱，但綠標須作法律認證程序。本人的服務只包括程式技術部份，法律認證部份請找自己公司的法律顧問處理。
+ 1. 本人所生成的 single name / wild card 憑證（非 StartSSL™ `Distributor Package <https://www.startssl.com/?app=7>`_ ），其組織必定為 **YUEH-FENG HO** ( 如下圖的 3 號框 )，這是受限於 StartSSL.com 的政策，無法修改。而綠標憑證則會是貴公司（組織）的名稱，但綠標須作法律認證程序。本人的服務只包括程式技術部份，法律認證部份請找自己公司的法律顧問處理。
  #. 對口技術人員需有中華民國身份證，並以 Web Camera / Skype 確認身份及繳交身份證影本( 或掃瞄電子檔 )。
  #. 本人保留提供服務的權利，如果 **我沒空** 或是 **跟你( 或貴公司 )沒緣份** ，那就十分抱歉了。
 
