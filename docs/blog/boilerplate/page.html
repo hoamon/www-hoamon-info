@@ -12,17 +12,37 @@
 {%- extends "layout.html" -%}
 
 {%- block body -%}
+    <div style="float: left; width: 280px;">
+        <script type="text/javascript">
+            document.write(unescape('%3Cdiv class="g-plusone" data-href="')
+                + HREF
+                + unescape('" data-size="tall" data-annotation="inline"%3E%3C/div%3E'));
+        </script>
+    </div>
+    <div style="float: left; width: 280px;">
+        <script type="text/javascript">
+            document.write(unescape('%3Cdiv class="fb-like" data-href="')
+                + HREF
+                + unescape('" data-send="true" data-show-faces="false"%3E%3C/div%3E'));
+        </script>
+    </div>
+    <div style="clear: both;"></div>
     {{ body }}
-    <script type="text/javascript">
-        document.write(unescape('%3Cdiv class="g-plusone" data-href="')
-            + HREF
-            + unescape('" data-size="tall" data-width="600" data-annotation="inline"%3E%3C/div%3E'));
-    </script>
-    <script type="text/javascript">
-        document.write(unescape('%3Cdiv class="fb-like" data-href="')
-            + HREF
-            + unescape('" data-send="true" data-width="600" data-show-faces="true"%3E%3C/div%3E'));
-    </script>
+    <div style="float: left; width: 280px;">
+        <script type="text/javascript">
+            document.write(unescape('%3Cdiv class="g-plusone" data-href="')
+                + HREF
+                + unescape('" data-size="tall" data-annotation="inline"%3E%3C/div%3E'));
+        </script>
+    </div>
+    <div style="float: left; width: 280px;">
+        <script type="text/javascript">
+            document.write(unescape('%3Cdiv class="fb-like" data-href="')
+                + HREF
+                + unescape('" data-send="true" data-show-faces="false"%3E%3C/div%3E'));
+        </script>
+    </div>
+    <div style="clear: both;"></div>
     <script>
         var linkwithin_site_id = 1527897;
     </script>
