@@ -20,31 +20,44 @@
 {% block linktags %}{% endblock %}
 
 {% block extrahead %}
-    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <!-- 使用 Google 所提供的 jQuery 靜態檔 { -->
+        <link rel="stylesheet" title="default" type="text/css" media="screen"
+            href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/blitzer/jquery-ui.css" />
+        <script type="text/javascript"
+            src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript"
+            src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
+        <script type="text/javascript"
+            src="/blog/_static/disqus.js"></script>
+    <!-- } 使用 Google 所提供的 jQuery 靜態檔 -->
 
-    {% set JQUERY_VERSION, JQUERYUI_VERSION = "1.8.2", "1.8.24" %}
     <script type="text/javascript">
-        function self_joined_jquery () {
-            document.write(unescape('%3Cscript src="_static/jquery-{{JQUERY_VERSION}}.min.js" type="text/javascript"%3E%3C/script%3E'));
-            document.write(unescape('%3Cscript src="_static/jquery-ui-{{JQUERYUI_VERSION}}.custom.min.js" type="text/javascript"%3E%3C/script%3E'));
-            document.write(unescape('%3Clink rel="stylesheet" title="default" type="text/css" media="screen" href="_static/blitzer/jquery-ui-{{JQUERYUI_VERSION}}.custom.css" /%3E'));
-            if (typeof console) {
-                console.log('Use self-joined jquery-ui files');
+        function console_message (s) {
+            /*
+             * 使用者瀏覽器若支援 console 物件，則印出 s 文句。
+             */
+            if (typeof console){
+                console.log(s);
             }
         }
-        if (typeof google == 'undefined') {
+        function self_joined_jquery () {
+            /*
+             * 若使用者無法從 Google Api Host Site 下載所需函式庫，
+             * 則可使用自備的函式庫（但以下三個檔案需與本網頁 what_restaurants_should_we_eat_at.html 放置在同一資料夾中）。
+             */
+            var JQUERY_CSS = '/_static/blitzer/jquery-ui-1.8.24.custom.css';
+            var JQUERY_JS = '/_static/jquery-1.8.2.min.js';
+            var JQUERYUI_JS = '/_static/jquery-ui-1.8.24.custom.min.js';
+            document.write(unescape('%3Clink rel="stylesheet" title="default" type="text/css" media="screen" href="'+JQUERY_CSS+'" /%3E'));
+            document.write(unescape('%3Cscript src="'+JQUERY_JS+'" type="text/javascript"%3E%3C/script%3E'));
+            document.write(unescape('%3Cscript src="'+JQUERYUI_JS+'" type="text/javascript"%3E%3C/script%3E'));
+            console_message('Use self-joined jquery-ui files');
+        }
+        if (typeof jQuery == 'undefined') {
+            console_message('Failure on loading google libs!!!');
             self_joined_jquery();
         } else {
-            try {
-                google.load("jquery", "{{ JQUERY_VERSION }}");
-                google.load("jqueryui", "{{ JQUERYUI_VERSION }}");
-                document.write(unescape('%3Clink rel="stylesheet" title="default" type="text/css" media="screen" href="//ajax.googleapis.com/ajax/libs/jqueryui/{{ JQUERYUI_VERSION }}/themes/blitzer/jquery-ui.css" /%3E'));
-            } catch(error) {
-                self_joined_jquery();
-                if (typeof console) {
-                    console.log('Failure on google.load');
-                }
-            }
+            console_message('Well done on loading google libs!!!');
         }
     </script>
     <script type="text/javascript" src="_static/underscore.js"></script>
@@ -119,6 +132,12 @@
             </ul>
 
             <div style="clear: both;"></div>
+            {%- if pagename == index %}
+                <script type="text/javascript">
+                    var $tabs = $('.topnav #tabs');
+
+                </script>
+            {%- endif %}
         {%- endif %}
 
         <ul id="social_share" style="min-height: 80px;">
