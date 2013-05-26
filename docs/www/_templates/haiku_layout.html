@@ -119,24 +119,108 @@
         {%- if project == "hoamon.info" and pagename in ["index", "search", "english", "zhong-wen", "espanol", "ri-ben-yu", "portugues", "deutsch",
             "arabic", "francais", "russkij", "hangug-ui"] %}
             <ul id="tabs">
-                <li class='{%- if pagename == "english" %}isme{% endif %}'><a href="/english.html">English</a></li>
-                <li class='{%- if pagename == "zhong-wen" %}isme{% endif %}'><a href="/zhong-wen.html">正體中文</a></li>
-                <li class='{%- if pagename == "espanol" %}isme{% endif %}'><a href="/espanol.html">español</a><li>
-                <li class='{%- if pagename == "ri-ben-yu" %}isme{% endif %}'><a href="/ri-ben-yu.html">日本語</a><li>
-                <li class='{%- if pagename == "portugues" %}isme{% endif %}'><a href="/portugues.html">português</a><li>
-                <li class='{%- if pagename == "deutsch" %}isme{% endif %}'><a href="/deutsch.html">deutsch</a><li>
-                <li class='{%- if pagename == "arabic" %}isme{% endif %}'><a href="/arabic.html">العربية</a><li>
-                <li class='{%- if pagename == "francais" %}isme{% endif %}'><a href="/francais.html">français</a><li>
-                <li class='{%- if pagename == "russkij" %}isme{% endif %}'><a href="/russkij.html">русский</a><li>
-                <li class='{%- if pagename == "hangug-ui" %}isme{% endif %}'><a href="/hangug-ui.html">한국의</a><li>
+                <li id="one" class='{%- if pagename == "english" %}isme{% endif %}'><a href="/english.html" title="English">English</a></li>
+                <li id="two" class='{%- if pagename == "zhong-wen" %}isme{% endif %}'><a href="/zhong-wen.html" title="正體中文">正體中文</a></li>
+                <li id='three' class='{%- if pagename == "espanol" %}isme{% endif %}'><a href="/espanol.html" title="español">español</a><li>
+                <li id='four' class='{%- if pagename == "ri-ben-yu" %}isme{% endif %}'><a href="/ri-ben-yu.html" title="日本語">日本語</a><li>
+                <li id='five' class='{%- if pagename == "portugues" %}isme{% endif %}'><a href="/portugues.html" title="português">português</a><li>
+                <li id='six' class='{%- if pagename == "deutsch" %}isme{% endif %}'><a href="/deutsch.html" title="deutsch">deutsch</a><li>
+                <li id='seven' class='{%- if pagename == "arabic" %}isme{% endif %}'><a href="/arabic.html" title="العربية">العربية</a><li>
+                <li id='eight' class='{%- if pagename == "francais" %}isme{% endif %}'><a href="/francais.html" title="français">français</a><li>
+                <li id='nine' class='{%- if pagename == "russkij" %}isme{% endif %}'><a href="/russkij.html" title="русский">русский</a><li>
+                <li id='ten' class='{%- if pagename == "hangug-ui" %}isme{% endif %}'><a href="/hangug-ui.html" title="한국의">한국의</a><li>
             </ul>
 
             <div style="clear: both;"></div>
-            {%- if pagename == index %}
-                <script type="text/javascript">
-                    var $tabs = $('.topnav #tabs');
-
-                </script>
+            {%- if pagename == "index" %}
+                <style>
+                    .topnav #tabs li:hover {
+                        border-radius: 5px;
+                        background-color: black;
+                    }
+                    #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten {
+                      -webkit-box-shadow: 0 0 30px red, inset 0 0 5px rgba(255,255,255, 0.5);
+                      -webkit-animation-duration: 0.7s;
+                      -webkit-animation-iteration-count: infinite;
+                      -webkit-animation-direction: alternate;
+                    }
+                    #one { -webkit-animation-name: first ; }
+                    #two { -webkit-animation-name: second ; }
+                    #three { -webkit-animation-name: third ; }
+                    #four { -webkit-animation-name: fourth ; }
+                    #five { -webkit-animation-name: fifth ; }
+                    #six { -webkit-animation-name: sixth ; }
+                    #seven { -webkit-animation-name: seventh ; }
+                    #eight { -webkit-animation-name: eighth ; }
+                    #nine { -webkit-animation-name: ninth ; }
+                    #ten { -webkit-animation-name: tenth ; }
+                    @-webkit-keyframes first {
+                      0%   {opacity:0.2;}
+                      10%  {opacity:1;}
+                      20%  {opacity:0.2;}
+                      100% {opacity:0;}
+                    }
+                    @-webkit-keyframes second {
+                      0%   {opacity:0;}
+                      10%   {opacity:0.2;}
+                      20%  {opacity:1;}
+                      30%  {opacity:0.2;}
+                      100% {opacity:0;}
+                    }
+                    @-webkit-keyframes third {
+                      0%   {opacity:0;}
+                      20%  {opacity:0.2;}
+                      30%  {opacity:1;}
+                      40%  {opacity:0.2;}
+                      100% {opacity:0;}
+                    }
+                    @-webkit-keyframes fourth {
+                      0%   {opacity:0;}
+                      30%  {opacity:0.2;}
+                      40%  {opacity:1;}
+                      50%  {opacity:0.2;}
+                      100% {opacity:0;}
+                    }
+                    @-webkit-keyframes fifth {
+                      0%   {opacity:0;}
+                      40%  {opacity:0.2;}
+                      50%  {opacity:1;}
+                      60%  {opacity:0.2;}
+                      100% {opacity:0;}
+                    }
+                    @-webkit-keyframes sixth {
+                      0%   {opacity:0;}
+                      50%  {opacity:0.2;}
+                      60%  {opacity:1;}
+                      70%  {opacity:0.2;}
+                      100% {opacity:0;}
+                    }
+                    @-webkit-keyframes seventh {
+                      0%   {opacity:0;}
+                      60%  {opacity:0.2;}
+                      70%  {opacity:1;}
+                      80%  {opacity:0.2;}
+                      100% {opacity:0;}
+                    }
+                    @-webkit-keyframes eighth {
+                      0%   {opacity:0;}
+                      70%  {opacity:0.2;}
+                      80%  {opacity:1;}
+                      90%  {opacity:0.2;}
+                      100% {opacity:0;}
+                    }
+                    @-webkit-keyframes ninth {
+                      0%   {opacity:0;}
+                      80%  {opacity:0.2;}
+                      90%  {opacity:1;}
+                      100% {opacity:0.2;}
+                    }
+                    @-webkit-keyframes tenth {
+                      0%   {opacity:0;}
+                      90%  {opacity:0.2;}
+                      100%  {opacity:1;}
+                    }
+                </style>
             {%- endif %}
         {%- endif %}
 
