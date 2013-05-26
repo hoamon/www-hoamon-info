@@ -17,7 +17,7 @@ StartSSL.com 有提供我們這些已作過 Personal Identity Validation 的人
 .. more::
 
 
-1. 會問問題者，直接在本格留言詢問，純諮詢完全免費。
+1. 自己註冊 `StartSSl.com <https://www.startssl.com/>`_ ，有問題直接在本格留言詢問（ **請勿使用 email** ），純諮詢完全免費。
 #. 技術能力有水準者( 會使用 Web Camera / Skype ，修改 DNS 紀錄，轉寄信件，生成 CSR 檔… )，每張 single name / wild card 收 1800 元新臺幣( 含發票 )，綠標（Extended Validation）每張額外加價 8000 元新臺幣（ 含發票 )。
 #. 技術能力中等者( 會使用 Web Camera / Skype ，設定 VNC server ，生成 CSR 檔 )，每張 single name / wild card 收 5400 元新臺幣( 含發票 )，綠標（Extended Validation）每張額外加價 8000 元新臺幣（ 含發票 )。
 #. 技術能力低下者( 會使用 Web Camera / Skype ，設定 VNC server )，每張 single name / wild card 收 10800 元新臺幣( 含發票 )，綠標（Extended Validation）每張額外加價 8000 元新臺幣（ 含發票 )。
@@ -27,7 +27,7 @@ StartSSL.com 有提供我們這些已作過 Personal Identity Validation 的人
 =================  ==============================  =============================================  =======================  =====================
 等級 \\ 每張       含發票之服務費                  不含發票之車馬費（實報實銷）                   single name / wild card  EV
 =================  ==============================  =============================================  =======================  =====================
-1 會問問題         free                            free                                           free                     free
+1 只問問題         無                              無                                             無                       無
 2 有水準           1800                            0                                              0                        8000
 3 中等             5400                            0                                              0                        8000
 4 低下             10800                           0                                              0                        8000
@@ -37,7 +37,7 @@ StartSSL.com 有提供我們這些已作過 Personal Identity Validation 的人
 
 但書則是：
 
- 1. 所生成的 single name / wild 憑證其組織必定為 **YUEH-FENG HO** ( 如下圖的 3 號框 )，這是受限於 StartSSL.com 的政策，無法修改。而綠標憑證則會是貴公司（組織）的名稱，但綠標須作法律認證程序。本人的服務只包括程式技術部份，法律認證部份請找自己公司的法律顧問處理。
+ 1. 所生成的 single name / wild card 憑證其組織必定為 **YUEH-FENG HO** ( 如下圖的 3 號框 )，這是受限於 StartSSL.com 的政策，無法修改。而綠標憑證則會是貴公司（組織）的名稱，但綠標須作法律認證程序。本人的服務只包括程式技術部份，法律認證部份請找自己公司的法律顧問處理。
  #. 對口技術人員需有中華民國身份證，並以 Web Camera / Skype 確認身份及繳交身份證影本( 或掃瞄電子檔 )。
  #. 本人保留提供服務的權利，如果 **我沒空** 或是 **跟你( 或貴公司 )沒緣份** ，那就十分抱歉了。
 
