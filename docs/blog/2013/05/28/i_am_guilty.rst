@@ -7,7 +7,7 @@ UDN 報導：
 
     全文網址: 王老師配方 無法可罰 | 毒澱粉源頭追查 | 國內要聞 | 聯合新聞網 http://udn.com/NEWS/NATIONAL/NATS2/7923738.shtml#ixzz2UZ0Kar6I Power By udn.com
 
-看到這則報導，我心中十分忐忑。不曉得該不該老實招出。沒講可能就再也吃不下飯了。而公開告解是最好釋放壓力的方式，且也有自首的效用。
+看到這則報導，我心中十分忐忑。不曉得該不該老實招出。沒講可能就再也吃不下飯了。而公開告解是最好釋放壓力的方式，且也有自首的效用（ `誤 <http://www.judicial.gov.tw/assist/assist01/assist01-14.asp>`_ ）。
 
 .. more::
 
