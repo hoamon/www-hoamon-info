@@ -9,6 +9,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   #2013/06/01/2013_006202_liquidation
    2013/05/28/i_am_guilty
    #2013/05/06/test_paypal
    2013/04/14/there_are_so_many_hungers_in_the_world
@@ -47,6 +48,10 @@ Sitemap
    2010/10/01/htc-wifi
    2009/11/01/amazon
    2009/07/01/1000-1001-999-1001-2009-1-1-5-2008-12
+   2009/05/01/foclass_07
+   2009/05/01/blog-post_07
+   2009/04/01/blog-post_28
+   2009/04/01/foclass
    2007/10/01/blog-post_1929
    2007/02/01/trac_27
    2007/02/01/trac
