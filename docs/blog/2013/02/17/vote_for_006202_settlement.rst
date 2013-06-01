@@ -29,5 +29,5 @@
 
 .. author:: default
 .. categories:: chinese
-.. tags:: finance, investment, bond
+.. tags:: finance, liquidation, investment, bond
 .. comments::
