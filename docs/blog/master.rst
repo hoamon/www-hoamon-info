@@ -44,6 +44,7 @@ Sitemap
    2012/04/01/aws
    2012/03/01/nginx
    2012/01/01/blog-post
+   2011/11/01/reitreat
    2011/03/01/blog-post_8878
    2010/10/01/htc-wifi
    2009/11/01/amazon
