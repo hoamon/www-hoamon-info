@@ -9,7 +9,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
-   #2013/06/01/2013_006202_liquidation
+   2013/06/01/2013_006202_liquidation
    2013/05/28/i_am_guilty
    #2013/05/06/test_paypal
    2013/04/14/there_are_so_many_hungers_in_the_world
