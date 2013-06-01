@@ -11,6 +11,8 @@ P.S. FO 就是 Futures and Options (期貨與選擇權)。
 對主修營建管理的學生而言，計算債券殖利率的原理即是工程經濟中計算某一型態現金流量的 IRR (Internal Return Rate 內部報酬率) 。\
 我們以一中央政府公債作為範例，介紹該殖利率計算方式。
 
+.. more::
+
 「A98101 98央債甲1」其給息及基本條件如下：
 
 * 2009/1/21 發行
@@ -59,9 +61,15 @@ P.S. FO 就是 Futures and Options (期貨與選擇權)。
     :width: 600px
     :align: center
 
-這樣就可以用 `數值方法`_ 求 r 了。
+這樣就可以用 :doc:`數值方法 <../../04/01/blog-post_28>` 求 r 了。
 
-.. _數值方法: http://hoamon.blogspot.com/2009/04/blog-post_28.html
+:doc:`../../05/01/blog-post_07` 系列文章
+--------------------------------------------------------------------------------
+
+    #. :doc:`../../04/01/foclass` (本文）
+    #. :doc:`../../04/01/blog-post_28`
+    #. :doc:`../../05/01/foclass`
+    #. :doc:`../../05/01/foclass_07`
 
 .. author:: default
 .. categories:: chinese
