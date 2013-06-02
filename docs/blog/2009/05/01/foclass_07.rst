@@ -16,7 +16,7 @@ FOClass: 債券殖利率曲線計算
 .. figure:: http://latex.codecogs.com/gif.latex?PV%20=%20\sum_{i=1}^{n}C_{i}%20\times%20D_{i}
     :align: center
 
-可得到類似 3.3a + 1.2b + 5.5c = 30 的等式。像是代入 `前篇文章`_ 的九張債券可得如下式子：
+可得到類似 3.3a + 1.2b + 5.5c = 30 的等式。像是代入 `前篇文章 <../../05/01/foclass>`_ 的九張債券可得如下式子：
 
 .. figure:: http://latex.codecogs.com/gif.latex?%5Cbegin%7Bbmatrix%7D%20x_%7B11%7D%20&%20x_%7B12%7D%20&%20x_%7B13%7D%5C%5C%20...%20&%20...&%20...%5C%5C%20x_%7B91%7D%20&%20x_%7B92%7D%20&%20x_%7B93%7D%20%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D%20a%5C%5C%20b%5C%5C%20c%20%5Cend%7Bbmatrix%7D%20=%20%5Cbegin%7Bbmatrix%7D%2043.33%5C%5C%20...%5C%5C%203,4%20%5Cend%7Bbmatrix%7D
     :align: center
