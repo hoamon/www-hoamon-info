@@ -21,14 +21,6 @@
             data-size="tall" data-width="600" data-annotation="inline"></div>
         <div class="fb-like" data-href="http://www.hoamon.info/blog/{{ pathto(metadata.link) }}"
             data-send="true" data-width="600" data-show-faces="true"></div>
-        <script>
-            var linkwithin_site_id = 1527897;
-        </script>
-        <script src="http://www.linkwithin.com/widget.js"></script>
-        <a href="http://www.linkwithin.com/">
-            <img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..."
-                 style="border: 0" />
-        </a>
         {{ timestamp(metadata.formatted_date) }}
         {{ post_meta(metadata, metadata.comment_count) }}
         {%- if not loop.last -%}<div class="separator post_separator"></div>{%- endif -%}
