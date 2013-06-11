@@ -276,7 +276,7 @@ My Other Site
 --------------------------------------------------------------------------------
 
     * Blog: http://www.hoamon.info/blog/ , brief thought about everything.
-    * Paper: http://paper.hoamon.info/ ,  some academic and important articles.
+    * Paper: http://www.hoamon.info/paper.html ,  some academic and important articles.
     * Book: http://www.hoamon.info/course.html , training guides and some textbooks.
     * SOHO works: https://ho600.com/ ,  contracting projects and own services.
 
