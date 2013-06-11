@@ -156,7 +156,7 @@ DB.  And i also wrote some web program, like wi-fi service payment system.
 
 My second job was a assistant of graduates career guidance section of National
 Chi Nan University to analyze and write the reports of graduated, programming
-enterprise visits and handle web site.
+enterprise visits and handle web sites.
 
 The Last work was the programmer of my academic advisor.  In the working period,
 i build two construction management web sites:
@@ -275,15 +275,15 @@ Chronicle List
 My Other Site
 --------------------------------------------------------------------------------
 
-    * Blog: http://blog.hoamon.info/ , brief thought about everything.
+    * Blog: http://www.hoamon.info/blog/ , brief thought about everything.
     * Paper: http://paper.hoamon.info/ ,  some academic and important articles.
-    * Book: http://book.hoamon.info/ , training guides and some textbooks.
-    * SOHO works: http://ho600.com/ ,  contracting projects and own services.
+    * Book: http://www.hoamon.info/course.html , training guides and some textbooks.
+    * SOHO works: https://ho600.com/ ,  contracting projects and own services.
 
 Dig My Thought
 --------------------------------------------------------------------------------
 
-A few class i wrote:
+A few class articles i wrote:
 `Baseball <http://blog.hoamon.info/search/label/baseball>`_ ,
 `Construction Management <http://blog.hoamon.info/search/label/construction%20management>`_ ,
 `Education <http://blog.hoamon.info/search/label/education>`_ ,
