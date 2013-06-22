@@ -535,36 +535,45 @@ function CPM (duration) {
 
         var l = '50 * ' + (contractor_number[2] ? contractor_number[2] : 1);
         var c11 = eval(l);
-        $('tr:eq(1) td:eq(3)', $C_table).text(l+' = '+c11);
+        l = l.replace(/\* +([0-9]+)/, '* <span style="color: blue; text-decoration: underline;">$1</span>')
+        $('tr:eq(1) td:eq(3)', $C_table).html(l+' = '+c11);
         var l = '400 * ' + (contractor_number[5] ? contractor_number[5] : 1);
         var c12 = eval(l);
-        $('tr:eq(1) td:eq(4)', $C_table).text(l+' = '+c12);
+        l = l.replace(/\* +([0-9]+)/, '* <span style="color: blue; text-decoration: underline;">$1</span>')
+        $('tr:eq(1) td:eq(4)', $C_table).html(l+' = '+c12);
 
         var l = '20 * ' + (contractor_number[2] ? contractor_number[2] : 1);
         var c21 = eval(l);
-        $('tr:eq(2) td:eq(3)', $C_table).text(l+' = '+c21);
+        l = l.replace(/\* +([0-9]+)/, '* <span style="color: blue; text-decoration: underline;">$1</span>')
+        $('tr:eq(2) td:eq(3)', $C_table).html(l+' = '+c21);
         var l = '200 * ' + (contractor_number[5] ? contractor_number[5] : 1);
         var c22 = eval(l);
-        $('tr:eq(2) td:eq(4)', $C_table).text(l+' = '+c22);
+        l = l.replace(/\* +([0-9]+)/, '* <span style="color: blue; text-decoration: underline;">$1</span>')
+        $('tr:eq(2) td:eq(4)', $C_table).html(l+' = '+c22);
 
         var l = '100 * ' + (contractor_number[2] ? contractor_number[2] : 1);
         var c31 = eval(l);
-        $('tr:eq(3) td:eq(3)', $C_table).text(l+' = '+c31);
+        l = l.replace(/\* +([0-9]+)/, '* <span style="color: blue; text-decoration: underline;">$1</span>')
+        $('tr:eq(3) td:eq(3)', $C_table).html(l+' = '+c31);
         var l = '300 * ' + (contractor_number[5] ? contractor_number[5] : 1);
         var c32 = eval(l);
-        $('tr:eq(3) td:eq(4)', $C_table).text(l+' = '+c32);
+        l = l.replace(/\* +([0-9]+)/, '* <span style="color: blue; text-decoration: underline;">$1</span>')
+        $('tr:eq(3) td:eq(4)', $C_table).html(l+' = '+c32);
 
         var l = '50 * ' + (contractor_number[4] ? contractor_number[4] : 1);
         var r1 = eval(l);
-        $('tr:eq(1) td:eq(3)', $R_table).text(l+' = '+r1);
+        l = l.replace(/\* +([0-9]+)/, '* <span style="color: blue; text-decoration: underline;">$1</span>')
+        $('tr:eq(1) td:eq(3)', $R_table).html(l+' = '+r1);
 
         var l = '20 * ' + (contractor_number[4] ? contractor_number[4] : 1);
         var r2 = eval(l);
-        $('tr:eq(2) td:eq(3)', $R_table).text(l+' = '+r2);
+        l = l.replace(/\* +([0-9]+)/, '* <span style="color: blue; text-decoration: underline;">$1</span>')
+        $('tr:eq(2) td:eq(3)', $R_table).html(l+' = '+r2);
 
         var l = '100 * ' + (contractor_number[4] ? contractor_number[4] : 1);
         var r3 = eval(l);
-        $('tr:eq(3) td:eq(3)', $R_table).text(l+' = '+r3);
+        l = l.replace(/\* +([0-9]+)/, '* <span style="color: blue; text-decoration: underline;">$1</span>')
+        $('tr:eq(3) td:eq(3)', $R_table).html(l+' = '+r3);
 
         var l = c11 + ' * ' + c12 + ' + ' + c21 + ' * ' + c22 + ' + ' + c31 + ' * ' + c32;
         l = '總價承包契約： ' + l + ' = '+ eval(l);
