@@ -9,6 +9,8 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2013/06/28/acknowledgement_of_my_doctoral_dissertation
+   2013/06/28/acknowledgement_of_my_masters_dissertation
    2013/06/21/2013_construction_management_final_exam
    2013/06/01/2013_006202_liquidation
    2013/05/28/i_am_guilty
