@@ -30,12 +30,16 @@
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 from django.db import models as M
+from django.db import IntegrityError
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.models import AnonymousUser
 from django.utils import simplejson as json
 from django.utils.translation import ugettext as _
 from django.utils.translation import ungettext
+from django.db.utils import DatabaseError
+
+from guardian.shortcuts import assign
 
 from random import choice, randint, random
 from types import IntType, LongType
