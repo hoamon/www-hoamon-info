@@ -6,14 +6,14 @@ from os.path import join
 
 class LoadAfterAppSettings(object):
     """ put any variables and values in this class.VARS then the variables will be loaded in the end of settings.py,
-        but before import trunk_local_settings.*
+        but before import turnk_local_settings.*
 
         the settings.* loading order:
 
             original trunk/settings.*
             >> every settings.* in INSTALLED_APPS
             >> original trunk/settings.LoadAfterAppSettings.VARS
-            >> trunk/trunk_local_settings.*
+            >> trunk/turnk_local_settings.*
     """
     VARS = {}
 
@@ -33,6 +33,9 @@ _insert_sys_path(0, join(TRUNK, 'modules'))
 _insert_sys_path(0, TRUNK)
 TRUNK_PARENT = os.path.dirname(TRUNK)
 _insert_sys_path(0, TRUNK_PARENT)
+
+for d in os.listdir(join(TRUNK, 'depends_modules')):
+    _insert_sys_path(0, join(TRUNK, 'depends_modules', d))
 
 # use the below to set up third party libraries
 #_insert_sys_path(0, join(os.path.dirname(TRUNK), 'asset', 'SOME-LIB-DIR'))
@@ -100,9 +103,9 @@ elif ((os.environ.get('UWSGI_ORIGINAL_PROC_NAME', None)
                 'NAME': 'ho600',
                 'OPTIONS': {
                     'autocommit': True,
+                    }
                 }
             }
-        }
 else:
     # Running in development, so use a local MySQL database.
     DEBUG = True
@@ -116,9 +119,9 @@ else:
                 'NAME': 'test_ho600',
                 'OPTIONS': {
                     'autocommit': True,
+                    }
                 }
             }
-        }
 
 
 try:
@@ -134,6 +137,8 @@ def uwsgi_print(s):
 
 
 TEMPLATE_DEBUG = DEBUG
+
+DEVELOPER_DOCS_PATH = os.path.join(TRUNK, '..', 'docs', '_build', 'html')
 
 CACHES = {
     'default': {
@@ -154,19 +159,21 @@ MANAGERS = ADMINS
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'Asia/Taipei'
+TIME_ZONE = 'UTC'
 
 DATE_FORMAT = 'Y-m-d'
 DATETIME_FORMAT = 'Y-m-d H:i:s'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'zh-tw'
+LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'ja-jp'
 
 LANGUAGES = (
+    ('ja-jp', u'\u65e5\u672c\u8a9e(Japanese)'),
     ('en-us', 'English(United States)'),
     ('zh-tw', u'\u6b63\u9ad4\u4e2d\u6587(Taiwan, R.O.C.)'),
-    #('zh-cn', u'\u7b80\u4f53\u4e2d\u6587(Mainland China)'),
+    ('zh-cn', u'\u7b80\u4f53\u4e2d\u6587(Mainland China)'),
 )
 
 SITE_ID = 1
@@ -270,6 +277,7 @@ TEMPLATE_DIRS = (
 _insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'mimeparse-0.1.3')) # needed by django-tastypie
 _insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'python-dateutil-1.5')) # needed by django-tastypie
 _insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'rose')) # needed by django-tastypie
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'defusedxml')) # needed by django-tastypie with xml format
 _insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'django-tastypie'))
 # the modules were needed by INSTALLED_APPS
 # for bin/before_deployment.py
@@ -277,6 +285,7 @@ ANOTHER_DEPENDS_MODULES += [
     'mimeparse',
     'dateutil',
     'rose',
+    'defusedxml',
 ]
 
 # and Optional modules:
@@ -336,6 +345,16 @@ ANOTHER_DEPENDS_MODULES += [
 
 _insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'django-mediagenerator'))
 
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'pytz-2013b', 'pytz-2013b'))
+ANOTHER_DEPENDS_MODULES += [
+    'pytz',
+]
+
+_insert_sys_path(0, join(TRUNK_PARENT, 'asset', 'suds-0.4', 'suds-0.4'))
+ANOTHER_DEPENDS_MODULES += [
+    'suds',
+]
+
 INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -348,6 +367,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    #'django_extensions', # only for generate model graph
     'tastypie',
     'guardian',
     'ho600_lib',
@@ -487,6 +507,7 @@ PRODUCTION_MEDIA_URL = '/production_mediagenerator/'
 GENERATED_MEDIA_DIR = join(TRUNK, 'mediagenerator-static')
 GLOBAL_MEDIA_DIRS = (join(TRUNK, 'static'),
                         join(TRUNK, 'modules'),
+                        join(TRUNK, 'depends_modules'),
                         #ROOT,  # if you run in GAE mode,
                                 # this ROOT directory will raise a IOError on ./trunk/_generate_media .
                                 # for example: the media file laies on ./my_module/media/xxx.js ,
