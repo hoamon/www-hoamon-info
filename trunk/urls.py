@@ -55,9 +55,10 @@ urlpatterns = patterns('',
         {'document_root' : os.path.join(settings.TRUNK, 'mediagenerator-static'), 'show_indexes' : settings.DEBUG}),
 
     url(r'^__docs__/?$', need_staff_login_serve,
-        {'document_root': os.path.join(settings.TRUNK, '__docs__'), 'path': 'index.html', 'show_indexes': settings.DEBUG}),
+        {'document_root': settings.DEVELOPER_DOCS_PATH, 'path': 'index.html', 'show_indexes': settings.DEBUG}),
     url(r'^__docs__/(?P<path>.*)$', need_staff_login_serve,
-        {'document_root' : os.path.join(settings.TRUNK, '__docs__'), 'show_indexes' : settings.DEBUG}),
+        {'document_root' : settings.DEVELOPER_DOCS_PATH, 'show_indexes' : settings.DEBUG}),
+
     # Examples:
     # url(r'^$', 'trunk.views.home', name='home'),
     # url(r'^trunk/', include('trunk.foo.urls')),
@@ -73,6 +74,8 @@ urlpatterns += patterns('',
 )
 
 def ho600_default_view(R):
+    try: from __version__ import version
+    except ImportError: version = 'LOCAL_DEBUG'
     import os
     _o = ''
     if settings.DEBUG:
@@ -83,8 +86,8 @@ def ho600_default_view(R):
         for k in dir(settings):
             _s += '<div><b>%s</b> = %s</div>' % (k, getattr(settings, k))
 
-    html = '''<html><head></head><body>
-<h1>Hello World!!</h1>
+    html = '''<html><head><title>Enviroment Variables</title></head><body>
+<h1>Hello Version( <a target="%(version)s" href="https://bitbucket.org/hoamon/ho600-django-gae-default-trunk/commits/%(version)s">%(version)s</a> )!!</h1>
 <p>This is the default view on any urls, you shoule remove me(in ./trunk/urls.py) and put yours.</p>
 <p>from <a href="https://www.ho600.com/">ho600.com</a></p>
 <hr align="left" width="600px"/>
@@ -103,14 +106,14 @@ If you have any question,
 <h3>To Developer:</h3>
 <h4>os.environ:</h4>
 <p>
-%s
+%(_o)s
 </p>
 <h4>settings:</h4>
 <p>
-%s
+%(_s)s
 </p>
 </body></html>
-''' % (_o, _s)
+''' % {'version': version, '_o': _o, '_s': _s}
     return HttpResponse(html)
 
 

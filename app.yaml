@@ -19,18 +19,18 @@ libraries:
 
 handlers:
 - url: /favicon.ico
-  static_files: trunk/static/favicon.ico
-  upload: trunk/static/favicon.ico
+  static_files: trunk/staticsite/favicon.ico
+  upload: trunk/staticsite/favicon.ico
 
 - url: /robots.txt
-  static_files: trunk/static/robots.txt
-  upload: trunk/static/robots.txt
+  static_files: trunk/staticsite/robots.txt
+  upload: trunk/staticsite/robots.txt
 
 - url: /static/CACHE
   static_dir: trunk/compressor-static/CACHE
 
 - url: /static
-  static_dir: trunk/static
+  static_dir: trunk/staticsite
 
 - url: /production_mediagenerator
   static_dir: trunk/mediagenerator-static

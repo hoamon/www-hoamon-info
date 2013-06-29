@@ -29,7 +29,7 @@
 #NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import os, sys
+import os, sys, re
 from os.path import join
 from shutil import copy, rmtree, copytree, ignore_patterns
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -88,3 +88,9 @@ print(r.read())
 # run ./manage.py compress --settings=compressor_settings to export static media files
 r = os.popen('%s collectstatic --noinput'%join(trunk_dir, 'manage.py'))
 print(r.read())
+
+r = os.popen('hg id -i')
+version = r.read()
+f = open('%s/__version__.py'%trunk_dir, 'w')
+f.write('version = "%s"'%re.split('[^a-f0-9]', version)[0])
+f.close()

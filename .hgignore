@@ -25,7 +25,7 @@ local_settings.py$
 ^trunk/depends_modules/.*/
 ^trunk/for_mediagenerator/media
 ^trunk/compressor-static/.*
-^trunk/static/.*
+^trunk/staticsite/.*
 
 ^logs/apache2_access.log
 ^logs/apache2_error.log
