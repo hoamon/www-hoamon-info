@@ -6,14 +6,14 @@ from os.path import join
 
 class LoadAfterAppSettings(object):
     """ put any variables and values in this class.VARS then the variables will be loaded in the end of settings.py,
-        but before import turnk_local_settings.*
+        but before import trunk_local_settings.*
 
         the settings.* loading order:
 
             original trunk/settings.*
             >> every settings.* in INSTALLED_APPS
             >> original trunk/settings.LoadAfterAppSettings.VARS
-            >> trunk/turnk_local_settings.*
+            >> trunk/trunk_local_settings.*
     """
     VARS = {}
 
@@ -81,10 +81,10 @@ if ((os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine') or
                 }
             }
 elif ((os.environ.get('UWSGI_ORIGINAL_PROC_NAME', None)
-            #INFO: if UWSGI_DEB_CONFNAME = 'tho600', the MODE still is DEBUG(but only with nginx+uwsgi)
-            and os.environ.get('UWSGI_DEB_CONFNAME', 'tho600') != 'tho600')
-        or os.environ.get('AP_PARENT_PID', None)
-	or os.getenv('SETTINGS_MODE') == 'production'):
+        #INFO: if UWSGI_DEB_CONFNAME = 'tho600', the MODE still is DEBUG(but only with nginx+uwsgi)
+        and os.environ.get('UWSGI_DEB_CONFNAME', 'tho600') != 'tho600')
+    or os.environ.get('AP_PARENT_PID', None)
+    or os.getenv('SETTINGS_MODE') == 'production'):
     #INFO: If You are running in the windows dos enviroment,
     # and want to syncdb to the ho600_prod.
     # Please do the below line in the dos before syncdb
@@ -100,9 +100,9 @@ elif ((os.environ.get('UWSGI_ORIGINAL_PROC_NAME', None)
                 'NAME': 'ho600',
                 'OPTIONS': {
                     'autocommit': True,
-                    }
                 }
             }
+        }
 else:
     # Running in development, so use a local MySQL database.
     DEBUG = True
@@ -116,9 +116,9 @@ else:
                 'NAME': 'test_ho600',
                 'OPTIONS': {
                     'autocommit': True,
-                    }
                 }
             }
+        }
 
 
 try:
@@ -166,7 +166,7 @@ LANGUAGE_CODE = 'zh-tw'
 LANGUAGES = (
     ('en-us', 'English(United States)'),
     ('zh-tw', u'\u6b63\u9ad4\u4e2d\u6587(Taiwan, R.O.C.)'),
-    ('zh-cn', u'\u7b80\u4f53\u4e2d\u6587(Mainland China)'),
+    #('zh-cn', u'\u7b80\u4f53\u4e2d\u6587(Mainland China)'),
 )
 
 SITE_ID = 1
