@@ -96,13 +96,13 @@ elif ((os.environ.get('UWSGI_ORIGINAL_PROC_NAME', None)
     if not DATABASES:
         DATABASES = {
             'default': {
-                'ENGINE': 'django.db.backends.postgresql_psycopg2',
+                'ENGINE': 'django.db.backends.mysql',
                 'USER': 'ho600',
                 'PASSWORD': 'ho600',
                 'HOST': 'localhost',
                 'NAME': 'ho600',
                 'OPTIONS': {
-                    'autocommit': True,
+                    'init_command': 'SET storage_engine=INNODB',
                     }
                 }
             }
@@ -112,13 +112,13 @@ else:
     if not DATABASES:
         DATABASES = {
             'default': {
-                'ENGINE': 'django.db.backends.postgresql_psycopg2',
+                'ENGINE': 'django.db.backends.mysql',
                 'USER': 'test_ho600',
                 'PASSWORD': 'test_ho600',
                 'HOST': 'localhost',
                 'NAME': 'test_ho600',
                 'OPTIONS': {
-                    'autocommit': True,
+                    'init_command': 'SET storage_engine=INNODB',
                     }
                 }
             }
