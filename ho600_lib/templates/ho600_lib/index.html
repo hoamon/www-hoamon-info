@@ -134,7 +134,7 @@
 <body id="id_body">{% csrf_token %}
     {% block menu %}
 	<div id="menu" align="center">
-        <a href="{% url ho600_lib.views.rBugList %}">Index</a>
+        <a href="{% url 'ho600_lib.views.rBugList' %}">Index</a>
 	</div>
     {% endblock %}
 
