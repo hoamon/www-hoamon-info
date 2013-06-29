@@ -36,6 +36,15 @@
 Changelog
 ================================================================================
 
+release-1.0.8
+--------------------------------------------------------------------------------
+
+ * static directory names "staticsite"
+ * add jenkins.sh
+ * add reset_test_data_db(for PostgreSQL)
+ * import pytz for UTC time translation
+ * import suds for Webservice interacting
+
 release-1.0.7
 --------------------------------------------------------------------------------
 

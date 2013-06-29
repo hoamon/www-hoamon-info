@@ -30,7 +30,7 @@
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-VERSION = (1, 0, 6, 'final', 0)
+VERSION = (1, 0, 8, 'final', 0)
 
 
 import os
