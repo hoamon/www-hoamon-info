@@ -8,5 +8,4 @@ fi
 
 cd trunk/
 ./manage.py syncdb --noinput
-./manage.py loaddata staff_data.json
 ./manage.py createcachetable default_trunk_cache
