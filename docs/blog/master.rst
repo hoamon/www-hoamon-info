@@ -9,6 +9,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2013/07/06/hg_pre_push_autosign
    2013/06/28/acknowledgement_of_my_doctoral_dissertation
    2013/06/28/acknowledgement_of_my_masters_dissertation
    2013/06/21/2013_construction_management_final_exam
