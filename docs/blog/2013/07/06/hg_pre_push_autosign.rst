@@ -96,7 +96,7 @@ PGP 原理請見 `舊文 <http://blog.hoamon.info/search?q=pgp>`_ 。
 而往往這些累人的事，就不會有好人去作了，因為 **好人很懶** 。\
 所以我們應將這兩個動作自動化，寫成 hg_hook 程式。
 
-如下是 hg_hook.py( :download:`程式碼下載` ) 的內容：
+如下是 hg_hook.py( :download:`程式碼下載 <hg_hook.py>` ) 的內容：
 
 .. code-block:: python
     :linenos:
