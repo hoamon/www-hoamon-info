@@ -4,7 +4,7 @@
 .. figure:: gpg_sign_changeset.png
     :width: 600px
     :align: center
-    
+
     紅底部份為合法 GPG 簽章的版本(changeset)
 
 標題講得很複雜，但其實就是要方便有效率地作到 mercurial 版本的 GPG 簽章。
@@ -31,7 +31,7 @@
 新專案由他們 B 部門員工自行作維護的動作。如果編輯作者需等於版本送出者，\
 那麼在我沒有 A' 專案的送出權限下， B 部門所 fork 的 A' 專案勢必得為歷史版本中的作者資訊更新，\
 雖 mercurial 預設不允許更動歷史版本的任何資訊，但可遶個路(mq)處理，這樣會造成額外工作量的增加。
- 
+
 所以說： **編輯作者與版本送出者是不應該強迫一致的** 。
 
 但不強迫一致則會衍生另一個問題，如果我要惡整同事，只要在提交版本時，使用同事的帳號為作者，\
@@ -46,13 +46,15 @@
 
 中華民國的自然人憑證使用技術卡在「Windows(IE) Only」上，自然不會是我們的解決方案。所以我們就使用 PGP 技術。\
 而 mercurial 也有與 GnuPG(Gnu出品的 PGP Open Source 工具) 結合的外掛，只要在 .hgrc 中設定：
- 
+
 .. code-block:: ini
     :linenos:
 
     [gpg]
     key = 29E21FFB
-    
+    key_url = "http://www.hoamon.info/hoamon.asc"
+    #在簽章後順便在 hg 註解中放入公錀下載點
+
 即可在 shell 中，執行：
 
 .. code-block:: bash
@@ -64,7 +66,7 @@
 .. code-block:: bash
 
     $ hg sigcheck changeset_version
-    
+
 來驗證這個 changeset_version 是否是由 `29E21FFB <http://www.hoamon.info/hoamon.asc>`_ 這把錀匙所簽章的，\
 是的話，就能百分百相信這個版本是由 YUEH-FENG HO(也就是何岳峰) 所作的。 \
 PGP 原理請見 `舊文 <http://blog.hoamon.info/search?q=pgp>`_ 。
@@ -83,7 +85,7 @@ PGP 原理請見 `舊文 <http://blog.hoamon.info/search?q=pgp>`_ 。
 .. figure:: merge.png
     :width: 600px
     :align: center
-    
+
 我自己手邊作到 278 版，而同事(test@another)另外作了 279 版，\
 那一樣為了要確認 test 同事得為 279 版負責，\
 所以我在 merge 前，應該要作 $ hg sigcheck 279 ，如果 279 沒有簽章，\
@@ -103,8 +105,8 @@ PGP 原理請見 `舊文 <http://blog.hoamon.info/search?q=pgp>`_ 。
 
     #!/usr/bin/python
     import os, re
-    
-    
+
+
     def autosign(*args, **kw):
         u""" 檢查倒數第二版有沒有 GPG 簽章，有則略過
             無則視最新版作者為誰來處理：
@@ -113,21 +115,22 @@ PGP 原理請見 `舊文 <http://blog.hoamon.info/search?q=pgp>`_ 。
                 非本人則視有沒有 -f 參數來處理
         """
         print('HG Push Start...\n')
-    
+
         author_name = kw['ui'].username()
         public_key_id = kw['ui'].config('gpg', 'key')
+        public_key_url = kw['ui'].config('gpg', 'key_url')
         key_info = os.popen('gpg --list-public-keys %s'
                             %public_key_id).read()
         public_key_uid = re.search(r'uid\s+([^\n]+)',
                             key_info).groups()[0]
         print('Author Name: %s\n'%author_name)
         print('Public Key UID: %s\n'%public_key_uid)
-    
+
         check_version = os.popen('hg log -r tip^'
                             +'--template "{node|short}"'
                             ).read()
         res = os.popen('hg sigcheck %s'%check_version).read()
-    
+
         if public_key_uid in res:
             print('No need to sign GPG signature!\n')
             return False
@@ -135,13 +138,22 @@ PGP 原理請見 `舊文 <http://blog.hoamon.info/search?q=pgp>`_ 。
             print('Head Changeset:\n')
             res0 = os.popen('hg tip -v').read()
             for line in res0.split('\n'): print('\t%s'%line)
-    
+
             if (not re.search(r'\b'+author_name+r'\b', res0)
                 and "push -f" not in kw['args']):
                 print('The newest changeset is not yours\n')
                 return True
             else:
-                r = os.popen('hg sign tip')
+                version = re.search(
+                    r'changeset:\s+[0-9]+:([^\s]+)\s',
+                                    res0).groups()[0]
+                key_info = ("with id:%(key_id)s %(key_url)s"
+                            % {'key_id': public_key_id,
+                            'key_url': public_key_url})
+                r = os.popen('hg sign '+version+' -m '
+                            '"Added signature('+key_info+')'
+                            +' for changeset '+version+'"')
+
                 print('Done for %s\n'%r.read())
                 return False
 

@@ -37,6 +37,7 @@ def autosign(*args, **kw):
 
     author_name = kw['ui'].username()
     public_key_id = kw['ui'].config('gpg', 'key')
+    public_key_url = kw['ui'].config('gpg', 'key_url')
     key_info = os.popen('gpg --list-public-keys %s'%public_key_id).read()
     public_key_uid = re.search(r'uid\s+([^\n]+)', key_info).groups()[0]
     print('Author Name: %s\n'%author_name)
@@ -57,7 +58,12 @@ def autosign(*args, **kw):
             print('The newest changeset is not yours\n')
             return True
         else:
-            r = os.popen('hg sign tip')
+            version = re.search(r'changeset:\s+[0-9]+:([^\s]+)\s', res0).groups()[0]
+            r = os.popen('hg sign %(version)s -m "Added signature(with id:%(key_id)s %(key_url)s) for changeset %(version)s"'%
+                        {'version': version,
+                        'key_id': public_key_id,
+                        'key_url': public_key_url,
+                        })
             print('Done for %s\n'%r.read())
             return False
 
