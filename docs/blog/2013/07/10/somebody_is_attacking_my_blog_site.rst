@@ -70,7 +70,26 @@
 它會因為 ori_image == new_image 而不另起連線去下載圖檔，為什麼這個 IP 的 IE9 會一直下載呢？ \
 兩者的差別只有我的 IE9 是 64 位元，但對方的是 32 位元。
 
-也許我該改個 javascript 寫法？ 目前先讓它一直抓吧！ 反正 GAE 也沒花多少資源。
+先改個 javascript 寫法，判斷它有沒有 window.ActiveXObject 屬性來決定是不是要每 6 秒檢查圖檔：
+
+.. code-block:: diff
+
+    diff -r 953853f70bff docs/blog/_static/www.hoamon.info.js
+    --- a/docs/blog/_static/www.hoamon.info.js      Wed Jul 10 22:55:02 2013 +0800
+    +++ b/docs/blog/_static/www.hoamon.info.js      Wed Jul 10 23:05:41 2013 +0800
+    @@ -25,7 +25,10 @@
+         if (ori_image != new_image) {
+             $('body').css('background-image', new_image);
+         }
+    -    setTimeout('change_background_image()', 6000);
+    +    if(! window.ActiveXObject){
+    +        setTimeout('change_background_image()', 6000);
+    +        console.log('h')
+    +    }
+     }
+
+雖然不改也沒什麼大不了，反正　GAE 的靜態資源花不大。但畢竟放著它，也會害網路設備多傳送點封包，\
+還是改吧！
 
 .. author:: default
 .. categories:: chinese
