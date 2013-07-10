@@ -1,4 +1,4 @@
-有人在攻擊我的站台或是中毒或…
+有人在攻擊我的站台或是中毒或…(誤)
 ================================================================================
 
 .. figure:: appengine.png
@@ -45,7 +45,34 @@
 果然有發現。該 IP 應是某個 Hinet 固定制的商業用戶所有，因為它的網段為 /30 ，這代表它可以領到 4 個 IP ，\
 已去信 HN8003....@hn.hinet.net 告知。希望它們有注意到這個問題。
 
+後記
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+寄出信後，才想到該 IP 很穩定地每 6 秒來抓一次檔案，這與我用 js 函式設定每 6 秒要檢查更新背景圖是有相關的。
+
+.. code-block:: javascript
+
+    var change_background_image = function () {
+        var d = new Date();
+        var number = d.getDay() + 1;
+        //var number = d.getSeconds() % 7 + 1;
+        var $body = $('body');
+        var ori_image = $body.css('background-image');
+        var l = window.location;
+        var new_image = 'url('+l.protocol+'//'+l.host+'/blog/_static/'+number+'.JPG)';
+        if (ori_image != new_image) {
+            $('body').css('background-image', new_image);
+        }
+        setTimeout('change_background_image()', 6000);
+    }
+
+但我一樣用 IE9 去觀看 http://www.hoamon.info/blog/2007/02/01/pythonpdb.html ，\
+它會因為 ori_image == new_image 而不另起連線去下載圖檔，為什麼這個 IP 的 IE9 會一直下載呢？ \
+兩者的差別只有我的 IE9 是 64 位元，但對方的是 32 位元。
+
+也許我該改個 javascript 寫法？ 目前先讓它一直抓吧！ 反正 GAE 也沒花多少資源。
+
 .. author:: default
 .. categories:: chinese
-.. tags:: ddos
+.. tags:: google app engine, hinet, javascript
 .. comments::
