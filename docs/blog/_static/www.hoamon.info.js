@@ -27,7 +27,6 @@ var change_background_image = function () {
     }
     if(! window.ActiveXObject){
         setTimeout('change_background_image()', 6000);
-        console.log('h')
     }
 }
 
