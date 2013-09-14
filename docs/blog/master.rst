@@ -9,6 +9,9 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2013/09/13/delete_bitbucket_repository
+   2013/07/17/existing_connections_dropped_rudely_when_instance_taken_out_of_elb
+   2013/07/10/somebody_is_attacking_my_blog_site
    2013/07/06/hg_pre_push_autosign
    2013/06/28/acknowledgement_of_my_doctoral_dissertation
    2013/06/28/acknowledgement_of_my_masters_dissertation
@@ -72,4 +75,4 @@ Sitemap
    2007/02/01/python-listhash-def
    2007/02/01/python
    2007/02/01/pythonpdb
-   1900/01/01/suggestion
+   1990/01/01/suggestion

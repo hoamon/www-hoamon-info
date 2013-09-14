@@ -195,5 +195,5 @@ PGP 原理請見 `舊文 <http://blog.hoamon.info/search?q=pgp>`_ 。
 
 .. author:: default
 .. categories:: chinese
-.. tags:: git, gnupg, hg, mercurial, python
+.. tags:: git, gnupg, hg, mercurial, pgp, python
 .. comments::

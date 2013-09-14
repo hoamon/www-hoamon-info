@@ -563,7 +563,7 @@ for app in INSTALLED_APPS:
         app_settings = __import__('.'.join([app, 'settings']))
     except ImportError:
         pass
-    except Exception, e:
+    except:
         pass
     else:
         try:

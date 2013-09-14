@@ -22,8 +22,8 @@ if [ $is_me ] && [ $is_me == "me" ]; then
 
     exit 0
 
-elif [ $is_me ] && [ $is_me == "crontab" ]; then
-    version=${user}'-crontab'
+elif [ $is_me ] && [[ $is_me == crontab* ]]; then
+    version=${user}'-'${is_me}
 elif [ $is_me ]; then
     sub_version='-'${user}'-'`echo $is_me|sed 's/[^0-9a-zA-Z]//g'`
     version=${version}${sub_version,,}
