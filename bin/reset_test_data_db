@@ -1,11 +1,14 @@
 #!/bin/bash
 
 TABLES=`psql -h localhost -t --command "SELECT string_agg(table_name, ',') FROM information_schema.tables WHERE table_schema='public'" -U test_ho600 test_ho600`
+#TABLES=${TABLES/XXX/} # don't drop XXX table
+#TABLES=${TABLES/,,/}
+
 echo Dropping tables: ${TABLES}
 if [ ${TABLES} ] ; then
     psql --command "DROP TABLE IF EXISTS ${TABLES} CASCADE" -U test_ho600 test_ho600 -h localhost
 fi
 
 cd trunk/
-./manage.py syncdb --noinput
+./manage.py syncdb --noinput --all
 ./manage.py createcachetable default_trunk_cache

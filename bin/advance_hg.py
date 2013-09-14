@@ -33,6 +33,7 @@
 import os, re
 from optparse import OptionParser, OptionGroup
 from mercurial import ui, hg, error, commands
+from mercurial.error import RepoLookupError
 
 
 
@@ -154,7 +155,10 @@ class AdvanceHG(object):
             ui0.write(u'\t no update version \n')
         else:
             if not version:
-                version = 'tip'
+                try:
+                    version = repo['master'].hex()
+                except RepoLookupError:
+                    version = repo['default'].hex()
             try:
                 hg.update(repo, version)
             except:

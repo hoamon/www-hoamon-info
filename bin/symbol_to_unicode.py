@@ -3,10 +3,12 @@
 import re, sys
 
 def symbol_to_unicode(s):
-    r = ''
+    r = []
     for l in s.split('\n'):
-        r += unicode(eval("u'"+l+"'")) + '\n'
-    return r
+        s = unicode(eval("u'"+l+"'"))
+        print s
+        #r.append(s+"\n")
+    #return ''.join(r)
 
 if __name__ == '__main__':
     filename = sys.argv[1]

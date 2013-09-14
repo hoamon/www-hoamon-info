@@ -73,6 +73,11 @@ copytree(join(root, 'ho600_lib'), join(module_dir, 'ho600_lib'),
         ignore=ignore_patterns('*.pyc', '.hg'))
 print '\tDone for %s' % os.path.basename(join(module_dir, 'ho600_lib'))
 
+if os.path.isdir(join(trunk_dir, 'staticsite')):
+    rmtree(join(trunk_dir, 'staticsite'))
+if os.path.isdir(join(trunk_dir, 'mediagenerator-static')):
+    rmtree(join(trunk_dir, 'mediagenerator-static'))
+
 # run ./manage.py collectstatic to collectstatic static files
 r = os.popen('%s collectstatic --noinput'%join(trunk_dir, 'manage.py'))
 print(r.read())
@@ -85,12 +90,14 @@ print(r.read())
 r = os.popen('%s compress --force'%join(trunk_dir, 'manage.py'))
 print(r.read())
 
-# run ./manage.py compress --settings=compressor_settings to export static media files
-r = os.popen('%s collectstatic --noinput'%join(trunk_dir, 'manage.py'))
+# run make html
+r = os.popen('cd %s && make html && cd -'%join(trunk_dir, '..', 'docs'))
 print(r.read())
 
 r = os.popen('hg id -i')
 version = r.read()
 f = open('%s/__version__.py'%trunk_dir, 'w')
-f.write('version = "%s"'%re.split('[^a-f0-9]', version)[0])
+s = 'version = "%s"'%re.split('[^a-f0-9]', version)[0]
+print(s)
+f.write(s)
 f.close()
