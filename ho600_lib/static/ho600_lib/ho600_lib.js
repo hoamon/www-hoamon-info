@@ -172,7 +172,13 @@ if (!Array.prototype.indexOf) {
             convert_tastypie_datetime: function (s) {
                 var re = new RegExp('^([0-9]+)-([0-9]+)-([0-9]+).([0-9]+):([0-9]+):([0-9]+)(\.?[0-9]*)$');
                 var list = re.exec(s);
-                return list[1]+'-'+list[2]+'-'+list[3]+' '+list[4]+':'+list[5]+':'+list[6];
+                if (list) {
+                    return list[1]+'-'+list[2]+'-'+list[3]+' '+list[4]+':'+list[5]+':'+list[6];
+                } else {
+                    var re = new RegExp('^([0-9]+)-([0-9]+)-([0-9]+)$');
+                    var list = re.exec(s);
+                    return list[1]+'-'+list[2]+'-'+list[3]+' 00:00:00';
+                }
             },
             get_debug: function () {
                 return DEBUG;
@@ -188,20 +194,22 @@ if (!Array.prototype.indexOf) {
             },
             debug_print: function (v, err) {
                 if (DEBUG && window.console && console.log) {
-                    var prefix = '(None) ';
-                    if (err) {
-                        var line = err.stack.split('\n')[3];
-                        var re = new RegExp('at ([^ ]+) (.+):([0-9]+):([0-9]+)');
-                        var list = re.exec(line);
-                        if (list) {
-                            var function_name = list[1];
-                            var file_name = $.url(list[2].replace('(', '')).attr('file');
-                            var line_number = list[3];
-                            var word_number = list[4];
-                            var prefix = '(' + [file_name, function_name, line_number, word_number].join(':') + ') ';
+                    if($.browser.chrome) {
+                        var prefix = '(None) ';
+                        if (err) {
+                            var line = err.stack.split('\n')[3];
+                            var re = new RegExp('at ([^ ]+) (.+):([0-9]+):([0-9]+)');
+                            var list = re.exec(line);
+                            if (list) {
+                                var function_name = list[1];
+                                var file_name = $.url(list[2].replace('(', '')).attr('file');
+                                var line_number = list[3];
+                                var word_number = list[4];
+                                var prefix = '(' + [file_name, function_name, line_number, word_number].join(':') + ') ';
+                            }
                         }
+                        console.log(prefix+v);
                     }
-                    console.log(prefix+v);
                 }
             },
             get_resource_uri_from_xhr: function (xhr) {
