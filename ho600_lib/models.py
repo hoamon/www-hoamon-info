@@ -43,7 +43,7 @@ from guardian.shortcuts import assign
 
 from random import choice, randint, random
 from types import IntType, LongType
-from sha import sha
+from hashlib import sha1 as sha
 
 from django.conf import settings
 import re, datetime, logging, os
@@ -76,10 +76,18 @@ class Ho600LibBaseModel(M.Model):
                 break
 
 
+    def verify_key_value_6_6(self):
+        return self.verify_key_value[6:12]
+
+
+    def generate_key(self):
+        return sha(str(random())).hexdigest()
+
+
     def verify_key(self, key=''):
         if not key and not self.verify_key_value:
             while True:
-                self.verify_key_value = sha(str(random())).hexdigest()
+                self.verify_key_value = self.generate_key()
                 try: self.save()
                 except IntegrityError, DatabaseError: pass
                 else: break
@@ -99,7 +107,41 @@ class Ho600LibBaseModel(M.Model):
 
 
 
-class Tree(M.Model):
+class TreeBase(object):
+    parent_name = 'parent'
+    chlid_set_name = 'child_set'
+
+
+    def has_this_child(self, child):
+        if self == child:
+            return True
+        else:
+            for c in getattr(self, self.child_set_name).all():
+                if c.has_this_child(child):
+                    return True
+        return False
+
+
+    def get_all_child_set_as_formed_list(self, level=0, max_level=0):
+        _list = self.get_all_child_set_as_list()
+        _min = min([i[0] for i in _list])
+        _result = [('&nbsp;&nbsp;'*(i[0]-_min), i[1]) for i in _list]
+        return _result
+
+
+    def get_all_child_set_as_list(self, level=0, max_level=0):
+        if max_level > 0 and level > max_level:
+            return []
+        else:
+            list = [(level, self)]
+            for c in getattr(self, self.child_set_name).all().order_by('id'):
+                sub_list = c.get_all_child_set_as_list(level=level+1, max_level=max_level)
+                list.extend(sub_list)
+            return list
+
+
+
+class Tree(M.Model, TreeBase):
     parent = M.ForeignKey('self', related_name='child_set', null=True)
 
 
@@ -108,29 +150,6 @@ class Tree(M.Model):
         """ It will not generate a database table when 'abstract' set True
         """
         abstract = True
-
-
-
-    def has_this_child(self, child):
-        if self == child:
-            return True
-        else:
-            for c in self.child_set.all():
-                if c.has_this_child(child):
-                    return True
-        return False
-
-
-
-    def get_all_child_set_as_list(self, level=0, max_level=0):
-        if max_level > 0 and level > max_level:
-            return []
-        else:
-            list = [(level, self)]
-            for c in self.child_set.all().order_by('id'):
-                sub_list = c.get_all_child_set_as_list(level=level+1, max_level=max_level)
-                list.extend(sub_list)
-            return list
 
 
 
