@@ -34,8 +34,9 @@ _insert_sys_path(0, TRUNK)
 TRUNK_PARENT = os.path.dirname(TRUNK)
 _insert_sys_path(0, TRUNK_PARENT)
 
-for d in os.listdir(join(TRUNK, 'depends_modules')):
-    _insert_sys_path(0, join(TRUNK, 'depends_modules', d))
+if os.path.isdir(join(TRUNK, 'depends_modules')):
+    for d in os.listdir(join(TRUNK, 'depends_modules')):
+        _insert_sys_path(0, join(TRUNK, 'depends_modules', d))
 
 # use the below to set up third party libraries
 #_insert_sys_path(0, join(os.path.dirname(TRUNK), 'asset', 'SOME-LIB-DIR'))
