@@ -41,6 +41,7 @@ from django.http import HttpResponseRedirect
 from django.http import HttpResponseForbidden, HttpResponseNotFound, HttpResponseServerError
 from django.conf import settings
 from django.utils import simplejson as json
+from django.db import connection
 
 from ho600_lib import get_template_by_site_and_lang
 from ho600_lib.models import BugPage
@@ -53,6 +54,10 @@ class Handle500Middleware(object):
         """ Create a technical server error response. The last three arguments are
             the values returned from sys.exc_info().
         """
+        #because PostgreSQL default run on read commited mode,
+        #so if any error occur, it should rollback the batch of sql statements.
+        #connection._rollback()
+        # for further explain: http://www.hoamon.info/blog/2013/04/12/difference_between_mysql_and_postgresql_with_django.html
         reporter = ExceptionReporter(request, *sys.exc_info())
         #phase I, record bug page html
         bp = BugPage(html=reporter.get_traceback_html())

@@ -49,6 +49,12 @@ import types
 import datetime
 
 
+def root(R):
+    """ just show the root url of ho600_lib
+    """
+    return HttpResponse('nothing')
+
+
 def check_internal_ips(function):
     def _inner_function(*args, **kw):
         R = args[0]

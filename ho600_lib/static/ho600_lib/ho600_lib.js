@@ -28,6 +28,15 @@
 # NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 # EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+if (!Array.prototype.indexOf) {
+    Array.prototype.indexOf = function(obj, start) {
+         for (var i = (start || 0), j = this.length; i < j; i++) {
+             if (this[i] === obj) { return i; }
+         }
+         return -1;
+    }
+}
+
 
 (function($){
     if ($ && $.bugrecord) {
@@ -160,11 +169,22 @@
     $.ho600_lib = function (DEBUG) {
         DEBUG = DEBUG ? DEBUG : false;
         var d = {
+            convert_tastypie_datetime: function (s) {
+                var re = new RegExp('^([0-9]+)-([0-9]+)-([0-9]+).([0-9]+):([0-9]+):([0-9]+)(\.?[0-9]*)$');
+                var list = re.exec(s);
+                if (list) {
+                    return list[1]+'-'+list[2]+'-'+list[3]+' '+list[4]+':'+list[5]+':'+list[6];
+                } else {
+                    var re = new RegExp('^([0-9]+)-([0-9]+)-([0-9]+)$');
+                    var list = re.exec(s);
+                    return list[1]+'-'+list[2]+'-'+list[3]+' 00:00:00';
+                }
+            },
             get_debug: function () {
                 return DEBUG;
             },
             error_object: function () {
-                if (DEBUG && window.console) {
+                if (DEBUG && window.console && console.log) {
                     try {
                         throw Error('');
                     } catch (err) {
@@ -173,21 +193,23 @@
                 }
             },
             debug_print: function (v, err) {
-                if (DEBUG && window.console && ($.browser.webkit || $.browser.chrome)) {
-                    var prefix = '(None) ';
-                    if (err) {
-                        var line = err.stack.split('\n')[3];
-                        var re = new RegExp('at ([^ ]+) (.+):([0-9]+):([0-9]+)');
-                        var list = re.exec(line);
-                        if (list) {
-                            var function_name = list[1];
-                            var file_name = $.url(list[2].replace('(', '')).attr('file');
-                            var line_number = list[3];
-                            var word_number = list[4];
-                            var prefix = '(' + [file_name, function_name, line_number, word_number].join(':') + ') ';
+                if (DEBUG && window.console && console.log) {
+                    if($.browser.chrome) {
+                        var prefix = '(None) ';
+                        if (err) {
+                            var line = err.stack.split('\n')[3];
+                            var re = new RegExp('at ([^ ]+) (.+):([0-9]+):([0-9]+)');
+                            var list = re.exec(line);
+                            if (list) {
+                                var function_name = list[1];
+                                var file_name = $.url(list[2].replace('(', '')).attr('file');
+                                var line_number = list[3];
+                                var word_number = list[4];
+                                var prefix = '(' + [file_name, function_name, line_number, word_number].join(':') + ') ';
+                            }
                         }
+                        console.log(prefix+v);
                     }
-                    console.log(prefix+v);
                 }
             },
             get_resource_uri_from_xhr: function (xhr) {
@@ -200,6 +222,7 @@
         d['get_uri'] = d.get_resource_uri_from_xhr;
         d['er'] = d.error_object;
         d['debug'] = d.get_debug;
+        d['ctd'] = d.convert_tastypie_datetime;
         return d;
     };
 }) ($);

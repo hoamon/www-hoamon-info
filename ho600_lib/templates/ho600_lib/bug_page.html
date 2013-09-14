@@ -58,7 +58,7 @@
         </tr>
         <tr>
             <td align="center"><a target="bug_page_html_{{ bug_page.code }}"
-                href="{% url ho600_lib.views.rBugPageHtml bug_page.code %}">
+                href="{% url 'ho600_lib.views.rBugPageHtml' bug_page.code %}">
                     {{ bug_page.code }}
                 </a>
             </td>
@@ -85,7 +85,7 @@
 </table>
 </div>
 
-<iframe width="100%" height="650px" src="{% url ho600_lib.views.rBugPageHtml bug_page.code %}">
+<iframe width="100%" height="650px" src="{% url 'ho600_lib.views.rBugPageHtml' bug_page.code %}">
 </iframe>
 </center>
 {% endblock %}

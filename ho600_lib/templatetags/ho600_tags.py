@@ -42,10 +42,18 @@ register = template.Library()
 
 @register.simple_tag
 def use_jqueryui(jquery_version, jqueryui_version, theme_name):
-    return """<link rel="stylesheet" title="default" type="text/css" media="screen" href="//ajax.googleapis.com/ajax/libs/jqueryui/%(jqueryui_version)s/themes/%(theme_name)s/jquery-ui.css" />
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/%(jquery_version)s/jquery.min.js"></script>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/%(jqueryui_version)s/jquery-ui.min.js"></script>
-    <script type="text/javascript">
+    if settings.DEBUG:
+        google_host = ""
+    else:
+        google_host = """<link rel="stylesheet" title="default" type="text/css" media="screen" href="//ajax.googleapis.com/ajax/libs/jqueryui/%(jqueryui_version)s/themes/%(theme_name)s/jquery-ui.min.css" />
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/%(jquery_version)s/jquery.min.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/%(jqueryui_version)s/jquery-ui.min.js"></script>""" % {
+            'DEBUG': 'true' if settings.DEBUG else 'false',
+            'jquery_version': jquery_version,
+            'jqueryui_version': jqueryui_version,
+            'theme_name': theme_name,
+        }
+    return google_host+"""<script type="text/javascript">
             function self_joined_jquery () {
                 if (JQUERY_CSS && JQUERY_JS && JQUERYUI_JS){
                     document.write(unescape('%%3Clink rel="stylesheet" title="default" type="text/css" media="screen" href="'+JQUERY_CSS+'" /%%3E'));

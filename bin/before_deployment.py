@@ -29,7 +29,7 @@
 #NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 #EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import os, sys
+import os, sys, re
 from os.path import join
 from shutil import copy, rmtree, copytree, ignore_patterns
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -73,6 +73,11 @@ copytree(join(root, 'ho600_lib'), join(module_dir, 'ho600_lib'),
         ignore=ignore_patterns('*.pyc', '.hg'))
 print '\tDone for %s' % os.path.basename(join(module_dir, 'ho600_lib'))
 
+if os.path.isdir(join(trunk_dir, 'staticsite')):
+    rmtree(join(trunk_dir, 'staticsite'))
+if os.path.isdir(join(trunk_dir, 'mediagenerator-static')):
+    rmtree(join(trunk_dir, 'mediagenerator-static'))
+
 # run ./manage.py collectstatic to collectstatic static files
 r = os.popen('%s collectstatic --noinput'%join(trunk_dir, 'manage.py'))
 print(r.read())
@@ -82,9 +87,17 @@ r = os.popen('%s generatemedia'%join(trunk_dir, 'manage.py'))
 print(r.read())
 
 # run ./manage.py compress --settings=compressor_settings to export static media files
-r = os.popen('%s compress --settings=compressor_settings'%join(trunk_dir, 'manage.py'))
+r = os.popen('%s compress --force'%join(trunk_dir, 'manage.py'))
 print(r.read())
 
-# run ./manage.py compress --settings=compressor_settings to export static media files
-r = os.popen('%s collectstatic --noinput'%join(trunk_dir, 'manage.py'))
+# run make html
+r = os.popen('cd %s && make html && cd -'%join(trunk_dir, '..', 'docs'))
 print(r.read())
+
+r = os.popen('hg id -i')
+version = r.read()
+f = open('%s/__version__.py'%trunk_dir, 'w')
+s = 'version = "%s"'%re.split('[^a-f0-9]', version)[0]
+print(s)
+f.write(s)
+f.close()

@@ -33,6 +33,7 @@
 import os, re
 from optparse import OptionParser, OptionGroup
 from mercurial import ui, hg, error, commands
+from mercurial.error import RepoLookupError
 
 
 
@@ -150,14 +151,20 @@ class AdvanceHG(object):
             except:
                 ui0.write(u'\t problem in repo.pull\n')
                 return
-        if not version:
-            version = 'tip'
-        try:
-            hg.update(repo, version)
-        except:
-            ui0.write(u'\t problem in hg.update\n')
-            return
-        ui0.write(u'\t 更新至 %s 版\n' % version)
+        if '__none__' == version:
+            ui0.write(u'\t no update version \n')
+        else:
+            if not version:
+                try:
+                    version = repo['master'].hex()
+                except RepoLookupError:
+                    version = repo['default'].hex()
+            try:
+                hg.update(repo, version)
+            except:
+                ui0.write(u'\t problem in hg.update\n')
+                return
+            ui0.write(u'\t 更新至 %s 版\n' % version)
 
 
     def pullAll(self, *args, **kw):
@@ -200,7 +207,7 @@ class AdvanceHG(object):
             repo = ':'.join(self.pullall_directory.split(':')[0:2])
 	else:
 	    repo = self.pullall_directory.split(':')[0]
-        self.pull(repo)
+        self.pull(repo, version='__none__')
 
         if not depends:
             paths = self.rDepends(pullall_directory, hgrc_filename=self.depends_modules)
@@ -215,7 +222,9 @@ class AdvanceHG(object):
                 else:
                     remote_source = path[1]
                     #TODO should change to mercurial api
-                    r = os.popen('hg clone %s %s' % (remote_source, os.path.join(pullall_directory, repo)))
+                    cmd = 'hg clone %s %s' % (remote_source, os.path.join(pullall_directory, repo))
+                    print(cmd)
+                    r = os.popen(cmd)
                     print(r.read())
                     self.pull(os.path.join(pullall_directory, repo), version)
         else:
