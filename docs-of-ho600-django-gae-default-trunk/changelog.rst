@@ -36,6 +36,19 @@
 Changelog
 ================================================================================
 
+release-1.0.9
+--------------------------------------------------------------------------------
+
+ * Upgrade for django-1.5.x
+ * Change web link of ho600-django-gae-federated-auth
+ * hg update compatibility with hg-git base project
+ * Show BUILD_URL(ex. generate by jenkins) information
+ * Add a example script to execute django-south
+ * Use google host only in production environment
+ * Seperate Tree method to TreeBase class
+ * Seperate generate_key method in Ho600BaseModel
+ * Plain Glue Filter of mediagenerator for debug js format error
+
 release-1.0.8
 --------------------------------------------------------------------------------
 
