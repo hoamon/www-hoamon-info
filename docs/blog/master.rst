@@ -9,6 +9,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2013/11/20/www_hoyun2_info
    2013/09/13/delete_bitbucket_repository
    2013/07/17/existing_connections_dropped_rudely_when_instance_taken_out_of_elb
    2013/07/10/somebody_is_attacking_my_blog_site
