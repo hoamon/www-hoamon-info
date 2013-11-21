@@ -49,6 +49,7 @@ Sitemap
    2012/11/05/startssl_com_web_ssl_retailer
    2012/11/04/ho600_s_ssl_certification
    2012/11/04/change
+   2012/05/01/blog-post
    2012/04/01/aws
    2012/03/01/nginx
    2012/03/01/blog-post_11
