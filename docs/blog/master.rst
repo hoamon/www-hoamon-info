@@ -9,6 +9,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2014/02/13/static_hosting_in_goolge_cloud_storage
    2013/11/20/www_hoyun2_info
    2013/09/13/delete_bitbucket_repository
    2013/07/17/existing_connections_dropped_rudely_when_instance_taken_out_of_elb
