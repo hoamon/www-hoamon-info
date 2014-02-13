@@ -6,7 +6,7 @@
 My Detail
 ===========================================
 
-.. image:: _static/me_index.png
+.. image:: http://www.gravatar.com/avatar/64b6447c45c4331592d9c331ba921bd8.png?s=450
     :width: 450px
     :alt: It's me
     :align: right
