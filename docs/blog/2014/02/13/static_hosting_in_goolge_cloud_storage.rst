@@ -137,7 +137,7 @@ Key 的格式如： GOOGOFBWWW?????????? ，而 Secret 格式長得像： UoFYgF
 
 使用你的命令列工具，進入 C:\\gsutil> ，執行下列指令(在 Linux 下，請把 python 去掉，就是只要 gsutil config )：
 
-.. code-block:: dos
+.. code-block:: bat
 
     C:\gsutil> python gsutil config
 
@@ -180,7 +180,7 @@ Key 的格式如： GOOGOFBWWW?????????? ，而 Secret 格式長得像： UoFYgF
 3.3 創建 BUCKET
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: dos
+.. code-block:: bat
 
     C:\gsutil> python gsutil mb gs://www.hoyun2.info
 
@@ -191,13 +191,13 @@ gs:// 後面則是 BUCKET 名稱。
 
 有兩種設定方式，一種是設定權限的預設值：
 
-.. code-block:: dos
+.. code-block:: bat
 
     C:\gsutil> python gsutil setdefacl public-read gs://www.hoyun2.info
 
 另一種是上傳檔案後再更改權限：
 
-.. code-block:: dos
+.. code-block:: bat
 
     C:\gsutil> python gsutil -m setacl -R -a public-read gs://www.hoyun2.info
 
@@ -206,20 +206,20 @@ gs:// 後面則是 BUCKET 名稱。
 
 可整站上傳：
 
-.. code-block:: dos
+.. code-block:: bat
 
     C:\gsutil> python gsutil cp -R -a public-read C:\hoyun2-hoyun2.bitbucket.org-b96cbcf8d4d9\* gs://www.hoyun2.info
 
 也可針對某資料夾上傳：
 
-.. code-block:: dos
+.. code-block:: bat
 
     C:\gsutil> python gsutil cp -R -a public-read C:\hoyun2-hoyun2.bitbucket.org-b96cbcf8d4d9\static\* gs://www.hoyun2.info/static
 
 6. 設定 index 及 404 NotFound 頁面的檔案名稱。
 --------------------------------------------------------------------------------
 
-.. code-block:: dos
+.. code-block:: bat
 
     C:\gsutil> python gsutil setwebcfg -m index.html -e 404.html gs://www.hoyun2.info
 
