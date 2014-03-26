@@ -9,6 +9,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2014/03/27/private_bidding_1_of_2
    2014/02/13/static_hosting_in_goolge_cloud_storage
    2013/11/20/www_hoyun2_info
    2013/09/13/delete_bitbucket_repository
