@@ -1,19 +1,19 @@
 [廣告] 長輩要拍賣的「埔里黑膽石」
 ================================================================================
 
-.. figure:: P1040527.JPG
+.. figure:: P1040527.jpg
     :width: 600
     :align: center
 
     黑膽石正面
 
-.. figure:: P1040529.JPG
+.. figure:: P1040529.jpg
     :width: 600
     :align: center
 
     黑膽石背面
 
-.. figure:: P1040530.JPG
+.. figure:: P1040530.jpg
     :width: 600
     :align: center
 
