@@ -9,6 +9,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2016/12/02/software_job_in_puli
    2014/07/26/stone_sales
    #2014/03/27/private_bidding_1_of_2
    2014/02/13/static_hosting_in_goolge_cloud_storage
