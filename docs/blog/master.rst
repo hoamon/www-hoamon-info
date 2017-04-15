@@ -9,6 +9,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2016/12/27/an_anonymous_fair_exam_site
    2016/12/11/why_give_such_high_salary_for_a_software_job_in_puli
    2016/12/02/software_job_in_puli
    2014/07/26/stone_sales
