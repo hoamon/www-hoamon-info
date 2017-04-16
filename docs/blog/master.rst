@@ -9,11 +9,13 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2017/04/01/is_a_deal_in_close_outcry
+   2017/01/01/5_software_development_trends_shaping_enterprise_in_2017
    2016/12/27/an_anonymous_fair_exam_site
    2016/12/11/why_give_such_high_salary_for_a_software_job_in_puli
    2016/12/02/software_job_in_puli
    2014/07/26/stone_sales
-   #2014/03/27/private_bidding_1_of_2
+   2014/03/27/private_bidding_1_of_2
    2014/02/13/static_hosting_in_goolge_cloud_storage
    2013/11/20/www_hoyun2_info
    2013/09/13/delete_bitbucket_repository
@@ -25,7 +27,7 @@ Sitemap
    2013/06/21/2013_construction_management_final_exam
    2013/06/01/2013_006202_liquidation
    2013/05/28/i_am_guilty
-   #2013/05/06/test_paypal
+   2013/05/06/test_paypal
    2013/04/14/there_are_so_many_hungers_in_the_world
    2013/04/12/difference_between_mysql_and_postgresql_with_django
    2013/03/06/why_not_kill_them_all
