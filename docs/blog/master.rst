@@ -32,7 +32,7 @@ Sitemap
    2013/04/12/difference_between_mysql_and_postgresql_with_django
    2013/03/06/why_not_kill_them_all
    2013/03/06/delete_gae_application
-   #2013/02/17/of_the_1___by_the_1___for_the_1__from_the_price_of_inequality
+   2013/02/17/of_the_1___by_the_1___for_the_1__from_the_price_of_inequality
    2013/02/17/hoamon_is_reading_at_ncnu
    2013/02/17/vote_for_006202_settlement
    2013/01/14/006202_rise_to_limit_in_a_day
