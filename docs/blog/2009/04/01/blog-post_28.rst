@@ -4,7 +4,7 @@ FOClass: 二分逼近法求債券殖利率
 一債券殖利率等式( :doc:`原理 <../../04/01/foclass>` )如下，試求 r 值：
 
 .. figure:: http://latex.codecogs.com/gif.latex?99.2679%20=-%20%5Cfrac%7B0.875%5Ctimes%20%281-%5Cfrac%7B280%7D%7B365%7D%29%7D%7B%281+r%29%5E%7B0%7D%7D%20+%20%5Cfrac%7B0.875%7D%7B%281+r%29%5E%7B%280+%5Cfrac%7B280%7D%7B365%7D%29%7D%7D%20+%20%5Cfrac%7B0.875%7D%7B%281+r%29%5E%7B%281+%5Cfrac%7B280%7D%7B365%7D%29%7D%7D%20+%20%5Cfrac%7B0.875%7D%7B%281+r%29%5E%7B%282+%5Cfrac%7B280%7D%7B365%7D%29%7D%7D%20+%20%5Cfrac%7B0.875%7D%7B%281+r%29%5E%7B%283+%5Cfrac%7B280%7D%7B365%7D%29%7D%7D%20+%20%5Cfrac%7B0.875%7D%7B%281+r%29%5E%7B%284+%5Cfrac%7B280%7D%7B365%7D%29%7D%7D
-    :width: 600px
+    :width: 100%
     :align: center
 
 如果該等式中 (1+r)^t 的期別 t 皆為大於 0 的整數時，我們可以直接使用 \

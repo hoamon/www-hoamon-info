@@ -3,7 +3,7 @@
 
 .. figure:: nchu.jpg
     :align: center
-    :width: 600px
+    :width: 100%
 
 
 我個人十分贊同『高教學費由各校自行調整』，\

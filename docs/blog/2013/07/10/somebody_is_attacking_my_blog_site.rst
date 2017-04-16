@@ -2,7 +2,7 @@
 ================================================================================
 
 .. figure:: appengine.png
-    :width: 600px
+    :width: 100%
     :align: center
     
     Google App Engine 的 Dashboard 頁面
@@ -39,7 +39,7 @@
 既然想不通，就找找看有沒有對方 IP 的聯絡方式，用 `whois 服務 <http://cqcounter.com/whois/>`_ 查了一下：
 
 .. figure:: 211.22.107.1X.png
-    :width: 600px
+    :width: 100%
     :align: center
 
 果然有發現。該 IP 應是某個 Hinet 固定制的商業用戶所有，因為它的網段為 /30 ，這代表它可以領到 4 個 IP ，\

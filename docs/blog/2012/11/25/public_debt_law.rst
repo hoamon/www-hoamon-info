@@ -4,7 +4,7 @@
 
 .. figure:: public_debt.png
     :align: center
-    :width: 600px
+    :width: 100%
 
     本圖( public_debt.png )部份內容含有 `玉山銀行 <http://www.esunbank.com.tw/>`_ 製作內容，非全屬 hoamon 所創作
 

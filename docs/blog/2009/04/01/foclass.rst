@@ -49,7 +49,7 @@ P.S. FO 就是 Futures and Options (期貨與選擇權)。
 求解方程式如下：
 
 .. figure:: foclass/2.gif
-    :width: 600px
+    :width: 100%
     :align: center
 
 作到上述式子為止，已經把整個現金流量模式都定義好，基本上，是可以數值方式去求出 r 為何了。\
@@ -58,7 +58,7 @@ P.S. FO 就是 Futures and Options (期貨與選擇權)。
 
 
 .. figure:: http://latex.codecogs.com/gif.latex?99.2679%20=-%20%5Cfrac%7B0.875%5Ctimes%20%281-%5Cfrac%7B280%7D%7B365%7D%29%7D%7B%281+r%29%5E%7B0%7D%7D%20+%20%5Cfrac%7B0.875%7D%7B%281+r%29%5E%7B%280+%5Cfrac%7B280%7D%7B365%7D%29%7D%7D%20+%20%5Cfrac%7B0.875%7D%7B%281+r%29%5E%7B%281+%5Cfrac%7B280%7D%7B365%7D%29%7D%7D%20+%20%5Cfrac%7B0.875%7D%7B%281+r%29%5E%7B%282+%5Cfrac%7B280%7D%7B365%7D%29%7D%7D%20+%20%5Cfrac%7B0.875%7D%7B%281+r%29%5E%7B%283+%5Cfrac%7B280%7D%7B365%7D%29%7D%7D%20+%20%5Cfrac%7B0.875%7D%7B%281+r%29%5E%7B%284+%5Cfrac%7B280%7D%7B365%7D%29%7D%7D
-    :width: 600px
+    :width: 100%
     :align: center
 
 這樣就可以用 :doc:`數值方法 <../../04/01/blog-post_28>` 求 r 了。

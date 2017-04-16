@@ -52,7 +52,7 @@ REIT(Real Estate Investment Trust)的本質像股票，REIT的管理機構就像
 之前在 2011 年 5 月左右，它們傳出要作清算的動作，所以股價開始大漲。
 
 .. figure:: Screenshot-6.png
-    :width: 600px
+    :width: 100%
     :align: center
     
     From `Yahoo! Stock`_
@@ -73,7 +73,7 @@ REIT(Real Estate Investment Trust)的本質像股票，REIT的管理機構就像
 我的確眼紅，但還是要照預定計畫來：「定期買進不同的投資標的」，沒輪到它，就只能算自己運氣沒那麼好囉~
 
 .. figure:: Screenshot-7.png
-    :width: 600px
+    :width: 100%
     :align: center
 
     From `Yahoo! Stock`_

@@ -5,7 +5,7 @@ Software job in puli(埔里軟工徵才)
 先破個題，我在埔里要徵 1 ~ 2 個軟體工程師，是不是埔里人不重要，是不是在埔里工作也不太重要，重要的是我在埔里親自面試。
 
 .. figure:: starbucks.jpg
-    :width: 600px
+    :width: 100%
     :align: center
 
     別擔心，埔里沒那麼鄉下，除了 PM2.5 外，我們也有星巴克咖啡。

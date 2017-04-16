@@ -6,7 +6,7 @@
 
 .. figure:: iclean.jpg
     :align: center
-    :width: 600px
+    :width: 100%
 
     本圖( iclean.jpg )部份內容含有 `Bio-enzyme.com <http://iclean.bio-enzyme.com/hmn/>`_ 製作之產品及內容，非全屬 hoamon 所創作
 

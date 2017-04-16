@@ -2,7 +2,7 @@
 ================================================================================
 
 .. figure:: why_give_such_high_salary_for_a_software_job_in_puli.png
-    :width: 600px
+    :width: 100%
     :align: center
 
     年薪:60萬+ ; 每週工時:40小時- ; 週休 3 日; 學歷/科系/性別/年齡/...: 不限;

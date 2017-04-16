@@ -34,7 +34,7 @@ FOClass: 債券殖利率曲線計算
 便算出殖利率曲線。如下圖：
 
 .. figure:: zero_bond_yield_curve.png
-    :width: 600px
+    :width: 100%
     :align: center
 
     綠色線為零息債券殖利率曲線、紅色線為附息債券殖利率曲線
