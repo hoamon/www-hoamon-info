@@ -9,9 +9,9 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
-   2017/04/01/is_a_deal_in_close_outcry
-   2017/01/01/5_software_development_trends_shaping_enterprise_in_2017
-   2017/01/01/make_or_buy_
+   #2017/04/01/is_a_deal_in_close_outcry
+   #2017/01/01/5_software_development_trends_shaping_enterprise_in_2017
+   #2017/01/01/make_or_buy_
    2016/12/27/an_anonymous_fair_exam_site
    2016/12/11/why_give_such_high_salary_for_a_software_job_in_puli
    2016/12/02/software_job_in_puli
