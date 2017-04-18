@@ -87,5 +87,5 @@ Python(Django) / Javascript ，主要平台： Ubuntu Linux on AWS ，年薪是 
 
 .. author:: default
 .. categories:: chinese
-.. tags:: hire, puli, python, ubuntu, amazon web service, aws, django, javascript, pgp
+.. tags:: hire, python, ubuntu, amazon web service, aws, django, javascript, pgp
 .. comments::
