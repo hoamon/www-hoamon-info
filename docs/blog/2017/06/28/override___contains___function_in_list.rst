@@ -6,7 +6,6 @@
 單純檢查 remote_ip 有沒有在 settings.INTERNAL_IPS 裡來達到安全性檢查:
 
 .. code-block:: python
-    :linenos:
 
     from django.conf import settings
     def check_internal_ips(function):
@@ -35,7 +34,6 @@
 所以 override 原 list 物件的 __contains__ 函式來作「額外 IP 」的查詢:
 
 .. code-block:: python
-    :linenos:
 
     # settings.py
     class CheckIPInSG(list):
