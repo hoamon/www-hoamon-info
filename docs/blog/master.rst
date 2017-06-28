@@ -9,6 +9,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2017/06/28/override___contains___function_in_list
    #2017/04/01/is_a_deal_in_close_outcry
    #2017/01/01/5_software_development_trends_shaping_enterprise_in_2017
    #2017/01/01/make_or_buy_
