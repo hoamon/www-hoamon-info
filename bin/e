@@ -1,2 +1,2 @@
 #/bin/bash
-source /var/www/www-hoamon-info-env/bin/activate
+source .py2env/bin/activate
