@@ -9,6 +9,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2018/11/22/my_decision_on_2018_referendum
    2018/04/12/yo_o__what_makes_you_think_you_can_manage_the_software_engineers_
    2017/07/14/a_tiny_format_error_makes_me_be_busy_a_day
    2017/06/28/override___contains___function_in_list
