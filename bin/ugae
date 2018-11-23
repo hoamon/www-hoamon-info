@@ -1,6 +1,6 @@
 #!/bin/bash
 
-appcfg="/usr/local/google-cloud-sdk/platform/google_appengine/appcfg.py"
+appcfg="appcfg.py"
 
 trunk=$1
 app_id=$2
