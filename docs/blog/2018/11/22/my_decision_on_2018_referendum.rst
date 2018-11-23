@@ -11,16 +11,16 @@
 ==== ====== ====== ============================================================
 編號 同意   不同意 主文
 ==== ====== ====== ============================================================
-07          ○      `你是否同意以「平均每年至少降低 1% 」之方式逐年降低火力發... </2018/11/22/my_decision_on_2018_referendum.html#referendum07>`_
-08   ○             `您是否同意確立「停止新建、擴建任何燃煤發電廠或發電機組... </2018/11/22/my_decision_on_2018_referendum.html#referendum08>`_
-09          ○      `你是否同意政府維持禁止開放日本福島 311 核災相關地區,包括... </2018/11/22/my_decision_on_2018_referendum.html#referendum09>`_
-10   ○             `你是否同意民法婚姻規定應限定在一男一女的結合? </2018/11/22/my_decision_on_2018_referendum.html#referendum10>`_
-11          ○      `你是否同意在國民教育階段內(國中及國小),教育部及各級學校... </2018/11/22/my_decision_on_2018_referendum.html#referendum11>`_
-12   ○      ○      `你是否同意以民法婚姻規定以外之其他形式來保障同性別二人... </2018/11/22/my_decision_on_2018_referendum.html#referendum12>`_
-13   ○             `你是否同意,以「台灣」 (Taiwan) 為全名申請參加所有國際... </2018/11/22/my_decision_on_2018_referendum.html#referendum13>`_
-14          ○      `您是否同意,以民法婚姻章保障同性別二人建立婚姻關係? </2018/11/22/my_decision_on_2018_referendum.html#referendum14>`_
-15   ○             `您是否同意,以「性別平等教育法」明定在國民教育各階段內... </2018/11/22/my_decision_on_2018_referendum.html#referendum15>`_
-16   ○             `您是否同意:廢除電業法第 95 條第 1 項,即廢除「核能發電... </2018/11/22/my_decision_on_2018_referendum.html#referendum16>`_
+07          ○      `你是否同意以「平均每年至少降低 1% 」之方式逐年降低火力發... </blog/2018/11/22/my_decision_on_2018_referendum.html#referendum07>`_
+08   ○             `您是否同意確立「停止新建、擴建任何燃煤發電廠或發電機組... </blog/2018/11/22/my_decision_on_2018_referendum.html#referendum08>`_
+09          ○      `你是否同意政府維持禁止開放日本福島 311 核災相關地區,包括... </blog/2018/11/22/my_decision_on_2018_referendum.html#referendum09>`_
+10   ○             `你是否同意民法婚姻規定應限定在一男一女的結合? </blog/2018/11/22/my_decision_on_2018_referendum.html#referendum10>`_
+11          ○      `你是否同意在國民教育階段內(國中及國小),教育部及各級學校... </blog/2018/11/22/my_decision_on_2018_referendum.html#referendum11>`_
+12   ○      ○      `你是否同意以民法婚姻規定以外之其他形式來保障同性別二人... </blog/2018/11/22/my_decision_on_2018_referendum.html#referendum12>`_
+13   ○             `你是否同意,以「台灣」 (Taiwan) 為全名申請參加所有國際... </blog/2018/11/22/my_decision_on_2018_referendum.html#referendum13>`_
+14          ○      `您是否同意,以民法婚姻章保障同性別二人建立婚姻關係? </blog/2018/11/22/my_decision_on_2018_referendum.html#referendum14>`_
+15   ○             `您是否同意,以「性別平等教育法」明定在國民教育各階段內... </blog/2018/11/22/my_decision_on_2018_referendum.html#referendum15>`_
+16   ○             `您是否同意:廢除電業法第 95 條第 1 項,即廢除「核能發電... </blog/2018/11/22/my_decision_on_2018_referendum.html#referendum16>`_
 ==== ====== ====== ============================================================
 
 以下是我對第 7 案到第 16 案的想法
