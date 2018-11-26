@@ -11,7 +11,8 @@ version=`hg id -n -i|sed 's/\([^ ]\+\) \+\([^ ]\+\)/\2-\1/'|sed 's/[^0-9a-z-]//g
 
 if [ $is_me ] && [ $is_me == "me" ]; then
     if [ $extra_version ]; then
-        sub_version='-'${user}'-auto-set-default-'`echo ${extra_version,,}|sed 's/[^0-9a-zA-Z]//g'`
+        extra_version=`echo ${extra_version}|sed 's/[^0-9a-zA-Z]//g'`
+        sub_version='-'${user}'-auto-set-default-'${extra_version}
     else
         sub_version='-'${user}'-auto-set-default-'`date +%Y%m%d%H%M%S`
     fi
