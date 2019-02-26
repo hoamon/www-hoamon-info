@@ -9,6 +9,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2019/02/26/this_is_just_the_beginning
    2018/11/24/my_conclusion_on_taiwan_2018_election
    2018/11/22/my_decision_on_2018_referendum
    2018/04/12/yo_o__what_makes_you_think_you_can_manage_the_software_engineers_
