@@ -7,21 +7,32 @@
 
 .. code-block:: python
 
+    # ho600_lib/views.py
     from django.conf import settings
     def check_internal_ips(function):
         def _inner_function(*args, **kw):
             request = args[0]
-            if hasattr(settings, 'INTERNAL_IPS') and request.META.get('REMOTE_ADDR') in settings.INTERNAL_IPS:
+            if (hasattr(settings, 'INTERNAL_IPS')
+                and request.META.get('REMOTE_ADDR')
+                    in settings.INTERNAL_IPS):
                 return function(*args, **kw)
             else:
-                return HttpResponseForbidden('You have no right!!!')
+                return HttpResponseForbidden(
+                    'You have no right!!!')
         return _inner_function
+
 
     @check_internal_ips
     def list_bugrecords(R):
-        """ list the latest 10 records about automated bug tracker
+        """ list the latest 10 records
+            about automated bug tracker
         """
         pass
+
+
+    # settings.py
+    INTERNAL_IPS = ['127.0.0.1', '192.168.1.1',
+                    '192.168.1.2', '192.168.1.254']
 
 但這有一個問題，每次家裡 IP 有變動，或是在別的地方處理 bug 時，\
 就得先登入機器內部修改 settings.py 才能從網頁上閱讀 bug 紀錄。\
@@ -43,22 +54,37 @@
         security_group_ids = ['sg-12345678', 'sg-87654321']
 
         def __contains__(self, remote_ip, *args, **kw):
-            result = super(CheckIPInSG, self).__contains__(remote_ip, *args, **kw)
+            result = super(CheckIPInSG,
+                           self).__contains__(
+                               remote_ip, *args, **kw)
             if result: return True
-            #INFO: above is just equivalent '"X.Y.Z.W" in list', if False, then run below
+            #INFO: above is just equivalent '"X.Y.Z.W" in list',
+            #      if False, then execute steps as below
 
             import boto3, netaddr
-            ec2 = boto3.resource('ec2',
-                                 aws_access_key_id=self.aws_access_key_id,
-                                 aws_secret_access_key=self.aws_secret_access_key,
-                                 region_name=self.region_name)
-            for sg in ec2.security_groups.filter(GroupIds=self.security_group_ids):
+            aws_access_key_id = self.aws_access_key_id
+            aws_secret_access_key = self.aws_secret_access_key
+            ec2 = boto3.resource(
+                'ec2',
+                aws_access_key_id=aws_access_key_id,
+                aws_secret_access_key=aws_secret_access_key,
+                region_name=self.region_name)
+            for sg in ec2.security_groups.filter(
+                GroupIds=self.security_group_ids):
                 for rule in sg.ip_permissions:
                     for ip in rule['IpRanges']:
-                        if netaddr.IPAddress(remote_ip) in netaddr.IPNetwork(ip['CidrIp']):
+                        if (netaddr.IPAddress(remote_ip)
+                               in netaddr.IPNetwork(
+                                   ip['CidrIp'])):
                             return True
             return False
-    INTERNAL_IPS = CheckIPInSG(['127.0.0.1', '192.168.1.1', '192.168.1.2', '192.168.1.254'])
+
+
+
+    INTERNAL_IPS = CheckIPInSG(['127.0.0.1',
+                                '192.168.1.1',
+                                '192.168.1.2',
+                                '192.168.1.254'])
 
 其中 CheckIPInSG 繼承了 list 類別，並 override(覆載) __contains__ 函式，\
 此函式被執行的時間點就在 request.META.get('REMOTE_ADDR') \
