@@ -91,13 +91,13 @@ STATIC_URL 這時要改成 "https://s3-ap-northeast-1.amazonaws.com/MY_BUCKET/<b
 
 說出這麼愚蠢的 debug 故事，只是想跟各位分享一個 Python 禪法:
 
-.. code-block:: plain
+	.. code-block:: plain
 
-	Errors should never pass silently.
+		Errors should never pass silently.
 
-	切勿讓錯誤悄稍溜走。
+		切勿讓錯誤悄稍溜走。
 
-而 `TDD <http://chimera.labs.oreilly.com/books/1234000000754/index.html`_ 可以幫到這一點。
+而 `TDD <http://chimera.labs.oreilly.com/books/1234000000754/index.html>`_ 可以幫到這一點。
 
 .. author:: default
 .. categories:: chinese
