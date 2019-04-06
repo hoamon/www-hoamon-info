@@ -68,7 +68,7 @@ Joel 有一篇著名的文章: \
 #. 你能用一個步驟建出所有結果嗎?
     * 有的。目前使用 Jenkins + Bash script 。
 #. 你有沒有每天都重新編譯建立(daily builds)嗎?
-    * :strike:`有的。周一到周五上班日自動編譯、測試、發佈。` 目前改成依「Issue 導向」作編譯建立，也就是說我們的單一功能、單一 bug 都會對應到 1 個 Issue 上，每個 Issue 會獨立開一個 branch ，所以當分枝 branch 在合回主線(以 pull request 方式)後，才作這個「重新編譯」的測試工作。
+    * 算是有的。 :strike:`周一到周五上班日自動編譯、測試、發佈。` 目前改成依「Issue 導向」作編譯建立，也就是說我們的單一功能、單一 bug 都會對應到 1 個 Issue 上，每個 Issue 會獨立開一個 branch ，所以當分枝 branch 在合回主線(以 pull request 方式)後，才作這個「重新編譯」的測試工作。
 #. 你有沒有問題追蹤資料庫(bug database)?
     * 有的。與業主用自架的 Ticket 系統，與員工用 Jira Software Issue 。
 #. 你會先把問題都修好之後才寫新的程式嗎?
