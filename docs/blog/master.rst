@@ -9,7 +9,20 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
-   #2014/03/27/private_bidding_1_of_2
+   2019/02/26/this_is_just_the_beginning
+   2018/11/24/my_conclusion_on_taiwan_2018_election
+   2018/11/22/my_decision_on_2018_referendum
+   2018/04/12/yo_o__what_makes_you_think_you_can_manage_the_software_engineers_
+   2017/07/14/a_tiny_format_error_makes_me_be_busy_a_day
+   2017/06/28/override___contains___function_in_list
+   #2017/04/01/is_a_deal_in_close_outcry
+   #2017/01/01/5_software_development_trends_shaping_enterprise_in_2017
+   #2017/01/01/make_or_buy_
+   2016/12/27/an_anonymous_fair_exam_site
+   2016/12/11/why_give_such_high_salary_for_a_software_job_in_puli
+   2016/12/02/software_job_in_puli
+   2014/07/26/stone_sales
+   2014/03/27/private_bidding_1_of_2
    2014/02/13/static_hosting_in_goolge_cloud_storage
    2013/11/20/www_hoyun2_info
    2013/09/13/delete_bitbucket_repository
@@ -21,12 +34,12 @@ Sitemap
    2013/06/21/2013_construction_management_final_exam
    2013/06/01/2013_006202_liquidation
    2013/05/28/i_am_guilty
-   #2013/05/06/test_paypal
+   2013/05/06/test_paypal
    2013/04/14/there_are_so_many_hungers_in_the_world
    2013/04/12/difference_between_mysql_and_postgresql_with_django
    2013/03/06/why_not_kill_them_all
    2013/03/06/delete_gae_application
-   #2013/02/17/of_the_1___by_the_1___for_the_1__from_the_price_of_inequality
+   2013/02/17/of_the_1___by_the_1___for_the_1__from_the_price_of_inequality
    2013/02/17/hoamon_is_reading_at_ncnu
    2013/02/17/vote_for_006202_settlement
    2013/01/14/006202_rise_to_limit_in_a_day

@@ -15,7 +15,7 @@
 首先是進入管理頁面：
 
 .. figure:: delete-repository-example01.png
-    :width: 600px
+    :width: 100%
     :align: center
 
     這個按鈕是專案管理者才看得到的
@@ -23,20 +23,20 @@
 點選左邊選單的「Delete repository」：
 
 .. figure:: delete-repository-example02.png
-    :width: 600px
+    :width: 100%
     :align: center
 
 按下「Delete repository」按鈕並再次確認即刪除本專案。
 
 .. figure:: delete-repository-example03.png
-    :width: 600px
+    :width: 100%
     :align: center
 
 又如果你是要移除專案參與者，那麼就點選管理頁面中的「Access management」，\
 點選要移除的帳號右邊的叉叉就能移除參與者，如下圖：
 
 .. figure:: delete-repository-example04.png
-    :width: 600px
+    :width: 100%
     :align: center
 
 不過刪了之後，是否讓你的付費等級可以調降，這倒不一定。\

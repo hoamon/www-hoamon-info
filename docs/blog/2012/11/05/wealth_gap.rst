@@ -4,7 +4,7 @@
 
 .. figure:: wealth_gap.jpg
     :align: center
-    :width: 600px
+    :width: 100%
 
     本圖( wealth_gap.png )部份內容含有 `中央印製廠 <http://www.cepp.gov.tw/>`_ 製作內容，非全屬 hoamon 所創作
 

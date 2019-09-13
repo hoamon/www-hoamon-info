@@ -5,7 +5,7 @@
 
 .. figure:: http://1.bp.blogspot.com/-MLA36hCKBKw/TZKDTx_xs_I/AAAAAAAAcEc/91OV8IZYmsg/s1600/PRC+Nuclear+Powers.PNG
     :align: center
-    :width: 600px
+    :width: 100%
 
     資料來源： 中華人民共和國環境保護部核與輻射安全中心； 製圖： 陳磊
 

@@ -2,7 +2,7 @@
 ================================================================================
 
 .. figure:: gpg_sign_changeset.png
-    :width: 600px
+    :width: 100%
     :align: center
 
     紅底部份為合法 GPG 簽章的版本(changeset)
@@ -83,7 +83,7 @@ PGP 原理請見 `舊文 <http://blog.hoamon.info/search?q=pgp>`_ 。
 如下圖：
 
 .. figure:: merge.png
-    :width: 600px
+    :width: 100%
     :align: center
 
 我自己手邊作到 278 版，而同事(test@another)另外作了 279 版，\

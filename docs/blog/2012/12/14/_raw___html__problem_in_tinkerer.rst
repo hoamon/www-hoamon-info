@@ -3,7 +3,7 @@
 
 .. figure:: raw_html.png
     :align: center
-    :width: 600px
+    :width: 100%
 
     Put youtube video into tinkerer-based blog
 

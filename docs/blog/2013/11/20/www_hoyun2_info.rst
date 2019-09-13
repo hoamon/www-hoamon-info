@@ -2,7 +2,7 @@
 ================================================================================
 
 .. figure:: www_hoyun2_info.png
-    :width: 600px
+    :width: 100%
     :align: center
 
     http://www.hoyun2.info/ 網站快照

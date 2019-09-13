@@ -252,7 +252,7 @@ B廠商      1    8         8    0         1         請依序代入貴企業的
 一施工網圖如下：
 
 .. figure:: cpm.png
-    :width: 600px
+    :width: 100%
     :align: center
 
 其工期則由貴企業廠商代號計算得來，詳如下表：

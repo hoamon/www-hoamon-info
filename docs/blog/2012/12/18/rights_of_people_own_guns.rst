@@ -3,7 +3,7 @@
 ================================================================================
 
 .. figure:: Machine-gun_with_night_vision_sight.jpg
-    :width: 600px
+    :width: 100%
     :align: center
 
     本圖( Machine-gun_with_night_vision_sight.JPG )為 `Kiril Kapustin <http://imagesfrombulgaria.com/v/Military/Machine-gun_with_night_vision_sight.JPG.html>`_ 所有，非 hoamon 創作
@@ -73,7 +73,7 @@
 ：『紀律良好的民兵隊伍，對於一個自由國家的安全實屬必要；故人民持有和攜帶武器的權利，不得予以侵犯』。
 
 .. figure:: Beijing.jpg
-    :width: 600px
+    :width: 100%
     :align: center
 
     本圖( Beijing.jpg )為 `Wen Chuan Tan <http://www.fotopedia.com/items/ktwenchuan-C2euwTdC-UI>`_ 所有，非 hoamon 創作

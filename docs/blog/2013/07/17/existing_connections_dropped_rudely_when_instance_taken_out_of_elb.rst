@@ -2,7 +2,7 @@ AWS 問題: ELB 會強迫切斷用戶與 EC2 的連線
 ================================================================================
 
 .. figure:: amazon_web_architecture.png
-    :width: 600px
+    :width: 100%
     :align: center
     
     此圖為 Amazon 所製的 Web 服務架構建議，著作權非 hoamon 所有 

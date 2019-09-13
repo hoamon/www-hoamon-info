@@ -6,7 +6,7 @@ Bitbucket 付費方案真是佛心來著
 
 .. figure:: bitbucket_plans.png
     :align: center
-    :width: 600px
+    :width: 100%
 
     本圖( bitbucket_plans.png )部份內容含有 `Bitbucket.org
     <https://Bitbucket.org/>`_ 製作內容，非全屬 hoamon 所創作

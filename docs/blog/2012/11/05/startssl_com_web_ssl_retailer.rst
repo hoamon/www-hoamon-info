@@ -5,7 +5,7 @@ StartSSL.com Web SSL 憑證代購
 下圖為綠標憑證在瀏覽器的顯示情形：
 
 .. figure:: startssl_com_web/greenbar.png
-    :width: 600px
+    :width: 100%
 
     本圖( greenbar.png )部份內容引自 https://www.startssl.com/ ，並非全屬 hoamon 創作
 

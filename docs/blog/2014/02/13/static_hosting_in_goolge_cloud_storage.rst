@@ -55,7 +55,7 @@
 請到 `Google Webmasters <http://www.google.com/webmasters/>`_ 頁面，登入後可看到下圖：
 
 .. figure:: shigcs/1-1.png
-    :width: 600px
+    :width: 100%
     :align: center
 
     列表的是已驗證或待驗證的網站
@@ -63,7 +63,7 @@
 按下「 Add A Site 」，可看到小視窗出現：
 
 .. figure:: shigcs/1-2.png
-    :width: 600px
+    :width: 100%
     :align: center
 
     輸入你想驗證的 root domain
@@ -73,7 +73,7 @@
 其中的 TXT 或 CNAME(點選「 Add a CNAME record 」) 方式都可以。
 
 .. figure:: shigcs/1-3.png
-    :width: 600px
+    :width: 100%
     :align: center
 
     藍色框內的文字是要貼到你的 Domain provider 的管理頁面中
@@ -83,20 +83,20 @@ DNS 設定完成後，建議過 5 分鐘後，再點選「 VERIFY 」按鈕。
 若選的是「 CNAME 」的設定方式，則會出現 Label / Destination 兩個欄位：
 
 .. figure:: shigcs/1-4.png
-    :width: 600px
+    :width: 100%
     :align: center
 
 下圖是我的 DNS 設定頁面，如果是 GoDaddy 或是其他域名商，\
 其 TXT > Name 的部份，通常是寫 @ (@ 在 DNS 規格中就是 root domain 的意思)。
 
 .. figure:: shigcs/1-5.png
-    :width: 600px
+    :width: 100%
     :align: center
 
 5 分鐘後，按下「 Verify 」後，如果沒有問題就可以看到下個畫面：
 
 .. figure:: shigcs/1-6.png
-    :width: 600px
+    :width: 100%
     :align: center
 
 2. 把 www.hoyun2.info CNAME 到 c.storage.googleapis.com

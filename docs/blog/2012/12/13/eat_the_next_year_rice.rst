@@ -4,7 +4,7 @@
 
 .. figure:: tiny-wooden-house-with-mushrooms.jpg
     :align: center
-    :width: 600px
+    :width: 100%
 
     圖片授權： Public domain image( `來源 <http://www.public-domain-image.com/plants/mushrooms/slides/tiny-wooden-house-with-mushrooms.html>`_ )
 
@@ -109,7 +109,7 @@
 
 .. figure:: 2011tax.png
     :align: center
-    :width: 600px
+    :width: 100%
 
     資料來源： 中華民國財政 2011 (ISSN 1682-3990 ) - 賦稅一章
 

@@ -36,9 +36,14 @@ local_settings.py$
 ^logs/nginx_access.log
 ^logs/nginx_error.log
 
+^.py2env/
+^.vscode/
 ^nbproject/
 ^.project
 ^.settings
 ^.pydevproject
 ^.settings/org.eclipse.core.resources.prefs
 ^.settings/org.eclipse.core.runtime.prefs
+
+.idea/
+.*\.DS_Store

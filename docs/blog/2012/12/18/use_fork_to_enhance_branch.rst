@@ -4,7 +4,7 @@
 
 .. figure:: branches_in_another_fork.png
     :align: center
-    :width: 600px
+    :width: 100%
 
     2f40672 乃 default branch; 以其為基礎，向上開設 6 個 branches
 
@@ -40,13 +40,13 @@ bitbucket 的 fork 按鈕如下圖：
 
 .. figure:: fork_button.png
     :align: center
-    :width: 600px
+    :width: 100%
 
 點選後，出現新專案的資訊填寫表單：
 
 .. figure:: new_repo.png
     :align: center
-    :width: 600px
+    :width: 100%
 
 其中要注意的是 fork 時，也可針對該專案的不同 tags, branches 作選擇，\
 若是選擇某一 branch 或是 tip 本身就是某一個 branch ，\
@@ -120,14 +120,14 @@ branch 關閉，並 merge 回 default ，再 push 到 https://bitbucket.org/hoam
 
 .. figure:: forked.png
     :align: center
-    :width: 600px
+    :width: 100%
 
 把 7ecfcfc push 到 www-hoamon-info 後，可以從下圖看到， www-hoamon-info 也只會拿到 7ecfcfc 母系的所有 changeset ，\
 在這裡看不到 skill_of_teacher 、 do_my_best 、 colombo …等 branch 的 changeset 。
 
 .. figure:: original.png
     :align: center
-    :width: 600px
+    :width: 100%
 
 利用 fork+branch ，我就能確保自己開的 branches 不會與別人開的 branches 有太多彼此互相影響的機會，\
 降低程式碼攪亂的機會。

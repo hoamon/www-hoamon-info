@@ -3,7 +3,7 @@ Monospaced fonts of Netbeans in Ubuntu
 
 .. figure:: before.png
     :align: center
-    :width: 600px
+    :width: 100%
 
     使用文泉驛等寬正黑，字會糊掉
 
@@ -19,7 +19,7 @@ Monospaced fonts of Netbeans in Ubuntu
 
 .. figure:: after.png
     :align: center
-    :width: 600px
+    :width: 100%
 
     加上反鋸齒的選項，字就不糊了
 

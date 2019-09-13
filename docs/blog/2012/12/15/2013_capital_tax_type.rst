@@ -4,7 +4,7 @@
 
 .. figure:: stock.jpg
     :align: center
-    :width: 600px
+    :width: 100%
 
     本圖( stock.jpg )部份內容含有 `Gentleface.com <http://findicons.com/icon/267784/hand_pro>`_ 製作之內容，非全屬 hoamon 所創作
 
