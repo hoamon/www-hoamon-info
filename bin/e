@@ -1,2 +1,2 @@
 #/bin/bash
-source .py2env/bin/activate
+source .py3env/bin/activate
