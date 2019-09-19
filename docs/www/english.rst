@@ -9,7 +9,7 @@
 
 
 .. image:: _static/me_english.jpg
-   :scale: 100 %
+   :width: 100 %
    :alt: It's me
    :align: left
 
