@@ -2,3 +2,7 @@
 	path = asset/book-for-a-software-company-of-one-man
 	url = ssh://git@bbk.ho600.com:7999/~hoamon/book-for-a-software-company-of-one-man.git
 	branch = master
+[submodule "asset/book-for-construction-management"]
+	path = asset/book-for-construction-management
+	url = ssh://git@bbk.ho600.com:7999/~hoamon/book-for-construction-management.git
+	branch = master
