@@ -14,3 +14,7 @@
 	path = asset/book-for-engineering-contract
 	url = ssh://git@bbk.ho600.com:7999/~hoamon/book-for-engineering-contract.git
 	branch = master
+[submodule "asset/book-for-management-mathematics"]
+	path = asset/book-for-management-mathematics
+	url = ssh://git@bbk.ho600.com:7999/~hoamon/book-for-management-mathematics.git
+	branch = master
