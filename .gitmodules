@@ -10,3 +10,7 @@
 	path = asset/book-for-engineering-economy
 	url = ssh://git@bbk.ho600.com:7999/~hoamon/book-for-engineering-economy.git
 	branch = master
+[submodule "asset/book-for-engineering-contract"]
+	path = asset/book-for-engineering-contract
+	url = ssh://git@bbk.ho600.com:7999/~hoamon/book-for-engineering-contract.git
+	branch = master
