@@ -21,12 +21,12 @@ phases:
       - echo -e '{ "CODEBUILD_BUILD_ID"':' "'${CODEBUILD_BUILD_ID}'",\n  "BUILD_TIME"':' "'${BUILD_TIME}'",\n   "COMMIT_CHANGESET"':' "'${COMMIT_CHANGESET}'" }' > s3_trunk/__version__.json
   build:
     commands:
-      - cd ../../docs/blog
+      - cd docs/blog
       - tinker --build
-      - cd docs/www
+      - cd ../../docs/www
       - make html
       - cd ../../s3_trunk
-      - cp -rf ../docs/blog/blog/html/* .
+      - cp -rf ../docs/blog/blog/html blog
       - cp -rf ../docs/www/_build/html/* .
       - aws s3 cp --recursive . s3://www.hoamon.info/
   #post_build:
