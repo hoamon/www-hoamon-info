@@ -1,0 +1,24 @@
+[submodule "asset/book-for-a-software-company-of-one-man"]
+	path = asset/book-for-a-software-company-of-one-man
+	url = ssh://git@bbk.ho600.com:7999/~hoamon/book-for-a-software-company-of-one-man.git
+	branch = master
+[submodule "asset/book-for-construction-management"]
+	path = asset/book-for-construction-management
+	url = ssh://git@bbk.ho600.com:7999/~hoamon/book-for-construction-management.git
+	branch = master
+[submodule "asset/book-for-engineering-economy"]
+	path = asset/book-for-engineering-economy
+	url = ssh://git@bbk.ho600.com:7999/~hoamon/book-for-engineering-economy.git
+	branch = master
+[submodule "asset/book-for-engineering-contract"]
+	path = asset/book-for-engineering-contract
+	url = ssh://git@bbk.ho600.com:7999/~hoamon/book-for-engineering-contract.git
+	branch = master
+[submodule "asset/book-for-management-mathematics"]
+	path = asset/book-for-management-mathematics
+	url = ssh://git@bbk.ho600.com:7999/~hoamon/book-for-management-mathematics.git
+	branch = master
+[submodule "asset/book-for-startup-company"]
+	path = asset/book-for-startup-company
+	url = ssh://git@bbk.ho600.com:7999/~hoamon/book-for-startup-company.git
+	branch = master

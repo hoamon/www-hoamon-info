@@ -13,7 +13,7 @@
 
 
 .. image:: _static/me_paper.jpeg
-   :scale: 100 %
+   :width: 100 %
    :alt: It's me
    :align: left
 

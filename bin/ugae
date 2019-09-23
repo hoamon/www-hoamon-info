@@ -7,7 +7,7 @@ app_id=$2
 user=$3
 is_me=$4
 extra_version=$5
-version=`hg id -n -i|sed 's/\([^ ]\+\) \+\([^ ]\+\)/\2-\1/'|sed 's/[^0-9a-z-]//g'`
+version=`git rev-parse --short HEAD`
 
 if [ $is_me ] && [ $is_me == "me" ]; then
     if [ $extra_version ]; then

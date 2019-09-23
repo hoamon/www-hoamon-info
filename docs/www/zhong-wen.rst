@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 .. image:: _static/me_zhong-wen.jpg
-   :scale: 100 %
+   :width: 100 %
    :alt: It's me and my mom, wife, sister
    :align: left
 

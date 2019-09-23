@@ -1,3 +1,7 @@
+.py2env/
 .py3env/
 *.pyc
 .vscode/
+_build/
+docs/blog/blog/
+trunk/index.yaml

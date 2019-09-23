@@ -86,12 +86,13 @@ html_sidebars = {
 # Tinkerer to play nice with Sphinx
 # **************************************************************
 
-import os
+import os, git
 
 source_suffix = tinkerer.source_suffix
 master_doc = tinkerer.master_doc
 version = tinkerer.__version__
-release = os.popen('hg id -n -i').read().replace(' ', '-').replace('+', '').replace('\n', '').split('-')[0]
+repo = git.Repo(search_parent_directories=True)
+release = repo.head.object.hexsha[:7]
 html_title = project
 html_use_index = False
 html_show_sourcelink = False
