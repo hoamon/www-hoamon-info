@@ -358,20 +358,20 @@
         &copy; Copyright {{ copyright }}.
         {%- for p0, p1, p2 in [
                                 ("hoamon.info", "www-hoamon-info", "我的個人網站"),
-                                ("Startup Company Practice in Internet", "startup-company", "網路創業實務"),
-                                ("Construction and Disaster Prevention Management", "construction-management", "營建與防災管理"),
-                                ("Engineering Economy", "engineering-economy", "工程經濟"),
-                                ("Management Mathematics", "management-mathematics", "管理數學"),
-                                ("Engineering Contract", "engineering-contract", "工程契約"),
-                                ("A Software Company of One Man", "a-software-company-of-one-man", "一人軟體公司"),
-                                ("Low Cost Google Cloud Construction of Small and Medium Companies", "low-cost-google-cloud-construction-of-smc", "中小企業的低成本 Google Cloud 佈建"),
+                                ("Startup Company Practice over the Internet", "book-for-startup-company", "網路創業實務"),
+                                ("Construction and Disaster Prevention Management", "book-for-construction-management", "營建與防災管理"),
+                                ("Engineering Economy", "book-for-engineering-economy", "工程經濟"),
+                                ("Management Mathematics", "book-for-management-mathematics", "管理數學"),
+                                ("Engineering Contract", "book-for-engineering-contract", "工程契約"),
+                                ("A Software Company of One Man", "book-for-a-software-company-of-one-man", "一人軟體公司"),
+                                ("Construct the Low Cost Network System for Small and Medium Companies", "book-for-construct-the-low-cost-network-system-for-smc", "佈建中小企業的低成本網路系統"),
                                 ] %}
             {%- if project ==  p0 %}
-                Version(<a href="//bitbucket.org/hoamon/{{ p1 }}/src/{{ release|e }}?at=default">{{ release|e }}</a>)
+                Version(<a href="//github.com/hoamon/{{ p1 }}/commit/{{ release|e }}">{{ release|e }}</a>)
             {% endif %}
         {% endfor %}
-        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
-        and hosted on <a href="https://developers.google.com/appengine/">Google App Engine</a>. <br/>
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+        and hosted on <a href="https://aws.amazon.com/">Amazon Web Service</a>. <br/>
         [<a name="footnote_star" class="notice">*</a>] All this site excepts the three scrolls in background that were created by my wife( <a alt="http://www.GraceBlue.info/"
         href="http://www.graceblue.info/">Grace</a> ), and also are licensed under CC BY-SA 3.0 .
     </div>
