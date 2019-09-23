@@ -31,7 +31,7 @@ Sphinx 主要是一個 ReST 文件的轉換器。我們先用 ReST 格式寫文�
 待發佈時， Sphinx 可以幫我們生成 .tex, .html, .pub, .pdf 等格式文件，\
 所以我們作者只需依 ReST 結構費心文章寫作，後端的出版編輯就交給 Sphinx 。\
 而因為 ReST 文件也不過就是純文字文件，所以它非常適合躺在版本控制器中。\
-我的個人網站就是開在 `Bitbucket <https://bitbucket.org/hoamon/www-hoamon-info>`_ 中控管的。
+我的個人網站就是開在 `Github <https://github.com/hoamon/www-hoamon-info>`_ 中控管的。
 
 但 Sphinx 只能幫我們把 .rst 轉成 .html ， Blog 系統則還需要其他服務，像是 RSS 分享, \
 時間序列文章列表等，所以我們需要裝個 `Tinkerer <http://www.tinkerer.me/>`_ 外掛來幫我們作到。

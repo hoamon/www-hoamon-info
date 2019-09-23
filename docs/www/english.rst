@@ -63,7 +63,7 @@ Sphinx is a reStructuredText-based documental generating tool which
 mainly apply to software project. I can treat the web page as a source code that
 lay on a `Mercurial <http://mercurial.selenic.com/>`_ repository
 ( I set my personal website in a open source project is
-hosted on http://bitbucket.org/hoamon/www-hoamon-info, and the licenses is BSD ).
+hosted on https://github.com/hoamon/www-hoamon-info, and the licenses is BSD ).
 
 The purpose of my detail page is only one describes who i am, and using the same
 content in ten different languages: English, 正體中文, español, 日本語, português,
