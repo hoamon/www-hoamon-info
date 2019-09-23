@@ -266,8 +266,8 @@
     <div class="content" style="clear: both;">
         {%- if project == "hoamon.info" %}
             <div style="float: right; margin-right: 10px;">
-                <a href="//bitbucket.org/hoamon/www-hoamon-info/history-node/{{ release|e }}/docs/www/{{ pagename }}.rst?at=default">Reversion History</a> and
-                <a href="//bitbucket.org/hoamon/www-hoamon-info/raw/{{ release|e }}/docs/www/{{ pagename }}.rst?at=default">Raw File</a> of
+                <a href="//github.com/hoamon/www-hoamon-info/commits/{{ release|e }}/docs/www/{{ pagename }}.rst">Reversion History</a> and
+                <a href="//raw.githubusercontent.com/hoamon/www-hoamon-info/{{ release|e }}/docs/www/{{ pagename }}.rst">Raw File</a> of
                 <b>this {{ pagename }}.html</b>
             </div>
         {% else %}
@@ -286,8 +286,8 @@
                     {% endif %}
                     <div style="float: right; margin-right: 5px;">
                         {%- if pagename != 'index' %}|{% endif %}
-                        <a href="//bitbucket.org/hoamon/{{ p1 }}/history-node/{{ release|e }}/{{ pagename }}.rst?at=default">Reversion History</a> and
-                        <a href="//bitbucket.org/hoamon/{{ p1 }}/raw/{{ release|e }}/{{ pagename }}.rst?at=default">Raw File</a> of
+                        <a href="//github.com/hoamon/{{ p1 }}/commits/{{ release|e }}/{{ pagename }}.rst">Reversion History</a> and
+                        <a href="//raw.githubusercontent.com/hoamon/{{ p1 }}/{{ release|e }}/{{ pagename }}.rst">Raw File</a> of
                         <b>this {{ pagename }}.html</b>
                     </div>
                 {% endif %}
@@ -397,7 +397,7 @@
             #fork_me { display: inline; }
         }
     </style>
-    <a id="fork_me" href="http://bitbucket.org/hoamon/www-hoamon-info">
+    <a id="fork_me" href="https://github.com/hoamon/www-hoamon-info">
         <img alt="Fork me" src="/_static/fork_me.png" style="position: fixed; top: 0; left: 0; border 0" />
     </a>
 {% endblock %}
