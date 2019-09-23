@@ -1,6 +1,6 @@
 # www-hoamon-info
 
-[!www-hoamon-info-codebuild-status-image]
+![www-hoamon-info-codebuild-status-image]
 
 My personal website( http://www.hoamon.info/ ), mainly using Python-Sphinx( http://sphinx-doc.org/ ) and blogging with Tinkerer( http://tinkerer.me/ ).
 
