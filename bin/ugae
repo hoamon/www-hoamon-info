@@ -16,6 +16,7 @@ if [ $is_me ] && [ $is_me == "me" ]; then
     else
         sub_version='-'${user}'-auto-set-default-'`date +%Y%m%d%H%M%S`
     fi
+    sub_version=`echo ${sub_version}|sed 's/[^0-9a-zA-Z-]//g'`
 
     ${appcfg} update $trunk -A $app_id -e $user -V ${version}${sub_version} \
         && ${appcfg} set_default_version $trunk -A $app_id -e $user -V ${version}${sub_version}
