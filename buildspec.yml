@@ -12,13 +12,14 @@ phases:
       # - command
   pre_build:
     commands:
+      - export COMMIT_CHANGESET=$(git rev-parse HEAD)
+      - export BRANCH="$(git branch --points-at ${COMMIT_CHANGESET} )"
+      - export SHORT_COMMIT_CHANGESET=$(git rev-parse --short=7 HEAD)
+      - export BUILD_TIME=$(date +%Y-%m-%dT%H:%M:%S%z)
+      - echo '{ "BRANCH"':' "'${BRANCH}'", \n  "CODEBUILD_BUILD_ID"':' "'${CODEBUILD_BUILD_ID}'",\n  "BUILD_TIME"':' "'${BUILD_TIME}'",\n   "COMMIT_CHANGESET"':' "'${COMMIT_CHANGESET}'" }' > s3_trunk/__version__.json
       - pip install --upgrade pip
       - pip install --upgrade awscli
       - pip install -r requirements.txt
-      - export COMMIT_CHANGESET=$(git rev-parse HEAD)
-      - export SHORT_COMMIT_CHANGESET=$(git rev-parse --short=7 HEAD)
-      - export BUILD_TIME=$(date +%Y-%m-%dT%H:%M:%S%z)
-      - echo '{ "CODEBUILD_BUILD_ID"':' "'${CODEBUILD_BUILD_ID}'",\n  "BUILD_TIME"':' "'${BUILD_TIME}'",\n   "COMMIT_CHANGESET"':' "'${COMMIT_CHANGESET}'" }' > s3_trunk/__version__.json
   build:
     commands:
       - cd docs/blog
