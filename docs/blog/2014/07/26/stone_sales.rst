@@ -2,19 +2,19 @@
 ================================================================================
 
 .. figure:: P1040527.jpg
-    :width: 600
+    :width: 100%
     :align: center
 
     黑膽石正面
 
 .. figure:: P1040529.jpg
-    :width: 600
+    :width: 100%
     :align: center
 
     黑膽石背面
 
 .. figure:: P1040530.jpg
-    :width: 600
+    :width: 100%
     :align: center
 
     黑膽石側面

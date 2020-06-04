@@ -79,7 +79,7 @@ Trac 官網： http://trac.edgewall.org/ (原 http://trac.edgewall.com/ )\
     我的第一個專案
 
 .. figure:: Screenshot-2.png
-    :width: 600
+    :width: 100%
 
 到此我們可以確定 Trac 系統是可以運作的。而在下一篇文章，\
 我們要把應用伺服器換成比較耐操、比較快的 :doc:`Apache2 加 mod_python <./trac_27>` 。

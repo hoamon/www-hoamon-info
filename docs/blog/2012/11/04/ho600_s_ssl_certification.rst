@@ -3,7 +3,7 @@ Ho600's SSL Certification
 ================================================================================
 
 .. figure:: ho600_ssl/ho600_ssl.png
-    :width: 600
+    :width: 100%
 
     本圖( ho600_ssl.png )部份內容引自 https://www.ho600.com/ ，並非全屬 hoamon 創作
 

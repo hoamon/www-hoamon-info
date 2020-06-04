@@ -47,19 +47,19 @@
 於此，我昨天捐了二筆款項給社民黨及基進黨:
 
 .. figure:: ./2018-sdp.png
-    :width: 600px
+    :width: 100%
 
     捐 3,000 元給社會民主黨
 
 .. figure:: ./2018-rws.png
-    :width: 600px
+    :width: 100%
 
     捐 7,200 元給基進黨
 
 也一直持續捐款給綠黨:
 
 .. figure:: ./2018-greenparty.png
-    :width: 600px
+    :width: 100%
 
     每月捐 600 元給綠黨
 

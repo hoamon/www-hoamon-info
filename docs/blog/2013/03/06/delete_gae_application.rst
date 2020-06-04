@@ -13,27 +13,27 @@
 首先進到該應用程式的 dashboard 頁面：
 
 .. figure:: delete_GAE_1.png
-    :width: 600
+    :width: 100%
     :align: center
 
 點選左邊選單中的 Application Settings 連結，再按下下方的 Disable Application 按鈕。\
 接下來出現下圖：
 
 .. figure:: delete_GAE_2.png
-    :width: 600
+    :width: 100%
     :align: center
 
 詢問你，是否真的要停用本應用程式？ 按下後，再出現下圖：
 
 .. figure:: delete_GAE_3.png
-    :width: 600
+    :width: 100%
     :align: center
 
 一個按鈕是給你「重新啟用」的，下一個按鈕則是給你「永久刪除本應用系統」的。\
 按下「Request permanent deletion」，就會看到：
 
 .. figure:: delete_GAE_4.png
-    :width: 600
+    :width: 100%
     :align: center
 
 告訴你， Google 會在 3 天（72小時）後才正式刪除本應用系統，如果後悔的話，\

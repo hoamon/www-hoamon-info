@@ -3,7 +3,7 @@
 
 .. figure:: wpid-overallc.png
     :align: center
-    :width: 600
+    :width: 100%
 
     2012 三月全世界的網頁伺服器市佔率圖 from http://netcraft.com/ 。本圖( wpid-overallc.png )非屬 hoamon 創作。
 
@@ -96,7 +96,7 @@ daemonize=true 則表示指令打完後，它就背景處理了，想要把這�
 
 .. figure:: nginx-fastcgi.png
     :align: center
-    :width: 600
+    :width: 100%
 
     圖來自陈辉的博客( http://huichen.org/2010/03/12/configure-fastcgi-for-nginx/ )
 

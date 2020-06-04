@@ -2,7 +2,7 @@
 ================================================================================
 
 .. figure:: hoamon_is_reading.jpg
-    :width: 600
+    :width: 100%
     :align: center
 
 年初三跟著老婆家人到暨大放風箏。那真是一個風景優美的地方，與其他國內大學相比，\
@@ -11,7 +11,7 @@
 .. more::
 
 .. figure:: http://www.ncnu.edu.tw/ncnuweb/units/share/130128_sa.jpg
-    :width: 600
+    :width: 100%
     :align: center
 
 上面是暨大與日月潭風景區管理處合辦之『花賞茶事』活動。\
