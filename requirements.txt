@@ -1,6 +1,6 @@
 # limit packages version on python2, because my blog depends on tinkerer>=1.2,<1.3
 docutils==0.15.2
-Jinja2==2.11.2
+Jinja2==2.11.3
 GitPython>=2.1,<2.2
 MarkupSafe==1.1.1
 Sphinx>=1.2,<1.3
