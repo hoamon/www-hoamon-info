@@ -9,6 +9,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2022/04/24/social_distance_app
    2019/02/26/this_is_just_the_beginning
    2018/11/24/my_conclusion_on_taiwan_2018_election
    2018/11/22/my_decision_on_2018_referendum

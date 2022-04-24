@@ -78,6 +78,6 @@
 我們民主國家，只能怪自己。
 
 .. author:: default
-.. categories:: none
-.. tags:: none
+.. categories:: chinese
+.. tags:: elections
 .. comments::

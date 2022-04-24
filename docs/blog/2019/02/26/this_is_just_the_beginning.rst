@@ -91,6 +91,6 @@
 P.S. 那張紙的右下方，後來又寫上 512 的數字，這又是另一個故事了，而這個故事，要留到講我有偏執症時再說。
 
 .. author:: default
-.. categories:: none
-.. tags:: none
+.. categories:: chinese
+.. tags:: education
 .. comments::
