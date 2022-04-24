@@ -20,6 +20,7 @@ phases:
       - pip install --upgrade pip
       - pip install --upgrade awscli
       - pip install -r requirements.txt
+      - pip list
   build:
     commands:
       - cd docs/blog
