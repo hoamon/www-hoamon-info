@@ -9,6 +9,7 @@ Sitemap
 .. toctree::
    :maxdepth: 1
 
+   2025/04/05/unfounded_facts
    2025/04/05/2025_big_recall
    2025/04/04/dumb_does_not_touch_political
    2022/05/15/face_it_accept_it_deal_with_it_let_go_of_it_if_you_got_wuhan_pneumonia
