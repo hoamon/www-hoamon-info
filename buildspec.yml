@@ -30,7 +30,7 @@ phases:
       - cd ../../s3_trunk
       - cp -rf ../docs/blog/blog/html blog
       - cp -rf ../docs/www/_build/html/* .
-      - aws s3 cp --recursive . s3://twwww.hoamon.info/
+      - aws s3 cp --recursive . s3://twwww.hoamon.info/ --region ap-east-2
   #post_build:
     #commands:
       # - command
